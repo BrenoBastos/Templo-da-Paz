@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\BRUNO\\source\\repos\\Templo_da_Paz\\Templo_da_Paz\\Templo_da_Paz.csproj",
+      "projectUniqueName": "C:\\Users\\BRUNO\\Documents\\GitHub\\Templo-da-Paz\\Templo_da_Paz\\Templo_da_Paz.csproj",
       "projectName": "Templo_da_Paz",
-      "projectPath": "C:\\Users\\BRUNO\\source\\repos\\Templo_da_Paz\\Templo_da_Paz\\Templo_da_Paz.csproj",
+      "projectPath": "C:\\Users\\BRUNO\\Documents\\GitHub\\Templo-da-Paz\\Templo_da_Paz\\Templo_da_Paz.csproj",
       "packagesPath": "C:\\Users\\BRUNO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\BRUNO\\source\\repos\\Templo_da_Paz\\Templo_da_Paz\\obj\\",
+      "outputPath": "C:\\Users\\BRUNO\\Documents\\GitHub\\Templo-da-Paz\\Templo_da_Paz\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
