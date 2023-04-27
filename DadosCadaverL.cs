@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Legista : Form
+    public partial class DadosCadaverL : Form
     {
-        public Legista()
+        public DadosCadaverL()
         {
             InitializeComponent();
-        }
-
-        private void TreeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            
-        }
-
-        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-
         }
     }
 }

@@ -98,7 +98,19 @@
     <Compile Include="Assistente.Designer.cs">
       <DependentUpon>Assistente.cs</DependentUpon>
     </Compile>
+    <Compile Include="AtualizarCadaverT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AtualizarCadaverT.Designer.cs">
+      <DependentUpon>AtualizarCadaverT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexao.cs" />
+    <Compile Include="DadosCadaverL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DadosCadaverL.Designer.cs">
+      <DependentUpon>DadosCadaverL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Legista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Assistente.resx">
       <DependentUpon>Assistente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AtualizarCadaverT.resx">
+      <DependentUpon>AtualizarCadaverT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DadosCadaverL.resx">
+      <DependentUpon>DadosCadaverL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Legista.resx">
       <DependentUpon>Legista.cs</DependentUpon>

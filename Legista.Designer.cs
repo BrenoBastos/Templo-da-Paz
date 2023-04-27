@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Cadáver");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Atualizar");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Dados");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Cadáver", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
@@ -36,13 +40,22 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(12, 1);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Cadaver";
-            treeNode1.Text = "Cadáver";
+            treeNode1.Checked = true;
+            treeNode1.Name = "Atualizar";
+            treeNode1.Text = "Atualizar";
+            treeNode1.ToolTipText = "Atualizar";
+            treeNode2.Checked = true;
+            treeNode2.Name = "Dados";
+            treeNode2.Text = "Dados";
+            treeNode2.ToolTipText = "Dados";
+            treeNode3.Name = "Cadaver";
+            treeNode3.Text = "Cadáver";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode3});
             this.treeView1.Size = new System.Drawing.Size(216, 216);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView1_AfterSelect);
+            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
             // Legista
             // 
@@ -58,6 +71,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
+        public System.Windows.Forms.TreeView treeView1;
     }
 }
