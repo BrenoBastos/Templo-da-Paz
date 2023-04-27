@@ -39,6 +39,7 @@
             this.BotaoLogin.TabIndex = 0;
             this.BotaoLogin.Text = "Login";
             this.BotaoLogin.UseVisualStyleBackColor = true;
+            this.BotaoLogin.Click += new System.EventHandler(this.BotaoLogin_Click);
             // 
             // Login
             // 
