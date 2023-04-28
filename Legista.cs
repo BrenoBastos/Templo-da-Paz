@@ -15,14 +15,14 @@ namespace WindowsFormsApp1
         public Legista()
         {
             InitializeComponent();
-        }
-
-        private void TreeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
             
         }
 
-        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+       
+
+       
+
+        private void treeView2_AfterSelect(object sender, TreeViewEventArgs e)
         {
 
         }
