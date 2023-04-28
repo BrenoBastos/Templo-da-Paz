@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Assistente : Form
+    public partial class CadastrarCadaverA : Form
     {
-        public Assistente()
+        public CadastrarCadaverA()
         {
             InitializeComponent();
         }

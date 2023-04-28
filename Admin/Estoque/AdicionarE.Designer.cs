@@ -1,6 +1,7 @@
-﻿namespace WindowsFormsApp1
+﻿
+namespace WindowsFormsApp1.Admin
 {
-    partial class Legista
+    partial class AdicionarE
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +29,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Cadaver = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // Cadaver
-            // 
-            this.Cadaver.AutoSize = true;
-            this.Cadaver.Location = new System.Drawing.Point(25, 42);
-            this.Cadaver.Name = "Cadaver";
-            this.Cadaver.Size = new System.Drawing.Size(47, 13);
-            this.Cadaver.TabIndex = 0;
-            this.Cadaver.Text = "Cadáver";
-            // 
-            // Legista
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Cadaver);
-            this.Name = "Legista";
-            this.Text = "Legista";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            this.Text = "AdicionarE";
         }
 
         #endregion
-
-        private System.Windows.Forms.Label Cadaver;
     }
 }

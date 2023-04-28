@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1.Admin
 {
-    public partial class Legista : Form
+    public partial class AssistenteD : Form
     {
-        public Legista()
+        public AssistenteD()
         {
             InitializeComponent();
-            
-        }
-
-       
-
-       
-
-        private void treeView2_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-
         }
     }
 }

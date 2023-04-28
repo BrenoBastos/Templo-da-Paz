@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1.Admin
 {
-    public partial class AtualizarCadaverT : Form
+    public partial class AlterarA : Form
     {
-        public AtualizarCadaverT()
+        public AlterarA()
         {
             InitializeComponent();
         }

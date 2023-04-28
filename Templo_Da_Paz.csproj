@@ -86,35 +86,119 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs">
+    <Compile Include="Admin\Admin1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin.Designer.cs">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <Compile Include="Admin\Admin1.Designer.cs">
+      <DependentUpon>Admin1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Assistente.cs">
+    <Compile Include="Admin\Administrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Assistente.Designer.cs">
+    <Compile Include="Admin\Administrador.Designer.cs">
+      <DependentUpon>Administrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Assistente\AlterarA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Assistente\AlterarA.Designer.cs">
+      <DependentUpon>AlterarA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Assistente\CadastrarA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Assistente\CadastrarA.Designer.cs">
+      <DependentUpon>CadastrarA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Assistente\RemoverA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Assistente\RemoverA.Designer.cs">
+      <DependentUpon>RemoverA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dados\AssistenteD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Dados\AssistenteD.Designer.cs">
+      <DependentUpon>AssistenteD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dados\EstoqueD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Dados\EstoqueD.Designer.cs">
+      <DependentUpon>EstoqueD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dados\LegistaD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Dados\LegistaD.Designer.cs">
+      <DependentUpon>LegistaD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Estoque\AdicionarE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Estoque\AdicionarE.Designer.cs">
+      <DependentUpon>AdicionarE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Estoque\CadastrarE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Estoque\CadastrarE.Designer.cs">
+      <DependentUpon>CadastrarE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Legista\AlterarL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Legista\AlterarL.Designer.cs">
+      <DependentUpon>AlterarL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Legista\RemoverL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Legista\RemoverL.Designer.cs">
+      <DependentUpon>RemoverL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assistente\Assistente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assistente\Assistente.Designer.cs">
       <DependentUpon>Assistente.cs</DependentUpon>
     </Compile>
-    <Compile Include="AtualizarCadaverT.cs">
+    <Compile Include="CadastrarL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AtualizarCadaverT.Designer.cs">
-      <DependentUpon>AtualizarCadaverT.cs</DependentUpon>
+    <Compile Include="CadastrarL.Designer.cs">
+      <DependentUpon>CadastrarL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Legista\AtualizarCadaverL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Legista\AtualizarCadaverL.Designer.cs">
+      <DependentUpon>AtualizarCadaverL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assistente\CadastrarCadaverA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assistente\CadastrarCadaverA.Designer.cs">
+      <DependentUpon>CadastrarCadaverA.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexao.cs" />
-    <Compile Include="DadosCadaverL.cs">
+    <Compile Include="Assistente\DadosCadaverA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DadosCadaverL.Designer.cs">
+    <Compile Include="Assistente\DadosCadaverA.Designer.cs">
+      <DependentUpon>DadosCadaverA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Legista\DadosCadaverL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Legista\DadosCadaverL.Designer.cs">
       <DependentUpon>DadosCadaverL.cs</DependentUpon>
     </Compile>
-    <Compile Include="Legista.cs">
+    <Compile Include="Legista\Legista.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Legista.Designer.cs">
+    <Compile Include="Legista\Legista.Designer.cs">
       <DependentUpon>Legista.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
@@ -125,19 +209,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Admin.resx">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\Admin1.resx">
+      <DependentUpon>Admin1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Assistente.resx">
+    <EmbeddedResource Include="Assistente\Assistente.resx">
       <DependentUpon>Assistente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AtualizarCadaverT.resx">
-      <DependentUpon>AtualizarCadaverT.cs</DependentUpon>
+    <EmbeddedResource Include="Legista\AtualizarCadaverL.resx">
+      <DependentUpon>AtualizarCadaverL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DadosCadaverL.resx">
+    <EmbeddedResource Include="Assistente\CadastrarCadaverA.resx">
+      <DependentUpon>CadastrarCadaverA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assistente\DadosCadaverA.resx">
+      <DependentUpon>DadosCadaverA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Legista\DadosCadaverL.resx">
       <DependentUpon>DadosCadaverL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Legista.resx">
+    <EmbeddedResource Include="Legista\Legista.resx">
       <DependentUpon>Legista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">

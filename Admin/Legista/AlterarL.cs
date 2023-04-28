@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1.Admin
 {
-    public partial class Admin : Form
+    public partial class AlterarL : Form
     {
-        public Admin()
+        public AlterarL()
         {
             InitializeComponent();
         }
