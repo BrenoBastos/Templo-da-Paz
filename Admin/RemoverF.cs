@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1.Admin
+namespace WindowsFormsApp1
 {
-    public partial class RemoverA : Form
+    public partial class RemoverF : Form
     {
-        public RemoverA()
+        public RemoverF()
         {
             InitializeComponent();
         }

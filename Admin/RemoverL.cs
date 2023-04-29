@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1.Admin
+namespace WindowsFormsApp1
 {
-    public partial class AssistenteD : Form
+    public partial class RemoverL : Form
     {
-        public AssistenteD()
+        public RemoverL()
         {
             InitializeComponent();
         }

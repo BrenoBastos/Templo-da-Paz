@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Login : Form
+    public partial class CadastrarF : Form
     {
-        public Login()
+        public CadastrarF()
         {
             InitializeComponent();
-        }
-
-        private void BotaoLogin_Click(object sender, EventArgs e)
-        {
-
-            this.Hide();
-
-           Admin1 novaTela = new Admin1();
-            novaTela.ShowDialog();
         }
     }
 }

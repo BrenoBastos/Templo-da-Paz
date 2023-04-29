@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1.Admin
+namespace WindowsFormsApp1
 {
-    public partial class EstoqueD : Form
+    public partial class CadastrarE : Form
     {
-        public EstoqueD()
+        public CadastrarE()
         {
             InitializeComponent();
         }

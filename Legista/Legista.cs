@@ -34,28 +34,26 @@ namespace WindowsFormsApp1
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            
+        }
+      
+
+        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
             if (e.Node.Text == "Atualizar")
             {
-                metodoAtualizar();
+                this.Hide();
+
+                AtualizarCadaverL novaTela = new AtualizarCadaverL();
+                novaTela.ShowDialog();
             }
-          else if (e.Node.Text == "Dados")
+            else if (e.Node.Text == "Dados")
             {
-                metodoDados();
+                this.Hide();
+
+                DadosCadaverL novaTela = new DadosCadaverL();
+                novaTela.ShowDialog();
             }
-        }
-        private void metodoAtualizar()
-        {
-            this.Hide();
-
-            AtualizarCadaverL novaTela = new AtualizarCadaverL();
-            novaTela.ShowDialog();
-        }
-        private void metodoDados()
-        {
-            this.Hide();
-
-            DadosCadaverL novaTela = new DadosCadaverL();
-            novaTela.ShowDialog();
         }
     }
 }

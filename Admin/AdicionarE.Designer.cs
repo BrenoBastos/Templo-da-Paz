@@ -1,7 +1,7 @@
 ﻿
-namespace WindowsFormsApp1.Admin
+namespace WindowsFormsApp1
 {
-    partial class AlterarA
+    partial class AdicionarE
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace WindowsFormsApp1.Admin
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AlterarA";
+            this.Text = "AdicionarE";
         }
 
         #endregion

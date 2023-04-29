@@ -1,7 +1,7 @@
 ﻿
-namespace WindowsFormsApp1.Admin
+namespace WindowsFormsApp1
 {
-    partial class AssistenteD
+    partial class DadosL
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace WindowsFormsApp1.Admin
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AssistenteD";
+            this.Text = "DadosL";
         }
 
         #endregion

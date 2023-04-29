@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApp1.Admin;
 
 namespace WindowsFormsApp1
 {
@@ -27,71 +26,135 @@ namespace WindowsFormsApp1
             TreeNode parentNode2 = treeView2.Nodes.Add("Estoque");
             TreeNode childNode6 = parentNode2.Nodes.Add("Cadastrar");
             TreeNode childNode7 = parentNode2.Nodes.Add("Adicionar");
-            TreeNode parentNode3 = treeView2.Nodes.Add("Dados");
-            TreeNode childNode8 = parentNode3.Nodes.Add("Legista");
-            TreeNode childNode9 = parentNode3.Nodes.Add("Assistente");
-            TreeNode childNode10 = parentNode3.Nodes.Add("Estoque");
+            TreeNode parentNode3 = treeView2.Nodes.Add("Fornecedor");
+            TreeNode childNode8 = parentNode3.Nodes.Add("Cadastrar");
+            TreeNode childNode9 = parentNode3.Nodes.Add("Remover");
+            TreeNode childNode10 = parentNode3.Nodes.Add("Alterar");
+            TreeNode parentNode4 = treeView2.Nodes.Add("Dados");
+            TreeNode childNode11 = parentNode4.Nodes.Add("Legista");
+            TreeNode childNode12 = parentNode4.Nodes.Add("Assistente");
+            TreeNode childNode13 = parentNode4.Nodes.Add("Estoque");
+            TreeNode childNode14 = parentNode4.Nodes.Add("Fornecedor");
 
         }
 
         private void treeView2_AfterSelect(object sender, TreeViewEventArgs e)
         {
             
-                if (e.Node.Parent.Text == "Legista" && e.Node.Text == "Cadastrar" )
-                {
-                    metodoCadastrarL();
-                }
-                else if (e.Node.Text == "Alterar" && e.Node.Parent.Text == "Legista")
-                {
-
-                }
-            
-            else if (e.Node.Text == "Remover" && e.Node.Parent.Text == "Legista")
-            {
-
-            }
-            else if (e.Node.Text == "Cadastrar" && e.Node.Parent.Text == "Assistente")
-            {
-
-            }
-            else if (e.Node.Text == "Alterar" && e.Node.Parent.Text == "Assistente")
-            {
-
-            }
-            else if (e.Node.Text == "Remover" && e.Node.Parent.Text == "Assistente")
-            {
-
-            }
-            else if (e.Node.Text == "Cadastrar" && e.Node.Parent.Text == "Estoque")
-            {
-
-            }
-            else if (e.Node.Text == "Adicionar" && e.Node.Parent.Text == "Estoque")
-            {
-
-            }
-            else if (e.Node.Text == "Legista" && e.Node.Parent.Text == "Dados")
-            {
-
-            }
-            else if (e.Node.Text == "Assistente" && e.Node.Parent.Text == "Dados")
-            {
-
-            }
-            else if (e.Node.Text == "Estoque" && e.Node.Parent.Text == "Dados")
-            {
-
-            }
+                
 
             
         }
-        private void metodoCadastrarL()
+      
+
+        private void treeView2_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
+            if (e.Node.Text == "Cadastrar" && e.Node.Parent.Text == "Legista")
+            {
 
-            CadastrarL novaTela = new CadastrarL();
-            novaTela.ShowDialog();
-            this.Hide();
+                this.Hide();
 
+                CadastrarL novaTela = new CadastrarL();
+                novaTela.ShowDialog();
+            }
+            else if (e.Node.Text == "Remover" && e.Node.Parent.Text == "Legista")
+                {
+                this.Hide();
+
+                RemoverL novaTela = new RemoverL();
+                novaTela.ShowDialog();
+            }
+            else if (e.Node.Text == "Alterar" && e.Node.Parent.Text == "Legista")
+            {
+                this.Hide();
+
+                AlterarL novaTela = new AlterarL();
+                novaTela.ShowDialog();
+            }
+           else if (e.Node.Text == "Cadastrar" && e.Node.Parent.Text == "Assistente")
+            {
+                this.Hide();
+
+                CadastrarA novaTela = new CadastrarA();
+                novaTela.ShowDialog();
+            }
+            else if (e.Node.Text == "Remover" && e.Node.Parent.Text == "Assistente")
+            {
+                this.Hide();
+
+                RemoverA novaTela = new RemoverA();
+                novaTela.ShowDialog();
+            }
+            else if (e.Node.Text == "Alterar" && e.Node.Parent.Text == "Assistente")
+            {
+                this.Hide();
+
+                AlterarA novaTela = new AlterarA();
+                novaTela.ShowDialog();
+            }
+            else if (e.Node.Text == "Cadastrar" && e.Node.Parent.Text == "Estoque")
+            {
+                this.Hide();
+
+                CadastrarE novaTela = new CadastrarE();
+                novaTela.ShowDialog();
+            }
+            else if (e.Node.Text == "Adicionar" && e.Node.Parent.Text == "Estoque")
+            {
+                this.Hide();
+
+                AdicionarE novaTela = new AdicionarE();
+                novaTela.ShowDialog();
+            }
+            else if (e.Node.Text == "Cadastrar" && e.Node.Parent.Text == "Fornecedor")
+            {
+                this.Hide();
+
+                CadastrarF novaTela = new CadastrarF();
+                novaTela.ShowDialog();
+            }
+            else if (e.Node.Text == "Remover" && e.Node.Parent.Text == "Fornecedor")
+            {
+                this.Hide();
+
+                RemoverF novaTela = new RemoverF();
+                novaTela.ShowDialog();
+            }
+            else if (e.Node.Text == "Alterar" && e.Node.Parent.Text == "Fornecedor")
+            {
+                this.Hide();
+
+                AlterarF novaTela = new AlterarF();
+                novaTela.ShowDialog();
+            }
+            if (e.Node.Text == "Legista" && e.Node.Parent != null && e.Node.Parent.Text == "Dados")
+            {
+                this.Hide();
+
+                DadosL novaTela = new DadosL();
+                novaTela.ShowDialog();
+            }
+            if (e.Node.Text == "Assistente" && e.Node.Parent != null && e.Node.Parent.Text == "Dados")
+            {
+                this.Hide();
+
+                DadosA novaTela = new DadosA();
+                novaTela.ShowDialog();
+            }
+             if (e.Node.Text == "Estoque" && e.Node.Parent != null && e.Node.Parent.Text == "Dados")
+            {
+                this.Hide();
+
+                DadosE novaTela = new DadosE();
+                novaTela.ShowDialog();
+            }
+            else if (e.Node.Text == "Fornecedor" && e.Node.Parent.Text == "Dados")
+            {
+                this.Hide();
+
+                DadosF novaTela = new DadosF();
+                novaTela.ShowDialog();
+            }
         }
     }
 }
