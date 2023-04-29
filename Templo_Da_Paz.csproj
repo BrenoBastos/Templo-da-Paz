@@ -227,8 +227,23 @@
     <Compile Include="Admin\RemoverL.Designer.cs">
       <DependentUpon>RemoverL.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin\AdicionarE.resx">
+      <DependentUpon>AdicionarE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\Admin1.resx">
       <DependentUpon>Admin1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AlterarA.resx">
+      <DependentUpon>AlterarA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AlterarF.resx">
+      <DependentUpon>AlterarF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AlterarL.resx">
+      <DependentUpon>AlterarL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CadastrarA.resx">
+      <DependentUpon>CadastrarA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Assistente\Assistente.resx">
       <DependentUpon>Assistente.cs</DependentUpon>
