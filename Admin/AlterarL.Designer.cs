@@ -410,6 +410,7 @@ namespace WindowsFormsApp1
             this.mNum.Size = new System.Drawing.Size(100, 20);
             this.mNum.TabIndex = 57;
             this.mNum.ValidatingType = typeof(System.DateTime);
+            this.mNum.Click += new System.EventHandler(this.mNum_Click);
             // 
             // Estado
             // 

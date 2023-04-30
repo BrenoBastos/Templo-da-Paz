@@ -15,6 +15,27 @@ namespace WindowsFormsApp1
         public DadosF()
         {
             InitializeComponent();
+            dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+        }
+
+        private void bLocalizar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textNome.Text))
+            {
+                MessageBox.Show("Campo 'Nome' vazio, preencha-o!");
+                return;
+            }
+            else if (textNome.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Localizado com sucesso");
+                textNome.Text = "";
+            }
         }
     }
 }

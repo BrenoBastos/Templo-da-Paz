@@ -238,5 +238,11 @@ namespace WindowsFormsApp1
                 textSenha.PasswordChar = '*';
             }
         }
+
+        private void mNum_Click(object sender, EventArgs e)
+        {
+            mNum.SelectionStart = 0;
+            mNum.SelectionLength = 0;
+        }
     }
 }

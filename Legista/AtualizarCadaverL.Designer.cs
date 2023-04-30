@@ -29,31 +29,33 @@
         private void InitializeComponent()
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.textNome = new System.Windows.Forms.TextBox();
+            this.textID = new System.Windows.Forms.TextBox();
+            this.textGaveta = new System.Windows.Forms.TextBox();
+            this.mHorarioChegada = new System.Windows.Forms.MaskedTextBox();
+            this.mDataRetirada = new System.Windows.Forms.MaskedTextBox();
+            this.mDataChegada = new System.Windows.Forms.MaskedTextBox();
             this.Gaveta = new System.Windows.Forms.Label();
             this.Retirada = new System.Windows.Forms.Label();
             this.Datare = new System.Windows.Forms.Label();
             this.Horario = new System.Windows.Forms.Label();
             this.DataCheg = new System.Windows.Forms.Label();
             this.Laudo = new System.Windows.Forms.Label();
-            this.Material = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.Label();
             this.Nome = new System.Windows.Forms.Label();
             this.bAtualizar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.NomeD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GavetaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataChegadaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HorariChegadaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.textLaudo = new System.Windows.Forms.RichTextBox();
+            this.cRetirada = new System.Windows.Forms.ComboBox();
+            this.textQuantidade = new System.Windows.Forms.TextBox();
+            this.Quantidade = new System.Windows.Forms.Label();
+            this.textMaterial = new System.Windows.Forms.TextBox();
+            this.Material = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,59 +72,62 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 48;
             // 
-            // textBox6
+            // textNome
             // 
-            this.textBox6.Location = new System.Drawing.Point(83, 49);
-            this.textBox6.MaximumSize = new System.Drawing.Size(100, 100);
-            this.textBox6.MinimumSize = new System.Drawing.Size(20, 20);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 47;
+            this.textNome.Location = new System.Drawing.Point(83, 49);
+            this.textNome.MaximumSize = new System.Drawing.Size(100, 100);
+            this.textNome.MinimumSize = new System.Drawing.Size(20, 20);
+            this.textNome.Name = "textNome";
+            this.textNome.Size = new System.Drawing.Size(100, 20);
+            this.textNome.TabIndex = 47;
             // 
-            // textBox5
+            // textID
             // 
-            this.textBox5.Location = new System.Drawing.Point(83, 84);
-            this.textBox5.MaximumSize = new System.Drawing.Size(100, 100);
-            this.textBox5.MinimumSize = new System.Drawing.Size(20, 20);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 46;
+            this.textID.Location = new System.Drawing.Point(83, 84);
+            this.textID.MaximumSize = new System.Drawing.Size(100, 100);
+            this.textID.MinimumSize = new System.Drawing.Size(20, 20);
+            this.textID.Name = "textID";
+            this.textID.Size = new System.Drawing.Size(100, 20);
+            this.textID.TabIndex = 46;
             // 
-            // textBox4
+            // textGaveta
             // 
-            this.textBox4.Location = new System.Drawing.Point(83, 140);
-            this.textBox4.MaximumSize = new System.Drawing.Size(100, 100);
-            this.textBox4.MinimumSize = new System.Drawing.Size(20, 20);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 45;
+            this.textGaveta.Location = new System.Drawing.Point(83, 140);
+            this.textGaveta.MaximumSize = new System.Drawing.Size(100, 100);
+            this.textGaveta.MinimumSize = new System.Drawing.Size(20, 20);
+            this.textGaveta.Name = "textGaveta";
+            this.textGaveta.Size = new System.Drawing.Size(100, 20);
+            this.textGaveta.TabIndex = 45;
             // 
-            // maskedTextBox3
+            // mHorarioChegada
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(647, 87);
-            this.maskedTextBox3.Mask = "00:00";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox3.TabIndex = 40;
-            this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
+            this.mHorarioChegada.Location = new System.Drawing.Point(647, 87);
+            this.mHorarioChegada.Mask = "00:00";
+            this.mHorarioChegada.Name = "mHorarioChegada";
+            this.mHorarioChegada.Size = new System.Drawing.Size(100, 20);
+            this.mHorarioChegada.TabIndex = 40;
+            this.mHorarioChegada.ValidatingType = typeof(System.DateTime);
+            this.mHorarioChegada.Click += new System.EventHandler(this.mHorarioChegada_Click);
             // 
-            // maskedTextBox2
+            // mDataRetirada
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(671, 137);
-            this.maskedTextBox2.Mask = "00/00/0000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox2.TabIndex = 39;
-            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
+            this.mDataRetirada.Location = new System.Drawing.Point(671, 137);
+            this.mDataRetirada.Mask = "00/00/0000";
+            this.mDataRetirada.Name = "mDataRetirada";
+            this.mDataRetirada.Size = new System.Drawing.Size(100, 20);
+            this.mDataRetirada.TabIndex = 39;
+            this.mDataRetirada.ValidatingType = typeof(System.DateTime);
+            this.mDataRetirada.Click += new System.EventHandler(this.mDataRetirada_Click);
             // 
-            // maskedTextBox1
+            // mDataChegada
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(627, 53);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 38;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.mDataChegada.Location = new System.Drawing.Point(627, 53);
+            this.mDataChegada.Mask = "00/00/0000";
+            this.mDataChegada.Name = "mDataChegada";
+            this.mDataChegada.Size = new System.Drawing.Size(100, 20);
+            this.mDataChegada.TabIndex = 38;
+            this.mDataChegada.ValidatingType = typeof(System.DateTime);
+            this.mDataChegada.Click += new System.EventHandler(this.mDataChegada_Click);
             // 
             // Gaveta
             // 
@@ -178,15 +183,6 @@
             this.Laudo.TabIndex = 32;
             this.Laudo.Text = "Laudo";
             // 
-            // Material
-            // 
-            this.Material.AutoSize = true;
-            this.Material.Location = new System.Drawing.Point(276, 204);
-            this.Material.Name = "Material";
-            this.Material.Size = new System.Drawing.Size(44, 13);
-            this.Material.TabIndex = 29;
-            this.Material.Text = "Material";
-            // 
             // ID
             // 
             this.ID.AutoSize = true;
@@ -213,6 +209,7 @@
             this.bAtualizar.TabIndex = 26;
             this.bAtualizar.Text = "Atualizar";
             this.bAtualizar.UseVisualStyleBackColor = true;
+            this.bAtualizar.Click += new System.EventHandler(this.bAtualizar_Click);
             // 
             // dataGridView1
             // 
@@ -227,24 +224,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(639, 128);
             this.dataGridView1.TabIndex = 25;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(340, 46);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(100, 96);
-            this.richTextBox1.TabIndex = 49;
-            this.richTextBox1.Text = "";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(627, 184);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(156, 21);
-            this.comboBox2.TabIndex = 50;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // NomeD
             // 
@@ -271,29 +250,73 @@
             this.HorariChegadaData.HeaderText = "HorarioChegada";
             this.HorariChegadaData.Name = "HorariChegadaData";
             // 
-            // listBox1
+            // textLaudo
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(340, 182);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 51;
+            this.textLaudo.Location = new System.Drawing.Point(340, 46);
+            this.textLaudo.Name = "textLaudo";
+            this.textLaudo.Size = new System.Drawing.Size(100, 96);
+            this.textLaudo.TabIndex = 49;
+            this.textLaudo.Text = "";
             // 
-            // AtualizarCadaverT
+            // cRetirada
+            // 
+            this.cRetirada.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
+            this.cRetirada.FormattingEnabled = true;
+            this.cRetirada.Location = new System.Drawing.Point(627, 184);
+            this.cRetirada.Name = "cRetirada";
+            this.cRetirada.Size = new System.Drawing.Size(156, 21);
+            this.cRetirada.TabIndex = 50;
+            this.cRetirada.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // textQuantidade
+            // 
+            this.textQuantidade.Location = new System.Drawing.Point(384, 221);
+            this.textQuantidade.Name = "textQuantidade";
+            this.textQuantidade.Size = new System.Drawing.Size(100, 20);
+            this.textQuantidade.TabIndex = 52;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.AutoSize = true;
+            this.Quantidade.Location = new System.Drawing.Point(298, 228);
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.Size = new System.Drawing.Size(62, 13);
+            this.Quantidade.TabIndex = 53;
+            this.Quantidade.Text = "Quantidade";
+            // 
+            // textMaterial
+            // 
+            this.textMaterial.Location = new System.Drawing.Point(340, 177);
+            this.textMaterial.Name = "textMaterial";
+            this.textMaterial.Size = new System.Drawing.Size(100, 20);
+            this.textMaterial.TabIndex = 51;
+            // 
+            // Material
+            // 
+            this.Material.AutoSize = true;
+            this.Material.Location = new System.Drawing.Point(264, 179);
+            this.Material.Name = "Material";
+            this.Material.Size = new System.Drawing.Size(44, 13);
+            this.Material.TabIndex = 29;
+            this.Material.Text = "Material";
+            // 
+            // AtualizarCadaverL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.Quantidade);
+            this.Controls.Add(this.textQuantidade);
+            this.Controls.Add(this.textMaterial);
+            this.Controls.Add(this.cRetirada);
+            this.Controls.Add(this.textLaudo);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.textNome);
+            this.Controls.Add(this.textID);
+            this.Controls.Add(this.textGaveta);
+            this.Controls.Add(this.mHorarioChegada);
+            this.Controls.Add(this.mDataRetirada);
+            this.Controls.Add(this.mDataChegada);
             this.Controls.Add(this.Gaveta);
             this.Controls.Add(this.Retirada);
             this.Controls.Add(this.Datare);
@@ -305,7 +328,7 @@
             this.Controls.Add(this.Nome);
             this.Controls.Add(this.bAtualizar);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "AtualizarCadaverT";
+            this.Name = "AtualizarCadaverL";
             this.Text = "AtualizarCadaverT";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -316,30 +339,32 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox textNome;
+        private System.Windows.Forms.TextBox textID;
+        private System.Windows.Forms.TextBox textGaveta;
+        private System.Windows.Forms.MaskedTextBox mHorarioChegada;
+        private System.Windows.Forms.MaskedTextBox mDataRetirada;
+        private System.Windows.Forms.MaskedTextBox mDataChegada;
         private System.Windows.Forms.Label Gaveta;
         private System.Windows.Forms.Label Retirada;
         private System.Windows.Forms.Label Datare;
         private System.Windows.Forms.Label Horario;
         private System.Windows.Forms.Label DataCheg;
         private System.Windows.Forms.Label Laudo;
-        private System.Windows.Forms.Label Material;
         private System.Windows.Forms.Label ID;
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.Button bAtualizar;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.RichTextBox textLaudo;
+        private System.Windows.Forms.ComboBox cRetirada;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeD;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDData;
         private System.Windows.Forms.DataGridViewTextBoxColumn GavetaData;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataChegadaData;
         private System.Windows.Forms.DataGridViewTextBoxColumn HorariChegadaData;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox textQuantidade;
+        private System.Windows.Forms.Label Quantidade;
+        private System.Windows.Forms.TextBox textMaterial;
+        private System.Windows.Forms.Label Material;
     }
 }

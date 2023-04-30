@@ -20,13 +20,13 @@ namespace WindowsFormsApp1
         }
         private void comboBoxiniciar()
         {
-            if (comboBox2.Items.Count == 0)
+            if (cRetirada.Items.Count == 0)
             {
-                comboBox2.Items.Add("Espera");
-                comboBox2.Items.Add("IML");
-                comboBox2.Items.Add("Funerária");
-                comboBox2.SelectedIndex = 0;
-                comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+                cRetirada.Items.Add("Espera");
+                cRetirada.Items.Add("IML");
+                cRetirada.Items.Add("Funerária");
+                cRetirada.SelectedIndex = 0;
+                cRetirada.DropDownStyle = ComboBoxStyle.DropDownList;
 
             }
         }
@@ -34,6 +34,126 @@ namespace WindowsFormsApp1
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void bAtualizar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textNome.Text) || string.IsNullOrWhiteSpace(textID.Text) || string.IsNullOrWhiteSpace(textGaveta.Text) || string.IsNullOrWhiteSpace(textLaudo.Text) || string.IsNullOrWhiteSpace(textMaterial.Text)
+                || string.IsNullOrWhiteSpace(textQuantidade.Text) || !mHorarioChegada.MaskCompleted || !mDataRetirada.MaskCompleted || !mDataChegada.MaskCompleted )
+            {
+                MessageBox.Show("Preencha todos os campos!");
+                return;
+            }
+            else
+            {
+
+                // Verifica cada campo individualmente
+                if (string.IsNullOrWhiteSpace(textNome.Text))
+                {
+                    MessageBox.Show("Campo 'Nome' vazio, preencha-o!");
+                    return;
+                }
+                // Verifica cada campo individualmente
+                if (string.IsNullOrWhiteSpace(textID.Text))
+                {
+                    MessageBox.Show("Campo 'ID' vazio, preencha-o!");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(textGaveta.Text))
+                {
+                    MessageBox.Show("Campo 'Gaveta' vazio, preencha-o!");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(textLaudo.Text))
+                {
+                    MessageBox.Show("Campo 'Laudo' vazio, preencha-o!");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(textMaterial.Text))
+                {
+                    MessageBox.Show("Campo 'Material' vazio, preencha-o!");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(textQuantidade.Text))
+                {
+                    MessageBox.Show("Campo 'Quantidade' vazio, preencha-o!");
+                    return;
+                }
+                if (!mDataChegada.MaskCompleted)
+                {
+                    MessageBox.Show("Campo 'Data Chegada' vazio, preencha-o!");
+                    return;
+                }
+                if (!mDataRetirada.MaskCompleted)
+                {
+                    MessageBox.Show("Campo 'Data Retirada' vazio, preencha-o!");
+                    return;
+                }
+
+                if (!mHorarioChegada.MaskCompleted)
+                {
+                    MessageBox.Show("Campo 'Horário Chegada' vazio, preencha-o!");
+                    return;
+                }
+
+                
+
+
+               
+
+                if (!int.TryParse(textID.Text, out int idValue))
+                {
+                    MessageBox.Show("ID inválido! Insira apenas números.");
+                    textID.Text = "";
+                    return;
+                }
+
+
+
+
+                else if (textNome.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
+                    return;
+                }
+                else if (textGaveta.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Gaveta'.");
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Atualizado com sucesso");
+                    textNome.Text = "";
+                    textID.Text = "";
+                    textGaveta.Text = "";
+                    textLaudo.Text = "";
+                    textMaterial.Text = "";
+                    textQuantidade.Text = "";
+                    mDataChegada.Text = "";
+                    mDataRetirada.Text = "";
+                    mHorarioChegada.Text = "";
+
+                }
+            }
+        }
+
+        private void mDataChegada_Click(object sender, EventArgs e)
+        {
+            mDataChegada.SelectionStart = 0;
+            mDataChegada.SelectionLength = 0;
+        }
+
+        private void mHorarioChegada_Click(object sender, EventArgs e)
+        {
+            mHorarioChegada.SelectionStart = 0;
+            mHorarioChegada.SelectionLength = 0;
+        }
+
+        private void mDataRetirada_Click(object sender, EventArgs e)
+        {
+            mDataRetirada.SelectionStart = 0;
+            mDataRetirada.SelectionLength = 0;
         }
     }
 }

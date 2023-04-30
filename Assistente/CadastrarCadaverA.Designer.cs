@@ -30,11 +30,11 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.bCadastrar = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.textNome = new System.Windows.Forms.TextBox();
+            this.textID = new System.Windows.Forms.TextBox();
+            this.textGaveta = new System.Windows.Forms.TextBox();
+            this.mHorarioChegada = new System.Windows.Forms.MaskedTextBox();
+            this.mDataChegada = new System.Windows.Forms.MaskedTextBox();
             this.Gaveta = new System.Windows.Forms.Label();
             this.Horario = new System.Windows.Forms.Label();
             this.DataCheg = new System.Windows.Forms.Label();
@@ -50,52 +50,55 @@ namespace WindowsFormsApp1
             this.bCadastrar.TabIndex = 0;
             this.bCadastrar.Text = "Cadastrar";
             this.bCadastrar.UseVisualStyleBackColor = true;
+            this.bCadastrar.Click += new System.EventHandler(this.bCadastrar_Click);
             // 
-            // textBox6
+            // textNome
             // 
-            this.textBox6.Location = new System.Drawing.Point(83, 73);
-            this.textBox6.MaximumSize = new System.Drawing.Size(100, 100);
-            this.textBox6.MinimumSize = new System.Drawing.Size(20, 20);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 57;
+            this.textNome.Location = new System.Drawing.Point(83, 73);
+            this.textNome.MaximumSize = new System.Drawing.Size(100, 100);
+            this.textNome.MinimumSize = new System.Drawing.Size(20, 20);
+            this.textNome.Name = "textNome";
+            this.textNome.Size = new System.Drawing.Size(100, 20);
+            this.textNome.TabIndex = 57;
             // 
-            // textBox5
+            // textID
             // 
-            this.textBox5.Location = new System.Drawing.Point(83, 108);
-            this.textBox5.MaximumSize = new System.Drawing.Size(100, 100);
-            this.textBox5.MinimumSize = new System.Drawing.Size(20, 20);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 56;
+            this.textID.Location = new System.Drawing.Point(83, 108);
+            this.textID.MaximumSize = new System.Drawing.Size(100, 100);
+            this.textID.MinimumSize = new System.Drawing.Size(20, 20);
+            this.textID.Name = "textID";
+            this.textID.Size = new System.Drawing.Size(100, 20);
+            this.textID.TabIndex = 56;
             // 
-            // textBox4
+            // textGaveta
             // 
-            this.textBox4.Location = new System.Drawing.Point(83, 164);
-            this.textBox4.MaximumSize = new System.Drawing.Size(100, 100);
-            this.textBox4.MinimumSize = new System.Drawing.Size(20, 20);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 55;
+            this.textGaveta.Location = new System.Drawing.Point(83, 164);
+            this.textGaveta.MaximumSize = new System.Drawing.Size(100, 100);
+            this.textGaveta.MinimumSize = new System.Drawing.Size(20, 20);
+            this.textGaveta.Name = "textGaveta";
+            this.textGaveta.Size = new System.Drawing.Size(100, 20);
+            this.textGaveta.TabIndex = 55;
             // 
-            // maskedTextBox3
+            // mHorarioChegada
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(647, 111);
-            this.maskedTextBox3.Mask = "00:00";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox3.TabIndex = 54;
-            this.maskedTextBox3.ValidatingType = typeof(System.DateTime);
+            this.mHorarioChegada.Location = new System.Drawing.Point(647, 111);
+            this.mHorarioChegada.Mask = "00:00";
+            this.mHorarioChegada.Name = "mHorarioChegada";
+            this.mHorarioChegada.Size = new System.Drawing.Size(100, 20);
+            this.mHorarioChegada.TabIndex = 54;
+            this.mHorarioChegada.ValidatingType = typeof(System.DateTime);
+            this.mHorarioChegada.Click += new System.EventHandler(this.mHorarioChegada_Click);
             // 
-            // maskedTextBox1
+            // mDataChegada
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(627, 77);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 53;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            this.mDataChegada.Location = new System.Drawing.Point(627, 77);
+            this.mDataChegada.Mask = "00/00/0000";
+            this.mDataChegada.Name = "mDataChegada";
+            this.mDataChegada.Size = new System.Drawing.Size(100, 20);
+            this.mDataChegada.TabIndex = 53;
+            this.mDataChegada.ValidatingType = typeof(System.DateTime);
+            this.mDataChegada.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            this.mDataChegada.Click += new System.EventHandler(this.mDataChegada_Click);
             // 
             // Gaveta
             // 
@@ -147,11 +150,11 @@ namespace WindowsFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.textNome);
+            this.Controls.Add(this.textID);
+            this.Controls.Add(this.textGaveta);
+            this.Controls.Add(this.mHorarioChegada);
+            this.Controls.Add(this.mDataChegada);
             this.Controls.Add(this.Gaveta);
             this.Controls.Add(this.Horario);
             this.Controls.Add(this.DataCheg);
@@ -168,11 +171,11 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.Button bCadastrar;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox textNome;
+        private System.Windows.Forms.TextBox textID;
+        private System.Windows.Forms.TextBox textGaveta;
+        private System.Windows.Forms.MaskedTextBox mHorarioChegada;
+        private System.Windows.Forms.MaskedTextBox mDataChegada;
         private System.Windows.Forms.Label Gaveta;
         private System.Windows.Forms.Label Horario;
         private System.Windows.Forms.Label DataCheg;

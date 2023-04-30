@@ -28,21 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dDados = new System.Windows.Forms.DataGridView();
+            this.dNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dDataChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dHorarioChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dDataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.Label();
-            this.NomeText = new System.Windows.Forms.TextBox();
-            this.IDText = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.textNome = new System.Windows.Forms.TextBox();
+            this.bLocalizar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dDados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 168);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(668, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.dDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dNome,
+            this.dID,
+            this.dDataChegada,
+            this.dHorarioChegada,
+            this.dDataRetirada,
+            this.dRetirada});
+            this.dDados.Location = new System.Drawing.Point(73, 160);
+            this.dDados.Name = "dDados";
+            this.dDados.Size = new System.Drawing.Size(668, 150);
+            this.dDados.TabIndex = 0;
+            // 
+            // dNome
+            // 
+            this.dNome.HeaderText = "Nome";
+            this.dNome.Name = "dNome";
+            this.dNome.ReadOnly = true;
+            // 
+            // dID
+            // 
+            this.dID.HeaderText = "ID";
+            this.dID.Name = "dID";
+            this.dID.ReadOnly = true;
+            // 
+            // dDataChegada
+            // 
+            this.dDataChegada.HeaderText = "DataChegada";
+            this.dDataChegada.Name = "dDataChegada";
+            this.dDataChegada.ReadOnly = true;
+            // 
+            // dHorarioChegada
+            // 
+            this.dHorarioChegada.HeaderText = "HorarioChegada";
+            this.dHorarioChegada.Name = "dHorarioChegada";
+            this.dHorarioChegada.ReadOnly = true;
+            // 
+            // dDataRetirada
+            // 
+            this.dDataRetirada.HeaderText = "DataRetirada";
+            this.dDataRetirada.Name = "dDataRetirada";
+            this.dDataRetirada.ReadOnly = true;
+            // 
+            // dRetirada
+            // 
+            this.dRetirada.HeaderText = "Retirada";
+            this.dRetirada.Name = "dRetirada";
+            this.dRetirada.ReadOnly = true;
             // 
             // Nome
             // 
@@ -53,42 +101,35 @@
             this.Nome.TabIndex = 1;
             this.Nome.Text = "Nome";
             // 
-            // ID
+            // textNome
             // 
-            this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(171, 106);
-            this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(18, 13);
-            this.ID.TabIndex = 2;
-            this.ID.Text = "ID";
+            this.textNome.Location = new System.Drawing.Point(323, 44);
+            this.textNome.Name = "textNome";
+            this.textNome.Size = new System.Drawing.Size(100, 20);
+            this.textNome.TabIndex = 3;
             // 
-            // NomeText
+            // bLocalizar
             // 
-            this.NomeText.Location = new System.Drawing.Point(323, 44);
-            this.NomeText.Name = "NomeText";
-            this.NomeText.Size = new System.Drawing.Size(100, 20);
-            this.NomeText.TabIndex = 3;
-            // 
-            // IDText
-            // 
-            this.IDText.Location = new System.Drawing.Point(323, 106);
-            this.IDText.Name = "IDText";
-            this.IDText.Size = new System.Drawing.Size(100, 20);
-            this.IDText.TabIndex = 4;
+            this.bLocalizar.Location = new System.Drawing.Point(323, 102);
+            this.bLocalizar.Name = "bLocalizar";
+            this.bLocalizar.Size = new System.Drawing.Size(75, 23);
+            this.bLocalizar.TabIndex = 27;
+            this.bLocalizar.Text = "Localizar";
+            this.bLocalizar.UseVisualStyleBackColor = true;
+            this.bLocalizar.Click += new System.EventHandler(this.bLocalizar_Click);
             // 
             // DadosCadaverL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.IDText);
-            this.Controls.Add(this.NomeText);
-            this.Controls.Add(this.ID);
+            this.Controls.Add(this.bLocalizar);
+            this.Controls.Add(this.textNome);
             this.Controls.Add(this.Nome);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dDados);
             this.Name = "DadosCadaverL";
             this.Text = "DadosCadaverL";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,10 +137,15 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dDados;
         private System.Windows.Forms.Label Nome;
-        private System.Windows.Forms.Label ID;
-        private System.Windows.Forms.TextBox NomeText;
-        private System.Windows.Forms.TextBox IDText;
+        private System.Windows.Forms.TextBox textNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dDataChegada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dHorarioChegada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dDataRetirada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dRetirada;
+        private System.Windows.Forms.Button bLocalizar;
     }
 }
