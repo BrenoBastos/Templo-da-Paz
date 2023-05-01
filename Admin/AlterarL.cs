@@ -21,7 +21,6 @@ namespace WindowsFormsApp1
             comboBoxiniciar3();
 
             formatarCampoSenha();
-            dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
         }
         public int value;

@@ -39,6 +39,8 @@ namespace WindowsFormsApp1
             this.dHorarioChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dDataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dLegista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dAssistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,11 +79,14 @@ namespace WindowsFormsApp1
             this.dDataChegada,
             this.dHorarioChegada,
             this.dDataRetirada,
-            this.dRetirada});
-            this.dDados.Location = new System.Drawing.Point(66, 208);
+            this.dRetirada,
+            this.dLegista,
+            this.dAssistente});
+            this.dDados.Location = new System.Drawing.Point(12, 288);
             this.dDados.Name = "dDados";
-            this.dDados.Size = new System.Drawing.Size(668, 150);
+            this.dDados.Size = new System.Drawing.Size(863, 150);
             this.dDados.TabIndex = 28;
+            this.dDados.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellContentDoubleClick);
             // 
             // dNome
             // 
@@ -119,11 +124,23 @@ namespace WindowsFormsApp1
             this.dRetirada.Name = "dRetirada";
             this.dRetirada.ReadOnly = true;
             // 
+            // dLegista
+            // 
+            this.dLegista.HeaderText = "Legista";
+            this.dLegista.Name = "dLegista";
+            this.dLegista.ReadOnly = true;
+            // 
+            // dAssistente
+            // 
+            this.dAssistente.HeaderText = "Assistente";
+            this.dAssistente.Name = "dAssistente";
+            this.dAssistente.ReadOnly = true;
+            // 
             // DadosCadaverA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(934, 450);
             this.Controls.Add(this.bLocalizar);
             this.Controls.Add(this.textNome);
             this.Controls.Add(this.Nome);
@@ -148,5 +165,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn dHorarioChegada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dDataRetirada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dRetirada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dLegista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dAssistente;
     }
 }

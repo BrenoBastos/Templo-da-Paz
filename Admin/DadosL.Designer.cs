@@ -50,6 +50,7 @@ namespace WindowsFormsApp1
             this.dDados.Name = "dDados";
             this.dDados.Size = new System.Drawing.Size(347, 150);
             this.dDados.TabIndex = 22;
+            this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
             // 
             // Nome
             // 
@@ -106,6 +107,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label2);
             this.Name = "DadosL";
             this.Text = "DadosL";
+            this.Click += new System.EventHandler(this.DadosL_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

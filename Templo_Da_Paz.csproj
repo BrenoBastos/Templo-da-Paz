@@ -116,6 +116,12 @@
     <Compile Include="Admin\AlterarL.Designer.cs">
       <DependentUpon>AlterarL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Assistente\AlterarCadaverA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Assistente\AlterarCadaverA.Designer.cs">
+      <DependentUpon>AlterarCadaverA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Assistente\Assistente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,12 @@
     <Compile Include="Admin\CadastrarA.Designer.cs">
       <DependentUpon>CadastrarA.cs</DependentUpon>
     </Compile>
+    <Compile Include="Legista\DadosCadaverLM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Legista\DadosCadaverLM.Designer.cs">
+      <DependentUpon>DadosCadaverLM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Legista\AtualizarCadaverL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,24 +221,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Admin\RemoverA.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\RemoverA.Designer.cs">
-      <DependentUpon>RemoverA.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\RemoverF.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\RemoverF.Designer.cs">
-      <DependentUpon>RemoverF.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\RemoverL.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\RemoverL.Designer.cs">
-      <DependentUpon>RemoverL.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Admin\AdicionarE.resx">
       <DependentUpon>AdicionarE.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,20 +257,17 @@
     <EmbeddedResource Include="Admin\DadosL.resx">
       <DependentUpon>DadosL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\RemoverA.resx">
-      <DependentUpon>RemoverA.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\RemoverF.resx">
-      <DependentUpon>RemoverF.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\RemoverL.resx">
-      <DependentUpon>RemoverL.cs</DependentUpon>
+    <EmbeddedResource Include="Assistente\AlterarCadaverA.resx">
+      <DependentUpon>AlterarCadaverA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Assistente\Assistente.resx">
       <DependentUpon>Assistente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\CadastrarA.resx">
       <DependentUpon>CadastrarA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Legista\DadosCadaverLM.resx">
+      <DependentUpon>DadosCadaverLM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Legista\AtualizarCadaverL.resx">
       <DependentUpon>AtualizarCadaverL.cs</DependentUpon>

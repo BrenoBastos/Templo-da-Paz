@@ -38,18 +38,10 @@ namespace WindowsFormsApp1
             this.textID = new System.Windows.Forms.TextBox();
             this.mContato = new System.Windows.Forms.MaskedTextBox();
             this.bAlterar = new System.Windows.Forms.Button();
-            this.dDados = new System.Windows.Forms.DataGridView();
-            this.DNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DContato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.Label();
             this.textCpf = new System.Windows.Forms.MaskedTextBox();
-            this.dEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cEstado = new System.Windows.Forms.ComboBox();
             this.Estado = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
             // Nome
@@ -128,52 +120,6 @@ namespace WindowsFormsApp1
             this.bAlterar.UseVisualStyleBackColor = true;
             this.bAlterar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dDados
-            // 
-            this.dDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DNome,
-            this.dCpf,
-            this.DID,
-            this.DEndereco,
-            this.DContato,
-            this.dEstado});
-            this.dDados.Location = new System.Drawing.Point(166, 320);
-            this.dDados.Name = "dDados";
-            this.dDados.Size = new System.Drawing.Size(622, 118);
-            this.dDados.TabIndex = 9;
-            // 
-            // DNome
-            // 
-            this.DNome.HeaderText = "Nome";
-            this.DNome.Name = "DNome";
-            this.DNome.ReadOnly = true;
-            // 
-            // dCpf
-            // 
-            this.dCpf.HeaderText = "CPF";
-            this.dCpf.Name = "dCpf";
-            this.dCpf.ReadOnly = true;
-            // 
-            // DID
-            // 
-            this.DID.HeaderText = "ID";
-            this.DID.Name = "DID";
-            this.DID.ReadOnly = true;
-            this.DID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // DEndereco
-            // 
-            this.DEndereco.HeaderText = "Endereço";
-            this.DEndereco.Name = "DEndereco";
-            this.DEndereco.ReadOnly = true;
-            // 
-            // DContato
-            // 
-            this.DContato.HeaderText = "Contato";
-            this.DContato.Name = "DContato";
-            this.DContato.ReadOnly = true;
-            // 
             // CPF
             // 
             this.CPF.AutoSize = true;
@@ -192,12 +138,6 @@ namespace WindowsFormsApp1
             this.textCpf.TabIndex = 11;
             this.textCpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.textCpf_MaskInputRejected);
             this.textCpf.Click += new System.EventHandler(this.textCpf_Click);
-            // 
-            // dEstado
-            // 
-            this.dEstado.HeaderText = "Estado";
-            this.dEstado.Name = "dEstado";
-            this.dEstado.ReadOnly = true;
             // 
             // cEstado
             // 
@@ -225,7 +165,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.Estado);
             this.Controls.Add(this.textCpf);
             this.Controls.Add(this.CPF);
-            this.Controls.Add(this.dDados);
             this.Controls.Add(this.bAlterar);
             this.Controls.Add(this.mContato);
             this.Controls.Add(this.textID);
@@ -237,7 +176,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.Nome);
             this.Name = "AlterarF";
             this.Text = "AlterarF";
-            ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,15 +192,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox textID;
         private System.Windows.Forms.MaskedTextBox mContato;
         private System.Windows.Forms.Button bAlterar;
-        private System.Windows.Forms.DataGridView dDados;
         private System.Windows.Forms.Label CPF;
         private System.Windows.Forms.MaskedTextBox textCpf;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dCpf;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DEndereco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DContato;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dEstado;
         private System.Windows.Forms.ComboBox cEstado;
         private System.Windows.Forms.Label Estado;
     }

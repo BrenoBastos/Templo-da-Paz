@@ -42,5 +42,13 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        private void dDados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Hide();
+
+            AlterarCadaverA novaTela = new AlterarCadaverA();
+            novaTela.ShowDialog();
+        }
     }
 }

@@ -37,5 +37,22 @@ namespace WindowsFormsApp1
                 textNome.Text = "";
             }
         }
+
+        private void DadosF_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            AlterarF novaTela = new AlterarF();
+            novaTela.ShowDialog();
+        }
+
+        private void dDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Hide();
+
+            AlterarF novaTela = new AlterarF();
+            novaTela.ShowDialog();
+        }
     }
-}
+    }
+

@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.dDados = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.Label();
+            this.textNome = new System.Windows.Forms.TextBox();
+            this.bLocalizar = new System.Windows.Forms.Button();
             this.dNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dDataChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dHorarioChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dDataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.Label();
-            this.textNome = new System.Windows.Forms.TextBox();
-            this.bLocalizar = new System.Windows.Forms.Button();
+            this.dLegista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dAssistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,11 +52,40 @@
             this.dDataChegada,
             this.dHorarioChegada,
             this.dDataRetirada,
-            this.dRetirada});
-            this.dDados.Location = new System.Drawing.Point(73, 160);
+            this.dRetirada,
+            this.dLegista,
+            this.dAssistente});
+            this.dDados.Location = new System.Drawing.Point(12, 169);
             this.dDados.Name = "dDados";
-            this.dDados.Size = new System.Drawing.Size(668, 150);
+            this.dDados.Size = new System.Drawing.Size(834, 150);
             this.dDados.TabIndex = 0;
+            this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSize = true;
+            this.Nome.Location = new System.Drawing.Point(171, 53);
+            this.Nome.Name = "Nome";
+            this.Nome.Size = new System.Drawing.Size(35, 13);
+            this.Nome.TabIndex = 1;
+            this.Nome.Text = "Nome";
+            // 
+            // textNome
+            // 
+            this.textNome.Location = new System.Drawing.Point(323, 44);
+            this.textNome.Name = "textNome";
+            this.textNome.Size = new System.Drawing.Size(100, 20);
+            this.textNome.TabIndex = 3;
+            // 
+            // bLocalizar
+            // 
+            this.bLocalizar.Location = new System.Drawing.Point(323, 102);
+            this.bLocalizar.Name = "bLocalizar";
+            this.bLocalizar.Size = new System.Drawing.Size(75, 23);
+            this.bLocalizar.TabIndex = 27;
+            this.bLocalizar.Text = "Localizar";
+            this.bLocalizar.UseVisualStyleBackColor = true;
+            this.bLocalizar.Click += new System.EventHandler(this.bLocalizar_Click);
             // 
             // dNome
             // 
@@ -92,37 +123,22 @@
             this.dRetirada.Name = "dRetirada";
             this.dRetirada.ReadOnly = true;
             // 
-            // Nome
+            // dLegista
             // 
-            this.Nome.AutoSize = true;
-            this.Nome.Location = new System.Drawing.Point(171, 53);
-            this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(35, 13);
-            this.Nome.TabIndex = 1;
-            this.Nome.Text = "Nome";
+            this.dLegista.HeaderText = "Legista";
+            this.dLegista.Name = "dLegista";
             // 
-            // textNome
+            // dAssistente
             // 
-            this.textNome.Location = new System.Drawing.Point(323, 44);
-            this.textNome.Name = "textNome";
-            this.textNome.Size = new System.Drawing.Size(100, 20);
-            this.textNome.TabIndex = 3;
-            // 
-            // bLocalizar
-            // 
-            this.bLocalizar.Location = new System.Drawing.Point(323, 102);
-            this.bLocalizar.Name = "bLocalizar";
-            this.bLocalizar.Size = new System.Drawing.Size(75, 23);
-            this.bLocalizar.TabIndex = 27;
-            this.bLocalizar.Text = "Localizar";
-            this.bLocalizar.UseVisualStyleBackColor = true;
-            this.bLocalizar.Click += new System.EventHandler(this.bLocalizar_Click);
+            this.dAssistente.HeaderText = "Assistente";
+            this.dAssistente.Name = "dAssistente";
+            this.dAssistente.ReadOnly = true;
             // 
             // DadosCadaverL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1209, 450);
             this.Controls.Add(this.bLocalizar);
             this.Controls.Add(this.textNome);
             this.Controls.Add(this.Nome);
@@ -140,12 +156,14 @@
         private System.Windows.Forms.DataGridView dDados;
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.TextBox textNome;
+        private System.Windows.Forms.Button bLocalizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn dID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dDataChegada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dHorarioChegada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dDataRetirada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dRetirada;
-        private System.Windows.Forms.Button bLocalizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dLegista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dAssistente;
     }
 }

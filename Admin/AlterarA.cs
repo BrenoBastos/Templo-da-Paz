@@ -19,7 +19,6 @@ namespace WindowsFormsApp1
             comboBoxiniciar1();
             comboBoxiniciar2();
             formatarCampoSenha();
-            dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             comboBoxiniciar3();
 
         }

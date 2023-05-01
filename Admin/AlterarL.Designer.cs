@@ -50,19 +50,6 @@ namespace WindowsFormsApp1
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dDados = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Endereço = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Senha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bAlterar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -72,7 +59,6 @@ namespace WindowsFormsApp1
             this.mNum = new System.Windows.Forms.MaskedTextBox();
             this.Estado = new System.Windows.Forms.Label();
             this.cEstado = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
             // lSenha
@@ -255,98 +241,6 @@ namespace WindowsFormsApp1
             this.label1.TabIndex = 31;
             this.label1.Text = "Nome";
             // 
-            // dDados
-            // 
-            this.dDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nome,
-            this.CPF,
-            this.RG,
-            this.ID,
-            this.Endereço,
-            this.DataNascimento,
-            this.Contato,
-            this.dNum,
-            this.EstadoCivil,
-            this.Sexo,
-            this.Senha,
-            this.dEstado});
-            this.dDados.Location = new System.Drawing.Point(4, 253);
-            this.dDados.Name = "dDados";
-            this.dDados.Size = new System.Drawing.Size(1021, 150);
-            this.dDados.TabIndex = 30;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // CPF
-            // 
-            this.CPF.HeaderText = "CPF";
-            this.CPF.Name = "CPF";
-            this.CPF.ReadOnly = true;
-            // 
-            // RG
-            // 
-            this.RG.HeaderText = "RG";
-            this.RG.Name = "RG";
-            this.RG.ReadOnly = true;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // Endereço
-            // 
-            this.Endereço.HeaderText = "Endereço";
-            this.Endereço.Name = "Endereço";
-            this.Endereço.ReadOnly = true;
-            // 
-            // DataNascimento
-            // 
-            this.DataNascimento.HeaderText = "DataNascimento";
-            this.DataNascimento.Name = "DataNascimento";
-            this.DataNascimento.ReadOnly = true;
-            // 
-            // Contato
-            // 
-            this.Contato.HeaderText = "Contato";
-            this.Contato.Name = "Contato";
-            this.Contato.ReadOnly = true;
-            // 
-            // dNum
-            // 
-            this.dNum.HeaderText = "Num_Registro_Profissional";
-            this.dNum.Name = "dNum";
-            this.dNum.ReadOnly = true;
-            // 
-            // EstadoCivil
-            // 
-            this.EstadoCivil.HeaderText = "EstadoCivil";
-            this.EstadoCivil.Name = "EstadoCivil";
-            this.EstadoCivil.ReadOnly = true;
-            // 
-            // Sexo
-            // 
-            this.Sexo.HeaderText = "Sexo";
-            this.Sexo.Name = "Sexo";
-            this.Sexo.ReadOnly = true;
-            // 
-            // Senha
-            // 
-            this.Senha.HeaderText = "Senha";
-            this.Senha.Name = "Senha";
-            this.Senha.ReadOnly = true;
-            // 
-            // dEstado
-            // 
-            this.dEstado.HeaderText = "Estado";
-            this.dEstado.Name = "dEstado";
-            // 
             // bAlterar
             // 
             this.bAlterar.Location = new System.Drawing.Point(201, 224);
@@ -463,11 +357,9 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dDados);
             this.Controls.Add(this.bAlterar);
             this.Name = "AlterarL";
             this.Text = "AlterarL";
-            ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,7 +388,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dDados;
         private System.Windows.Forms.Button bAlterar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -504,18 +395,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label Num_Registro_Profissional;
         private System.Windows.Forms.MaskedTextBox mNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Endereço;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataNascimento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contato;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstadoCivil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Senha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dEstado;
         private System.Windows.Forms.Label Estado;
         private System.Windows.Forms.ComboBox cEstado;
     }

@@ -30,11 +30,11 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.dDados = new System.Windows.Forms.DataGridView();
+            this.DNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bLocalizar = new System.Windows.Forms.Button();
             this.textNome = new System.Windows.Forms.TextBox();
             this.Nome = new System.Windows.Forms.Label();
-            this.DNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +48,19 @@ namespace WindowsFormsApp1
             this.dDados.Name = "dDados";
             this.dDados.Size = new System.Drawing.Size(371, 118);
             this.dDados.TabIndex = 10;
+            this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
+            // 
+            // DNome
+            // 
+            this.DNome.HeaderText = "Nome";
+            this.DNome.Name = "DNome";
+            this.DNome.ReadOnly = true;
+            // 
+            // dEstado
+            // 
+            this.dEstado.HeaderText = "Estado";
+            this.dEstado.Name = "dEstado";
+            this.dEstado.ReadOnly = true;
             // 
             // bLocalizar
             // 
@@ -75,18 +88,6 @@ namespace WindowsFormsApp1
             this.Nome.TabIndex = 11;
             this.Nome.Text = "Nome";
             // 
-            // DNome
-            // 
-            this.DNome.HeaderText = "Nome";
-            this.DNome.Name = "DNome";
-            this.DNome.ReadOnly = true;
-            // 
-            // dEstado
-            // 
-            this.dEstado.HeaderText = "Estado";
-            this.dEstado.Name = "dEstado";
-            this.dEstado.ReadOnly = true;
-            // 
             // DadosF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -98,6 +99,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.dDados);
             this.Name = "DadosF";
             this.Text = "DadosF";
+            this.Click += new System.EventHandler(this.DadosF_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

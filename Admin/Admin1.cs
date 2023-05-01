@@ -17,19 +17,16 @@ namespace WindowsFormsApp1
             InitializeComponent();
             TreeNode parentNode = treeView2.Nodes.Add("Legista");
             TreeNode childNode = parentNode.Nodes.Add("Cadastrar");
-            TreeNode childNode1 = parentNode.Nodes.Add("Remover");
-            TreeNode childNode2 = parentNode.Nodes.Add("Alterar");
+           
             TreeNode parentNode1 = treeView2.Nodes.Add("Assistente");
             TreeNode childNode3 = parentNode1.Nodes.Add("Cadastrar");
-            TreeNode childNode4 = parentNode1.Nodes.Add("Remover");
-            TreeNode childNode5 = parentNode1.Nodes.Add("Alterar");
+            
             TreeNode parentNode2 = treeView2.Nodes.Add("Estoque");
             TreeNode childNode6 = parentNode2.Nodes.Add("Cadastrar");
             TreeNode childNode7 = parentNode2.Nodes.Add("Adicionar");
             TreeNode parentNode3 = treeView2.Nodes.Add("Fornecedor");
             TreeNode childNode8 = parentNode3.Nodes.Add("Cadastrar");
-            TreeNode childNode9 = parentNode3.Nodes.Add("Remover");
-            TreeNode childNode10 = parentNode3.Nodes.Add("Alterar");
+           
             TreeNode parentNode4 = treeView2.Nodes.Add("Dados");
             TreeNode childNode11 = parentNode4.Nodes.Add("Legista");
             TreeNode childNode12 = parentNode4.Nodes.Add("Assistente");
@@ -57,20 +54,8 @@ namespace WindowsFormsApp1
                 CadastrarL novaTela = new CadastrarL();
                 novaTela.ShowDialog();
             }
-            else if (e.Node.Text == "Remover" && e.Node.Parent.Text == "Legista")
-                {
-                this.Hide();
-
-                RemoverL novaTela = new RemoverL();
-                novaTela.ShowDialog();
-            }
-            else if (e.Node.Text == "Alterar" && e.Node.Parent.Text == "Legista")
-            {
-                this.Hide();
-
-                AlterarL novaTela = new AlterarL();
-                novaTela.ShowDialog();
-            }
+           
+           
            else if (e.Node.Text == "Cadastrar" && e.Node.Parent.Text == "Assistente")
             {
                 this.Hide();
@@ -78,20 +63,8 @@ namespace WindowsFormsApp1
                 CadastrarA novaTela = new CadastrarA();
                 novaTela.ShowDialog();
             }
-            else if (e.Node.Text == "Remover" && e.Node.Parent.Text == "Assistente")
-            {
-                this.Hide();
-
-                RemoverA novaTela = new RemoverA();
-                novaTela.ShowDialog();
-            }
-            else if (e.Node.Text == "Alterar" && e.Node.Parent.Text == "Assistente")
-            {
-                this.Hide();
-
-                AlterarA novaTela = new AlterarA();
-                novaTela.ShowDialog();
-            }
+           
+           
             else if (e.Node.Text == "Cadastrar" && e.Node.Parent.Text == "Estoque")
             {
                 this.Hide();
@@ -113,20 +86,8 @@ namespace WindowsFormsApp1
                 CadastrarF novaTela = new CadastrarF();
                 novaTela.ShowDialog();
             }
-            else if (e.Node.Text == "Remover" && e.Node.Parent.Text == "Fornecedor")
-            {
-                this.Hide();
-
-                RemoverF novaTela = new RemoverF();
-                novaTela.ShowDialog();
-            }
-            else if (e.Node.Text == "Alterar" && e.Node.Parent.Text == "Fornecedor")
-            {
-                this.Hide();
-
-                AlterarF novaTela = new AlterarF();
-                novaTela.ShowDialog();
-            }
+           
+           
             if (e.Node.Text == "Legista" && e.Node.Parent != null && e.Node.Parent.Text == "Dados")
             {
                 this.Hide();

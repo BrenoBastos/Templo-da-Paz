@@ -42,5 +42,13 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        private void dDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Hide();
+
+            DadosCadaverLM novaTela = new DadosCadaverLM();
+            novaTela.ShowDialog();
+        }
     }
 }

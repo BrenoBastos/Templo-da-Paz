@@ -42,5 +42,27 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        private void DadosL_Click(object sender, EventArgs e)
+        {
+  
+        }
+
+        private void dDados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Hide();
+
+            AlterarL novaTela = new AlterarL();
+            novaTela.ShowDialog();
+        }
+
+        private void dDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Hide();
+
+            AlterarL novaTela = new AlterarL();
+            novaTela.ShowDialog();
+        }
     }
-}
+    }
+

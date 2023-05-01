@@ -94,6 +94,8 @@ namespace WindowsFormsApp1
             this.dDados.Name = "dDados";
             this.dDados.Size = new System.Drawing.Size(347, 150);
             this.dDados.TabIndex = 19;
+            this.dDados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellClick);
+            this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
             // 
             // Nome
             // 

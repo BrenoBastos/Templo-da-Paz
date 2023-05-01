@@ -16,7 +16,6 @@ namespace WindowsFormsApp1
         public AlterarF()
         {
             InitializeComponent();
-            dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             comboBoxiniciar1();
            
             
