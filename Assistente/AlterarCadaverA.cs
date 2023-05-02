@@ -39,7 +39,11 @@ namespace WindowsFormsApp1
             }
             else
             {
-
+                if (string.IsNullOrWhiteSpace(textAssistente.Text))
+                {
+                    MessageBox.Show("Campo 'Assistente' vazio, preencha-o!");
+                    return;
+                }
                 // Verifica cada campo individualmente
                 if (string.IsNullOrWhiteSpace(textNome.Text))
                 {
@@ -80,7 +84,11 @@ namespace WindowsFormsApp1
 
 
 
-
+                else if (textAssistente.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Assistente'.");
+                    return;
+                }
                 else if (textNome.Text.All(char.IsDigit))
                 {
                     MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
@@ -99,6 +107,7 @@ namespace WindowsFormsApp1
                     textGaveta.Text = "";
                     mDataChegada.Text = "";
                     mHorarioChegada.Text = "";
+                    textAssistente.Text = "";
 
 
 

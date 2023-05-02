@@ -40,6 +40,8 @@ namespace WindowsFormsApp1
             this.DataCheg = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.Label();
             this.Nome = new System.Windows.Forms.Label();
+            this.textAssistente = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bCadastrar
@@ -145,11 +147,31 @@ namespace WindowsFormsApp1
             this.Nome.TabIndex = 48;
             this.Nome.Text = "Nome";
             // 
+            // textAssistente
+            // 
+            this.textAssistente.Location = new System.Drawing.Point(139, 218);
+            this.textAssistente.MaximumSize = new System.Drawing.Size(100, 100);
+            this.textAssistente.MinimumSize = new System.Drawing.Size(20, 20);
+            this.textAssistente.Name = "textAssistente";
+            this.textAssistente.Size = new System.Drawing.Size(100, 20);
+            this.textAssistente.TabIndex = 59;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(80, 226);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "Assistente";
+            // 
             // CadastrarCadaverA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textAssistente);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textNome);
             this.Controls.Add(this.textID);
             this.Controls.Add(this.textGaveta);
@@ -181,5 +203,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label DataCheg;
         private System.Windows.Forms.Label ID;
         private System.Windows.Forms.Label Nome;
+        private System.Windows.Forms.TextBox textAssistente;
+        private System.Windows.Forms.Label label1;
     }
 }

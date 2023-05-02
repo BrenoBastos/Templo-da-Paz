@@ -46,7 +46,16 @@ namespace WindowsFormsApp1
             }
             else
             {
-
+                if (string.IsNullOrWhiteSpace(textAssistente.Text))
+                {
+                    MessageBox.Show("Campo 'Assistente' vazio, preencha-o!");
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(textLegista.Text))
+                {
+                    MessageBox.Show("Campo 'Legista' vazio, preencha-o!");
+                    return;
+                }
                 // Verifica cada campo individualmente
                 if (string.IsNullOrWhiteSpace(textNome.Text))
                 {
@@ -108,7 +117,16 @@ namespace WindowsFormsApp1
                     return;
                 }
 
-
+                else if (textAssistente.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Assistente'.");
+                    return;
+                }
+                else if (textLegista.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Legista'.");
+                    return;
+                }
 
 
                 else if (textNome.Text.All(char.IsDigit))
@@ -133,7 +151,8 @@ namespace WindowsFormsApp1
                     mDataChegada.Text = "";
                     mDataRetirada.Text = "";
                     mHorarioChegada.Text = "";
-
+                    textAssistente.Text = "";
+                    textLegista.Text = "";
                 }
             }
         }

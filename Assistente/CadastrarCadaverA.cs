@@ -32,7 +32,11 @@ namespace WindowsFormsApp1
             }
             else
             {
-
+                if (string.IsNullOrWhiteSpace(textAssistente.Text))
+                {
+                    MessageBox.Show("Campo 'Assistente' vazio, preencha-o!");
+                    return;
+                }
                 // Verifica cada campo individualmente
                 if (string.IsNullOrWhiteSpace(textNome.Text))
                 {
@@ -92,7 +96,7 @@ namespace WindowsFormsApp1
                     textGaveta.Text = "";
                     mDataChegada.Text = "";
                     mHorarioChegada.Text = "";
-                  
+                    textAssistente.Text = "";
 
            
                 }

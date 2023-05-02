@@ -50,6 +50,10 @@ namespace WindowsFormsApp1
             this.ID = new System.Windows.Forms.Label();
             this.Nome = new System.Windows.Forms.Label();
             this.bAlterar = new System.Windows.Forms.Button();
+            this.textLegista = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textAssistente = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Quantidade
@@ -127,6 +131,7 @@ namespace WindowsFormsApp1
             this.mHorarioChegada.Size = new System.Drawing.Size(100, 20);
             this.mHorarioChegada.TabIndex = 66;
             this.mHorarioChegada.ValidatingType = typeof(System.DateTime);
+            this.mHorarioChegada.Click += new System.EventHandler(this.mHorarioChegada_Click);
             // 
             // mDataRetirada
             // 
@@ -136,6 +141,7 @@ namespace WindowsFormsApp1
             this.mDataRetirada.Size = new System.Drawing.Size(100, 20);
             this.mDataRetirada.TabIndex = 65;
             this.mDataRetirada.ValidatingType = typeof(System.DateTime);
+            this.mDataRetirada.Click += new System.EventHandler(this.mDataRetirada_Click);
             // 
             // mDataChegada
             // 
@@ -145,6 +151,7 @@ namespace WindowsFormsApp1
             this.mDataChegada.Size = new System.Drawing.Size(100, 20);
             this.mDataChegada.TabIndex = 64;
             this.mDataChegada.ValidatingType = typeof(System.DateTime);
+            this.mDataChegada.Click += new System.EventHandler(this.mDataChegada_Click);
             // 
             // Gaveta
             // 
@@ -235,12 +242,53 @@ namespace WindowsFormsApp1
             this.bAlterar.TabIndex = 54;
             this.bAlterar.Text = "Alterar";
             this.bAlterar.UseVisualStyleBackColor = true;
+            this.bAlterar.Click += new System.EventHandler(this.bAlterar_Click);
+            // 
+            // textLegista
+            // 
+            this.textLegista.Location = new System.Drawing.Point(134, 284);
+            this.textLegista.MaximumSize = new System.Drawing.Size(100, 100);
+            this.textLegista.MinimumSize = new System.Drawing.Size(20, 20);
+            this.textLegista.Name = "textLegista";
+            this.textLegista.Size = new System.Drawing.Size(100, 20);
+            this.textLegista.TabIndex = 78;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(69, 291);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 77;
+            this.label2.Text = "Legista";
+            // 
+            // textAssistente
+            // 
+            this.textAssistente.Location = new System.Drawing.Point(101, 233);
+            this.textAssistente.MaximumSize = new System.Drawing.Size(100, 100);
+            this.textAssistente.MinimumSize = new System.Drawing.Size(20, 20);
+            this.textAssistente.Name = "textAssistente";
+            this.textAssistente.Size = new System.Drawing.Size(100, 20);
+            this.textAssistente.TabIndex = 76;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(42, 241);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 75;
+            this.label1.Text = "Assistente";
             // 
             // DadosCadaverLM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textLegista);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textAssistente);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Quantidade);
             this.Controls.Add(this.textQuantidade);
             this.Controls.Add(this.textMaterial);
@@ -292,5 +340,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label ID;
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.Button bAlterar;
+        private System.Windows.Forms.TextBox textLegista;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textAssistente;
+        private System.Windows.Forms.Label label1;
     }
 }

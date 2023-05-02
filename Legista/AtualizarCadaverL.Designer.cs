@@ -56,6 +56,11 @@
             this.Quantidade = new System.Windows.Forms.Label();
             this.textMaterial = new System.Windows.Forms.TextBox();
             this.Material = new System.Windows.Forms.Label();
+            this.textAssistente = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textLegista = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dAssistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,10 +224,11 @@
             this.IDData,
             this.GavetaData,
             this.DataChegadaData,
-            this.HorariChegadaData});
+            this.HorariChegadaData,
+            this.dAssistente});
             this.dataGridView1.Location = new System.Drawing.Point(65, 322);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(639, 128);
+            this.dataGridView1.Size = new System.Drawing.Size(718, 128);
             this.dataGridView1.TabIndex = 25;
             // 
             // NomeD
@@ -300,11 +306,57 @@
             this.Material.TabIndex = 29;
             this.Material.Text = "Material";
             // 
+            // textAssistente
+            // 
+            this.textAssistente.Location = new System.Drawing.Point(112, 184);
+            this.textAssistente.MaximumSize = new System.Drawing.Size(100, 100);
+            this.textAssistente.MinimumSize = new System.Drawing.Size(20, 20);
+            this.textAssistente.Name = "textAssistente";
+            this.textAssistente.Size = new System.Drawing.Size(100, 20);
+            this.textAssistente.TabIndex = 55;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(53, 192);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Assistente";
+            // 
+            // textLegista
+            // 
+            this.textLegista.Location = new System.Drawing.Point(145, 235);
+            this.textLegista.MaximumSize = new System.Drawing.Size(100, 100);
+            this.textLegista.MinimumSize = new System.Drawing.Size(20, 20);
+            this.textLegista.Name = "textLegista";
+            this.textLegista.Size = new System.Drawing.Size(100, 20);
+            this.textLegista.TabIndex = 57;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(80, 242);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 56;
+            this.label2.Text = "Legista";
+            // 
+            // dAssistente
+            // 
+            this.dAssistente.HeaderText = "Assistente";
+            this.dAssistente.Name = "dAssistente";
+            this.dAssistente.ReadOnly = true;
+            // 
             // AtualizarCadaverL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textLegista);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textAssistente);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Quantidade);
             this.Controls.Add(this.textQuantidade);
             this.Controls.Add(this.textMaterial);
@@ -366,5 +418,10 @@
         private System.Windows.Forms.Label Quantidade;
         private System.Windows.Forms.TextBox textMaterial;
         private System.Windows.Forms.Label Material;
+        private System.Windows.Forms.TextBox textAssistente;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textLegista;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dAssistente;
     }
 }
