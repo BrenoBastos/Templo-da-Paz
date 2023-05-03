@@ -41,6 +41,7 @@ namespace WindowsFormsApp1
             this.dRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dLegista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dAssistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,11 +137,22 @@ namespace WindowsFormsApp1
             this.dAssistente.Name = "dAssistente";
             this.dAssistente.ReadOnly = true;
             // 
+            // bVoltar
+            // 
+            this.bVoltar.Location = new System.Drawing.Point(107, 183);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.TabIndex = 73;
+            this.bVoltar.Text = "Voltar";
+            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
+            // 
             // DadosCadaverA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 450);
+            this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.bLocalizar);
             this.Controls.Add(this.textNome);
             this.Controls.Add(this.Nome);
@@ -167,5 +179,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn dRetirada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dLegista;
         private System.Windows.Forms.DataGridViewTextBoxColumn dAssistente;
+        private System.Windows.Forms.Button bVoltar;
     }
 }

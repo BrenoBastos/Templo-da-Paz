@@ -114,5 +114,13 @@ namespace WindowsFormsApp1
             mHorarioChegada.SelectionStart = 0;
             mHorarioChegada.SelectionLength = 0;
         }
+
+        private void bVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Assistente novaTela = new Assistente();
+            novaTela.ShowDialog();
+        }
     }
 }

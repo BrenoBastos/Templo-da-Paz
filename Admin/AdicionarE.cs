@@ -56,5 +56,13 @@ namespace WindowsFormsApp1
             textQuantidade.Text = "";
 
         }
+
+        private void bVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Admin1 novaTela = new Admin1();
+            novaTela.ShowDialog();
+        }
     }
 }

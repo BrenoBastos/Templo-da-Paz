@@ -42,6 +42,7 @@ namespace WindowsFormsApp1
             this.bAlterar = new System.Windows.Forms.Button();
             this.textAssistente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.bVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textNome
@@ -164,11 +165,22 @@ namespace WindowsFormsApp1
             this.label1.TabIndex = 69;
             this.label1.Text = "Assistente";
             // 
+            // bVoltar
+            // 
+            this.bVoltar.Location = new System.Drawing.Point(203, 311);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.TabIndex = 71;
+            this.bVoltar.Text = "Voltar";
+            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
+            // 
             // AlterarCadaverA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.textAssistente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textNome);
@@ -204,5 +216,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button bAlterar;
         private System.Windows.Forms.TextBox textAssistente;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button bVoltar;
     }
 }

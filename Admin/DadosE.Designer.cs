@@ -37,6 +37,7 @@ namespace WindowsFormsApp1
             this.dQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,11 +104,22 @@ namespace WindowsFormsApp1
             this.dTotal.Name = "dTotal";
             this.dTotal.ReadOnly = true;
             // 
+            // bVoltar
+            // 
+            this.bVoltar.Location = new System.Drawing.Point(31, 248);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.TabIndex = 93;
+            this.bVoltar.Text = "Voltar";
+            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
+            // 
             // DadosE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.dDados);
             this.Controls.Add(this.textMaterial);
             this.Controls.Add(this.Material);
@@ -130,5 +142,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn dQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn dFornecedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn dTotal;
+        private System.Windows.Forms.Button bVoltar;
     }
 }

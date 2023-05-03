@@ -38,6 +38,7 @@ namespace WindowsFormsApp1
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,11 +116,22 @@ namespace WindowsFormsApp1
             this.dEstado.Name = "dEstado";
             this.dEstado.ReadOnly = true;
             // 
+            // bVoltar
+            // 
+            this.bVoltar.Location = new System.Drawing.Point(42, 351);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.TabIndex = 92;
+            this.bVoltar.Text = "Voltar";
+            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
+            // 
             // DadosA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.dDados);
             this.Controls.Add(this.textNome1);
             this.Controls.Add(this.label2);
@@ -145,5 +157,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dEstado;
+        private System.Windows.Forms.Button bVoltar;
     }
 }

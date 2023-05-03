@@ -50,5 +50,13 @@ namespace WindowsFormsApp1
             DadosCadaverLM novaTela = new DadosCadaverLM();
             novaTela.ShowDialog();
         }
+
+        private void bVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Legista novaTela = new Legista();
+            novaTela.ShowDialog();
+        }
     }
 }

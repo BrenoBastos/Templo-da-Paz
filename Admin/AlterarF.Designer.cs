@@ -42,6 +42,7 @@ namespace WindowsFormsApp1
             this.textCpf = new System.Windows.Forms.MaskedTextBox();
             this.cEstado = new System.Windows.Forms.ComboBox();
             this.Estado = new System.Windows.Forms.Label();
+            this.bVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Nome
@@ -156,11 +157,22 @@ namespace WindowsFormsApp1
             this.Estado.TabIndex = 60;
             this.Estado.Text = "Estado";
             // 
+            // bVoltar
+            // 
+            this.bVoltar.Location = new System.Drawing.Point(120, 264);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.TabIndex = 65;
+            this.bVoltar.Text = "Voltar";
+            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
+            // 
             // AlterarF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.cEstado);
             this.Controls.Add(this.Estado);
             this.Controls.Add(this.textCpf);
@@ -196,5 +208,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.MaskedTextBox textCpf;
         private System.Windows.Forms.ComboBox cEstado;
         private System.Windows.Forms.Label Estado;
+        private System.Windows.Forms.Button bVoltar;
     }
 }

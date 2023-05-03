@@ -50,5 +50,13 @@ namespace WindowsFormsApp1
             AlterarCadaverA novaTela = new AlterarCadaverA();
             novaTela.ShowDialog();
         }
+
+        private void bVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Assistente novaTela = new Assistente();
+            novaTela.ShowDialog();
+        }
     }
 }

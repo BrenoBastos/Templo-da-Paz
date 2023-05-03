@@ -36,6 +36,7 @@ namespace WindowsFormsApp1
             this.textNome1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bLocalizar = new System.Windows.Forms.Button();
+            this.bVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,11 +97,22 @@ namespace WindowsFormsApp1
             this.bLocalizar.UseVisualStyleBackColor = true;
             this.bLocalizar.Click += new System.EventHandler(this.bLocalizar_Click);
             // 
+            // bVoltar
+            // 
+            this.bVoltar.Location = new System.Drawing.Point(69, 219);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.TabIndex = 95;
+            this.bVoltar.Text = "Voltar";
+            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
+            // 
             // DadosL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.bLocalizar);
             this.Controls.Add(this.dDados);
             this.Controls.Add(this.textNome1);
@@ -123,5 +135,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox textNome1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button bLocalizar;
+        private System.Windows.Forms.Button bVoltar;
     }
 }

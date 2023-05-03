@@ -243,5 +243,13 @@ namespace WindowsFormsApp1
             mNum.SelectionStart = 0;
             mNum.SelectionLength = 0;
         }
+
+        private void bVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            DadosL novaTela = new DadosL();
+            novaTela.ShowDialog();
+        }
     }
 }

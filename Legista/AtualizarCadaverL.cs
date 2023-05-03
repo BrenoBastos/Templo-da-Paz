@@ -174,5 +174,13 @@ namespace WindowsFormsApp1
             mDataRetirada.SelectionStart = 0;
             mDataRetirada.SelectionLength = 0;
         }
+
+        private void bVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Legista novaTela = new Legista();
+            novaTela.ShowDialog();
+        }
     }
 }

@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.dDados = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.Label();
-            this.textNome = new System.Windows.Forms.TextBox();
-            this.bLocalizar = new System.Windows.Forms.Button();
             this.dNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dDataChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +37,10 @@
             this.dRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dLegista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dAssistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.Label();
+            this.textNome = new System.Windows.Forms.TextBox();
+            this.bLocalizar = new System.Windows.Forms.Button();
+            this.bVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,32 +61,6 @@
             this.dDados.Size = new System.Drawing.Size(834, 150);
             this.dDados.TabIndex = 0;
             this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSize = true;
-            this.Nome.Location = new System.Drawing.Point(171, 53);
-            this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(35, 13);
-            this.Nome.TabIndex = 1;
-            this.Nome.Text = "Nome";
-            // 
-            // textNome
-            // 
-            this.textNome.Location = new System.Drawing.Point(323, 44);
-            this.textNome.Name = "textNome";
-            this.textNome.Size = new System.Drawing.Size(100, 20);
-            this.textNome.TabIndex = 3;
-            // 
-            // bLocalizar
-            // 
-            this.bLocalizar.Location = new System.Drawing.Point(323, 102);
-            this.bLocalizar.Name = "bLocalizar";
-            this.bLocalizar.Size = new System.Drawing.Size(75, 23);
-            this.bLocalizar.TabIndex = 27;
-            this.bLocalizar.Text = "Localizar";
-            this.bLocalizar.UseVisualStyleBackColor = true;
-            this.bLocalizar.Click += new System.EventHandler(this.bLocalizar_Click);
             // 
             // dNome
             // 
@@ -134,11 +109,48 @@
             this.dAssistente.Name = "dAssistente";
             this.dAssistente.ReadOnly = true;
             // 
+            // Nome
+            // 
+            this.Nome.AutoSize = true;
+            this.Nome.Location = new System.Drawing.Point(171, 53);
+            this.Nome.Name = "Nome";
+            this.Nome.Size = new System.Drawing.Size(35, 13);
+            this.Nome.TabIndex = 1;
+            this.Nome.Text = "Nome";
+            // 
+            // textNome
+            // 
+            this.textNome.Location = new System.Drawing.Point(323, 44);
+            this.textNome.Name = "textNome";
+            this.textNome.Size = new System.Drawing.Size(100, 20);
+            this.textNome.TabIndex = 3;
+            // 
+            // bLocalizar
+            // 
+            this.bLocalizar.Location = new System.Drawing.Point(323, 102);
+            this.bLocalizar.Name = "bLocalizar";
+            this.bLocalizar.Size = new System.Drawing.Size(75, 23);
+            this.bLocalizar.TabIndex = 27;
+            this.bLocalizar.Text = "Localizar";
+            this.bLocalizar.UseVisualStyleBackColor = true;
+            this.bLocalizar.Click += new System.EventHandler(this.bLocalizar_Click);
+            // 
+            // bVoltar
+            // 
+            this.bVoltar.Location = new System.Drawing.Point(131, 102);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.TabIndex = 75;
+            this.bVoltar.Text = "Voltar";
+            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
+            // 
             // DadosCadaverL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1209, 450);
+            this.ClientSize = new System.Drawing.Size(1020, 450);
+            this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.bLocalizar);
             this.Controls.Add(this.textNome);
             this.Controls.Add(this.Nome);
@@ -165,5 +177,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dRetirada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dLegista;
         private System.Windows.Forms.DataGridViewTextBoxColumn dAssistente;
+        private System.Windows.Forms.Button bVoltar;
     }
 }

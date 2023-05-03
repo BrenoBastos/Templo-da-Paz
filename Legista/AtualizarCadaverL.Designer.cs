@@ -50,6 +50,7 @@
             this.GavetaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataChegadaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HorariChegadaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dAssistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textLaudo = new System.Windows.Forms.RichTextBox();
             this.cRetirada = new System.Windows.Forms.ComboBox();
             this.textQuantidade = new System.Windows.Forms.TextBox();
@@ -60,7 +61,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textLegista = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dAssistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -256,6 +257,12 @@
             this.HorariChegadaData.HeaderText = "HorarioChegada";
             this.HorariChegadaData.Name = "HorariChegadaData";
             // 
+            // dAssistente
+            // 
+            this.dAssistente.HeaderText = "Assistente";
+            this.dAssistente.Name = "dAssistente";
+            this.dAssistente.ReadOnly = true;
+            // 
             // textLaudo
             // 
             this.textLaudo.Location = new System.Drawing.Point(340, 46);
@@ -342,17 +349,22 @@
             this.label2.TabIndex = 56;
             this.label2.Text = "Legista";
             // 
-            // dAssistente
+            // bVoltar
             // 
-            this.dAssistente.HeaderText = "Assistente";
-            this.dAssistente.Name = "dAssistente";
-            this.dAssistente.ReadOnly = true;
+            this.bVoltar.Location = new System.Drawing.Point(170, 283);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.TabIndex = 74;
+            this.bVoltar.Text = "Voltar";
+            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
             // AtualizarCadaverL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.textLegista);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textAssistente);
@@ -423,5 +435,6 @@
         private System.Windows.Forms.TextBox textLegista;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dAssistente;
+        private System.Windows.Forms.Button bVoltar;
     }
 }

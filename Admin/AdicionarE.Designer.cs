@@ -37,6 +37,7 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.Fornecedor = new System.Windows.Forms.Label();
             this.textFornecedor = new System.Windows.Forms.TextBox();
+            this.bVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bAdicionar
@@ -105,11 +106,22 @@ namespace WindowsFormsApp1
             this.textFornecedor.Size = new System.Drawing.Size(100, 20);
             this.textFornecedor.TabIndex = 7;
             // 
+            // bVoltar
+            // 
+            this.bVoltar.Location = new System.Drawing.Point(69, 291);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.TabIndex = 8;
+            this.bVoltar.Text = "Voltar";
+            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
+            // 
             // AdicionarE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.textFornecedor);
             this.Controls.Add(this.Fornecedor);
             this.Controls.Add(this.label1);
@@ -135,5 +147,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Fornecedor;
         private System.Windows.Forms.TextBox textFornecedor;
+        private System.Windows.Forms.Button bVoltar;
     }
 }

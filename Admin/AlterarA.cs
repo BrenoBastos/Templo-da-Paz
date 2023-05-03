@@ -212,5 +212,14 @@ namespace WindowsFormsApp1
                 }
             }
         }
-}}
+
+        private void bVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+           DadosA novaTela = new DadosA();
+            novaTela.ShowDialog();
+        }
+    }
+}
 

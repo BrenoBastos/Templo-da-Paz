@@ -157,5 +157,13 @@ namespace WindowsFormsApp1
             mDataRetirada.SelectionStart = 0;
             mDataRetirada.SelectionLength = 0;
         }
+
+        private void bVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            DadosCadaverL novaTela = new DadosCadaverL();
+            novaTela.ShowDialog();
+        }
     }
 }

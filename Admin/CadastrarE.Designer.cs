@@ -36,6 +36,7 @@ namespace WindowsFormsApp1
             this.Quantidade = new System.Windows.Forms.Label();
             this.Material = new System.Windows.Forms.Label();
             this.bCadastrar = new System.Windows.Forms.Button();
+            this.bVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textFornecedor
@@ -98,11 +99,22 @@ namespace WindowsFormsApp1
             this.bCadastrar.UseVisualStyleBackColor = true;
             this.bCadastrar.Click += new System.EventHandler(this.bCadastrar_Click);
             // 
+            // bVoltar
+            // 
+            this.bVoltar.Location = new System.Drawing.Point(109, 283);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.TabIndex = 89;
+            this.bVoltar.Text = "Voltar";
+            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
+            // 
             // CadastrarE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.textFornecedor);
             this.Controls.Add(this.Fornecedor);
             this.Controls.Add(this.textQuantidade);
@@ -126,5 +138,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label Quantidade;
         private System.Windows.Forms.Label Material;
         private System.Windows.Forms.Button bCadastrar;
+        private System.Windows.Forms.Button bVoltar;
     }
 }

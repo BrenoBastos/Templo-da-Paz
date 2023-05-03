@@ -49,5 +49,13 @@ namespace WindowsFormsApp1
                 novaTela.ShowDialog();
             }
         }
+
+        private void bVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Login novaTela = new Login();
+            novaTela.ShowDialog();
+        }
     }
 }

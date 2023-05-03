@@ -63,6 +63,14 @@ namespace WindowsFormsApp1
             AlterarL novaTela = new AlterarL();
             novaTela.ShowDialog();
         }
+
+        private void bVoltar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Admin1 novaTela = new Admin1();
+            novaTela.ShowDialog();
+        }
     }
     }
 
