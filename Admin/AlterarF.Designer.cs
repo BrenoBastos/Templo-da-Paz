@@ -32,17 +32,20 @@ namespace WindowsFormsApp1
             this.Nome = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.Label();
             this.Endereço = new System.Windows.Forms.Label();
-            this.Contato = new System.Windows.Forms.Label();
             this.textNome = new System.Windows.Forms.TextBox();
             this.textEndereco = new System.Windows.Forms.TextBox();
             this.textID = new System.Windows.Forms.TextBox();
-            this.mContato = new System.Windows.Forms.MaskedTextBox();
             this.bAlterar = new System.Windows.Forms.Button();
             this.CPF = new System.Windows.Forms.Label();
             this.textCpf = new System.Windows.Forms.MaskedTextBox();
             this.cEstado = new System.Windows.Forms.ComboBox();
-            this.Estado = new System.Windows.Forms.Label();
+            this.Status = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
+            this.Contato = new System.Windows.Forms.Label();
+            this.tContato = new System.Windows.Forms.Label();
+            this.mContato = new System.Windows.Forms.MaskedTextBox();
+            this.cContato = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Nome
@@ -72,15 +75,6 @@ namespace WindowsFormsApp1
             this.Endereço.TabIndex = 2;
             this.Endereço.Text = "Endereço";
             // 
-            // Contato
-            // 
-            this.Contato.AutoSize = true;
-            this.Contato.Location = new System.Drawing.Point(233, 179);
-            this.Contato.Name = "Contato";
-            this.Contato.Size = new System.Drawing.Size(44, 13);
-            this.Contato.TabIndex = 3;
-            this.Contato.Text = "Contato";
-            // 
             // textNome
             // 
             this.textNome.Location = new System.Drawing.Point(399, 5);
@@ -102,18 +96,9 @@ namespace WindowsFormsApp1
             this.textID.Size = new System.Drawing.Size(100, 20);
             this.textID.TabIndex = 6;
             // 
-            // mContato
-            // 
-            this.mContato.Location = new System.Drawing.Point(390, 172);
-            this.mContato.Name = "mContato";
-            this.mContato.Size = new System.Drawing.Size(100, 20);
-            this.mContato.TabIndex = 7;
-            this.mContato.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mContato_MaskInputRejected);
-            this.mContato.Click += new System.EventHandler(this.mContato_Click);
-            // 
             // bAlterar
             // 
-            this.bAlterar.Location = new System.Drawing.Point(399, 277);
+            this.bAlterar.Location = new System.Drawing.Point(399, 354);
             this.bAlterar.Name = "bAlterar";
             this.bAlterar.Size = new System.Drawing.Size(75, 23);
             this.bAlterar.TabIndex = 8;
@@ -143,19 +128,19 @@ namespace WindowsFormsApp1
             // cEstado
             // 
             this.cEstado.FormattingEnabled = true;
-            this.cEstado.Location = new System.Drawing.Point(377, 215);
+            this.cEstado.Location = new System.Drawing.Point(424, 311);
             this.cEstado.Name = "cEstado";
             this.cEstado.Size = new System.Drawing.Size(121, 21);
             this.cEstado.TabIndex = 61;
             // 
-            // Estado
+            // Status
             // 
-            this.Estado.AutoSize = true;
-            this.Estado.Location = new System.Drawing.Point(302, 215);
-            this.Estado.Name = "Estado";
-            this.Estado.Size = new System.Drawing.Size(40, 13);
-            this.Estado.TabIndex = 60;
-            this.Estado.Text = "Estado";
+            this.Status.AutoSize = true;
+            this.Status.Location = new System.Drawing.Point(323, 314);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(37, 13);
+            this.Status.TabIndex = 60;
+            this.Status.Text = "Status";
             // 
             // bVoltar
             // 
@@ -167,18 +152,63 @@ namespace WindowsFormsApp1
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
+            // Contato
+            // 
+            this.Contato.AutoSize = true;
+            this.Contato.Location = new System.Drawing.Point(233, 179);
+            this.Contato.Name = "Contato";
+            this.Contato.Size = new System.Drawing.Size(44, 13);
+            this.Contato.TabIndex = 3;
+            this.Contato.Text = "Contato";
+            // 
+            // tContato
+            // 
+            this.tContato.AutoSize = true;
+            this.tContato.Location = new System.Drawing.Point(287, 267);
+            this.tContato.Name = "tContato";
+            this.tContato.Size = new System.Drawing.Size(44, 13);
+            this.tContato.TabIndex = 71;
+            this.tContato.Text = "Contato";
+            // 
+            // mContato
+            // 
+            this.mContato.Location = new System.Drawing.Point(418, 264);
+            this.mContato.Name = "mContato";
+            this.mContato.Size = new System.Drawing.Size(100, 20);
+            this.mContato.TabIndex = 70;
+            // 
+            // cContato
+            // 
+            this.cContato.FormattingEnabled = true;
+            this.cContato.Location = new System.Drawing.Point(378, 222);
+            this.cContato.Name = "cContato";
+            this.cContato.Size = new System.Drawing.Size(121, 21);
+            this.cContato.TabIndex = 69;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(287, 225);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 68;
+            this.label3.Text = "Contato";
+            // 
             // AlterarF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tContato);
+            this.Controls.Add(this.mContato);
+            this.Controls.Add(this.cContato);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.cEstado);
-            this.Controls.Add(this.Estado);
+            this.Controls.Add(this.Status);
             this.Controls.Add(this.textCpf);
             this.Controls.Add(this.CPF);
             this.Controls.Add(this.bAlterar);
-            this.Controls.Add(this.mContato);
             this.Controls.Add(this.textID);
             this.Controls.Add(this.textEndereco);
             this.Controls.Add(this.textNome);
@@ -198,16 +228,19 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.Label ID;
         private System.Windows.Forms.Label Endereço;
-        private System.Windows.Forms.Label Contato;
         private System.Windows.Forms.TextBox textNome;
         private System.Windows.Forms.TextBox textEndereco;
         private System.Windows.Forms.TextBox textID;
-        private System.Windows.Forms.MaskedTextBox mContato;
         private System.Windows.Forms.Button bAlterar;
         private System.Windows.Forms.Label CPF;
         private System.Windows.Forms.MaskedTextBox textCpf;
         private System.Windows.Forms.ComboBox cEstado;
-        private System.Windows.Forms.Label Estado;
+        private System.Windows.Forms.Label Status;
         private System.Windows.Forms.Button bVoltar;
+        private System.Windows.Forms.Label Contato;
+        private System.Windows.Forms.Label tContato;
+        private System.Windows.Forms.MaskedTextBox mContato;
+        private System.Windows.Forms.ComboBox cContato;
+        private System.Windows.Forms.Label label3;
     }
 }

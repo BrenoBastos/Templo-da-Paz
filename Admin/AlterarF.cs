@@ -51,14 +51,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Campo 'Nome' vazio, preencha-o!");
                     return;
                 }
-                string numero = Regex.Replace(mContato.Text, @"[^\d]+", "");
-
-                if (!Regex.IsMatch(mContato.Text, @"^^(\(\d{2}\))?\s?\d{4,5}-\d{4}$"))
-                {
-                    MessageBox.Show("Campo 'Contato' vazio ou inválido, preencha-o com um número de contato válido no formato (99) 9999-9999 ou (99) 99999-9999.");
-                    return;
-                }
-
+             
                 if (!textCpf.MaskCompleted)
                 {
                     MessageBox.Show("Campo 'CPF' vazio, preencha-o!");

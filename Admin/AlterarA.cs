@@ -20,23 +20,40 @@ namespace WindowsFormsApp1
             comboBoxiniciar2();
             formatarCampoSenha();
             comboBoxiniciar3();
-
+            comboBoxiniciar4();
+           
         }
         public int value;
         private void comboBoxiniciar3()
         {
-            if (cEstado.Items.Count == 0)
+            if (cStatus.Items.Count == 0)
             {
-                cEstado.Items.Add("Ativo");
-                cEstado.Items.Add("Inativo");
+                cStatus.Items.Add("Ativo");
+                cStatus.Items.Add("Inativo");
 
-                cEstado.SelectedIndex = 0;
-                cEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+                cStatus.SelectedIndex = 0;
+                cStatus.DropDownStyle = ComboBoxStyle.DropDownList;
 
             }
         }
+        private void comboBoxiniciar4()
+        {
+            if (cContato.Items.Count == 0)
+            {
+                cContato.Items.Add("Celular");
+                cContato.Items.Add("Telefone");
 
-            private void comboBoxiniciar1()
+                cContato.SelectedIndex = 0;
+                cContato.DropDownStyle = ComboBoxStyle.DropDownList;
+                tContato.Text = "Celular";
+                mContato.Mask = "(99) 99999-9999";
+                mContato.Text = "";
+                tContato.Visible = true;
+                mContato.Visible = true;
+
+            }
+        }
+        private void comboBoxiniciar1()
         {
             if (cEstadoCivil.Items.Count == 0)
             {
@@ -159,13 +176,13 @@ namespace WindowsFormsApp1
                     return;
                 }
 
-
-                // verifica se o valor do campo Contato está no formato correto
-                if (!Regex.IsMatch(mContato.Text, @"^^(\(\d{2}\))?\s?\d{4,5}-\d{4}$"))
+                if (!mContato.MaskCompleted)
                 {
-                    MessageBox.Show("Campo 'Contato' vazio ou inválido, preencha-o com um número de contato válido no formato (99) 9999-9999 ou (99) 99999-9999.");
+                    MessageBox.Show("Campo 'Contao' vazio, preencha-o!");
                     return;
                 }
+
+           
 
 
 
@@ -187,7 +204,12 @@ namespace WindowsFormsApp1
                     return;
                 }
 
-              
+                else if (!mContato.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor, insira apenas números no campo 'Contato'.");
+                    return;
+                }
+
 
 
                 else if   (textNome.Text.All(char.IsDigit))
@@ -207,7 +229,8 @@ namespace WindowsFormsApp1
                     textSenha.Text = "";
                     cEstadoCivil.SelectedIndex = 0;
                     cSexo.SelectedIndex = 0;
-
+                    mContato.Text = "";
+                    cContato.SelectedIndex = 0;
                     textID.Text = "";
                 }
             }
@@ -219,6 +242,29 @@ namespace WindowsFormsApp1
 
            DadosA novaTela = new DadosA();
             novaTela.ShowDialog();
+        }
+
+        private void CContato_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cContato.SelectedItem.ToString() == "Celular")
+            {
+             
+
+            }
+            else if (cContato.SelectedItem.ToString() == "Telefone")
+            {
+                tContato.Text = "Telefone";
+                mContato.Mask = "(99) 9999-9999";
+                mContato.Text = "";
+                tContato.Visible = true;
+                mContato.Visible = true;
+            }
+        }
+
+        private void MContato_Click_1(object sender, EventArgs e)
+        {
+            mContato.SelectionStart = 0;
+            mContato.SelectionLength = 0;
         }
     }
 }

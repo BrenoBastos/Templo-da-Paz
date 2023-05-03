@@ -109,7 +109,7 @@ namespace WindowsFormsApp1
                 DadosE novaTela = new DadosE();
                 novaTela.ShowDialog();
             }
-            else if (e.Node.Text == "Fornecedor" && e.Node.Parent.Text == "Dados")
+            if (e.Node.Text == "Fornecedor" && e.Node.Parent != null && e.Node.Parent.Text == "Dados")
             {
                 this.Hide();
 

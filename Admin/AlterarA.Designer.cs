@@ -47,13 +47,15 @@ namespace WindowsFormsApp1
             this.cEstadoCivil = new System.Windows.Forms.ComboBox();
             this.cSexo = new System.Windows.Forms.ComboBox();
             this.mDataNascimento = new System.Windows.Forms.MaskedTextBox();
-            this.mContato = new System.Windows.Forms.MaskedTextBox();
             this.textRG = new System.Windows.Forms.MaskedTextBox();
             this.textCpf = new System.Windows.Forms.MaskedTextBox();
             this.lSenha = new System.Windows.Forms.LinkLabel();
-            this.cEstado = new System.Windows.Forms.ComboBox();
-            this.Estado = new System.Windows.Forms.Label();
+            this.cStatus = new System.Windows.Forms.ComboBox();
+            this.Status = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
+            this.cContato = new System.Windows.Forms.ComboBox();
+            this.mContato = new System.Windows.Forms.MaskedTextBox();
+            this.tContato = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -87,7 +89,7 @@ namespace WindowsFormsApp1
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(280, 112);
+            this.label3.Location = new System.Drawing.Point(280, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 4;
@@ -211,14 +213,6 @@ namespace WindowsFormsApp1
             this.mDataNascimento.ValidatingType = typeof(System.DateTime);
             this.mDataNascimento.Click += new System.EventHandler(this.mDataNascimento_Click);
             // 
-            // mContato
-            // 
-            this.mContato.Location = new System.Drawing.Point(368, 109);
-            this.mContato.Name = "mContato";
-            this.mContato.Size = new System.Drawing.Size(100, 20);
-            this.mContato.TabIndex = 25;
-            this.mContato.Click += new System.EventHandler(this.mContato_Click);
-            // 
             // textRG
             // 
             this.textRG.Location = new System.Drawing.Point(72, 109);
@@ -251,22 +245,22 @@ namespace WindowsFormsApp1
             this.lSenha.VisitedLinkColor = System.Drawing.Color.Black;
             this.lSenha.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // cEstado
+            // cStatus
             // 
-            this.cEstado.FormattingEnabled = true;
-            this.cEstado.Location = new System.Drawing.Point(604, 134);
-            this.cEstado.Name = "cEstado";
-            this.cEstado.Size = new System.Drawing.Size(121, 21);
-            this.cEstado.TabIndex = 63;
+            this.cStatus.FormattingEnabled = true;
+            this.cStatus.Location = new System.Drawing.Point(604, 134);
+            this.cStatus.Name = "cStatus";
+            this.cStatus.Size = new System.Drawing.Size(121, 21);
+            this.cStatus.TabIndex = 63;
             // 
-            // Estado
+            // Status
             // 
-            this.Estado.AutoSize = true;
-            this.Estado.Location = new System.Drawing.Point(529, 134);
-            this.Estado.Name = "Estado";
-            this.Estado.Size = new System.Drawing.Size(40, 13);
-            this.Estado.TabIndex = 62;
-            this.Estado.Text = "Estado";
+            this.Status.AutoSize = true;
+            this.Status.Location = new System.Drawing.Point(529, 134);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(37, 13);
+            this.Status.TabIndex = 62;
+            this.Status.Text = "Status";
             // 
             // bVoltar
             // 
@@ -278,18 +272,46 @@ namespace WindowsFormsApp1
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
+            // cContato
+            // 
+            this.cContato.FormattingEnabled = true;
+            this.cContato.Location = new System.Drawing.Point(350, 112);
+            this.cContato.Name = "cContato";
+            this.cContato.Size = new System.Drawing.Size(121, 21);
+            this.cContato.TabIndex = 65;
+            this.cContato.SelectedIndexChanged += new System.EventHandler(this.CContato_SelectedIndexChanged);
+            // 
+            // mContato
+            // 
+            this.mContato.Location = new System.Drawing.Point(359, 146);
+            this.mContato.Name = "mContato";
+            this.mContato.Size = new System.Drawing.Size(100, 20);
+            this.mContato.TabIndex = 66;
+            this.mContato.Click += new System.EventHandler(this.MContato_Click_1);
+            // 
+            // tContato
+            // 
+            this.tContato.AutoSize = true;
+            this.tContato.Location = new System.Drawing.Point(286, 146);
+            this.tContato.Name = "tContato";
+            this.tContato.Size = new System.Drawing.Size(44, 13);
+            this.tContato.TabIndex = 67;
+            this.tContato.Text = "Contato";
+            // 
             // AlterarA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 450);
+            this.Controls.Add(this.tContato);
+            this.Controls.Add(this.mContato);
+            this.Controls.Add(this.cContato);
             this.Controls.Add(this.bVoltar);
-            this.Controls.Add(this.cEstado);
-            this.Controls.Add(this.Estado);
+            this.Controls.Add(this.cStatus);
+            this.Controls.Add(this.Status);
             this.Controls.Add(this.lSenha);
             this.Controls.Add(this.textCpf);
             this.Controls.Add(this.textRG);
-            this.Controls.Add(this.mContato);
             this.Controls.Add(this.mDataNascimento);
             this.Controls.Add(this.cSexo);
             this.Controls.Add(this.cEstadoCivil);
@@ -335,12 +357,14 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ComboBox cEstadoCivil;
         private System.Windows.Forms.ComboBox cSexo;
         private System.Windows.Forms.MaskedTextBox mDataNascimento;
-        private System.Windows.Forms.MaskedTextBox mContato;
         private System.Windows.Forms.MaskedTextBox textRG;
         private System.Windows.Forms.MaskedTextBox textCpf;
         private System.Windows.Forms.LinkLabel lSenha;
-        private System.Windows.Forms.ComboBox cEstado;
-        private System.Windows.Forms.Label Estado;
+        private System.Windows.Forms.ComboBox cStatus;
+        private System.Windows.Forms.Label Status;
         private System.Windows.Forms.Button bVoltar;
+        private System.Windows.Forms.ComboBox cContato;
+        private System.Windows.Forms.MaskedTextBox mContato;
+        private System.Windows.Forms.Label tContato;
     }
 }
