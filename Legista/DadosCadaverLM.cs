@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         private void bAlterar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textNome.Text) || string.IsNullOrWhiteSpace(textID.Text) || string.IsNullOrWhiteSpace(textGaveta.Text) || string.IsNullOrWhiteSpace(textLaudo.Text) || string.IsNullOrWhiteSpace(textMaterial.Text)
-               || string.IsNullOrWhiteSpace(textQuantidade.Text) || !mHorarioChegada.MaskCompleted || !mDataRetirada.MaskCompleted || !mDataChegada.MaskCompleted)
+               || string.IsNullOrWhiteSpace(textQuantidade.Text) || !mHorarioChegada.MaskCompleted || !mDataObito.MaskCompleted || !mHorárioÓbito.MaskCompleted || !mDataRetirada.MaskCompleted || !mDataChegada.MaskCompleted)
             {
                 MessageBox.Show("Preencha todos os campos!");
                 return;
@@ -72,6 +72,21 @@ namespace WindowsFormsApp1
                 if (!mDataChegada.MaskCompleted)
                 {
                     MessageBox.Show("Campo 'Data Chegada' vazio, preencha-o!");
+                    return;
+                }
+                if (!mHorarioRetirada.MaskCompleted)
+                {
+                    MessageBox.Show("Campo 'Horario Retirada' vazio, preencha-o!");
+                    return;
+                }
+                if (!mDataObito.MaskCompleted)
+                {
+                    MessageBox.Show("Campo 'Data Óbito' vazio, preencha-o!");
+                    return;
+                }
+                if (!mHorárioÓbito.MaskCompleted)
+                {
+                    MessageBox.Show("Campo 'Horário Óbito' vazio, preencha-o!");
                     return;
                 }
                 if (!mDataRetirada.MaskCompleted)
@@ -164,6 +179,29 @@ namespace WindowsFormsApp1
 
             DadosCadaverL novaTela = new DadosCadaverL();
             novaTela.ShowDialog();
+        }
+
+        private void mHorarioRetirada_Click(object sender, EventArgs e)
+        {
+            mHorarioRetirada.SelectionStart = 0;
+            mHorarioRetirada.SelectionLength = 0;
+        }
+
+        private void DataÓbito_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mDataObito_Click(object sender, EventArgs e)
+        {
+            mDataObito.SelectionStart = 0;
+            mDataObito.SelectionLength = 0;
+        }
+
+        private void mHorárioÓbito_Click(object sender, EventArgs e)
+        {
+            mHorárioÓbito.SelectionStart = 0;
+            mHorárioÓbito.SelectionLength = 0;
         }
     }
 }

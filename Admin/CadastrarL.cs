@@ -103,11 +103,6 @@ namespace WindowsFormsApp1
             mDataNascimento.SelectionLength = 0;
         }
 
-        private void mNum_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (textSenha.UseSystemPasswordChar)
@@ -127,7 +122,7 @@ namespace WindowsFormsApp1
         private void bCadastrar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textNome.Text) || !textCpf.MaskCompleted || !textRG.MaskCompleted ||
-                      string.IsNullOrWhiteSpace(textEndereco.Text) || !mNum.MaskCompleted || !mDataNascimento.MaskCompleted || !mContato.MaskCompleted)
+                      string.IsNullOrWhiteSpace(textEndereco.Text) || !mCRM.MaskCompleted || !mDataNascimento.MaskCompleted || !mContato.MaskCompleted)
             {
                 MessageBox.Show("Preencha todos os campos!");
                 return;
@@ -165,7 +160,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Campo 'Data de Nascimento' vazio, preencha-o!");
                     return;
                 }
-                if (!mNum.MaskCompleted)
+                if (!mCRM.MaskCompleted)
                 {
                     MessageBox.Show("Campo 'Data de Nascimento' vazio, preencha-o!");
                     return;
@@ -218,7 +213,7 @@ namespace WindowsFormsApp1
                     textSenha.Text = "";
                     cEstadoCivil.SelectedIndex = 0;
                     cSexo.SelectedIndex = 0;
-                    mNum.Text = "";
+                    mCRM.Text = "";
                     cEstado.SelectedIndex = 0;
 
                     textID.Text = "";
@@ -232,6 +227,13 @@ namespace WindowsFormsApp1
 
             Admin1 novaTela = new Admin1();
             novaTela.ShowDialog();
+        }
+
+        private void mCRM_Click(object sender, EventArgs e)
+        {
+
+            mCRM.SelectionStart = 0;
+            mCRM.SelectionLength = 0;
         }
     }
 }

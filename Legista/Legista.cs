@@ -18,6 +18,8 @@ namespace WindowsFormsApp1
             TreeNode parentNode = treeView1.Nodes.Add("Cadáver");
             TreeNode childNode = parentNode.Nodes.Add("Atualizar");
             TreeNode childNode1 = parentNode.Nodes.Add("Dados");
+            TreeNode childNode2 = parentNode.Nodes.Add("Certificado");
+
 
         }
 
@@ -52,6 +54,13 @@ namespace WindowsFormsApp1
                 this.Hide();
 
                 DadosCadaverL novaTela = new DadosCadaverL();
+                novaTela.ShowDialog();
+            }
+            else if (e.Node.Text == "Certificado")
+            {
+                this.Hide();
+
+                CertificadoObito novaTela = new CertificadoObito();
                 novaTela.ShowDialog();
             }
         }

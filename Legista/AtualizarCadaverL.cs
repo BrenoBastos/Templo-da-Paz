@@ -62,6 +62,21 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Campo 'Nome' vazio, preencha-o!");
                     return;
                 }
+                if (!mHorarioRetirada.MaskCompleted)
+                {
+                    MessageBox.Show("Campo 'Horario Retirada' vazio, preencha-o!");
+                    return;
+                }
+                if (!mDataObito.MaskCompleted)
+                {
+                    MessageBox.Show("Campo 'Data Óbito' vazio, preencha-o!");
+                    return;
+                }
+                if (!mHorárioÓbito.MaskCompleted)
+                {
+                    MessageBox.Show("Campo 'Horário Óbito' vazio, preencha-o!");
+                    return;
+                }
                 // Verifica cada campo individualmente
                 if (string.IsNullOrWhiteSpace(textID.Text))
                 {
@@ -73,6 +88,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Campo 'Gaveta' vazio, preencha-o!");
                     return;
                 }
+
                 if (string.IsNullOrWhiteSpace(textLaudo.Text))
                 {
                     MessageBox.Show("Campo 'Laudo' vazio, preencha-o!");
@@ -181,6 +197,24 @@ namespace WindowsFormsApp1
 
             Legista novaTela = new Legista();
             novaTela.ShowDialog();
+        }
+
+        private void mHorárioÓbito_Click(object sender, EventArgs e)
+        {
+            mHorárioÓbito.SelectionStart = 0;
+            mHorárioÓbito.SelectionLength = 0;
+        }
+
+        private void mDataObito_Click(object sender, EventArgs e)
+        {
+            mDataObito.SelectionStart = 0;
+            mDataObito.SelectionLength = 0;
+        }
+
+        private void mHorarioRetirada_Click(object sender, EventArgs e)
+        {
+            mHorarioRetirada.SelectionStart = 0;
+            mHorarioRetirada.SelectionLength = 0;
         }
     }
 }

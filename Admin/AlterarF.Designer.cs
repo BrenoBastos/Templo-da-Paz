@@ -41,7 +41,6 @@ namespace WindowsFormsApp1
             this.cEstado = new System.Windows.Forms.ComboBox();
             this.Status = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
-            this.Contato = new System.Windows.Forms.Label();
             this.tContato = new System.Windows.Forms.Label();
             this.mContato = new System.Windows.Forms.MaskedTextBox();
             this.cContato = new System.Windows.Forms.ComboBox();
@@ -152,15 +151,6 @@ namespace WindowsFormsApp1
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
-            // Contato
-            // 
-            this.Contato.AutoSize = true;
-            this.Contato.Location = new System.Drawing.Point(233, 179);
-            this.Contato.Name = "Contato";
-            this.Contato.Size = new System.Drawing.Size(44, 13);
-            this.Contato.TabIndex = 3;
-            this.Contato.Text = "Contato";
-            // 
             // tContato
             // 
             this.tContato.AutoSize = true;
@@ -212,7 +202,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.textID);
             this.Controls.Add(this.textEndereco);
             this.Controls.Add(this.textNome);
-            this.Controls.Add(this.Contato);
             this.Controls.Add(this.Endereço);
             this.Controls.Add(this.ID);
             this.Controls.Add(this.Nome);
@@ -237,7 +226,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ComboBox cEstado;
         private System.Windows.Forms.Label Status;
         private System.Windows.Forms.Button bVoltar;
-        private System.Windows.Forms.Label Contato;
         private System.Windows.Forms.Label tContato;
         private System.Windows.Forms.MaskedTextBox mContato;
         private System.Windows.Forms.ComboBox cContato;

@@ -30,9 +30,9 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.cEstado = new System.Windows.Forms.ComboBox();
-            this.Estado = new System.Windows.Forms.Label();
-            this.mNum = new System.Windows.Forms.MaskedTextBox();
-            this.Num_Registro_Profissional = new System.Windows.Forms.Label();
+            this.Status = new System.Windows.Forms.Label();
+            this.mCRM = new System.Windows.Forms.MaskedTextBox();
+            this.CRMLegista = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -66,33 +66,33 @@ namespace WindowsFormsApp1
             this.cEstado.Size = new System.Drawing.Size(121, 21);
             this.cEstado.TabIndex = 85;
             // 
-            // Estado
+            // Status
             // 
-            this.Estado.AutoSize = true;
-            this.Estado.Location = new System.Drawing.Point(467, 269);
-            this.Estado.Name = "Estado";
-            this.Estado.Size = new System.Drawing.Size(40, 13);
-            this.Estado.TabIndex = 84;
-            this.Estado.Text = "Estado";
+            this.Status.AutoSize = true;
+            this.Status.Location = new System.Drawing.Point(467, 269);
+            this.Status.Name = "Status";
+            this.Status.Size = new System.Drawing.Size(37, 13);
+            this.Status.TabIndex = 84;
+            this.Status.Text = "Status";
             // 
-            // mNum
+            // mCRM
             // 
-            this.mNum.Location = new System.Drawing.Point(361, 230);
-            this.mNum.Mask = "00/00/0000";
-            this.mNum.Name = "mNum";
-            this.mNum.Size = new System.Drawing.Size(100, 20);
-            this.mNum.TabIndex = 83;
-            this.mNum.ValidatingType = typeof(System.DateTime);
-            this.mNum.Click += new System.EventHandler(this.mNum_Click);
+            this.mCRM.Location = new System.Drawing.Point(301, 230);
+            this.mCRM.Mask = "0000000";
+            this.mCRM.Name = "mCRM";
+            this.mCRM.Size = new System.Drawing.Size(100, 20);
+            this.mCRM.TabIndex = 83;
+            this.mCRM.ValidatingType = typeof(System.DateTime);
+            this.mCRM.Click += new System.EventHandler(this.mCRM_Click);
             // 
-            // Num_Registro_Profissional
+            // CRMLegista
             // 
-            this.Num_Registro_Profissional.AutoSize = true;
-            this.Num_Registro_Profissional.Location = new System.Drawing.Point(222, 233);
-            this.Num_Registro_Profissional.Name = "Num_Registro_Profissional";
-            this.Num_Registro_Profissional.Size = new System.Drawing.Size(133, 13);
-            this.Num_Registro_Profissional.TabIndex = 82;
-            this.Num_Registro_Profissional.Text = "Num_Registro_Profissional";
+            this.CRMLegista.AutoSize = true;
+            this.CRMLegista.Location = new System.Drawing.Point(222, 233);
+            this.CRMLegista.Name = "CRMLegista";
+            this.CRMLegista.Size = new System.Drawing.Size(68, 13);
+            this.CRMLegista.TabIndex = 82;
+            this.CRMLegista.Text = "CRM Legista";
             // 
             // label12
             // 
@@ -304,9 +304,9 @@ namespace WindowsFormsApp1
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.cEstado);
-            this.Controls.Add(this.Estado);
-            this.Controls.Add(this.mNum);
-            this.Controls.Add(this.Num_Registro_Profissional);
+            this.Controls.Add(this.Status);
+            this.Controls.Add(this.mCRM);
+            this.Controls.Add(this.CRMLegista);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
@@ -339,9 +339,9 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.ComboBox cEstado;
-        private System.Windows.Forms.Label Estado;
-        private System.Windows.Forms.MaskedTextBox mNum;
-        private System.Windows.Forms.Label Num_Registro_Profissional;
+        private System.Windows.Forms.Label Status;
+        private System.Windows.Forms.MaskedTextBox mCRM;
+        private System.Windows.Forms.Label CRMLegista;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;

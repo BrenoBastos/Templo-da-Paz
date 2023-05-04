@@ -62,6 +62,12 @@
             this.textLegista = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
+            this.mHorarioRetirada = new System.Windows.Forms.MaskedTextBox();
+            this.HorárioRetirada = new System.Windows.Forms.Label();
+            this.mHorárioÓbito = new System.Windows.Forms.MaskedTextBox();
+            this.mDataObito = new System.Windows.Forms.MaskedTextBox();
+            this.HorárioÓbito = new System.Windows.Forms.Label();
+            this.DataÓbito = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,7 +153,7 @@
             // Retirada
             // 
             this.Retirada.AutoSize = true;
-            this.Retirada.Location = new System.Drawing.Point(546, 184);
+            this.Retirada.Location = new System.Drawing.Point(556, 268);
             this.Retirada.Name = "Retirada";
             this.Retirada.Size = new System.Drawing.Size(47, 13);
             this.Retirada.TabIndex = 36;
@@ -275,7 +281,7 @@
             // 
             this.cRetirada.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
             this.cRetirada.FormattingEnabled = true;
-            this.cRetirada.Location = new System.Drawing.Point(627, 184);
+            this.cRetirada.Location = new System.Drawing.Point(647, 268);
             this.cRetirada.Name = "cRetirada";
             this.cRetirada.Size = new System.Drawing.Size(156, 21);
             this.cRetirada.TabIndex = 50;
@@ -359,11 +365,74 @@
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
+            // mHorarioRetirada
+            // 
+            this.mHorarioRetirada.Location = new System.Drawing.Point(671, 177);
+            this.mHorarioRetirada.Mask = "00:00";
+            this.mHorarioRetirada.Name = "mHorarioRetirada";
+            this.mHorarioRetirada.Size = new System.Drawing.Size(100, 20);
+            this.mHorarioRetirada.TabIndex = 76;
+            this.mHorarioRetirada.ValidatingType = typeof(System.DateTime);
+            this.mHorarioRetirada.Click += new System.EventHandler(this.mHorarioRetirada_Click);
+            // 
+            // HorárioRetirada
+            // 
+            this.HorárioRetirada.AutoSize = true;
+            this.HorárioRetirada.Location = new System.Drawing.Point(541, 181);
+            this.HorárioRetirada.Name = "HorárioRetirada";
+            this.HorárioRetirada.Size = new System.Drawing.Size(84, 13);
+            this.HorárioRetirada.TabIndex = 75;
+            this.HorárioRetirada.Text = "Horário Retirada";
+            // 
+            // mHorárioÓbito
+            // 
+            this.mHorárioÓbito.Location = new System.Drawing.Point(691, 237);
+            this.mHorárioÓbito.Mask = "00:00";
+            this.mHorárioÓbito.Name = "mHorárioÓbito";
+            this.mHorárioÓbito.Size = new System.Drawing.Size(100, 20);
+            this.mHorárioÓbito.TabIndex = 80;
+            this.mHorárioÓbito.ValidatingType = typeof(System.DateTime);
+            this.mHorárioÓbito.Click += new System.EventHandler(this.mHorárioÓbito_Click);
+            // 
+            // mDataObito
+            // 
+            this.mDataObito.Location = new System.Drawing.Point(671, 203);
+            this.mDataObito.Mask = "00/00/0000";
+            this.mDataObito.Name = "mDataObito";
+            this.mDataObito.Size = new System.Drawing.Size(100, 20);
+            this.mDataObito.TabIndex = 79;
+            this.mDataObito.ValidatingType = typeof(System.DateTime);
+            this.mDataObito.Click += new System.EventHandler(this.mDataObito_Click);
+            // 
+            // HorárioÓbito
+            // 
+            this.HorárioÓbito.AutoSize = true;
+            this.HorárioÓbito.Location = new System.Drawing.Point(561, 241);
+            this.HorárioÓbito.Name = "HorárioÓbito";
+            this.HorárioÓbito.Size = new System.Drawing.Size(69, 13);
+            this.HorárioÓbito.TabIndex = 78;
+            this.HorárioÓbito.Text = "Horário Óbito";
+            // 
+            // DataÓbito
+            // 
+            this.DataÓbito.AutoSize = true;
+            this.DataÓbito.Location = new System.Drawing.Point(561, 206);
+            this.DataÓbito.Name = "DataÓbito";
+            this.DataÓbito.Size = new System.Drawing.Size(58, 13);
+            this.DataÓbito.TabIndex = 77;
+            this.DataÓbito.Text = "Data Óbito";
+            // 
             // AtualizarCadaverL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(953, 450);
+            this.Controls.Add(this.mHorárioÓbito);
+            this.Controls.Add(this.mDataObito);
+            this.Controls.Add(this.HorárioÓbito);
+            this.Controls.Add(this.DataÓbito);
+            this.Controls.Add(this.mHorarioRetirada);
+            this.Controls.Add(this.HorárioRetirada);
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.textLegista);
             this.Controls.Add(this.label2);
@@ -436,5 +505,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dAssistente;
         private System.Windows.Forms.Button bVoltar;
+        private System.Windows.Forms.MaskedTextBox mHorarioRetirada;
+        private System.Windows.Forms.Label HorárioRetirada;
+        private System.Windows.Forms.MaskedTextBox mHorárioÓbito;
+        private System.Windows.Forms.MaskedTextBox mDataObito;
+        private System.Windows.Forms.Label HorárioÓbito;
+        private System.Windows.Forms.Label DataÓbito;
     }
 }
