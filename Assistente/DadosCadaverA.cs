@@ -58,5 +58,21 @@ namespace WindowsFormsApp1
             Assistente novaTela = new Assistente();
             novaTela.ShowDialog();
         }
+
+        private void DadosCadaverA_DoubleClick(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            AlterarCadaverA novaTela = new AlterarCadaverA();
+            novaTela.ShowDialog();
+        }
+
+        private void dDados_DoubleClick(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            AlterarCadaverA novaTela = new AlterarCadaverA();
+            novaTela.ShowDialog();
+        }
     }
 }

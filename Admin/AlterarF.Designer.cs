@@ -166,6 +166,7 @@ namespace WindowsFormsApp1
             this.mContato.Name = "mContato";
             this.mContato.Size = new System.Drawing.Size(100, 20);
             this.mContato.TabIndex = 70;
+            this.mContato.Click += new System.EventHandler(this.mContato_Click_1);
             // 
             // cContato
             // 
@@ -174,6 +175,7 @@ namespace WindowsFormsApp1
             this.cContato.Name = "cContato";
             this.cContato.Size = new System.Drawing.Size(121, 21);
             this.cContato.TabIndex = 69;
+            this.cContato.SelectedIndexChanged += new System.EventHandler(this.cContato_SelectedIndexChanged);
             // 
             // label3
             // 

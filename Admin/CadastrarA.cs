@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
             comboBoxiniciar2();
             formatarCampoSenha();
             comboBoxiniciar3();
+            comboBoxiniciar4();
 
         }
         public int value;
@@ -61,8 +62,29 @@ namespace WindowsFormsApp1
                 cSexo.DropDownStyle = ComboBoxStyle.DropDownList;
 
             }
+
         }
-        private void formatarCampoSenha()
+        private void comboBoxiniciar4() {
+
+            if (cContato.Items.Count == 0)
+            {
+                cContato.Items.Add("Celular");
+                cContato.Items.Add("Telefone");
+                cContato.SelectedIndex = 0;
+
+                cContato.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                tContato.Text = "Celular";
+                mContato.Mask = "(99) 99999-9999";
+                mContato.Text = "";
+                tContato.Visible = true;
+                mContato.Visible = true;
+
+
+
+            }
+        }
+    private void formatarCampoSenha()
         {
             textSenha.UseSystemPasswordChar = true;
             textSenha.PasswordChar = '*';
@@ -76,11 +98,6 @@ namespace WindowsFormsApp1
        
 
        
-
-        private void mContato_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void textID_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -102,57 +119,7 @@ namespace WindowsFormsApp1
             else
             {
 
-                // Verifica cada campo individualmente
-                if (string.IsNullOrWhiteSpace(textNome.Text))
-                {
-                    MessageBox.Show("Campo 'Nome' vazio, preencha-o!");
-                    return;
-                }
-
-
-                if (!textCpf.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'CPF' vazio, preencha-o!");
-                    return;
-                }
-                if (!textRG.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'RG' vazio, preencha-o!");
-                    return;
-                }
-
-                if (string.IsNullOrWhiteSpace(textEndereco.Text))
-                {
-                    MessageBox.Show("Campo 'Endereço' vazio, preencha-o!");
-                    return;
-                }
-
-                if (!mDataNascimento.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'Data de Nascimento' vazio, preencha-o!");
-                    return;
-                }
-
-
-                // verifica se o valor do campo Contato está no formato correto
-                if (!Regex.IsMatch(mContato.Text, @"^^(\(\d{2}\))?\s?\d{4,5}-\d{4}$"))
-                {
-                    MessageBox.Show("Campo 'Contato' vazio ou inválido, preencha-o com um número de contato válido no formato (99) 9999-9999 ou (99) 99999-9999.");
-                    return;
-                }
-
-
-
-                else if (string.IsNullOrWhiteSpace(textSenha.Text))
-                {
-                    MessageBox.Show("Campo 'Senha' vazio, preencha-o!");
-                    return;
-                }
-                if (string.IsNullOrWhiteSpace(textID.Text))
-                {
-                    MessageBox.Show("Campo 'ID' vazio, preencha-o!");
-                    return;
-                }
+               
 
                 if (!int.TryParse(textID.Text, out int idValue))
                 {
@@ -167,6 +134,7 @@ namespace WindowsFormsApp1
                 else if (textNome.Text.All(char.IsDigit))
                 {
                     MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
+                    textNome.Text = "";
                     return;
                 }
                 else
@@ -181,7 +149,7 @@ namespace WindowsFormsApp1
                     textSenha.Text = "";
                     cEstadoCivil.SelectedIndex = 0;
                     cSexo.SelectedIndex = 0;
-
+                    cContato.SelectedIndex = 0;
                     textID.Text = "";
                 }
             }
@@ -227,6 +195,35 @@ namespace WindowsFormsApp1
 
             Admin1 novaTela = new Admin1();
             novaTela.ShowDialog();
+        }
+
+        private void mContato_Click(object sender, EventArgs e)
+        {
+            mContato.SelectionStart = 0;
+            mContato.SelectionLength = 0;
+        }
+
+        private void cContato_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cContato.SelectedItem.ToString() == "Celular")
+            {
+                {
+                    tContato.Text = "Celular";
+                    mContato.Mask = "(99) 99999-9999";
+                    mContato.Text = "";
+                    tContato.Visible = true;
+                    mContato.Visible = true;
+
+                }
+            }
+            else if (cContato.SelectedItem.ToString() == "Telefone")
+            {
+                tContato.Text = "Telefone";
+                mContato.Mask = "(99) 9999-9999";
+                mContato.Text = "";
+                tContato.Visible = true;
+                mContato.Visible = true;
+            }
         }
     }
 }

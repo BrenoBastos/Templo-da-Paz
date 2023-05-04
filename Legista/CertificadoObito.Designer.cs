@@ -31,34 +31,54 @@ namespace WindowsFormsApp1
         {
             this.Nome = new System.Windows.Forms.Label();
             this.CPF = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.Cor = new System.Windows.Forms.Label();
+            this.Naturalidade = new System.Windows.Forms.Label();
+            this.RG = new System.Windows.Forms.Label();
+            this.Filiação = new System.Windows.Forms.Label();
+            this.DataFalecimento = new System.Windows.Forms.Label();
+            this.LocaldeFaclecimento = new System.Windows.Forms.Label();
+            this.Sepultamento = new System.Windows.Forms.Label();
+            this.Sexo = new System.Windows.Forms.Label();
+            this.Idade = new System.Windows.Forms.Label();
+            this.EstadoCivil = new System.Windows.Forms.Label();
+            this.TitulodeEleitor = new System.Windows.Forms.Label();
+            this.Residência = new System.Windows.Forms.Label();
+            this.HoradeFalecimento = new System.Windows.Forms.Label();
+            this.CausadaMorte = new System.Windows.Forms.Label();
+            this.Declarante = new System.Windows.Forms.Label();
+            this.Medico = new System.Windows.Forms.Label();
+            this.CRM = new System.Windows.Forms.Label();
+            this.Anotações = new System.Windows.Forms.Label();
             this.bBaixar = new System.Windows.Forms.Button();
+            this.mCRM = new System.Windows.Forms.MaskedTextBox();
+            this.textNomeMedico = new System.Windows.Forms.TextBox();
+            this.textAnotacoes = new System.Windows.Forms.TextBox();
+            this.textSepultamento = new System.Windows.Forms.TextBox();
+            this.mDataFalecimento = new System.Windows.Forms.MaskedTextBox();
+            this.bVoltar = new System.Windows.Forms.Button();
+            this.textDeclarante = new System.Windows.Forms.TextBox();
+            this.textCausadaMorte = new System.Windows.Forms.TextBox();
+            this.textRG = new System.Windows.Forms.MaskedTextBox();
+            this.textIdade = new System.Windows.Forms.TextBox();
+            this.mEleitor = new System.Windows.Forms.MaskedTextBox();
+            this.textLocal = new System.Windows.Forms.TextBox();
+            this.textFiliação = new System.Windows.Forms.TextBox();
+            this.textNome = new System.Windows.Forms.TextBox();
+            this.textCpf = new System.Windows.Forms.MaskedTextBox();
+            this.textResidencia = new System.Windows.Forms.TextBox();
+            this.cEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.cSexo = new System.Windows.Forms.ComboBox();
+            this.comboCor = new System.Windows.Forms.ComboBox();
+            this.textNaturalidade = new System.Windows.Forms.TextBox();
+            this.mHora = new System.Windows.Forms.MaskedTextBox();
+            this.mDataNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.Nascimento = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Nome
             // 
             this.Nome.AutoSize = true;
-            this.Nome.Location = new System.Drawing.Point(376, 39);
+            this.Nome.Location = new System.Drawing.Point(373, 9);
             this.Nome.Name = "Nome";
             this.Nome.Size = new System.Drawing.Size(35, 13);
             this.Nome.TabIndex = 0;
@@ -67,238 +87,418 @@ namespace WindowsFormsApp1
             // CPF
             // 
             this.CPF.AutoSize = true;
-            this.CPF.Location = new System.Drawing.Point(224, 58);
+            this.CPF.Location = new System.Drawing.Point(381, 32);
             this.CPF.Name = "CPF";
             this.CPF.Size = new System.Drawing.Size(27, 13);
             this.CPF.TabIndex = 1;
             this.CPF.Text = "CPF";
             // 
-            // label3
+            // Cor
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(383, 219);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.Cor.AutoSize = true;
+            this.Cor.Location = new System.Drawing.Point(93, 96);
+            this.Cor.Name = "Cor";
+            this.Cor.Size = new System.Drawing.Size(23, 13);
+            this.Cor.TabIndex = 2;
+            this.Cor.Text = "Cor";
             // 
-            // label4
+            // Naturalidade
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(391, 227);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "label4";
+            this.Naturalidade.AutoSize = true;
+            this.Naturalidade.Location = new System.Drawing.Point(362, 96);
+            this.Naturalidade.Name = "Naturalidade";
+            this.Naturalidade.Size = new System.Drawing.Size(67, 13);
+            this.Naturalidade.TabIndex = 3;
+            this.Naturalidade.Text = "Naturalidade";
             // 
-            // label5
+            // RG
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(399, 235);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
+            this.RG.AutoSize = true;
+            this.RG.Location = new System.Drawing.Point(385, 159);
+            this.RG.Name = "RG";
+            this.RG.Size = new System.Drawing.Size(23, 13);
+            this.RG.TabIndex = 4;
+            this.RG.Text = "RG";
             // 
-            // label6
+            // Filiação
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(407, 243);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "label6";
+            this.Filiação.AutoSize = true;
+            this.Filiação.Location = new System.Drawing.Point(93, 69);
+            this.Filiação.Name = "Filiação";
+            this.Filiação.Size = new System.Drawing.Size(43, 13);
+            this.Filiação.TabIndex = 5;
+            this.Filiação.Text = "Filiação";
             // 
-            // label7
+            // DataFalecimento
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(415, 251);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "label7";
+            this.DataFalecimento.AutoSize = true;
+            this.DataFalecimento.Location = new System.Drawing.Point(246, 262);
+            this.DataFalecimento.Name = "DataFalecimento";
+            this.DataFalecimento.Size = new System.Drawing.Size(90, 13);
+            this.DataFalecimento.TabIndex = 6;
+            this.DataFalecimento.Text = "Data Falecimento";
             // 
-            // label8
+            // LocaldeFaclecimento
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(423, 259);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "label8";
+            this.LocaldeFaclecimento.AutoSize = true;
+            this.LocaldeFaclecimento.Location = new System.Drawing.Point(362, 130);
+            this.LocaldeFaclecimento.Name = "LocaldeFaclecimento";
+            this.LocaldeFaclecimento.Size = new System.Drawing.Size(108, 13);
+            this.LocaldeFaclecimento.TabIndex = 7;
+            this.LocaldeFaclecimento.Text = "Local de Falecimento";
             // 
-            // label9
+            // Sepultamento
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(431, 267);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "label9";
+            this.Sepultamento.AutoSize = true;
+            this.Sepultamento.Location = new System.Drawing.Point(197, 297);
+            this.Sepultamento.Name = "Sepultamento";
+            this.Sepultamento.Size = new System.Drawing.Size(176, 13);
+            this.Sepultamento.TabIndex = 8;
+            this.Sepultamento.Text = "Sepultamento,Cremação(Município)";
             // 
-            // label10
+            // Sexo
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(224, 134);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "label10";
+            this.Sexo.AutoSize = true;
+            this.Sexo.Location = new System.Drawing.Point(105, 21);
+            this.Sexo.Name = "Sexo";
+            this.Sexo.Size = new System.Drawing.Size(31, 13);
+            this.Sexo.TabIndex = 9;
+            this.Sexo.Text = "Sexo";
             // 
-            // label11
+            // Idade
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(388, 227);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "label11";
+            this.Idade.AutoSize = true;
+            this.Idade.Location = new System.Drawing.Point(353, 195);
+            this.Idade.Name = "Idade";
+            this.Idade.Size = new System.Drawing.Size(34, 13);
+            this.Idade.TabIndex = 10;
+            this.Idade.Text = "Idade";
             // 
-            // label12
+            // EstadoCivil
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(396, 235);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "label12";
+            this.EstadoCivil.AutoSize = true;
+            this.EstadoCivil.Location = new System.Drawing.Point(93, 45);
+            this.EstadoCivil.Name = "EstadoCivil";
+            this.EstadoCivil.Size = new System.Drawing.Size(62, 13);
+            this.EstadoCivil.TabIndex = 11;
+            this.EstadoCivil.Text = "Estado Civil";
             // 
-            // label13
+            // TitulodeEleitor
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(404, 243);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "label13";
+            this.TitulodeEleitor.AutoSize = true;
+            this.TitulodeEleitor.Location = new System.Drawing.Point(537, 219);
+            this.TitulodeEleitor.Name = "TitulodeEleitor";
+            this.TitulodeEleitor.Size = new System.Drawing.Size(80, 13);
+            this.TitulodeEleitor.TabIndex = 12;
+            this.TitulodeEleitor.Text = "Titulo de Eleitor";
             // 
-            // label14
+            // Residência
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(412, 251);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "label14";
+            this.Residência.AutoSize = true;
+            this.Residência.Location = new System.Drawing.Point(362, 69);
+            this.Residência.Name = "Residência";
+            this.Residência.Size = new System.Drawing.Size(60, 13);
+            this.Residência.TabIndex = 13;
+            this.Residência.Text = "Residência";
             // 
-            // label15
+            // HoradeFalecimento
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(420, 259);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 13);
-            this.label15.TabIndex = 14;
-            this.label15.Text = "label15";
+            this.HoradeFalecimento.AutoSize = true;
+            this.HoradeFalecimento.Location = new System.Drawing.Point(268, 231);
+            this.HoradeFalecimento.Name = "HoradeFalecimento";
+            this.HoradeFalecimento.Size = new System.Drawing.Size(105, 13);
+            this.HoradeFalecimento.TabIndex = 14;
+            this.HoradeFalecimento.Text = "Hora de Falecimento";
             // 
-            // label16
+            // CausadaMorte
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(428, 267);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 13);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "label16";
+            this.CausadaMorte.AutoSize = true;
+            this.CausadaMorte.Location = new System.Drawing.Point(535, 172);
+            this.CausadaMorte.Name = "CausadaMorte";
+            this.CausadaMorte.Size = new System.Drawing.Size(82, 13);
+            this.CausadaMorte.TabIndex = 15;
+            this.CausadaMorte.Text = "Causa da Morte";
             // 
-            // label17
+            // Declarante
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(436, 275);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 13);
-            this.label17.TabIndex = 16;
-            this.label17.Text = "label17";
+            this.Declarante.AutoSize = true;
+            this.Declarante.Location = new System.Drawing.Point(558, 262);
+            this.Declarante.Name = "Declarante";
+            this.Declarante.Size = new System.Drawing.Size(59, 13);
+            this.Declarante.TabIndex = 16;
+            this.Declarante.Text = "Declarante";
             // 
-            // label18
+            // Medico
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(444, 283);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(41, 13);
-            this.label18.TabIndex = 17;
-            this.label18.Text = "label18";
+            this.Medico.AutoSize = true;
+            this.Medico.Location = new System.Drawing.Point(187, 352);
+            this.Medico.Name = "Medico";
+            this.Medico.Size = new System.Drawing.Size(181, 13);
+            this.Medico.TabIndex = 17;
+            this.Medico.Text = "Nome do médico que atestou o óbito";
             // 
-            // label19
+            // CRM
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(452, 291);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 13);
-            this.label19.TabIndex = 18;
-            this.label19.Text = "label19";
+            this.CRM.AutoSize = true;
+            this.CRM.Location = new System.Drawing.Point(149, 371);
+            this.CRM.Name = "CRM";
+            this.CRM.Size = new System.Drawing.Size(177, 13);
+            this.CRM.TabIndex = 18;
+            this.CRM.Text = "CRM do médico que atestou o óbito";
             // 
-            // label20
+            // Anotações
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(460, 299);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 13);
-            this.label20.TabIndex = 19;
-            this.label20.Text = "label20";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(468, 307);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(41, 13);
-            this.label21.TabIndex = 20;
-            this.label21.Text = "label21";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(476, 315);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(41, 13);
-            this.label22.TabIndex = 21;
-            this.label22.Text = "label22";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(484, 323);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(41, 13);
-            this.label23.TabIndex = 22;
-            this.label23.Text = "label23";
+            this.Anotações.AutoSize = true;
+            this.Anotações.Location = new System.Drawing.Point(314, 323);
+            this.Anotações.Name = "Anotações";
+            this.Anotações.Size = new System.Drawing.Size(58, 13);
+            this.Anotações.TabIndex = 19;
+            this.Anotações.Text = "Anotações";
             // 
             // bBaixar
             // 
-            this.bBaixar.Location = new System.Drawing.Point(512, 108);
+            this.bBaixar.Location = new System.Drawing.Point(321, 394);
             this.bBaixar.Name = "bBaixar";
-            this.bBaixar.Size = new System.Drawing.Size(75, 23);
+            this.bBaixar.Size = new System.Drawing.Size(199, 62);
             this.bBaixar.TabIndex = 23;
             this.bBaixar.Text = "Baixar";
             this.bBaixar.UseVisualStyleBackColor = true;
             this.bBaixar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // mCRM
+            // 
+            this.mCRM.Location = new System.Drawing.Point(393, 368);
+            this.mCRM.Mask = "0000000";
+            this.mCRM.Name = "mCRM";
+            this.mCRM.Size = new System.Drawing.Size(100, 20);
+            this.mCRM.TabIndex = 84;
+            this.mCRM.ValidatingType = typeof(System.DateTime);
+            this.mCRM.Click += new System.EventHandler(this.mCRM_Click);
+            // 
+            // textNomeMedico
+            // 
+            this.textNomeMedico.Location = new System.Drawing.Point(393, 342);
+            this.textNomeMedico.Name = "textNomeMedico";
+            this.textNomeMedico.Size = new System.Drawing.Size(100, 20);
+            this.textNomeMedico.TabIndex = 85;
+            // 
+            // textAnotacoes
+            // 
+            this.textAnotacoes.Location = new System.Drawing.Point(388, 316);
+            this.textAnotacoes.Name = "textAnotacoes";
+            this.textAnotacoes.Size = new System.Drawing.Size(100, 20);
+            this.textAnotacoes.TabIndex = 86;
+            // 
+            // textSepultamento
+            // 
+            this.textSepultamento.Location = new System.Drawing.Point(393, 290);
+            this.textSepultamento.Name = "textSepultamento";
+            this.textSepultamento.Size = new System.Drawing.Size(100, 20);
+            this.textSepultamento.TabIndex = 87;
+            // 
+            // mDataFalecimento
+            // 
+            this.mDataFalecimento.Location = new System.Drawing.Point(388, 259);
+            this.mDataFalecimento.Mask = "00/00/0000";
+            this.mDataFalecimento.Name = "mDataFalecimento";
+            this.mDataFalecimento.Size = new System.Drawing.Size(100, 20);
+            this.mDataFalecimento.TabIndex = 88;
+            this.mDataFalecimento.ValidatingType = typeof(System.DateTime);
+            this.mDataFalecimento.Click += new System.EventHandler(this.mDataFalecimento_Click);
+            // 
+            // bVoltar
+            // 
+            this.bVoltar.Location = new System.Drawing.Point(194, 415);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.TabIndex = 92;
+            this.bVoltar.Text = "Voltar";
+            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
+            // 
+            // textDeclarante
+            // 
+            this.textDeclarante.Location = new System.Drawing.Point(632, 262);
+            this.textDeclarante.Name = "textDeclarante";
+            this.textDeclarante.Size = new System.Drawing.Size(100, 20);
+            this.textDeclarante.TabIndex = 93;
+            // 
+            // textCausadaMorte
+            // 
+            this.textCausadaMorte.Location = new System.Drawing.Point(643, 172);
+            this.textCausadaMorte.Name = "textCausadaMorte";
+            this.textCausadaMorte.Size = new System.Drawing.Size(100, 20);
+            this.textCausadaMorte.TabIndex = 94;
+            // 
+            // textRG
+            // 
+            this.textRG.Location = new System.Drawing.Point(420, 156);
+            this.textRG.Mask = "00.000.000-0";
+            this.textRG.Name = "textRG";
+            this.textRG.Size = new System.Drawing.Size(100, 20);
+            this.textRG.TabIndex = 95;
+            this.textRG.Click += new System.EventHandler(this.textRG_Click);
+            // 
+            // textIdade
+            // 
+            this.textIdade.Location = new System.Drawing.Point(388, 195);
+            this.textIdade.Name = "textIdade";
+            this.textIdade.Size = new System.Drawing.Size(100, 20);
+            this.textIdade.TabIndex = 96;
+            // 
+            // mEleitor
+            // 
+            this.mEleitor.Location = new System.Drawing.Point(632, 216);
+            this.mEleitor.Mask = "000000000000";
+            this.mEleitor.Name = "mEleitor";
+            this.mEleitor.Size = new System.Drawing.Size(100, 20);
+            this.mEleitor.TabIndex = 97;
+            this.mEleitor.ValidatingType = typeof(System.DateTime);
+            this.mEleitor.Click += new System.EventHandler(this.mEleitor_Click);
+            // 
+            // textLocal
+            // 
+            this.textLocal.Location = new System.Drawing.Point(494, 130);
+            this.textLocal.Name = "textLocal";
+            this.textLocal.Size = new System.Drawing.Size(100, 20);
+            this.textLocal.TabIndex = 98;
+            // 
+            // textFiliação
+            // 
+            this.textFiliação.Location = new System.Drawing.Point(152, 66);
+            this.textFiliação.Name = "textFiliação";
+            this.textFiliação.Size = new System.Drawing.Size(100, 20);
+            this.textFiliação.TabIndex = 99;
+            // 
+            // textNome
+            // 
+            this.textNome.Location = new System.Drawing.Point(436, 2);
+            this.textNome.Name = "textNome";
+            this.textNome.Size = new System.Drawing.Size(100, 20);
+            this.textNome.TabIndex = 100;
+            // 
+            // textCpf
+            // 
+            this.textCpf.Location = new System.Drawing.Point(445, 38);
+            this.textCpf.Mask = "000.000.000-00";
+            this.textCpf.Name = "textCpf";
+            this.textCpf.Size = new System.Drawing.Size(100, 20);
+            this.textCpf.TabIndex = 101;
+            this.textCpf.Click += new System.EventHandler(this.textCpf_Click);
+            // 
+            // textResidencia
+            // 
+            this.textResidencia.Location = new System.Drawing.Point(445, 69);
+            this.textResidencia.Name = "textResidencia";
+            this.textResidencia.Size = new System.Drawing.Size(100, 20);
+            this.textResidencia.TabIndex = 102;
+            // 
+            // cEstadoCivil
+            // 
+            this.cEstadoCivil.FormattingEnabled = true;
+            this.cEstadoCivil.Location = new System.Drawing.Point(177, 39);
+            this.cEstadoCivil.Name = "cEstadoCivil";
+            this.cEstadoCivil.Size = new System.Drawing.Size(121, 21);
+            this.cEstadoCivil.TabIndex = 103;
+            // 
+            // cSexo
+            // 
+            this.cSexo.FormattingEnabled = true;
+            this.cSexo.Location = new System.Drawing.Point(177, 12);
+            this.cSexo.Name = "cSexo";
+            this.cSexo.Size = new System.Drawing.Size(121, 21);
+            this.cSexo.TabIndex = 104;
+            // 
+            // comboCor
+            // 
+            this.comboCor.FormattingEnabled = true;
+            this.comboCor.Location = new System.Drawing.Point(148, 96);
+            this.comboCor.Name = "comboCor";
+            this.comboCor.Size = new System.Drawing.Size(121, 21);
+            this.comboCor.TabIndex = 105;
+            // 
+            // textNaturalidade
+            // 
+            this.textNaturalidade.Location = new System.Drawing.Point(458, 96);
+            this.textNaturalidade.Name = "textNaturalidade";
+            this.textNaturalidade.Size = new System.Drawing.Size(100, 20);
+            this.textNaturalidade.TabIndex = 106;
+            // 
+            // mHora
+            // 
+            this.mHora.Location = new System.Drawing.Point(393, 228);
+            this.mHora.Mask = "00:00";
+            this.mHora.Name = "mHora";
+            this.mHora.Size = new System.Drawing.Size(100, 20);
+            this.mHora.TabIndex = 107;
+            this.mHora.Click += new System.EventHandler(this.mHora_Click);
+            // 
+            // mDataNascimento
+            // 
+            this.mDataNascimento.Location = new System.Drawing.Point(169, 153);
+            this.mDataNascimento.Mask = "00/00/0000";
+            this.mDataNascimento.Name = "mDataNascimento";
+            this.mDataNascimento.Size = new System.Drawing.Size(100, 20);
+            this.mDataNascimento.TabIndex = 109;
+            this.mDataNascimento.ValidatingType = typeof(System.DateTime);
+            this.mDataNascimento.Click += new System.EventHandler(this.mDataNascimento_Click);
+            // 
+            // Nascimento
+            // 
+            this.Nascimento.AutoSize = true;
+            this.Nascimento.Location = new System.Drawing.Point(47, 156);
+            this.Nascimento.Name = "Nascimento";
+            this.Nascimento.Size = new System.Drawing.Size(89, 13);
+            this.Nascimento.TabIndex = 108;
+            this.Nascimento.Text = "Data Nascimento";
+            // 
             // CertificadoObito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 741);
+            this.Controls.Add(this.mDataNascimento);
+            this.Controls.Add(this.Nascimento);
+            this.Controls.Add(this.mHora);
+            this.Controls.Add(this.textNaturalidade);
+            this.Controls.Add(this.comboCor);
+            this.Controls.Add(this.cSexo);
+            this.Controls.Add(this.cEstadoCivil);
+            this.Controls.Add(this.textResidencia);
+            this.Controls.Add(this.textCpf);
+            this.Controls.Add(this.textNome);
+            this.Controls.Add(this.textFiliação);
+            this.Controls.Add(this.textLocal);
+            this.Controls.Add(this.mEleitor);
+            this.Controls.Add(this.textIdade);
+            this.Controls.Add(this.textRG);
+            this.Controls.Add(this.textCausadaMorte);
+            this.Controls.Add(this.textDeclarante);
+            this.Controls.Add(this.bVoltar);
+            this.Controls.Add(this.mDataFalecimento);
+            this.Controls.Add(this.textSepultamento);
+            this.Controls.Add(this.textAnotacoes);
+            this.Controls.Add(this.textNomeMedico);
+            this.Controls.Add(this.mCRM);
             this.Controls.Add(this.bBaixar);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Anotações);
+            this.Controls.Add(this.CRM);
+            this.Controls.Add(this.Medico);
+            this.Controls.Add(this.Declarante);
+            this.Controls.Add(this.CausadaMorte);
+            this.Controls.Add(this.HoradeFalecimento);
+            this.Controls.Add(this.Residência);
+            this.Controls.Add(this.TitulodeEleitor);
+            this.Controls.Add(this.EstadoCivil);
+            this.Controls.Add(this.Idade);
+            this.Controls.Add(this.Sexo);
+            this.Controls.Add(this.Sepultamento);
+            this.Controls.Add(this.LocaldeFaclecimento);
+            this.Controls.Add(this.DataFalecimento);
+            this.Controls.Add(this.Filiação);
+            this.Controls.Add(this.RG);
+            this.Controls.Add(this.Naturalidade);
+            this.Controls.Add(this.Cor);
             this.Controls.Add(this.CPF);
             this.Controls.Add(this.Nome);
             this.Name = "CertificadoObito";
@@ -312,27 +512,47 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.Label CPF;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label Cor;
+        private System.Windows.Forms.Label Naturalidade;
+        private System.Windows.Forms.Label RG;
+        private System.Windows.Forms.Label Filiação;
+        private System.Windows.Forms.Label DataFalecimento;
+        private System.Windows.Forms.Label LocaldeFaclecimento;
+        private System.Windows.Forms.Label Sexo;
+        private System.Windows.Forms.Label Idade;
+        private System.Windows.Forms.Label EstadoCivil;
+        private System.Windows.Forms.Label TitulodeEleitor;
+        private System.Windows.Forms.Label Residência;
+        private System.Windows.Forms.Label HoradeFalecimento;
+        private System.Windows.Forms.Label CausadaMorte;
+        private System.Windows.Forms.Label Declarante;
+        private System.Windows.Forms.Label Medico;
+        private System.Windows.Forms.Label CRM;
+        private System.Windows.Forms.Label Anotações;
         private System.Windows.Forms.Button bBaixar;
+        private System.Windows.Forms.Label Sepultamento;
+        private System.Windows.Forms.MaskedTextBox mCRM;
+        private System.Windows.Forms.TextBox textNomeMedico;
+        private System.Windows.Forms.TextBox textAnotacoes;
+        private System.Windows.Forms.TextBox textSepultamento;
+        private System.Windows.Forms.MaskedTextBox mDataFalecimento;
+        private System.Windows.Forms.Button bVoltar;
+        private System.Windows.Forms.TextBox textDeclarante;
+        private System.Windows.Forms.TextBox textCausadaMorte;
+        private System.Windows.Forms.MaskedTextBox textRG;
+        private System.Windows.Forms.TextBox textIdade;
+        private System.Windows.Forms.MaskedTextBox mEleitor;
+        private System.Windows.Forms.TextBox textLocal;
+        private System.Windows.Forms.TextBox textFiliação;
+        private System.Windows.Forms.TextBox textNome;
+        private System.Windows.Forms.MaskedTextBox textCpf;
+        private System.Windows.Forms.TextBox textResidencia;
+        private System.Windows.Forms.ComboBox cEstadoCivil;
+        private System.Windows.Forms.ComboBox cSexo;
+        private System.Windows.Forms.ComboBox comboCor;
+        private System.Windows.Forms.TextBox textNaturalidade;
+        private System.Windows.Forms.MaskedTextBox mHora;
+        private System.Windows.Forms.MaskedTextBox mDataNascimento;
+        private System.Windows.Forms.Label Nascimento;
     }
 }

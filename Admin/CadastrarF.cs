@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             comboBoxiniciar1();
-
+            comboBoxiniciar2();
         }
         private void comboBoxiniciar1()
         {
@@ -28,8 +28,28 @@ namespace WindowsFormsApp1
                 cEstado.SelectedIndex = 0;
                 cEstado.DropDownStyle = ComboBoxStyle.DropDownList;
             }
+           
+        }
+        private void comboBoxiniciar2()
+        {
+            if (cContato.Items.Count == 0)
+            {
+                cContato.Items.Add("Celular");
+                cContato.Items.Add("Telefone");
+
+                cContato.DropDownStyle = ComboBoxStyle.DropDownList;
+
+                tContato.Text = "Celular";
+                mContato.Mask = "(99) 99999-9999";
+                mContato.Text = "";
+                tContato.Visible = true;
+                mContato.Visible = true;
+                cContato.SelectedIndex = 0;
+
             }
-    private void textCpf_Click(object sender, EventArgs e)
+        }
+        
+            private void textCpf_Click(object sender, EventArgs e)
         {
             textCpf.SelectionStart = 0;
             textCpf.SelectionLength = 0;
@@ -37,57 +57,19 @@ namespace WindowsFormsApp1
 
         private void bCadastrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textNome.Text) || !textCpf.MaskCompleted ||
-                      string.IsNullOrWhiteSpace(textEndereco.Text) || !mContato.MaskCompleted)
-            {
-                MessageBox.Show("Preencha todos os campos!");
-                return;
-            }
-            else
-            {
-
-                // Verifica cada campo individualmente
-                if (string.IsNullOrWhiteSpace(textNome.Text))
-                {
-                    MessageBox.Show("Campo 'Nome' vazio, preencha-o!");
-                    return;
-                }
-                string numero = Regex.Replace(mContato.Text, @"[^\d]+", "");
-
-                if (!Regex.IsMatch(mContato.Text, @"^^(\(\d{2}\))?\s?\d{4,5}-\d{4}$"))
-                {
-                    MessageBox.Show("Campo 'Contato' vazio ou inválido, preencha-o com um número de contato válido no formato (99) 9999-9999 ou (99) 99999-9999.");
-                    return;
-                }
-
-                if (!textCpf.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'CPF' vazio, preencha-o!");
-                    return;
-                }
-
-
-                if (string.IsNullOrWhiteSpace(textEndereco.Text))
-                {
-                    MessageBox.Show("Campo 'Endereço' vazio, preencha-o!");
-                    return;
-                }
+            if (string.IsNullOrWhiteSpace(textNome.Text) || !textCpf.MaskCompleted 
+    || string.IsNullOrWhiteSpace(textID.Text) || string.IsNullOrWhiteSpace(textEndereco.Text) 
+    || string.IsNullOrWhiteSpace(mContato.Text))
+{
+    MessageBox.Show("Preencha todos os campos!");
+    return;
+}
 
 
 
 
 
-
-
-
-
-                if (string.IsNullOrWhiteSpace(textID.Text))
-                {
-                    MessageBox.Show("Campo 'ID' vazio, preencha-o!");
-                    return;
-                }
-
-                if (!int.TryParse(textID.Text, out int idValue))
+            else if (!int.TryParse(textID.Text, out int idValue))
                 {
                     MessageBox.Show("ID inválido! Insira apenas números.");
                     textID.Text = "";
@@ -100,7 +82,9 @@ namespace WindowsFormsApp1
                 else if (textNome.Text.All(char.IsDigit))
                 {
                     MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
-                    return;
+                textNome.Text = "";
+
+                return;
                 }
                 else
                 {
@@ -109,9 +93,9 @@ namespace WindowsFormsApp1
                     textCpf.Text = "";
                     textEndereco.Text = "";
                     mContato.Text = "";
-
+                cContato.SelectedIndex = 0;
                     textID.Text = "";
-                }
+                
             }
         }
 
@@ -121,6 +105,37 @@ namespace WindowsFormsApp1
 
             Admin1 novaTela = new Admin1();
             novaTela.ShowDialog();
+        }
+
+        private void cContato_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cContato.SelectedItem.ToString() == "Celular")
+            {
+                
+                    tContato.Text = "Celular";
+                    mContato.Mask = "(99) 99999-9999";
+                    mContato.Text = "";
+                    tContato.Visible = true;
+                    mContato.Visible = true;
+
+                
+            }
+            else if (cContato.SelectedItem.ToString() == "Telefone")
+            {
+                tContato.Text = "Telefone";
+                mContato.Mask = "(99) 9999-9999";
+                mContato.Text = "";
+                tContato.Visible = true;
+                mContato.Visible = true;
+            }
+        }
+
+       
+
+        private void mContato_Click_1(object sender, EventArgs e)
+        {
+            mContato.SelectionStart = 0;
+            mContato.SelectionLength = 0;
         }
     }
 }

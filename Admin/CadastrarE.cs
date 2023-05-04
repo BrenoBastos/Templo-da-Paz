@@ -24,37 +24,23 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Por favor, preencha todos os campos.");
                 return;
             }
-            else if (string.IsNullOrWhiteSpace(textMaterial.Text))
-            {
-                MessageBox.Show("Por favor, preencha o campo material");
 
-            }
-            else if (string.IsNullOrWhiteSpace(textQuantidade.Text))
-            {
-                MessageBox.Show("Por favor, preencha o campo quantidade");
 
-            }
-            else if (string.IsNullOrWhiteSpace(textFornecedor.Text))
+            else if (!textQuantidade.Text.All(char.IsDigit))
             {
-                MessageBox.Show("Por favor, preencha o campo fornecedor");
+                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Quantidade'.");
+                textQuantidade.Text = "";
+                return;
 
             }
             else
             {
+                MessageBox.Show("Cadastrado com sucesso");
+                textMaterial.Text = "";
+                textFornecedor.Text = "";
 
-
-                if (!textQuantidade.Text.All(char.IsDigit))
-                {
-                    MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Quantidade'.");
-                    return;
-                }
+                textQuantidade.Text = "";
             }
-            MessageBox.Show("Cadastrado com sucesso");
-            textMaterial.Text = "";
-            textFornecedor.Text = "";
-
-            textQuantidade.Text = "";
-
         }
 
         private void textMaterial_TextChanged(object sender, EventArgs e)

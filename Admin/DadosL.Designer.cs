@@ -30,13 +30,13 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.dDados = new System.Windows.Forms.DataGridView();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textNome1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bLocalizar = new System.Windows.Forms.Button();
             this.bVoltar = new System.Windows.Forms.Button();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,30 +46,12 @@ namespace WindowsFormsApp1
             this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nome,
             this.ID,
-            this.dEstado});
+            this.dStatus});
             this.dDados.Location = new System.Drawing.Point(227, 199);
             this.dDados.Name = "dDados";
             this.dDados.Size = new System.Drawing.Size(347, 150);
             this.dDados.TabIndex = 22;
             this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // dEstado
-            // 
-            this.dEstado.HeaderText = "Estado";
-            this.dEstado.Name = "dEstado";
-            this.dEstado.ReadOnly = true;
             // 
             // textNome1
             // 
@@ -107,6 +89,24 @@ namespace WindowsFormsApp1
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
+            // Nome
+            // 
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // dStatus
+            // 
+            this.dStatus.HeaderText = "Status";
+            this.dStatus.Name = "dStatus";
+            this.dStatus.ReadOnly = true;
+            // 
             // DadosL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -129,12 +129,12 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.DataGridView dDados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dEstado;
         private System.Windows.Forms.TextBox textNome1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button bLocalizar;
         private System.Windows.Forms.Button bVoltar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dStatus;
     }
 }

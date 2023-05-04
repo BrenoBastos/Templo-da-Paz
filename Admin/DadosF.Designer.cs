@@ -30,12 +30,12 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.dDados = new System.Windows.Forms.DataGridView();
-            this.DNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bLocalizar = new System.Windows.Forms.Button();
             this.textNome = new System.Windows.Forms.TextBox();
             this.Nome = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
+            this.DNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,24 +44,12 @@ namespace WindowsFormsApp1
             this.dDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DNome,
-            this.dEstado});
-            this.dDados.Location = new System.Drawing.Point(97, 216);
+            this.dStatus});
+            this.dDados.Location = new System.Drawing.Point(226, 227);
             this.dDados.Name = "dDados";
             this.dDados.Size = new System.Drawing.Size(371, 118);
             this.dDados.TabIndex = 10;
             this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
-            // 
-            // DNome
-            // 
-            this.DNome.HeaderText = "Nome";
-            this.DNome.Name = "DNome";
-            this.DNome.ReadOnly = true;
-            // 
-            // dEstado
-            // 
-            this.dEstado.HeaderText = "Estado";
-            this.dEstado.Name = "dEstado";
-            this.dEstado.ReadOnly = true;
             // 
             // bLocalizar
             // 
@@ -99,6 +87,18 @@ namespace WindowsFormsApp1
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
+            // DNome
+            // 
+            this.DNome.HeaderText = "Nome";
+            this.DNome.Name = "DNome";
+            this.DNome.ReadOnly = true;
+            // 
+            // dStatus
+            // 
+            this.dStatus.HeaderText = "Status";
+            this.dStatus.Name = "dStatus";
+            this.dStatus.ReadOnly = true;
+            // 
             // DadosF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,8 +124,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button bLocalizar;
         private System.Windows.Forms.TextBox textNome;
         private System.Windows.Forms.Label Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dEstado;
         private System.Windows.Forms.Button bVoltar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dStatus;
     }
 }

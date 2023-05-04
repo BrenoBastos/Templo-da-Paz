@@ -24,21 +24,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Por favor, preencha todos os campos.");
                 return;
             }
-            else if (string.IsNullOrWhiteSpace(textMaterial.Text))
-            {
-                MessageBox.Show("Por favor, preencha o campo material");
-
-            }
-            else if (string.IsNullOrWhiteSpace(textQuantidade.Text))
-            {
-                MessageBox.Show("Por favor, preencha o campo quantidade");
-
-            }
-            else if (string.IsNullOrWhiteSpace(textFornecedor.Text))
-            {
-                MessageBox.Show("Por favor, preencha o campo fornecedor");
-
-            }
+          
             else
             {
                 

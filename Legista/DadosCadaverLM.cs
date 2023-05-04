@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Preencha todos os campos!");
                 return;
             }
-            else
+            else 
             {
                 if (string.IsNullOrWhiteSpace(textAssistente.Text))
                 {
