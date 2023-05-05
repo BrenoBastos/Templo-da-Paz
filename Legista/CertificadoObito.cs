@@ -20,24 +20,11 @@ namespace WindowsFormsApp1
         public CertificadoObito()
         {
             InitializeComponent();
-            comboBoxiniciar1();
             comboBoxiniciar2();
             comboBoxiniciar3();
+          
         }
-        private void comboBoxiniciar1()
-        {
-            if (cEstadoCivil.Items.Count == 0)
-            {
-                cEstadoCivil.Items.Add("Solteiro(a)");
-                cEstadoCivil.Items.Add("Casado(a)");
-                cEstadoCivil.Items.Add("União Estável");
-                cEstadoCivil.Items.Add("Viúvo(a)");
-
-                cEstadoCivil.SelectedIndex = 0;
-                cEstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            }
-        }
+      
         private void comboBoxiniciar2()
         {
             if (comboCor.Items.Count == 0)
@@ -67,18 +54,37 @@ namespace WindowsFormsApp1
         }
        
         private void button1_Click(object sender, EventArgs e)
-{
-            if (string.IsNullOrWhiteSpace(textNome.Text) || !textCpf.MaskCompleted || string.IsNullOrWhiteSpace(textNaturalidade.Text) || string.IsNullOrWhiteSpace(textLocal.Text) || !textRG.MaskCompleted
-                 || string.IsNullOrWhiteSpace(textCausadaMorte.Text) || string.IsNullOrWhiteSpace(textIdade.Text) || string.IsNullOrWhiteSpace(textFiliação.Text) || !mEleitor.MaskCompleted || !mHora.MaskCompleted || string.IsNullOrWhiteSpace(textDeclarante.Text) || !mDataFalecimento.MaskCompleted || !mDataNascimento.MaskCompleted||
-                 string.IsNullOrWhiteSpace(textSepultamento.Text)||string.IsNullOrWhiteSpace(textAnotacoes.Text)|| string.IsNullOrWhiteSpace(textNomeMedico.Text)|| !mCRM.MaskCompleted)
+        {
+            int dia = int.Parse(textDia.Text);
+            int ano= int.Parse(textAno.Text);
+            int mes = int.Parse(textMês.Text);
+            if (string.IsNullOrWhiteSpace(textNome.Text) || !textCpf.MaskCompleted || string.IsNullOrWhiteSpace(textMatricula.Text) || string.IsNullOrWhiteSpace(textMês.Text) || string.IsNullOrWhiteSpace(textAno.Text) || string.IsNullOrWhiteSpace(textDia.Text) || string.IsNullOrWhiteSpace(textAverbacoes.Text) || string.IsNullOrWhiteSpace(textAnotacoes.Text) || string.IsNullOrWhiteSpace(textNaturalidade.Text) || string.IsNullOrWhiteSpace(textLocal.Text) || !textDocumentoIdentificação.MaskCompleted
+                 || string.IsNullOrWhiteSpace(textCausadaMorte.Text) || string.IsNullOrWhiteSpace(textEstadoCivil.Text) || string.IsNullOrWhiteSpace(textFiliação.Text) || !mEleitor.MaskCompleted  || string.IsNullOrWhiteSpace(textDeclarante.Text) || !mDataFalecimento.MaskCompleted ||
+                 string.IsNullOrWhiteSpace(textSepultamento.Text)||string.IsNullOrWhiteSpace(textAnotacoes.Text)|| string.IsNullOrWhiteSpace(textNomeMedico.Text))
             {
                 MessageBox.Show("Preencha todos os campos!");
                 return;
             }
-         
-               
-                else
-                {
+            else if (mes < 1 || mes > 12)
+            {
+                MessageBox.Show("O campo'Mês' deve estar entre 1 e 12.");
+
+            }
+
+
+            else if (dia < 1 || dia > 31)
+            {
+                MessageBox.Show("O campo'Dia' deve estar entre 1 e 31.");
+
+            }
+            else if (ano< 1950)
+            {
+                MessageBox.Show("O campo'Ano' deve estar no ano atual ou quando se tornou legal a certidão");
+
+            }
+
+            else
+            {
                 if (textNome.Text.All(char.IsDigit))
                 {
                     MessageBox.Show("Por favor, insira apenas caracteres  no campo 'Nome'.");
@@ -89,6 +95,29 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Por favor, insira apenas caracteres  no campo 'Naturalidade'.");
                     return;
                 }
+                else if (!textMatricula.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor, insira apenas caracteres numéricos  no campo 'Matrícula'.");
+                    return;
+                }
+                else if (!textDia.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor, insira apenas caracteres numéricos  no campo 'Dia'.");
+                    return;
+                }
+                else if (!textMês.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor, insira apenas caracteres numéricos  no campo 'Mês'.");
+                    return;
+                }
+                else if (!textAno.Text.All(char.IsDigit))
+                {
+                    MessageBox.Show("Por favor, insira apenas caracteres numéricos  no campo 'Ano'.");
+                    return;
+                }
+           
+      
+          
                 // Cria um novo documento PDF
                 Document doc = new Document(PageSize.A4);
 
@@ -134,20 +163,26 @@ namespace WindowsFormsApp1
                         textNaturalidade.Text = "";
                         textLocal.Text = "";
                         textCausadaMorte.Text = "";
-                        textIdade.Text = "";
+                        textEstadoCivil.Text = "";
                         textFiliação.Text = "";
                         textDeclarante.Text = "";
                         textSepultamento.Text = "";
                         textAnotacoes.Text = "";
                         textNomeMedico.Text = "";
                         textCpf.Text = "";
-                        textRG.Text = "";
+                        textDocumentoIdentificação.Text = "";
                         mEleitor.Text = "";
-                        mCRM.Text = "";
+                    textAno.Text = "";
                         mDataFalecimento.Text = "";
-                        mDataNascimento.Text = "";
-                        mHora.Text = "";
-                    }
+                        mDataFalecimento.Text = "";
+                    textAverbacoes.Text = "";
+                    textDia.Text = "";
+                    textMatricula.Text = "";
+                    textMês.Text = "";
+                    comboCor.SelectedIndex = 0;
+                    cSexo.SelectedIndex = 0;
+
+                }
 
                     catch (Exception ex)
                     {
@@ -178,12 +213,7 @@ namespace WindowsFormsApp1
             novaTela.ShowDialog();
         }
 
-        private void mCRM_Click(object sender, EventArgs e)
-        {
-
-            mCRM.SelectionStart = 0;
-            mCRM.SelectionLength = 0;
-        }
+       
 
         private void mDataFalecimento_Click(object sender, EventArgs e)
         {
@@ -193,15 +223,11 @@ namespace WindowsFormsApp1
 
         private void mDataNascimento_Click(object sender, EventArgs e)
         {
-            mDataNascimento.SelectionStart = 0;
-            mDataNascimento.SelectionLength = 0;
+            mDataFalecimento.SelectionStart = 0;
+            mDataFalecimento.SelectionLength = 0;
         }
 
-        private void mHora_Click(object sender, EventArgs e)
-        {
-            mHora.SelectionStart = 0;
-            mHora.SelectionLength = 0;
-        }
+     
 
         private void mEleitor_Click(object sender, EventArgs e)
         {
@@ -218,8 +244,8 @@ namespace WindowsFormsApp1
         private void textRG_Click(object sender, EventArgs e)
         {
 
-            textRG.SelectionStart = 0;
-            textRG.SelectionLength = 0;
+            textDocumentoIdentificação.SelectionStart = 0;
+            textDocumentoIdentificação.SelectionLength = 0;
         }
     }
 }
