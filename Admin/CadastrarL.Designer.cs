@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.cEstado = new System.Windows.Forms.ComboBox();
+            this.cStatus = new System.Windows.Forms.ComboBox();
             this.Status = new System.Windows.Forms.Label();
             this.mCRM = new System.Windows.Forms.MaskedTextBox();
             this.CRMLegista = new System.Windows.Forms.Label();
@@ -54,19 +54,20 @@ namespace WindowsFormsApp1
             this.label4 = new System.Windows.Forms.Label();
             this.bCadastrar = new System.Windows.Forms.Button();
             this.bVoltar = new System.Windows.Forms.Button();
-            this.tContato = new System.Windows.Forms.Label();
-            this.mContato = new System.Windows.Forms.MaskedTextBox();
             this.cContato = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.mCelular = new System.Windows.Forms.TextBox();
+            this.Telefone = new System.Windows.Forms.Label();
+            this.Celular = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // cEstado
+            // cStatus
             // 
-            this.cEstado.FormattingEnabled = true;
-            this.cEstado.Location = new System.Drawing.Point(542, 269);
-            this.cEstado.Name = "cEstado";
-            this.cEstado.Size = new System.Drawing.Size(121, 21);
-            this.cEstado.TabIndex = 85;
+            this.cStatus.FormattingEnabled = true;
+            this.cStatus.Location = new System.Drawing.Point(542, 269);
+            this.cStatus.Name = "cStatus";
+            this.cStatus.Size = new System.Drawing.Size(121, 21);
+            this.cStatus.TabIndex = 85;
             // 
             // Status
             // 
@@ -283,24 +284,6 @@ namespace WindowsFormsApp1
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
-            // tContato
-            // 
-            this.tContato.AutoSize = true;
-            this.tContato.Location = new System.Drawing.Point(247, 217);
-            this.tContato.Name = "tContato";
-            this.tContato.Size = new System.Drawing.Size(44, 13);
-            this.tContato.TabIndex = 95;
-            this.tContato.Text = "Contato";
-            // 
-            // mContato
-            // 
-            this.mContato.Location = new System.Drawing.Point(318, 217);
-            this.mContato.Name = "mContato";
-            this.mContato.Size = new System.Drawing.Size(100, 20);
-            this.mContato.TabIndex = 94;
-            this.mContato.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mContato_MaskInputRejected);
-            this.mContato.Click += new System.EventHandler(this.mContato_Click);
-            // 
             // cContato
             // 
             this.cContato.FormattingEnabled = true;
@@ -319,17 +302,43 @@ namespace WindowsFormsApp1
             this.label3.TabIndex = 92;
             this.label3.Text = "Contato";
             // 
+            // mCelular
+            // 
+            this.mCelular.Location = new System.Drawing.Point(335, 208);
+            this.mCelular.Name = "mCelular";
+            this.mCelular.Size = new System.Drawing.Size(100, 20);
+            this.mCelular.TabIndex = 107;
+            // 
+            // Telefone
+            // 
+            this.Telefone.AutoSize = true;
+            this.Telefone.Location = new System.Drawing.Point(251, 249);
+            this.Telefone.Name = "Telefone";
+            this.Telefone.Size = new System.Drawing.Size(49, 13);
+            this.Telefone.TabIndex = 106;
+            this.Telefone.Text = "Telefone";
+            // 
+            // Celular
+            // 
+            this.Celular.AutoSize = true;
+            this.Celular.Location = new System.Drawing.Point(261, 215);
+            this.Celular.Name = "Celular";
+            this.Celular.Size = new System.Drawing.Size(39, 13);
+            this.Celular.TabIndex = 105;
+            this.Celular.Text = "Celular";
+            // 
             // CadastrarL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tContato);
-            this.Controls.Add(this.mContato);
+            this.Controls.Add(this.mCelular);
+            this.Controls.Add(this.Telefone);
+            this.Controls.Add(this.Celular);
             this.Controls.Add(this.cContato);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.bVoltar);
-            this.Controls.Add(this.cEstado);
+            this.Controls.Add(this.cStatus);
             this.Controls.Add(this.Status);
             this.Controls.Add(this.mCRM);
             this.Controls.Add(this.CRMLegista);
@@ -362,7 +371,7 @@ namespace WindowsFormsApp1
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cEstado;
+        private System.Windows.Forms.ComboBox cStatus;
         private System.Windows.Forms.Label Status;
         private System.Windows.Forms.MaskedTextBox mCRM;
         private System.Windows.Forms.Label CRMLegista;
@@ -387,9 +396,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button bCadastrar;
         private System.Windows.Forms.Button bVoltar;
-        private System.Windows.Forms.Label tContato;
-        private System.Windows.Forms.MaskedTextBox mContato;
         private System.Windows.Forms.ComboBox cContato;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox mCelular;
+        private System.Windows.Forms.Label Telefone;
+        private System.Windows.Forms.Label Celular;
     }
 }

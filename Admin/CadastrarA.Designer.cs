@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.cEstado = new System.Windows.Forms.ComboBox();
+            this.cStatus = new System.Windows.Forms.ComboBox();
             this.Status = new System.Windows.Forms.Label();
             this.lSenha = new System.Windows.Forms.LinkLabel();
             this.textCpf = new System.Windows.Forms.MaskedTextBox();
@@ -52,19 +52,20 @@ namespace WindowsFormsApp1
             this.Nome = new System.Windows.Forms.Label();
             this.bCadastrar = new System.Windows.Forms.Button();
             this.bVoltar = new System.Windows.Forms.Button();
-            this.tContato = new System.Windows.Forms.Label();
-            this.mContato = new System.Windows.Forms.MaskedTextBox();
             this.cContato = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.mCelular = new System.Windows.Forms.TextBox();
+            this.Telefone = new System.Windows.Forms.Label();
+            this.Celular = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // cEstado
+            // cStatus
             // 
-            this.cEstado.FormattingEnabled = true;
-            this.cEstado.Location = new System.Drawing.Point(619, 208);
-            this.cEstado.Name = "cEstado";
-            this.cEstado.Size = new System.Drawing.Size(121, 21);
-            this.cEstado.TabIndex = 87;
+            this.cStatus.FormattingEnabled = true;
+            this.cStatus.Location = new System.Drawing.Point(619, 208);
+            this.cStatus.Name = "cStatus";
+            this.cStatus.Size = new System.Drawing.Size(121, 21);
+            this.cStatus.TabIndex = 87;
             // 
             // Status
             // 
@@ -142,7 +143,7 @@ namespace WindowsFormsApp1
             // 
             // textSenha
             // 
-            this.textSenha.Location = new System.Drawing.Point(374, 269);
+            this.textSenha.Location = new System.Drawing.Point(365, 286);
             this.textSenha.Name = "textSenha";
             this.textSenha.Size = new System.Drawing.Size(100, 20);
             this.textSenha.TabIndex = 77;
@@ -191,7 +192,7 @@ namespace WindowsFormsApp1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(301, 272);
+            this.label7.Location = new System.Drawing.Point(300, 289);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 71;
@@ -262,27 +263,10 @@ namespace WindowsFormsApp1
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
-            // tContato
-            // 
-            this.tContato.AutoSize = true;
-            this.tContato.Location = new System.Drawing.Point(275, 243);
-            this.tContato.Name = "tContato";
-            this.tContato.Size = new System.Drawing.Size(44, 13);
-            this.tContato.TabIndex = 103;
-            this.tContato.Text = "Contato";
-            // 
-            // mContato
-            // 
-            this.mContato.Location = new System.Drawing.Point(383, 243);
-            this.mContato.Name = "mContato";
-            this.mContato.Size = new System.Drawing.Size(100, 20);
-            this.mContato.TabIndex = 102;
-            this.mContato.Click += new System.EventHandler(this.mContato_Click);
-            // 
             // cContato
             // 
             this.cContato.FormattingEnabled = true;
-            this.cContato.Location = new System.Drawing.Point(373, 214);
+            this.cContato.Location = new System.Drawing.Point(374, 183);
             this.cContato.Name = "cContato";
             this.cContato.Size = new System.Drawing.Size(121, 21);
             this.cContato.TabIndex = 101;
@@ -291,23 +275,49 @@ namespace WindowsFormsApp1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(275, 214);
+            this.label1.Location = new System.Drawing.Point(273, 186);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 100;
             this.label1.Text = "Contato";
+            // 
+            // mCelular
+            // 
+            this.mCelular.Location = new System.Drawing.Point(374, 209);
+            this.mCelular.Name = "mCelular";
+            this.mCelular.Size = new System.Drawing.Size(100, 20);
+            this.mCelular.TabIndex = 104;
+            // 
+            // Telefone
+            // 
+            this.Telefone.AutoSize = true;
+            this.Telefone.Location = new System.Drawing.Point(290, 250);
+            this.Telefone.Name = "Telefone";
+            this.Telefone.Size = new System.Drawing.Size(49, 13);
+            this.Telefone.TabIndex = 103;
+            this.Telefone.Text = "Telefone";
+            // 
+            // Celular
+            // 
+            this.Celular.AutoSize = true;
+            this.Celular.Location = new System.Drawing.Point(300, 216);
+            this.Celular.Name = "Celular";
+            this.Celular.Size = new System.Drawing.Size(39, 13);
+            this.Celular.TabIndex = 102;
+            this.Celular.Text = "Celular";
             // 
             // CadastrarA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tContato);
-            this.Controls.Add(this.mContato);
+            this.Controls.Add(this.mCelular);
+            this.Controls.Add(this.Telefone);
+            this.Controls.Add(this.Celular);
             this.Controls.Add(this.cContato);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bVoltar);
-            this.Controls.Add(this.cEstado);
+            this.Controls.Add(this.cStatus);
             this.Controls.Add(this.Status);
             this.Controls.Add(this.lSenha);
             this.Controls.Add(this.textCpf);
@@ -338,7 +348,7 @@ namespace WindowsFormsApp1
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cEstado;
+        private System.Windows.Forms.ComboBox cStatus;
         private System.Windows.Forms.Label Status;
         private System.Windows.Forms.LinkLabel lSenha;
         private System.Windows.Forms.MaskedTextBox textCpf;
@@ -361,9 +371,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.Button bCadastrar;
         private System.Windows.Forms.Button bVoltar;
-        private System.Windows.Forms.Label tContato;
-        private System.Windows.Forms.MaskedTextBox mContato;
         private System.Windows.Forms.ComboBox cContato;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox mCelular;
+        private System.Windows.Forms.Label Telefone;
+        private System.Windows.Forms.Label Celular;
     }
 }

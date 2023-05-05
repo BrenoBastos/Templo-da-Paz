@@ -94,6 +94,7 @@ namespace WindowsFormsApp1
             this.cRetirada.Name = "cRetirada";
             this.cRetirada.Size = new System.Drawing.Size(156, 21);
             this.cRetirada.TabIndex = 71;
+            this.cRetirada.SelectedIndexChanged += new System.EventHandler(this.cRetirada_SelectedIndexChanged);
             // 
             // textLaudo
             // 

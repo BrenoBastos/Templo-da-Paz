@@ -54,13 +54,14 @@ namespace WindowsFormsApp1
             this.Status = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
             this.cContato = new System.Windows.Forms.ComboBox();
-            this.mContato = new System.Windows.Forms.MaskedTextBox();
             this.Celular = new System.Windows.Forms.Label();
+            this.Telefone = new System.Windows.Forms.Label();
+            this.mCelular = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(319, 238);
+            this.button1.Location = new System.Drawing.Point(319, 290);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -125,7 +126,7 @@ namespace WindowsFormsApp1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(286, 198);
+            this.label7.Location = new System.Drawing.Point(286, 238);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 8;
@@ -175,7 +176,7 @@ namespace WindowsFormsApp1
             // 
             // textSenha
             // 
-            this.textSenha.Location = new System.Drawing.Point(359, 195);
+            this.textSenha.Location = new System.Drawing.Point(350, 241);
             this.textSenha.Name = "textSenha";
             this.textSenha.Size = new System.Drawing.Size(100, 20);
             this.textSenha.TabIndex = 16;
@@ -281,30 +282,39 @@ namespace WindowsFormsApp1
             this.cContato.TabIndex = 65;
             this.cContato.SelectedIndexChanged += new System.EventHandler(this.CContato_SelectedIndexChanged);
             // 
-            // mContato
-            // 
-            this.mContato.Location = new System.Drawing.Point(359, 150);
-            this.mContato.Name = "mContato";
-            this.mContato.Size = new System.Drawing.Size(100, 20);
-            this.mContato.TabIndex = 66;
-            this.mContato.Click += new System.EventHandler(this.MContato_Click_1);
-            // 
             // Celular
             // 
             this.Celular.AutoSize = true;
-            this.Celular.Location = new System.Drawing.Point(280, 157);
+            this.Celular.Location = new System.Drawing.Point(285, 153);
             this.Celular.Name = "Celular";
             this.Celular.Size = new System.Drawing.Size(39, 13);
             this.Celular.TabIndex = 67;
             this.Celular.Text = "Celular";
+            // 
+            // Telefone
+            // 
+            this.Telefone.AutoSize = true;
+            this.Telefone.Location = new System.Drawing.Point(275, 187);
+            this.Telefone.Name = "Telefone";
+            this.Telefone.Size = new System.Drawing.Size(49, 13);
+            this.Telefone.TabIndex = 68;
+            this.Telefone.Text = "Telefone";
+            // 
+            // mCelular
+            // 
+            this.mCelular.Location = new System.Drawing.Point(359, 146);
+            this.mCelular.Name = "mCelular";
+            this.mCelular.Size = new System.Drawing.Size(100, 20);
+            this.mCelular.TabIndex = 69;
             // 
             // AlterarA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 450);
+            this.Controls.Add(this.mCelular);
+            this.Controls.Add(this.Telefone);
             this.Controls.Add(this.Celular);
-            this.Controls.Add(this.mContato);
             this.Controls.Add(this.cContato);
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.cStatus);
@@ -364,7 +374,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label Status;
         private System.Windows.Forms.Button bVoltar;
         private System.Windows.Forms.ComboBox cContato;
-        private System.Windows.Forms.MaskedTextBox mContato;
         private System.Windows.Forms.Label Celular;
+        private System.Windows.Forms.Label Telefone;
+        private System.Windows.Forms.TextBox mCelular;
     }
 }

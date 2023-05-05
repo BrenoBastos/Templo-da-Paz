@@ -35,6 +35,7 @@ namespace WindowsFormsApp1
             this.Nome = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
             this.DNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +45,7 @@ namespace WindowsFormsApp1
             this.dDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DNome,
+            this.dID,
             this.dStatus});
             this.dDados.Location = new System.Drawing.Point(226, 227);
             this.dDados.Name = "dDados";
@@ -93,6 +95,12 @@ namespace WindowsFormsApp1
             this.DNome.Name = "DNome";
             this.DNome.ReadOnly = true;
             // 
+            // dID
+            // 
+            this.dID.HeaderText = "ID";
+            this.dID.Name = "dID";
+            this.dID.ReadOnly = true;
+            // 
             // dStatus
             // 
             this.dStatus.HeaderText = "Status";
@@ -126,6 +134,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.Button bVoltar;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dStatus;
     }
 }

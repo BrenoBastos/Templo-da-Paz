@@ -17,6 +17,8 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
             comboBoxiniciar();
+            dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
         }
         private void comboBoxiniciar()
         {
@@ -44,132 +46,69 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Preencha todos os campos!");
                 return;
             }
+            
+              
+
+
+
+            if (!textID.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas carecteres numéricos  no campo 'ID'.");
+                textID.Text = "";
+                return;
+            }
+
+            else if (textAssistente.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Assistente'.");
+                textAssistente.Text = "";
+                return;
+            }
+            else if (textLegista.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Legista'.");
+                textLegista.Text = "";
+                return;
+            }
+
+
+            else if (textNome.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
+                textNome.Text = "";
+                return;
+            }
+            else if (textGaveta.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Gaveta'.");
+                textGaveta.Text = "";
+                return;
+            }
+            else if (!textQuantidade.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas carecteres numéricos no campo 'Quantidade'.");
+                textQuantidade.Text = "";
+                return;
+            }
             else
             {
-                if (string.IsNullOrWhiteSpace(textAssistente.Text))
-                {
-                    MessageBox.Show("Campo 'Assistente' vazio, preencha-o!");
-                    return;
-                }
-                if (string.IsNullOrWhiteSpace(textLegista.Text))
-                {
-                    MessageBox.Show("Campo 'Legista' vazio, preencha-o!");
-                    return;
-                }
-                // Verifica cada campo individualmente
-                if (string.IsNullOrWhiteSpace(textNome.Text))
-                {
-                    MessageBox.Show("Campo 'Nome' vazio, preencha-o!");
-                    return;
-                }
-                if (!mHorarioRetirada.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'Horario Retirada' vazio, preencha-o!");
-                    return;
-                }
-                if (!mDataObito.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'Data Óbito' vazio, preencha-o!");
-                    return;
-                }
-                if (!mHorárioÓbito.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'Horário Óbito' vazio, preencha-o!");
-                    return;
-                }
-                // Verifica cada campo individualmente
-                if (string.IsNullOrWhiteSpace(textID.Text))
-                {
-                    MessageBox.Show("Campo 'ID' vazio, preencha-o!");
-                    return;
-                }
-                if (string.IsNullOrWhiteSpace(textGaveta.Text))
-                {
-                    MessageBox.Show("Campo 'Gaveta' vazio, preencha-o!");
-                    return;
-                }
+                MessageBox.Show("Atualizado com sucesso");
+                textNome.Text = "";
+                textID.Text = "";
+                textGaveta.Text = "";
+                textLaudo.Text = "";
+                textMaterial.Text = "";
+                textQuantidade.Text = "";
+                mDataChegada.Text = "";
+                mDataRetirada.Text = "";
+                mHorarioChegada.Text = "";
+                textAssistente.Text = "";
+                textLegista.Text = "";
+                mHorarioRetirada.Text = "";
+                mDataObito.Text = "";
+                mHorárioÓbito.Text = "";
+                cRetirada.SelectedIndex = 0;
 
-                if (string.IsNullOrWhiteSpace(textLaudo.Text))
-                {
-                    MessageBox.Show("Campo 'Laudo' vazio, preencha-o!");
-                    return;
-                }
-                if (string.IsNullOrWhiteSpace(textMaterial.Text))
-                {
-                    MessageBox.Show("Campo 'Material' vazio, preencha-o!");
-                    return;
-                }
-                if (string.IsNullOrWhiteSpace(textQuantidade.Text))
-                {
-                    MessageBox.Show("Campo 'Quantidade' vazio, preencha-o!");
-                    return;
-                }
-                if (!mDataChegada.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'Data Chegada' vazio, preencha-o!");
-                    return;
-                }
-                if (!mDataRetirada.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'Data Retirada' vazio, preencha-o!");
-                    return;
-                }
-
-                if (!mHorarioChegada.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'Horário Chegada' vazio, preencha-o!");
-                    return;
-                }
-
-                
-
-
-               
-
-                if (!int.TryParse(textID.Text, out int idValue))
-                {
-                    MessageBox.Show("ID inválido! Insira apenas números.");
-                    textID.Text = "";
-                    return;
-                }
-
-                else if (textAssistente.Text.All(char.IsDigit))
-                {
-                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Assistente'.");
-                    return;
-                }
-                else if (textLegista.Text.All(char.IsDigit))
-                {
-                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Legista'.");
-                    return;
-                }
-
-
-                else if (textNome.Text.All(char.IsDigit))
-                {
-                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
-                    return;
-                }
-                else if (textGaveta.Text.All(char.IsDigit))
-                {
-                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Gaveta'.");
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show("Atualizado com sucesso");
-                    textNome.Text = "";
-                    textID.Text = "";
-                    textGaveta.Text = "";
-                    textLaudo.Text = "";
-                    textMaterial.Text = "";
-                    textQuantidade.Text = "";
-                    mDataChegada.Text = "";
-                    mDataRetirada.Text = "";
-                    mHorarioChegada.Text = "";
-                    textAssistente.Text = "";
-                    textLegista.Text = "";
-                }
             }
         }
 
@@ -215,6 +154,11 @@ namespace WindowsFormsApp1
         {
             mHorarioRetirada.SelectionStart = 0;
             mHorarioRetirada.SelectionLength = 0;
+        }
+
+        private void dDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

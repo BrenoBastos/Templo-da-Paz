@@ -14,7 +14,21 @@ namespace WindowsFormsApp1
     {
         public DadosCadaverLM()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            comboBoxiniciar();
+
+        }
+        private void comboBoxiniciar()
+        {
+            if (cRetirada.Items.Count == 0)
+            {
+                cRetirada.Items.Add("Espera");
+                cRetirada.Items.Add("IML");
+                cRetirada.Items.Add("Funerária");
+                cRetirada.SelectedIndex = 0;
+                cRetirada.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            }
         }
 
         private void bAlterar_Click(object sender, EventArgs e)
@@ -25,91 +39,16 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Preencha todos os campos!");
                 return;
             }
-            else 
-            {
-                if (string.IsNullOrWhiteSpace(textAssistente.Text))
-                {
-                    MessageBox.Show("Campo 'Assistente' vazio, preencha-o!");
-                    return;
-                }
-                if (string.IsNullOrWhiteSpace(textLegista.Text))
-                {
-                    MessageBox.Show("Campo 'Legista' vazio, preencha-o!");
-                    return;
-                }
-                // Verifica cada campo individualmente
-                if (string.IsNullOrWhiteSpace(textNome.Text))
-                {
-                    MessageBox.Show("Campo 'Nome' vazio, preencha-o!");
-                    return;
-                }
-                // Verifica cada campo individualmente
-                if (string.IsNullOrWhiteSpace(textID.Text))
-                {
-                    MessageBox.Show("Campo 'ID' vazio, preencha-o!");
-                    return;
-                }
-                if (string.IsNullOrWhiteSpace(textGaveta.Text))
-                {
-                    MessageBox.Show("Campo 'Gaveta' vazio, preencha-o!");
-                    return;
-                }
-                if (string.IsNullOrWhiteSpace(textLaudo.Text))
-                {
-                    MessageBox.Show("Campo 'Laudo' vazio, preencha-o!");
-                    return;
-                }
-                if (string.IsNullOrWhiteSpace(textMaterial.Text))
-                {
-                    MessageBox.Show("Campo 'Material' vazio, preencha-o!");
-                    return;
-                }
-                if (string.IsNullOrWhiteSpace(textQuantidade.Text))
-                {
-                    MessageBox.Show("Campo 'Quantidade' vazio, preencha-o!");
-                    return;
-                }
-                if (!mDataChegada.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'Data Chegada' vazio, preencha-o!");
-                    return;
-                }
-                if (!mHorarioRetirada.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'Horario Retirada' vazio, preencha-o!");
-                    return;
-                }
-                if (!mDataObito.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'Data Óbito' vazio, preencha-o!");
-                    return;
-                }
-                if (!mHorárioÓbito.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'Horário Óbito' vazio, preencha-o!");
-                    return;
-                }
-                if (!mDataRetirada.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'Data Retirada' vazio, preencha-o!");
-                    return;
-                }
-
-                if (!mHorarioChegada.MaskCompleted)
-                {
-                    MessageBox.Show("Campo 'Horário Chegada' vazio, preencha-o!");
-                    return;
-                }
+           
+               
 
 
 
 
-
-
-                if (!int.TryParse(textID.Text, out int idValue))
+             else   if (!textID.Text.All(char.IsDigit))
                 {
-                    MessageBox.Show("ID inválido! Insira apenas números.");
-                    textID.Text = "";
+                MessageBox.Show("Por favor, insira apenas carecteres numéricos  no campo 'ID'.");
+                textID.Text = "";
                     return;
                 }
 
@@ -117,24 +56,28 @@ namespace WindowsFormsApp1
 
                 else if (textAssistente.Text.All(char.IsDigit))
                 {
-                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Assistente'.");
-                    return;
+                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Assistente'.");
+                textAssistente.Text = "";
+                return;
                 }
                 else if (textLegista.Text.All(char.IsDigit))
                 {
-                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Legista'.");
-                    return;
+                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Legista'.");
+                textLegista.Text = "";
+                return;
                 }
 
                 else if (textNome.Text.All(char.IsDigit))
                 {
-                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
-                    return;
+                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
+                textNome.Text = "";
+                return;
                 }
                 else if (textGaveta.Text.All(char.IsDigit))
                 {
-                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Gaveta'.");
-                    return;
+                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Gaveta'.");
+                textGaveta.Text = "";
+                return;
                 }
                 else
                 {
@@ -151,7 +94,7 @@ namespace WindowsFormsApp1
                     textAssistente.Text = "";
                     textLegista.Text = "";
 
-                }
+                
             }
         }
 
@@ -202,6 +145,11 @@ namespace WindowsFormsApp1
         {
             mHorárioÓbito.SelectionStart = 0;
             mHorárioÓbito.SelectionLength = 0;
+        }
+
+        private void cRetirada_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

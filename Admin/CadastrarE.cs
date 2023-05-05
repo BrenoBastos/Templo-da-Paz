@@ -33,6 +33,13 @@ namespace WindowsFormsApp1
                 return;
 
             }
+            else if (textFornecedor.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres  no campo 'Fornecedor'.");
+                textFornecedor.Text = "";
+                return;
+
+            }
             else
             {
                 MessageBox.Show("Cadastrado com sucesso");

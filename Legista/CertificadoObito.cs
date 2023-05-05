@@ -22,10 +22,11 @@ namespace WindowsFormsApp1
             InitializeComponent();
             comboBoxiniciar2();
             comboBoxiniciar3();
-          
-        }
-      
-        private void comboBoxiniciar2()
+           
+
+    }
+        
+    private void comboBoxiniciar2()
         {
             if (comboCor.Items.Count == 0)
             {
@@ -55,9 +56,7 @@ namespace WindowsFormsApp1
        
         private void button1_Click(object sender, EventArgs e)
         {
-            int dia = int.Parse(textDia.Text);
-            int ano= int.Parse(textAno.Text);
-            int mes = int.Parse(textMês.Text);
+            
             if (string.IsNullOrWhiteSpace(textNome.Text) || !textCpf.MaskCompleted || string.IsNullOrWhiteSpace(textMatricula.Text) || string.IsNullOrWhiteSpace(textMês.Text) || string.IsNullOrWhiteSpace(textAno.Text) || string.IsNullOrWhiteSpace(textDia.Text) || string.IsNullOrWhiteSpace(textAverbacoes.Text) || string.IsNullOrWhiteSpace(textAnotacoes.Text) || string.IsNullOrWhiteSpace(textNaturalidade.Text) || string.IsNullOrWhiteSpace(textLocal.Text) || !textDocumentoIdentificação.MaskCompleted
                  || string.IsNullOrWhiteSpace(textCausadaMorte.Text) || string.IsNullOrWhiteSpace(textEstadoCivil.Text) || string.IsNullOrWhiteSpace(textFiliação.Text) || !mEleitor.MaskCompleted  || string.IsNullOrWhiteSpace(textDeclarante.Text) || !mDataFalecimento.MaskCompleted ||
                  string.IsNullOrWhiteSpace(textSepultamento.Text)||string.IsNullOrWhiteSpace(textAnotacoes.Text)|| string.IsNullOrWhiteSpace(textNomeMedico.Text))
@@ -65,23 +64,28 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Preencha todos os campos!");
                 return;
             }
-            else if (mes < 1 || mes > 12)
-            {
-                MessageBox.Show("O campo'Mês' deve estar entre 1 e 12.");
 
+            int dia, mes, ano;
+
+            if (!int.TryParse(textDia.Text, out dia) || dia < 1 || dia > 31)
+            {
+                MessageBox.Show("O campo 'Dia' deve estar entre 1 e 31.");
+                return;
+            }
+
+            if (!int.TryParse(textMês.Text, out mes) || mes < 1 || mes > 12)
+            {
+                MessageBox.Show("O campo 'Mês' deve estar entre 1 e 12.");
+                return;
+            }
+
+            if (!int.TryParse(textAno.Text, out ano) || ano != DateTime.Now.Year)
+            {
+                MessageBox.Show("O campo 'Ano' deve estar no ano atual.");
+                return;
             }
 
 
-            else if (dia < 1 || dia > 31)
-            {
-                MessageBox.Show("O campo'Dia' deve estar entre 1 e 31.");
-
-            }
-            else if (ano< 1950)
-            {
-                MessageBox.Show("O campo'Ano' deve estar no ano atual ou quando se tornou legal a certidão");
-
-            }
 
             else
             {

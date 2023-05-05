@@ -35,10 +35,10 @@ namespace WindowsFormsApp1
             this.textNome1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dDados = new System.Windows.Forms.DataGridView();
-            this.bVoltar = new System.Windows.Forms.Button();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,18 +95,7 @@ namespace WindowsFormsApp1
             this.dDados.Name = "dDados";
             this.dDados.Size = new System.Drawing.Size(347, 150);
             this.dDados.TabIndex = 19;
-            this.dDados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellClick);
             this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
-            // 
-            // bVoltar
-            // 
-            this.bVoltar.Location = new System.Drawing.Point(42, 351);
-            this.bVoltar.Name = "bVoltar";
-            this.bVoltar.Size = new System.Drawing.Size(75, 23);
-            this.bVoltar.TabIndex = 92;
-            this.bVoltar.Text = "Voltar";
-            this.bVoltar.UseVisualStyleBackColor = true;
-            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
             // Nome
             // 
@@ -126,6 +115,16 @@ namespace WindowsFormsApp1
             this.dStatus.Name = "dStatus";
             this.dStatus.ReadOnly = true;
             // 
+            // bVoltar
+            // 
+            this.bVoltar.Location = new System.Drawing.Point(42, 351);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.TabIndex = 92;
+            this.bVoltar.Text = "Voltar";
+            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
+            // 
             // DadosA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +139,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.bLocalizar);
             this.Name = "DadosA";
             this.Text = "DadosA";
+            this.DoubleClick += new System.EventHandler(this.DadosA_DoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

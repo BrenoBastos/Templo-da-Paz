@@ -24,23 +24,30 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Por favor, preencha todos os campos.");
                 return;
             }
-          
+
+
+
+         else   if (!textQuantidade.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Quantidade'.");
+                textQuantidade.Text = "";
+                return;
+            }
+            else if (textFornecedor.Text.All(char.IsDigit))
+            {
+                MessageBox.Show( "Por favor, insira apenas caracteres  no campo 'Fornecedor'.");
+                textFornecedor.Text = "";
+
+            }
             else
             {
-                
+                MessageBox.Show("Adicionado com sucesso");
+                textMaterial.Text = "";
+                textFornecedor.Text = "";
 
-                if ( !textQuantidade.Text.All(char.IsDigit))
-                {
-                    MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Quantidade'.");
-                    return;
-                }
+                textQuantidade.Text = "";
+
             }
-            MessageBox.Show("Adicionado com sucesso");
-            textMaterial.Text = "";
-            textFornecedor.Text = "";
-
-            textQuantidade.Text = "";
-
         }
 
         private void bVoltar_Click(object sender, EventArgs e)

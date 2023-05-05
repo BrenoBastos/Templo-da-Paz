@@ -21,18 +21,18 @@ namespace WindowsFormsApp1
             formatarCampoSenha();
             comboBoxiniciar3();
             comboBoxiniciar4();
-
+            FormatarContato();
         }
         public int value;
         private void comboBoxiniciar3()
         {
-            if (cEstado.Items.Count == 0)
+            if (cStatus.Items.Count == 0)
             {
-                cEstado.Items.Add("Ativo");
-                cEstado.Items.Add("Inativo");
+                cStatus.Items.Add("Ativo");
+                cStatus.Items.Add("Inativo");
 
-                cEstado.SelectedIndex = 0;
-                cEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+                cStatus.SelectedIndex = 0;
+                cStatus.DropDownStyle = ComboBoxStyle.DropDownList;
 
             }
         }
@@ -74,12 +74,7 @@ namespace WindowsFormsApp1
 
                 cContato.DropDownStyle = ComboBoxStyle.DropDownList;
 
-                tContato.Text = "Celular";
-                mContato.Mask = "(99) 99999-9999";
-                mContato.Text = "";
-                tContato.Visible = true;
-                mContato.Visible = true;
-
+                
 
 
             }
@@ -92,12 +87,23 @@ namespace WindowsFormsApp1
 
         }
 
-       
-       
+        private void FormatarContato()
+        {
+            Celular.Location = new Point(300, 216);
+            mCelular.Location = new Point(374, 209);
 
-       
+            Celular.Visible = true;
+            Telefone.Visible = false;
+            mCelular.Enabled = true;
+            mCelular.Visible = true;
 
-       
+            mCelular.Text = "";
+        }
+
+
+
+
+
 
         private void textID_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -111,24 +117,35 @@ namespace WindowsFormsApp1
         private void bCadastrar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textNome.Text) || !textCpf.MaskCompleted || !textRG.MaskCompleted ||
-                                  string.IsNullOrWhiteSpace(textEndereco.Text) || !mDataNascimento.MaskCompleted || !mContato.MaskCompleted)
+                                  string.IsNullOrWhiteSpace(textEndereco.Text) || !mDataNascimento.MaskCompleted || string.IsNullOrWhiteSpace(mCelular.Text))
             {
                 MessageBox.Show("Preencha todos os campos!");
                 return;
             }
-            else
-            {
-
+           
                
 
-                if (!int.TryParse(textID.Text, out int idValue))
+              else  if (!textID.Text.All(char.IsDigit))
                 {
-                    MessageBox.Show("ID inválido! Insira apenas números.");
-                    textID.Text = "";
+                MessageBox.Show("Por favor, insira apenas carecteres numéricos  no campo 'ID'.");
+                textID.Text = "";
                     return;
                 }
 
+                else if (cContato.SelectedItem.ToString() == "Celular" && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{5}-\d{4}$"))
+                {
+                MessageBox.Show("Por favor, insira apenas carecteres numéricos  no  campo 'Contato' inválido, preencha-o com um número de contato válido ");
+                mCelular.Text = "";
+                    return;
+                }
 
+                else if (cContato.SelectedItem.ToString() == "Telefone" && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{4}-\d{4}$"))
+                {
+                MessageBox.Show("Por favor, insira apenas carecteres numéricos  no  campo 'Contato' inválido, preencha-o com um número de contato válido ");
+                mCelular.Text = "";
+                    return;
+                }
+               
 
 
                 else if (textNome.Text.All(char.IsDigit))
@@ -145,14 +162,14 @@ namespace WindowsFormsApp1
                     textRG.Text = "";
                     textEndereco.Text = "";
                     mDataNascimento.Text = "";
-                    mContato.Text = "";
+                    mCelular.Text = "";
                     textSenha.Text = "";
                     cEstadoCivil.SelectedIndex = 0;
                     cSexo.SelectedIndex = 0;
                     cContato.SelectedIndex = 0;
                     textID.Text = "";
                 }
-            }
+            
         }
 
         private void mDataNascimento_Click(object sender, EventArgs e)
@@ -197,32 +214,32 @@ namespace WindowsFormsApp1
             novaTela.ShowDialog();
         }
 
-        private void mContato_Click(object sender, EventArgs e)
-        {
-            mContato.SelectionStart = 0;
-            mContato.SelectionLength = 0;
-        }
+       
 
         private void cContato_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cContato.SelectedItem.ToString() == "Celular")
             {
-                {
-                    tContato.Text = "Celular";
-                    mContato.Mask = "(99) 99999-9999";
-                    mContato.Text = "";
-                    tContato.Visible = true;
-                    mContato.Visible = true;
 
-                }
+                Celular.Visible = true;
+                Telefone.Visible = false;
+                mCelular.Enabled = true;
+                mCelular.Visible = true;
+                mCelular.Text = "";
+                Celular.Location = new Point(300, 216);
+                mCelular.Location = new Point(374, 209);
+
+
             }
             else if (cContato.SelectedItem.ToString() == "Telefone")
             {
-                tContato.Text = "Telefone";
-                mContato.Mask = "(99) 9999-9999";
-                mContato.Text = "";
-                tContato.Visible = true;
-                mContato.Visible = true;
+                Celular.Visible = false;
+                Telefone.Visible = true;
+
+                mCelular.Text = "";
+                Telefone.Location = new Point(300, 216);
+
+
             }
         }
     }

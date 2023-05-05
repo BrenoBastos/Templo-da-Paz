@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textNome = new System.Windows.Forms.TextBox();
             this.textID = new System.Windows.Forms.TextBox();
             this.textGaveta = new System.Windows.Forms.TextBox();
@@ -44,7 +43,7 @@
             this.ID = new System.Windows.Forms.Label();
             this.Nome = new System.Windows.Forms.Label();
             this.bAtualizar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dDados = new System.Windows.Forms.DataGridView();
             this.NomeD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GavetaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,27 +61,14 @@
             this.textLegista = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
-            this.mHorarioRetirada = new System.Windows.Forms.MaskedTextBox();
             this.HorárioRetirada = new System.Windows.Forms.Label();
             this.mHorárioÓbito = new System.Windows.Forms.MaskedTextBox();
             this.mDataObito = new System.Windows.Forms.MaskedTextBox();
             this.HorárioÓbito = new System.Windows.Forms.Label();
             this.DataÓbito = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.mHorarioRetirada = new System.Windows.Forms.MaskedTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Espera",
-            "IML",
-            "Funerária"});
-            this.comboBox1.Location = new System.Drawing.Point(662, 176);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 48;
             // 
             // textNome
             // 
@@ -223,20 +209,21 @@
             this.bAtualizar.UseVisualStyleBackColor = true;
             this.bAtualizar.Click += new System.EventHandler(this.bAtualizar_Click);
             // 
-            // dataGridView1
+            // dDados
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NomeD,
             this.IDData,
             this.GavetaData,
             this.DataChegadaData,
             this.HorariChegadaData,
             this.dAssistente});
-            this.dataGridView1.Location = new System.Drawing.Point(65, 322);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(718, 128);
-            this.dataGridView1.TabIndex = 25;
+            this.dDados.Location = new System.Drawing.Point(65, 322);
+            this.dDados.Name = "dDados";
+            this.dDados.Size = new System.Drawing.Size(718, 128);
+            this.dDados.TabIndex = 25;
+            this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
             // 
             // NomeD
             // 
@@ -365,16 +352,6 @@
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
-            // mHorarioRetirada
-            // 
-            this.mHorarioRetirada.Location = new System.Drawing.Point(671, 177);
-            this.mHorarioRetirada.Mask = "00:00";
-            this.mHorarioRetirada.Name = "mHorarioRetirada";
-            this.mHorarioRetirada.Size = new System.Drawing.Size(100, 20);
-            this.mHorarioRetirada.TabIndex = 76;
-            this.mHorarioRetirada.ValidatingType = typeof(System.DateTime);
-            this.mHorarioRetirada.Click += new System.EventHandler(this.mHorarioRetirada_Click);
-            // 
             // HorárioRetirada
             // 
             this.HorárioRetirada.AutoSize = true;
@@ -422,6 +399,16 @@
             this.DataÓbito.TabIndex = 77;
             this.DataÓbito.Text = "Data Óbito";
             // 
+            // mHorarioRetirada
+            // 
+            this.mHorarioRetirada.Location = new System.Drawing.Point(671, 178);
+            this.mHorarioRetirada.Mask = "00:00";
+            this.mHorarioRetirada.Name = "mHorarioRetirada";
+            this.mHorarioRetirada.Size = new System.Drawing.Size(100, 20);
+            this.mHorarioRetirada.TabIndex = 76;
+            this.mHorarioRetirada.ValidatingType = typeof(System.DateTime);
+            this.mHorarioRetirada.Click += new System.EventHandler(this.mHorarioRetirada_Click);
+            // 
             // AtualizarCadaverL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,7 +430,6 @@
             this.Controls.Add(this.textMaterial);
             this.Controls.Add(this.cRetirada);
             this.Controls.Add(this.textLaudo);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textNome);
             this.Controls.Add(this.textID);
             this.Controls.Add(this.textGaveta);
@@ -460,18 +446,16 @@
             this.Controls.Add(this.ID);
             this.Controls.Add(this.Nome);
             this.Controls.Add(this.bAtualizar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dDados);
             this.Name = "AtualizarCadaverL";
             this.Text = "AtualizarCadaverT";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textNome;
         private System.Windows.Forms.TextBox textID;
         private System.Windows.Forms.TextBox textGaveta;
@@ -487,7 +471,7 @@
         private System.Windows.Forms.Label ID;
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.Button bAtualizar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dDados;
         private System.Windows.Forms.RichTextBox textLaudo;
         private System.Windows.Forms.ComboBox cRetirada;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeD;
@@ -505,11 +489,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dAssistente;
         private System.Windows.Forms.Button bVoltar;
-        private System.Windows.Forms.MaskedTextBox mHorarioRetirada;
         private System.Windows.Forms.Label HorárioRetirada;
         private System.Windows.Forms.MaskedTextBox mHorárioÓbito;
         private System.Windows.Forms.MaskedTextBox mDataObito;
         private System.Windows.Forms.Label HorárioÓbito;
         private System.Windows.Forms.Label DataÓbito;
+        private System.Windows.Forms.MaskedTextBox mHorarioRetirada;
     }
 }

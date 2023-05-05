@@ -30,25 +30,32 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Preencha todos os campos!");
                 return;
             }
-            else if (!int.TryParse(textID.Text, out int idValue))
+            else if (!textID.Text.All(char.IsDigit))
                 {
-                    MessageBox.Show("ID inválido! Insira apenas números.");
-                    textID.Text = "";
+                MessageBox.Show("Por favor, insira apenas carecteres numéricos  no campo 'ID'.");
+                textID.Text = "";
                     return;
                 }
 
+            else if (textAssistente.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Assistente'.");
+                textAssistente.Text = "";
+                return;
+            }
 
 
-
-                else if (textNome.Text.All(char.IsDigit))
+            else if (textNome.Text.All(char.IsDigit))
                 {
                     MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
-                    return;
+                textNome.Text = "";
+                return;
                 }
                 else if (textGaveta.Text.All(char.IsDigit))
                 {
                     MessageBox.Show("Por favor, insira apenas carecteres no campo 'Gaveta'.");
-                    return;
+                textGaveta.Text = "";
+                return;
                 }
                 else
                 {

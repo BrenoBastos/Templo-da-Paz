@@ -66,5 +66,13 @@ namespace WindowsFormsApp1
             Admin1 novaTela = new Admin1();
             novaTela.ShowDialog();
         }
+
+        private void DadosA_DoubleClick(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            AlterarA novaTela = new AlterarA();
+            novaTela.ShowDialog();
+        }
     }
 }
