@@ -63,6 +63,7 @@ namespace WindowsFormsApp1
             this.mCelular = new System.Windows.Forms.TextBox();
             this.Telefone = new System.Windows.Forms.Label();
             this.Celular = new System.Windows.Forms.Label();
+            this.Contato1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lSenha
@@ -234,7 +235,7 @@ namespace WindowsFormsApp1
             // 
             // bAlterar
             // 
-            this.bAlterar.Location = new System.Drawing.Point(201, 224);
+            this.bAlterar.Location = new System.Drawing.Point(241, 297);
             this.bAlterar.Name = "bAlterar";
             this.bAlterar.Size = new System.Drawing.Size(75, 23);
             this.bAlterar.TabIndex = 29;
@@ -307,7 +308,7 @@ namespace WindowsFormsApp1
             // 
             // mCRM
             // 
-            this.mCRM.Location = new System.Drawing.Point(277, 181);
+            this.mCRM.Location = new System.Drawing.Point(273, 271);
             this.mCRM.Mask = "0000000";
             this.mCRM.Name = "mCRM";
             this.mCRM.Size = new System.Drawing.Size(100, 20);
@@ -318,7 +319,7 @@ namespace WindowsFormsApp1
             // CRMLegista
             // 
             this.CRMLegista.AutoSize = true;
-            this.CRMLegista.Location = new System.Drawing.Point(198, 184);
+            this.CRMLegista.Location = new System.Drawing.Point(158, 297);
             this.CRMLegista.Name = "CRMLegista";
             this.CRMLegista.Size = new System.Drawing.Size(68, 13);
             this.CRMLegista.TabIndex = 84;
@@ -352,7 +353,7 @@ namespace WindowsFormsApp1
             // Telefone
             // 
             this.Telefone.AutoSize = true;
-            this.Telefone.Location = new System.Drawing.Point(182, 159);
+            this.Telefone.Location = new System.Drawing.Point(192, 161);
             this.Telefone.Name = "Telefone";
             this.Telefone.Size = new System.Drawing.Size(49, 13);
             this.Telefone.TabIndex = 89;
@@ -367,11 +368,21 @@ namespace WindowsFormsApp1
             this.Celular.TabIndex = 88;
             this.Celular.Text = "Celular";
             // 
+            // Contato1
+            // 
+            this.Contato1.AutoSize = true;
+            this.Contato1.Location = new System.Drawing.Point(196, 189);
+            this.Contato1.Name = "Contato1";
+            this.Contato1.Size = new System.Drawing.Size(44, 13);
+            this.Contato1.TabIndex = 91;
+            this.Contato1.Text = "Contato";
+            // 
             // AlterarL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 450);
+            this.Controls.Add(this.Contato1);
             this.Controls.Add(this.mCelular);
             this.Controls.Add(this.Telefone);
             this.Controls.Add(this.Celular);
@@ -449,5 +460,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox mCelular;
         private System.Windows.Forms.Label Telefone;
         private System.Windows.Forms.Label Celular;
+        private System.Windows.Forms.Label Contato1;
     }
 }

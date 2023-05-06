@@ -30,6 +30,8 @@ namespace WindowsFormsApp1
         {
             if (cContato.Items.Count == 0)
             {
+                cContato.Items.Add("Contato");
+
                 cContato.Items.Add("Celular");
                 cContato.Items.Add("Telefone");
 
@@ -42,11 +44,13 @@ namespace WindowsFormsApp1
         private void FormatarContato()
         {
 
-            Celular.Visible = true;
+        Contato1.Visible = true;
             Telefone.Visible = false;
             mCelular.Enabled = true;
             mCelular.Visible = true;
-           
+            Celular.Visible = false;
+            Contato1.Location = new Point(192, 125);
+
             mCelular.Text = "";
         }
         private void comboBoxiniciar1()
@@ -203,7 +207,16 @@ namespace WindowsFormsApp1
                     cContato.SelectedIndex = 0;
                     cStatus.SelectedIndex = 0;
                     textID.Text = "";
-                }
+                Celular.Visible = false;
+                Telefone.Visible = false;
+                mCelular.Enabled = true;
+                mCelular.Visible = true;
+                Contato1.Visible = true;
+
+                cContato.SelectedIndex = 0;
+
+                mCelular.Text = "";
+            }
             
         
     }
@@ -269,6 +282,7 @@ namespace WindowsFormsApp1
         {
             if (cContato.SelectedItem.ToString() == "Celular")
             {
+                Contato1.Visible = false;
 
                 Celular.Visible = true;
                 Telefone.Visible = false;
@@ -281,6 +295,8 @@ namespace WindowsFormsApp1
             }
             else if (cContato.SelectedItem.ToString() == "Telefone")
             {
+                Contato1.Visible = false;
+
                 Celular.Visible = false;
                 Telefone.Visible = true;
             

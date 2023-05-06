@@ -57,6 +57,7 @@ namespace WindowsFormsApp1
             this.Celular = new System.Windows.Forms.Label();
             this.Telefone = new System.Windows.Forms.Label();
             this.mCelular = new System.Windows.Forms.TextBox();
+            this.Contato1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -307,11 +308,21 @@ namespace WindowsFormsApp1
             this.mCelular.Size = new System.Drawing.Size(100, 20);
             this.mCelular.TabIndex = 69;
             // 
+            // Contato1
+            // 
+            this.Contato1.AutoSize = true;
+            this.Contato1.Location = new System.Drawing.Point(280, 214);
+            this.Contato1.Name = "Contato1";
+            this.Contato1.Size = new System.Drawing.Size(44, 13);
+            this.Contato1.TabIndex = 70;
+            this.Contato1.Text = "Contato";
+            // 
             // AlterarA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 450);
+            this.Controls.Add(this.Contato1);
             this.Controls.Add(this.mCelular);
             this.Controls.Add(this.Telefone);
             this.Controls.Add(this.Celular);
@@ -377,5 +388,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label Celular;
         private System.Windows.Forms.Label Telefone;
         private System.Windows.Forms.TextBox mCelular;
+        private System.Windows.Forms.Label Contato1;
     }
 }

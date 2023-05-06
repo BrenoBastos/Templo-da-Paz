@@ -18,7 +18,8 @@ namespace WindowsFormsApp1
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {    // Verifica se os campos obrigatórios foram preenchidos
+
             if (string.IsNullOrWhiteSpace(textMaterial.Text) || string.IsNullOrWhiteSpace(textQuantidade.Text) || string.IsNullOrWhiteSpace(textFornecedor.Text))
             {
                 MessageBox.Show("Por favor, preencha todos os campos.");
@@ -28,11 +29,13 @@ namespace WindowsFormsApp1
 
 
          else   if (!textQuantidade.Text.All(char.IsDigit))
-            {
+            {    // Verifica se o campo quantidade contém somente dígitos
+
                 MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Quantidade'.");
                 textQuantidade.Text = "";
                 return;
-            }
+            }    // Verifica se o campo fornecedor não contém somente dígitos
+
             else if (textFornecedor.Text.All(char.IsDigit))
             {
                 MessageBox.Show( "Por favor, insira apenas caracteres  no campo 'Fornecedor'.");
@@ -40,7 +43,8 @@ namespace WindowsFormsApp1
 
             }
             else
-            {
+            {    // Se passar por todas as validações, adiciona o item
+
                 MessageBox.Show("Adicionado com sucesso");
                 textMaterial.Text = "";
                 textFornecedor.Text = "";
@@ -52,8 +56,10 @@ namespace WindowsFormsApp1
 
         private void bVoltar_Click(object sender, EventArgs e)
         {
+            // Esconde a tela atual
             this.Hide();
 
+            // Cria uma nova instância da tela Admin1 e a exibe como diálogo
             Admin1 novaTela = new Admin1();
             novaTela.ShowDialog();
         }
