@@ -27,7 +27,9 @@ namespace WindowsFormsApp1
             // Formata o campo do telefone/celular
             FormatarContato(); 
             // Formata o campo da senha
-            formatarCampoSenha(); 
+            formatarCampoSenha();
+            textID.Enabled = false;
+
         }
         // Declaração de uma variável pública "value"
         public int value; 
@@ -72,7 +74,7 @@ namespace WindowsFormsApp1
                 // Adiciona os itens de sexo ao combobox
                 cSexo.Items.Add("Masculino");
                 cSexo.Items.Add("Feminino");
-                cSexo.Items.Add("Outro");
+                cSexo.Items.Add("Não definido");
                 // Seleciona o primeiro item do combobox
                 cSexo.SelectedIndex = 0; 
                 // Define o estilo do combobox como DropDownList
@@ -86,6 +88,8 @@ namespace WindowsFormsApp1
             {
                 // Adiciona o item "Ativo" ao combobox
                 cStatus.Items.Add("Ativo");
+                cStatus.Items.Add("Inativo");
+
                 // Seleciona o primeiro item do combobox
                 cStatus.SelectedIndex = 0;
                 // Define o estilo do combobox como DropDownList

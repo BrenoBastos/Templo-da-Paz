@@ -82,7 +82,7 @@ namespace WindowsFormsApp1
             {
                 cSexo.Items.Add("Masculino");
                 cSexo.Items.Add("Feminino");
-                cSexo.Items.Add("Outro");
+                cSexo.Items.Add("Não definido");
 
                 cSexo.SelectedIndex = 0;
                 // Define o estilo de exibição do combobox como DropDownList.

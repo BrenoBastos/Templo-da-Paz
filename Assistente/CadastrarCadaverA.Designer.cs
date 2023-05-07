@@ -43,6 +43,8 @@ namespace WindowsFormsApp1
             this.textAssistente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
+            this.comboCor = new System.Windows.Forms.ComboBox();
+            this.Cor = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bCadastrar
@@ -176,11 +178,30 @@ namespace WindowsFormsApp1
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
+            // comboCor
+            // 
+            this.comboCor.FormattingEnabled = true;
+            this.comboCor.Location = new System.Drawing.Point(62, 137);
+            this.comboCor.Name = "comboCor";
+            this.comboCor.Size = new System.Drawing.Size(121, 21);
+            this.comboCor.TabIndex = 113;
+            // 
+            // Cor
+            // 
+            this.Cor.AutoSize = true;
+            this.Cor.Location = new System.Drawing.Point(19, 133);
+            this.Cor.Name = "Cor";
+            this.Cor.Size = new System.Drawing.Size(23, 13);
+            this.Cor.TabIndex = 112;
+            this.Cor.Text = "Cor";
+            // 
             // CadastrarCadaverA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboCor);
+            this.Controls.Add(this.Cor);
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.textAssistente);
             this.Controls.Add(this.label1);
@@ -218,5 +239,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox textAssistente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bVoltar;
+        private System.Windows.Forms.ComboBox comboCor;
+        private System.Windows.Forms.Label Cor;
     }
 }

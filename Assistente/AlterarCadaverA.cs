@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
         public AlterarCadaverA()
         {
             InitializeComponent();
+            comboBoxiniciar2();
         }
 
         private void mDataChegada_Click(object sender, EventArgs e)
@@ -30,7 +31,22 @@ namespace WindowsFormsApp1
             // Define o comprimento da seleção para 0
             mHorarioChegada.SelectionLength = 0;
         }
-
+        private void comboBoxiniciar2()
+        {
+            // Verifica se o ComboBox não tem nenhum item
+            if (comboCor.Items.Count == 0)
+            {
+                // Adiciona os itens e seleciona o primeiro item
+                comboCor.Items.Add("Branco");
+                comboCor.Items.Add("Preto");
+                comboCor.Items.Add("Pardo");
+                comboCor.Items.Add("Amarelo");
+                comboCor.Items.Add("Indígena");
+                comboCor.SelectedIndex = 0;
+                // Define o estilo de dropdown como DropDownList, para impedir a inserção de itens
+                comboCor.DropDownStyle = ComboBoxStyle.DropDownList;
+            }
+        }
         private void bAlterar_Click(object sender, EventArgs e)
         {
             // Verifica se algum campo obrigatório está vazio ou incompleto
@@ -85,6 +101,8 @@ namespace WindowsFormsApp1
                 mDataChegada.Text = "";
                 mHorarioChegada.Text = "";
                 textAssistente.Text = "";
+                comboCor.SelectedIndex = 0;
+
             }
         }
         

@@ -20,6 +20,8 @@ namespace WindowsFormsApp1
             comboBoxiniciar1();
             comboBoxiniciar2();
             FormatarContato();
+            textID.Enabled = false;
+
         }
 
         //Função para inicializar o ComboBox de Status
@@ -30,6 +32,7 @@ namespace WindowsFormsApp1
             {
                 //Adiciona a opção "Ativo" no ComboBox de Status
                 cStatus.Items.Add("Ativo");
+                cStatus.Items.Add("Inativo");
 
                 //Seleciona a primeira opção do ComboBox de Status
                 cStatus.SelectedIndex = 0;

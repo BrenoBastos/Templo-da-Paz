@@ -22,6 +22,8 @@ namespace WindowsFormsApp1
             comboBoxiniciar3();
             comboBoxiniciar4();
             FormatarContato();
+            textID.Enabled = false;
+
         }
         // Método para iniciar o primeiro combo box de Estado Civil
         private void comboBoxiniciar1()
@@ -52,7 +54,7 @@ namespace WindowsFormsApp1
                 // Adiciona os valores no combo box
                 cSexo.Items.Add("Masculino");
                 cSexo.Items.Add("Feminino");
-                cSexo.Items.Add("Outro");
+                cSexo.Items.Add("Não definido");
 
                 // Seleciona o primeiro valor do combo box
                 cSexo.SelectedIndex = 0;
@@ -70,6 +72,7 @@ namespace WindowsFormsApp1
             {
                 // Adiciona os valores no combo box
                 cStatus.Items.Add("Ativo");
+                cStatus.Items.Add("Inativo");
                 cStatus.Items.Add("Inativo");
 
                 // Seleciona o primeiro valor do combo box

@@ -15,8 +15,26 @@ namespace WindowsFormsApp1
         public CadastrarCadaverA()
         {
             InitializeComponent();
-        }
+            comboBoxiniciar2();
+            textID.Enabled = false;
 
+        }
+        private void comboBoxiniciar2()
+        {
+            // Verifica se o ComboBox não tem nenhum item
+            if (comboCor.Items.Count == 0)
+            {
+                // Adiciona os itens e seleciona o primeiro item
+                comboCor.Items.Add("Branco");
+                comboCor.Items.Add("Preto");
+                comboCor.Items.Add("Pardo");
+                comboCor.Items.Add("Amarelo");
+                comboCor.Items.Add("Indígena");
+                comboCor.SelectedIndex = 0;
+                // Define o estilo de dropdown como DropDownList, para impedir a inserção de itens
+                comboCor.DropDownStyle = ComboBoxStyle.DropDownList;
+            }
+        }
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 

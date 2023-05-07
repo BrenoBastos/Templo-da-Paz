@@ -103,7 +103,7 @@ namespace WindowsFormsApp1
                 // Adiciona os itens "Masculino", "Feminino" e "Outro" à lista de itens.
                 cSexo.Items.Add("Masculino");
                 cSexo.Items.Add("Feminino");
-                cSexo.Items.Add("Outro");
+                cSexo.Items.Add("Não definido");
 
                 // Define o item selecionado como o primeiro item da lista.
                 cSexo.SelectedIndex = 0;

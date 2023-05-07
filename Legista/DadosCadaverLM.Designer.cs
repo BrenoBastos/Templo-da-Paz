@@ -61,6 +61,8 @@ namespace WindowsFormsApp1
             this.DataÓbito = new System.Windows.Forms.Label();
             this.mHorarioRetirada = new System.Windows.Forms.MaskedTextBox();
             this.HorárioRetirada = new System.Windows.Forms.Label();
+            this.comboCor = new System.Windows.Forms.ComboBox();
+            this.Cor = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Quantidade
@@ -106,7 +108,7 @@ namespace WindowsFormsApp1
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(83, 98);
+            this.textNome.Location = new System.Drawing.Point(101, 31);
             this.textNome.MaximumSize = new System.Drawing.Size(100, 100);
             this.textNome.MinimumSize = new System.Drawing.Size(20, 20);
             this.textNome.Name = "textNome";
@@ -115,7 +117,7 @@ namespace WindowsFormsApp1
             // 
             // textID
             // 
-            this.textID.Location = new System.Drawing.Point(83, 133);
+            this.textID.Location = new System.Drawing.Point(114, 68);
             this.textID.MaximumSize = new System.Drawing.Size(100, 100);
             this.textID.MinimumSize = new System.Drawing.Size(20, 20);
             this.textID.Name = "textID";
@@ -227,7 +229,7 @@ namespace WindowsFormsApp1
             // ID
             // 
             this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(42, 133);
+            this.ID.Location = new System.Drawing.Point(55, 75);
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(18, 13);
             this.ID.TabIndex = 56;
@@ -236,7 +238,7 @@ namespace WindowsFormsApp1
             // Nome
             // 
             this.Nome.AutoSize = true;
-            this.Nome.Location = new System.Drawing.Point(42, 98);
+            this.Nome.Location = new System.Drawing.Point(42, 38);
             this.Nome.Name = "Nome";
             this.Nome.Size = new System.Drawing.Size(35, 13);
             this.Nome.TabIndex = 55;
@@ -356,11 +358,30 @@ namespace WindowsFormsApp1
             this.HorárioRetirada.Text = "Horário Retirada";
             this.HorárioRetirada.Click += new System.EventHandler(this.mHorarioRetirada_Click);
             // 
+            // comboCor
+            // 
+            this.comboCor.FormattingEnabled = true;
+            this.comboCor.Location = new System.Drawing.Point(93, 140);
+            this.comboCor.Name = "comboCor";
+            this.comboCor.Size = new System.Drawing.Size(121, 21);
+            this.comboCor.TabIndex = 109;
+            // 
+            // Cor
+            // 
+            this.Cor.AutoSize = true;
+            this.Cor.Location = new System.Drawing.Point(50, 136);
+            this.Cor.Name = "Cor";
+            this.Cor.Size = new System.Drawing.Size(23, 13);
+            this.Cor.TabIndex = 106;
+            this.Cor.Text = "Cor";
+            // 
             // DadosCadaverLM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboCor);
+            this.Controls.Add(this.Cor);
             this.Controls.Add(this.mHorarioRetirada);
             this.Controls.Add(this.HorárioRetirada);
             this.Controls.Add(this.mHorárioÓbito);
@@ -434,5 +455,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label DataÓbito;
         private System.Windows.Forms.MaskedTextBox mHorarioRetirada;
         private System.Windows.Forms.Label HorárioRetirada;
+        private System.Windows.Forms.ComboBox comboCor;
+        private System.Windows.Forms.Label Cor;
     }
 }

@@ -18,6 +18,8 @@ namespace WindowsFormsApp1
             // Chama o método que inicializa a ComboBox
 
             comboBoxiniciar();
+            comboBoxiniciar2();
+
 
         }// Método que inicializa a ComboBox
 
@@ -39,7 +41,22 @@ namespace WindowsFormsApp1
 
             }
         }
-
+        private void comboBoxiniciar2()
+        {
+            // Verifica se o ComboBox não tem nenhum item
+            if (comboCor.Items.Count == 0)
+            {
+                // Adiciona os itens e seleciona o primeiro item
+                comboCor.Items.Add("Branco");
+                comboCor.Items.Add("Preto");
+                comboCor.Items.Add("Pardo");
+                comboCor.Items.Add("Amarelo");
+                comboCor.Items.Add("Indígena");
+                comboCor.SelectedIndex = 0;
+                // Define o estilo de dropdown como DropDownList, para impedir a inserção de itens
+                comboCor.DropDownStyle = ComboBoxStyle.DropDownList;
+            }
+        }
         private void bAlterar_Click(object sender, EventArgs e)
         {
             // Verifica se algum campo obrigatório está vazio
@@ -105,8 +122,11 @@ namespace WindowsFormsApp1
                 mHorarioChegada.Text = "";
                 textAssistente.Text = "";
                 textLegista.Text = "";
-            
-        }
+                cRetirada.SelectedIndex = 0;
+                comboCor.SelectedIndex = 0;
+
+
+            }
         }
 
         private void mDataChegada_Click(object sender, EventArgs e)

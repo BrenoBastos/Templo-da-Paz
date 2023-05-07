@@ -17,9 +17,11 @@ namespace WindowsFormsApp1
             InitializeComponent();
             // Inicializa o ComboBox
             comboBoxiniciar();
+            comboBoxiniciar2();
+
             // Define o modo de seleção do DataGridView
-     
-        dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
         }
         private void comboBoxiniciar()
@@ -36,7 +38,22 @@ namespace WindowsFormsApp1
 
             }
         }
-
+        private void comboBoxiniciar2()
+        {
+            // Verifica se o ComboBox não tem nenhum item
+            if (comboCor.Items.Count == 0)
+            {
+                // Adiciona os itens e seleciona o primeiro item
+                comboCor.Items.Add("Branco");
+                comboCor.Items.Add("Preto");
+                comboCor.Items.Add("Pardo");
+                comboCor.Items.Add("Amarelo");
+                comboCor.Items.Add("Indígena");
+                comboCor.SelectedIndex = 0;
+                // Define o estilo de dropdown como DropDownList, para impedir a inserção de itens
+                comboCor.DropDownStyle = ComboBoxStyle.DropDownList;
+            }
+        }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 

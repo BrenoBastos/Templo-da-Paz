@@ -24,7 +24,6 @@ namespace WindowsFormsApp1
 
             comboBoxiniciar2();
             comboBoxiniciar3();
-           
 
     }
 
@@ -185,7 +184,9 @@ namespace WindowsFormsApp1
                         }
                         // retorna que pdf foi gerado com sucesso ,limpa os campos e retorna o combobox ao padrão
                         MessageBox.Show("PDF gerado com sucesso!");
-                        textNome.Text = "";
+                comboCor.SelectedIndex = 0;
+                cSexo.SelectedIndex = 0;
+                textNome.Text = "";
                         textNaturalidade.Text = "";
                         textLocal.Text = "";
                         textCausadaMorte.Text = "";
@@ -205,8 +206,7 @@ namespace WindowsFormsApp1
                     textDia.Text = "";
                     textMatricula.Text = "";
                     textMês.Text = "";
-                    comboCor.SelectedIndex = 0;
-                    cSexo.SelectedIndex = 0;
+                  
 
                 }
             //se houve erro ao gerar o pdf

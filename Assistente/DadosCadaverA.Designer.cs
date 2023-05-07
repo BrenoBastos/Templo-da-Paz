@@ -33,15 +33,15 @@ namespace WindowsFormsApp1
             this.textNome = new System.Windows.Forms.TextBox();
             this.Nome = new System.Windows.Forms.Label();
             this.dDados = new System.Windows.Forms.DataGridView();
-            this.dNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bVoltar = new System.Windows.Forms.Button();
             this.dID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dDataChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dHorarioChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dDataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dLegista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dAssistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,8 +75,8 @@ namespace WindowsFormsApp1
             // 
             this.dDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dNome,
             this.dID,
+            this.dNome,
             this.dDataChegada,
             this.dHorarioChegada,
             this.dDataRetirada,
@@ -89,17 +89,27 @@ namespace WindowsFormsApp1
             this.dDados.TabIndex = 28;
             this.dDados.DoubleClick += new System.EventHandler(this.dDados_DoubleClick);
             // 
-            // dNome
+            // bVoltar
             // 
-            this.dNome.HeaderText = "Nome";
-            this.dNome.Name = "dNome";
-            this.dNome.ReadOnly = true;
+            this.bVoltar.Location = new System.Drawing.Point(107, 183);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.TabIndex = 73;
+            this.bVoltar.Text = "Voltar";
+            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
             // dID
             // 
             this.dID.HeaderText = "ID";
             this.dID.Name = "dID";
             this.dID.ReadOnly = true;
+            // 
+            // dNome
+            // 
+            this.dNome.HeaderText = "Nome";
+            this.dNome.Name = "dNome";
+            this.dNome.ReadOnly = true;
             // 
             // dDataChegada
             // 
@@ -137,16 +147,6 @@ namespace WindowsFormsApp1
             this.dAssistente.Name = "dAssistente";
             this.dAssistente.ReadOnly = true;
             // 
-            // bVoltar
-            // 
-            this.bVoltar.Location = new System.Drawing.Point(107, 183);
-            this.bVoltar.Name = "bVoltar";
-            this.bVoltar.Size = new System.Drawing.Size(75, 23);
-            this.bVoltar.TabIndex = 73;
-            this.bVoltar.Text = "Voltar";
-            this.bVoltar.UseVisualStyleBackColor = true;
-            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
-            // 
             // DadosCadaverA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,14 +172,14 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.TextBox textNome;
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.DataGridView dDados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dNome;
+        private System.Windows.Forms.Button bVoltar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn dDataChegada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dHorarioChegada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dDataRetirada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dRetirada;
         private System.Windows.Forms.DataGridViewTextBoxColumn dLegista;
         private System.Windows.Forms.DataGridViewTextBoxColumn dAssistente;
-        private System.Windows.Forms.Button bVoltar;
     }
 }
