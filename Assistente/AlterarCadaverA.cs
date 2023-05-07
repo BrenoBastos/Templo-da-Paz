@@ -25,66 +25,77 @@ namespace WindowsFormsApp1
 
         private void mHorarioChegada_Click(object sender, EventArgs e)
         {
-            mHorarioChegada.SelectionStart = 0;
+            // Define o início da seleção para 0
+                mHorarioChegada.SelectionStart = 0;
+            // Define o comprimento da seleção para 0
             mHorarioChegada.SelectionLength = 0;
         }
 
         private void bAlterar_Click(object sender, EventArgs e)
         {
+            // Verifica se algum campo obrigatório está vazio ou incompleto
             if (string.IsNullOrWhiteSpace(textNome.Text) || string.IsNullOrWhiteSpace(textGaveta.Text) ||
-         string.IsNullOrWhiteSpace(textID.Text) || !mDataChegada.MaskCompleted || !mHorarioChegada.MaskCompleted)
+                string.IsNullOrWhiteSpace(textID.Text) || !mDataChegada.MaskCompleted || !mHorarioChegada.MaskCompleted)
             {
                 MessageBox.Show("Preencha todos os campos!");
+                // encerra a execução do método se algum campo estiver incompleto
                 return;
             }
+            // Verifica se o campo ID contém apenas dígitos numéricos
             else if (!textID.Text.All(char.IsDigit))
-                {
-                MessageBox.Show("Por favor, insira apenas carecteres numéricos  no campo 'ID'.");
-                textID.Text = "";
-                    return;
-                }
-
-
-
-                else if (textAssistente.Text.All(char.IsDigit))
-                {
-                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Assistente'.");
-                textAssistente.Text = "";
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'ID'.");
+                // Limpa o campo ID se o usuário inseriu caracteres inválidos
+                textID.Text = ""; 
                 return;
-                }
-                else if (textNome.Text.All(char.IsDigit))
-                {
-                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
+            }
+            // Verifica se o campo Assistente contém apenas caracteres de texto
+            else if (textAssistente.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Assistente'.");
+                // Limpa o campo Assistente se o usuário inseriu caracteres inválidos
+                textAssistente.Text = ""; 
+                return;
+            }
+            // Verifica se o campo Nome contém apenas caracteres de texto
+            else if (textNome.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Nome'.");
+                // Limpa o campo Nome se o usuário inseriu caracteres inválidos
+               
                 textNome.Text = "";
                 return;
-                }
-                else if (textGaveta.Text.All(char.IsDigit))
-                {
-                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Gaveta'.");
+            }
+            // Verifica se o campo Gaveta contém apenas caracteres de texto
+            else if (textGaveta.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Gaveta'.");
+                // Limpa o campo Gaveta se o usuário inseriu caracteres inválidos
+              
                 textGaveta.Text = "";
                 return;
-                }
-                else
-                {
-                    MessageBox.Show("Alterado com sucesso");
-                    textNome.Text = "";
-                    textID.Text = "";
-                    textGaveta.Text = "";
-                    mDataChegada.Text = "";
-                    mHorarioChegada.Text = "";
-                    textAssistente.Text = "";
-
-
-
-                }
             }
+            else
+            {
+                // Se todos os campos foram preenchidos corretamente, exibe uma mensagem de sucesso e limpa os campos
+                MessageBox.Show("Alterado com sucesso");
+                textNome.Text = "";
+                textID.Text = "";
+                textGaveta.Text = "";
+                mDataChegada.Text = "";
+                mHorarioChegada.Text = "";
+                textAssistente.Text = "";
+            }
+        }
         
 
         private void bVoltar_Click(object sender, EventArgs e)
-        {
+        {// Esconde a janela atual
             this.Hide();
+            // Cria uma nova instância da classe  DadosCadaverA
 
             DadosCadaverA novaTela = new DadosCadaverA();
+            // Mostra a nova instância da janela  DadosCadaverA
             novaTela.ShowDialog();
         }
     }

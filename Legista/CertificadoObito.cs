@@ -20,101 +20,122 @@ namespace WindowsFormsApp1
         public CertificadoObito()
         {
             InitializeComponent();
+            // Chama os métodos para inicializar os ComboBox
+
             comboBoxiniciar2();
             comboBoxiniciar3();
            
 
     }
-        
-    private void comboBoxiniciar2()
+
+        // Método para inicializar o ComboBox da cor
+        private void comboBoxiniciar2()
         {
+            // Verifica se o ComboBox não tem nenhum item
             if (comboCor.Items.Count == 0)
             {
+                // Adiciona os itens e seleciona o primeiro item
                 comboCor.Items.Add("Branco");
                 comboCor.Items.Add("Preto");
                 comboCor.Items.Add("Pardo");
                 comboCor.Items.Add("Amarelo");
                 comboCor.Items.Add("Indígena");
                 comboCor.SelectedIndex = 0;
+                // Define o estilo de dropdown como DropDownList, para impedir a inserção de itens
                 comboCor.DropDownStyle = ComboBoxStyle.DropDownList;
-
             }
         }
+
+        // Método para inicializar o ComboBox do sexo
         private void comboBoxiniciar3()
         {
+            // Verifica se o ComboBox não tem nenhum item
             if (cSexo.Items.Count == 0)
             {
-                
-                    cSexo.Items.Add("Masculino");
-                    cSexo.Items.Add("Feminino");
-                    cSexo.Items.Add("Outro");
+                // Adiciona os itens e seleciona o primeiro item
+                cSexo.Items.Add("Masculino");
+                cSexo.Items.Add("Feminino");
+                cSexo.Items.Add("Outro");
                 cSexo.SelectedIndex = 0;
+                // Define o estilo de dropdown como DropDownList, para impedir a inserção de itens
                 cSexo.DropDownStyle = ComboBoxStyle.DropDownList;
-
             }
         }
        
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
+            // Verifica se algum campo obrigatório está vazio ou incompleto
             if (string.IsNullOrWhiteSpace(textNome.Text) || !textCpf.MaskCompleted || string.IsNullOrWhiteSpace(textMatricula.Text) || string.IsNullOrWhiteSpace(textMês.Text) || string.IsNullOrWhiteSpace(textAno.Text) || string.IsNullOrWhiteSpace(textDia.Text) || string.IsNullOrWhiteSpace(textAverbacoes.Text) || string.IsNullOrWhiteSpace(textAnotacoes.Text) || string.IsNullOrWhiteSpace(textNaturalidade.Text) || string.IsNullOrWhiteSpace(textLocal.Text) || !textDocumentoIdentificação.MaskCompleted
-                 || string.IsNullOrWhiteSpace(textCausadaMorte.Text) || string.IsNullOrWhiteSpace(textEstadoCivil.Text) || string.IsNullOrWhiteSpace(textFiliação.Text) || !mEleitor.MaskCompleted  || string.IsNullOrWhiteSpace(textDeclarante.Text) || !mDataFalecimento.MaskCompleted ||
-                 string.IsNullOrWhiteSpace(textSepultamento.Text)||string.IsNullOrWhiteSpace(textAnotacoes.Text)|| string.IsNullOrWhiteSpace(textNomeMedico.Text))
+                || string.IsNullOrWhiteSpace(textCausadaMorte.Text) || string.IsNullOrWhiteSpace(textEstadoCivil.Text) || string.IsNullOrWhiteSpace(textFiliação.Text) || !mEleitor.MaskCompleted || string.IsNullOrWhiteSpace(textDeclarante.Text) || !mDataFalecimento.MaskCompleted ||
+                string.IsNullOrWhiteSpace(textSepultamento.Text) || string.IsNullOrWhiteSpace(textAnotacoes.Text) || string.IsNullOrWhiteSpace(textNomeMedico.Text))
             {
+                // Mostra uma mensagem de erro e retorna
                 MessageBox.Show("Preencha todos os campos!");
                 return;
             }
 
-            int dia, mes, ano;
-
+            // Verifica se o valor no campo 'Dia' é válido
+            int dia;
             if (!int.TryParse(textDia.Text, out dia) || dia < 1 || dia > 31)
             {
                 MessageBox.Show("O campo 'Dia' deve estar entre 1 e 31.");
                 return;
             }
 
+            // Verifica se o valor no campo 'Mês' é válido
+            int mes;
             if (!int.TryParse(textMês.Text, out mes) || mes < 1 || mes > 12)
             {
                 MessageBox.Show("O campo 'Mês' deve estar entre 1 e 12.");
                 return;
             }
 
+            // Verifica se o valor no campo 'Ano' é válido
+            int ano;
             if (!int.TryParse(textAno.Text, out ano) || ano != DateTime.Now.Year)
             {
                 MessageBox.Show("O campo 'Ano' deve estar no ano atual.");
                 return;
             }
 
-
-
-            else
+            // Verifica se o campo 'Nome' contém apenas caracteres alfabéticos
+            if (textNome.Text.All(char.IsDigit))
             {
-                if (textNome.Text.All(char.IsDigit))
-                {
-                    MessageBox.Show("Por favor, insira apenas caracteres  no campo 'Nome'.");
-                    return;
-                }
-               else if (textNaturalidade.Text.All(char.IsDigit))
-                {
-                    MessageBox.Show("Por favor, insira apenas caracteres  no campo 'Naturalidade'.");
-                    return;
-                }
-                else if (!textMatricula.Text.All(char.IsDigit))
-                {
-                    MessageBox.Show("Por favor, insira apenas caracteres numéricos  no campo 'Matrícula'.");
-                    return;
-                }
-                else if (!textDia.Text.All(char.IsDigit))
-                {
-                    MessageBox.Show("Por favor, insira apenas caracteres numéricos  no campo 'Dia'.");
-                    return;
-                }
-                else if (!textMês.Text.All(char.IsDigit))
-                {
-                    MessageBox.Show("Por favor, insira apenas caracteres numéricos  no campo 'Mês'.");
-                    return;
-                }
-                else if (!textAno.Text.All(char.IsDigit))
+                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Nome'.");
+                return;
+            }
+
+            // Verifica se o campo 'Naturalidade' contém apenas caracteres alfabéticos
+            if (textNaturalidade.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Naturalidade'.");
+                return;
+            }
+
+            // Verifica se o campo 'Matrícula' contém apenas caracteres numéricos
+            if (!textMatricula.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Matrícula'.");
+                return;
+            }
+
+            // Verifica se o campo 'Dia' contém apenas caracteres numéricos
+            if (!textDia.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Dia'.");
+                return;
+            }
+
+            // Verifica se o campo 'Mês' contém apenas caracteres numéricos
+            if (!textMês.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Mês'.");
+                return;
+            }
+
+            // Verifica se o campo 'Ano' contém apenas caracteres numéricos
+            else if (!textAno.Text.All(char.IsDigit))
                 {
                     MessageBox.Show("Por favor, insira apenas caracteres numéricos  no campo 'Ano'.");
                     return;
@@ -162,6 +183,7 @@ namespace WindowsFormsApp1
                             // Escreve o conteúdo do MemoryStream no arquivo PDF selecionado pelo usuário
                             File.WriteAllBytes(saveFileDialog.FileName, pdfBytes);
                         }
+                        // retorna que pdf foi gerado com sucesso ,limpa os campos e retorna o combobox ao padrão
                         MessageBox.Show("PDF gerado com sucesso!");
                         textNome.Text = "";
                         textNaturalidade.Text = "";
@@ -187,7 +209,7 @@ namespace WindowsFormsApp1
                     cSexo.SelectedIndex = 0;
 
                 }
-
+            //se houve erro ao gerar o pdf
                     catch (Exception ex)
                     {
                         MessageBox.Show("Ocorreu um erro ao salvar o arquivo PDF: " + ex.Message);
@@ -204,51 +226,59 @@ namespace WindowsFormsApp1
                              
 
                 
-            }
+            
 
 
         
 
         private void bVoltar_Click(object sender, EventArgs e)
-        {
+        {// Esconde a janela atual
             this.Hide();
+            // Cria uma nova instância da classe      Legista 
 
             Legista novaTela = new Legista();
+            // Mostra a nova instância da janela    Legista
             novaTela.ShowDialog();
         }
 
        
 
         private void mDataFalecimento_Click(object sender, EventArgs e)
-        {
-            mDataFalecimento.SelectionStart = 0;
+        
+            {// Define o início da seleção para 0
+                mDataFalecimento.SelectionStart = 0;
+            // Define o comprimento da seleção para 0
             mDataFalecimento.SelectionLength = 0;
         }
 
         private void mDataNascimento_Click(object sender, EventArgs e)
-        {
+        {// Define o início da seleção para 0
             mDataFalecimento.SelectionStart = 0;
+            // Define o comprimento da seleção para 0
             mDataFalecimento.SelectionLength = 0;
         }
 
      
 
         private void mEleitor_Click(object sender, EventArgs e)
-        {
+        { // Define o início da seleção para 0
             mEleitor.SelectionStart = 0;
+            // Define o comprimento da seleção para 0
             mEleitor.SelectionLength = 0;
         }
 
         private void textCpf_Click(object sender, EventArgs e)
-        {
+        {  // Define o início da seleção para 0
             textCpf.SelectionStart = 0;
+            // Define o comprimento da seleção para 0
             textCpf.SelectionLength = 0;
         }
 
         private void textRG_Click(object sender, EventArgs e)
         {
-
+            // Define o início da seleção para 0
             textDocumentoIdentificação.SelectionStart = 0;
+            // Define o comprimento da seleção para 0
             textDocumentoIdentificação.SelectionLength = 0;
         }
     }

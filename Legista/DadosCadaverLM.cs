@@ -14,18 +14,27 @@ namespace WindowsFormsApp1
     {
         public DadosCadaverLM()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+            // Chama o método que inicializa a ComboBox
+
             comboBoxiniciar();
 
-        }
+        }// Método que inicializa a ComboBox
+
         private void comboBoxiniciar()
-        {
+        {    // Verifica se o ComboBox já foi preenchido antes
+
             if (cRetirada.Items.Count == 0)
-            {
+            {        // Adiciona as opções ao ComboBox
+
                 cRetirada.Items.Add("Espera");
-                cRetirada.Items.Add("IML");
+                cRetirada.Items.Add("Velório Municipal");
                 cRetirada.Items.Add("Funerária");
+                // Seleciona o primeiro item por padrão
+
                 cRetirada.SelectedIndex = 0;
+                // Define o estilo do ComboBox para "DropDownList", que impede que o usuário digite valores
+
                 cRetirada.DropDownStyle = ComboBoxStyle.DropDownList;
 
             }
@@ -33,100 +42,108 @@ namespace WindowsFormsApp1
 
         private void bAlterar_Click(object sender, EventArgs e)
         {
+            // Verifica se algum campo obrigatório está vazio
             if (string.IsNullOrWhiteSpace(textNome.Text) || string.IsNullOrWhiteSpace(textID.Text) || string.IsNullOrWhiteSpace(textGaveta.Text) || string.IsNullOrWhiteSpace(textLaudo.Text) || string.IsNullOrWhiteSpace(textMaterial.Text)
-               || string.IsNullOrWhiteSpace(textQuantidade.Text) || !mHorarioChegada.MaskCompleted || !mDataObito.MaskCompleted || !mHorárioÓbito.MaskCompleted || !mDataRetirada.MaskCompleted || !mDataChegada.MaskCompleted)
+                || string.IsNullOrWhiteSpace(textQuantidade.Text) || !mHorarioChegada.MaskCompleted || !mDataObito.MaskCompleted || !mHorárioÓbito.MaskCompleted || !mDataRetirada.MaskCompleted || !mDataChegada.MaskCompleted)
             {
                 MessageBox.Show("Preencha todos os campos!");
                 return;
             }
-           
-               
 
-
-
-
-             else   if (!textID.Text.All(char.IsDigit))
-                {
-                MessageBox.Show("Por favor, insira apenas carecteres numéricos  no campo 'ID'.");
+            // Verifica se o campo 'ID' contém somente caracteres numéricos
+            else if (!textID.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'ID'.");
                 textID.Text = "";
-                    return;
-                }
+                return;
+            }
 
-
-
-                else if (textAssistente.Text.All(char.IsDigit))
-                {
-                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Assistente'.");
+            // Verifica se o campo 'Assistente' contém somente caracteres não numéricos
+            else if (textAssistente.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Assistente'.");
                 textAssistente.Text = "";
                 return;
-                }
-                else if (textLegista.Text.All(char.IsDigit))
-                {
-                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Legista'.");
+            }
+
+            // Verifica se o campo 'Legista' contém somente caracteres não numéricos
+            else if (textLegista.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Legista'.");
                 textLegista.Text = "";
                 return;
-                }
+            }
 
-                else if (textNome.Text.All(char.IsDigit))
-                {
-                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
+            // Verifica se o campo 'Nome' contém somente caracteres não numéricos
+            else if (textNome.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Nome'.");
                 textNome.Text = "";
                 return;
-                }
-                else if (textGaveta.Text.All(char.IsDigit))
-                {
-                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Gaveta'.");
+            }
+
+            // Verifica se o campo 'Gaveta' contém somente caracteres não numéricos
+            else if (textGaveta.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Gaveta'.");
                 textGaveta.Text = "";
                 return;
-                }
-                else
-                {
-                    MessageBox.Show("ALterado com sucesso");
-                    textNome.Text = "";
-                    textID.Text = "";
-                    textGaveta.Text = "";
-                    textLaudo.Text = "";
-                    textMaterial.Text = "";
-                    textQuantidade.Text = "";
-                    mDataChegada.Text = "";
-                    mDataRetirada.Text = "";
-                    mHorarioChegada.Text = "";
-                    textAssistente.Text = "";
-                    textLegista.Text = "";
-
-                
             }
+
+            // Caso todas as validações sejam bem-sucedidas, mostra a mensagem de sucesso e limpa os campos
+            else
+            {
+                MessageBox.Show("Alterado com sucesso");
+                textNome.Text = "";
+                textID.Text = "";
+                textGaveta.Text = "";
+                textLaudo.Text = "";
+                textMaterial.Text = "";
+                textQuantidade.Text = "";
+                mDataChegada.Text = "";
+                mDataRetirada.Text = "";
+                mHorarioChegada.Text = "";
+                textAssistente.Text = "";
+                textLegista.Text = "";
+            
+        }
         }
 
         private void mDataChegada_Click(object sender, EventArgs e)
-        {
+        {// Define o início da seleção para 0
             mDataChegada.SelectionStart = 0;
+            // Define o comprimento da seleção para 0
             mDataChegada.SelectionLength = 0;
         }
 
         private void mHorarioChegada_Click(object sender, EventArgs e)
-        {
+        {// Define o início da seleção para 0
             mHorarioChegada.SelectionStart = 0;
+            // Define o comprimento da seleção para 0
             mHorarioChegada.SelectionLength = 0;
         }
 
         private void mDataRetirada_Click(object sender, EventArgs e)
-        {
+        {// Define o início da seleção para 0
             mDataRetirada.SelectionStart = 0;
+            // Define o comprimento da seleção para 0
             mDataRetirada.SelectionLength = 0;
         }
 
         private void bVoltar_Click(object sender, EventArgs e)
-        {
+        {// Esconde a janela atual
             this.Hide();
-
+            // Cria uma nova instância da classe       DadosCadaverL
             DadosCadaverL novaTela = new DadosCadaverL();
+            // Mostra a nova instância da janela  DadosCadaverL
+
             novaTela.ShowDialog();
         }
 
         private void mHorarioRetirada_Click(object sender, EventArgs e)
-        {
+        {// Define o início da seleção para 0
             mHorarioRetirada.SelectionStart = 0;
+            // Define o comprimento da seleção para 0
             mHorarioRetirada.SelectionLength = 0;
         }
 
@@ -136,14 +153,16 @@ namespace WindowsFormsApp1
         }
 
         private void mDataObito_Click(object sender, EventArgs e)
-        {
+        {// Define o início da seleção para 0
             mDataObito.SelectionStart = 0;
+            // Define o comprimento da seleção para 0
             mDataObito.SelectionLength = 0;
         }
 
         private void mHorárioÓbito_Click(object sender, EventArgs e)
-        {
+        {// Define o início da seleção para 0
             mHorárioÓbito.SelectionStart = 0;
+            // Define o comprimento da seleção para 0
             mHorárioÓbito.SelectionLength = 0;
         }
 

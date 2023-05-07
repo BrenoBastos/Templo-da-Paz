@@ -15,9 +15,16 @@ namespace WindowsFormsApp1
         public Legista()
         {
             InitializeComponent();
+            // Cria um nó raiz para a árvore de exibição da interface gráfica com o texto "Cadáver"
             TreeNode parentNode = treeView1.Nodes.Add("Cadáver");
+
+            // Cria um nó filho do nó raiz com o texto "Atualizar"
             TreeNode childNode = parentNode.Nodes.Add("Atualizar");
+
+            // Cria um nó filho do nó raiz com o texto "Dados"
             TreeNode childNode1 = parentNode.Nodes.Add("Dados");
+
+            // Cria um nó filho do nó raiz com o texto "Certificado"
             TreeNode childNode2 = parentNode.Nodes.Add("Certificado");
 
 
@@ -41,35 +48,43 @@ namespace WindowsFormsApp1
       
 
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
+        {// Verifica se o texto do nó clicado é "Atualizar"
             if (e.Node.Text == "Atualizar")
-            {
+            { // Esconde a janela atual
                 this.Hide();
-
+                // Cria uma nova instância da classe       AtualizarCadaverL
                 AtualizarCadaverL novaTela = new AtualizarCadaverL();
+                // Mostra a nova instância da janela         AtualizarCadaverL
+
                 novaTela.ShowDialog();
-            }
+            }// Verifica se o texto do nó clicado é "Dados"
             else if (e.Node.Text == "Dados")
             {
-                this.Hide();
-
+                // Esconde a janela atual
+                    this.Hide();
+                // Cria uma nova instância da classe    DadosCadaverL
                 DadosCadaverL novaTela = new DadosCadaverL();
-                novaTela.ShowDialog();
-            }
-            else if (e.Node.Text == "Certificado")
-            {
-                this.Hide();
+                // Mostra a nova instância da janela       DadosCadaverL
 
+                novaTela.ShowDialog();
+            }// Verifica se o texto do nó clicado é "Certificado"
+            else if (e.Node.Text == "Certificado")
+            {// Esconde a janela atual
+                this.Hide();
+                // Cria uma nova instância da classe    CertificadoObito
                 CertificadoObito novaTela = new CertificadoObito();
+                // Mostra a nova instância da janela CertificadoObito
+
                 novaTela.ShowDialog();
             }
         }
 
         private void bVoltar_Click(object sender, EventArgs e)
-        {
+        {// Esconde a janela atual
             this.Hide();
-
-           Login novaTela = new Login();
+            // Cria uma nova instância da classe    Login 
+            Login novaTela = new Login();
+            // Mostra a nova instância da janela Login
             novaTela.ShowDialog();
         }
     }
