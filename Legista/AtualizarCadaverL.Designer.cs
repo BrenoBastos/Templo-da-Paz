@@ -67,8 +67,6 @@
             this.HorárioÓbito = new System.Windows.Forms.Label();
             this.DataÓbito = new System.Windows.Forms.Label();
             this.mHorarioRetirada = new System.Windows.Forms.MaskedTextBox();
-            this.comboCor = new System.Windows.Forms.ComboBox();
-            this.Cor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -411,30 +409,11 @@
             this.mHorarioRetirada.ValidatingType = typeof(System.DateTime);
             this.mHorarioRetirada.Click += new System.EventHandler(this.mHorarioRetirada_Click);
             // 
-            // comboCor
-            // 
-            this.comboCor.FormattingEnabled = true;
-            this.comboCor.Location = new System.Drawing.Point(83, 113);
-            this.comboCor.Name = "comboCor";
-            this.comboCor.Size = new System.Drawing.Size(121, 21);
-            this.comboCor.TabIndex = 111;
-            // 
-            // Cor
-            // 
-            this.Cor.AutoSize = true;
-            this.Cor.Location = new System.Drawing.Point(40, 109);
-            this.Cor.Name = "Cor";
-            this.Cor.Size = new System.Drawing.Size(23, 13);
-            this.Cor.TabIndex = 110;
-            this.Cor.Text = "Cor";
-            // 
             // AtualizarCadaverL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.comboCor);
-            this.Controls.Add(this.Cor);
             this.Controls.Add(this.mHorárioÓbito);
             this.Controls.Add(this.mDataObito);
             this.Controls.Add(this.HorárioÓbito);
@@ -516,7 +495,5 @@
         private System.Windows.Forms.Label HorárioÓbito;
         private System.Windows.Forms.Label DataÓbito;
         private System.Windows.Forms.MaskedTextBox mHorarioRetirada;
-        private System.Windows.Forms.ComboBox comboCor;
-        private System.Windows.Forms.Label Cor;
     }
 }
