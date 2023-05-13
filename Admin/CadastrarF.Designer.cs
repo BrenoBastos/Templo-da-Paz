@@ -33,11 +33,9 @@ namespace WindowsFormsApp1
             this.Status = new System.Windows.Forms.Label();
             this.textCpf = new System.Windows.Forms.MaskedTextBox();
             this.CPF = new System.Windows.Forms.Label();
-            this.textID = new System.Windows.Forms.TextBox();
             this.textEndereco = new System.Windows.Forms.TextBox();
             this.textNome = new System.Windows.Forms.TextBox();
             this.Endereço = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.Label();
             this.Nome = new System.Windows.Forms.Label();
             this.bCadastrar = new System.Windows.Forms.Button();
             this.bVoltar = new System.Windows.Forms.Button();
@@ -83,13 +81,6 @@ namespace WindowsFormsApp1
             this.CPF.TabIndex = 70;
             this.CPF.Text = "CPF";
             // 
-            // textID
-            // 
-            this.textID.Location = new System.Drawing.Point(438, 224);
-            this.textID.Name = "textID";
-            this.textID.Size = new System.Drawing.Size(100, 20);
-            this.textID.TabIndex = 68;
-            // 
             // textEndereco
             // 
             this.textEndereco.Location = new System.Drawing.Point(438, 250);
@@ -112,15 +103,6 @@ namespace WindowsFormsApp1
             this.Endereço.Size = new System.Drawing.Size(53, 13);
             this.Endereço.TabIndex = 64;
             this.Endereço.Text = "Endereço";
-            // 
-            // ID
-            // 
-            this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(263, 231);
-            this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(18, 13);
-            this.ID.TabIndex = 63;
-            this.ID.Text = "ID";
             // 
             // Nome
             // 
@@ -210,11 +192,9 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.Status);
             this.Controls.Add(this.textCpf);
             this.Controls.Add(this.CPF);
-            this.Controls.Add(this.textID);
             this.Controls.Add(this.textEndereco);
             this.Controls.Add(this.textNome);
             this.Controls.Add(this.Endereço);
-            this.Controls.Add(this.ID);
             this.Controls.Add(this.Nome);
             this.Name = "CadastrarF";
             this.Text = "CadastrarF";
@@ -229,11 +209,9 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label Status;
         private System.Windows.Forms.MaskedTextBox textCpf;
         private System.Windows.Forms.Label CPF;
-        private System.Windows.Forms.TextBox textID;
         private System.Windows.Forms.TextBox textEndereco;
         private System.Windows.Forms.TextBox textNome;
         private System.Windows.Forms.Label Endereço;
-        private System.Windows.Forms.Label ID;
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.Button bCadastrar;
         private System.Windows.Forms.Button bVoltar;

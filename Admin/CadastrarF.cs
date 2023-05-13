@@ -20,7 +20,6 @@ namespace WindowsFormsApp1
             comboBoxiniciar1();
             comboBoxiniciar2();
             FormatarContato();
-            textID.Enabled = false;
 
         }
 
@@ -92,7 +91,7 @@ namespace WindowsFormsApp1
         {
             // Verifica se algum dos campos obrigatórios está vazio ou incompleto
             if (string.IsNullOrWhiteSpace(textNome.Text) || !textCpf.MaskCompleted
-                || string.IsNullOrWhiteSpace(textID.Text) || string.IsNullOrWhiteSpace(textEndereco.Text)
+                ||  string.IsNullOrWhiteSpace(textEndereco.Text)
                 || string.IsNullOrWhiteSpace(mCelular.Text))
             {
                 // Se algum campo estiver vazio, exibe uma mensagem de erro
@@ -101,13 +100,7 @@ namespace WindowsFormsApp1
             }
 
             // Verifica se o campo ID contém apenas caracteres numéricos
-            else if (!textID.Text.All(char.IsDigit))
-            {
-                // Se o campo contém caracteres não numéricos, exibe uma mensagem de erro e limpa o campo
-                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'ID'.");
-                textID.Text = "";
-                return;
-            }
+           
 
             // Verifica se o campo de contato é um celular e se o número de celular é válido
             else if (cContato.SelectedItem.ToString() == "Celular" && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{5}-\d{4}$"))
@@ -145,7 +138,6 @@ namespace WindowsFormsApp1
                 textEndereco.Text = "";
                 mCelular.Text = "";
                 cContato.SelectedIndex = 0;
-                textID.Text = "";
             }
         }
 

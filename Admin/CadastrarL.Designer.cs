@@ -34,7 +34,6 @@ namespace WindowsFormsApp1
             this.mCRM = new System.Windows.Forms.MaskedTextBox();
             this.CRMLegista = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lSenha = new System.Windows.Forms.LinkLabel();
@@ -45,7 +44,6 @@ namespace WindowsFormsApp1
             this.cEstadoCivil = new System.Windows.Forms.ComboBox();
             this.textEndereco = new System.Windows.Forms.TextBox();
             this.textSenha = new System.Windows.Forms.TextBox();
-            this.textID = new System.Windows.Forms.TextBox();
             this.textNome = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -105,15 +103,6 @@ namespace WindowsFormsApp1
             this.label12.Size = new System.Drawing.Size(23, 13);
             this.label12.TabIndex = 81;
             this.label12.Text = "RG";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(75, 220);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(18, 13);
-            this.label13.TabIndex = 80;
-            this.label13.Text = "ID";
             // 
             // label14
             // 
@@ -204,13 +193,6 @@ namespace WindowsFormsApp1
             this.textSenha.Name = "textSenha";
             this.textSenha.Size = new System.Drawing.Size(100, 20);
             this.textSenha.TabIndex = 69;
-            // 
-            // textID
-            // 
-            this.textID.Location = new System.Drawing.Point(116, 224);
-            this.textID.Name = "textID";
-            this.textID.Size = new System.Drawing.Size(100, 20);
-            this.textID.TabIndex = 68;
             // 
             // textNome
             // 
@@ -343,7 +325,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.mCRM);
             this.Controls.Add(this.CRMLegista);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lSenha);
@@ -354,7 +335,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.cEstadoCivil);
             this.Controls.Add(this.textEndereco);
             this.Controls.Add(this.textSenha);
-            this.Controls.Add(this.textID);
             this.Controls.Add(this.textNome);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -376,7 +356,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.MaskedTextBox mCRM;
         private System.Windows.Forms.Label CRMLegista;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.LinkLabel lSenha;
@@ -387,7 +366,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ComboBox cEstadoCivil;
         private System.Windows.Forms.TextBox textEndereco;
         private System.Windows.Forms.TextBox textSenha;
-        private System.Windows.Forms.TextBox textID;
         private System.Windows.Forms.TextBox textNome;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

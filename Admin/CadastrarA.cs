@@ -22,7 +22,6 @@ namespace WindowsFormsApp1
             comboBoxiniciar3();
             comboBoxiniciar4();
             FormatarContato();
-            textID.Enabled = false;
 
         }
         // Método para iniciar o primeiro combo box de Estado Civil
@@ -156,12 +155,7 @@ namespace WindowsFormsApp1
 
             // Verifica se o campo 'ID' contém apenas caracteres numéricos
 
-            else if (!textID.Text.All(char.IsDigit))
-                {
-                MessageBox.Show("Por favor, insira apenas carecteres numéricos  no campo 'ID'.");
-                textID.Text = "";
-                    return;
-                }
+        
             // Verifica se o campo 'Contato' contém um número de celular válido
 
             else if (cContato.SelectedItem.ToString() == "Celular" && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{5}-\d{4}$"))
@@ -202,7 +196,6 @@ namespace WindowsFormsApp1
                     cEstadoCivil.SelectedIndex = 0;
                     cSexo.SelectedIndex = 0;
                     cContato.SelectedIndex = 0;
-                    textID.Text = "";
                 }
             
         }

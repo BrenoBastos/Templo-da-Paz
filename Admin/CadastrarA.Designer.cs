@@ -39,13 +39,11 @@ namespace WindowsFormsApp1
             this.cEstadoCivil = new System.Windows.Forms.ComboBox();
             this.textEndereco = new System.Windows.Forms.TextBox();
             this.textSenha = new System.Windows.Forms.TextBox();
-            this.textID = new System.Windows.Forms.TextBox();
             this.textNome = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -148,13 +146,6 @@ namespace WindowsFormsApp1
             this.textSenha.Size = new System.Drawing.Size(100, 20);
             this.textSenha.TabIndex = 77;
             // 
-            // textID
-            // 
-            this.textID.Location = new System.Drawing.Point(87, 227);
-            this.textID.Name = "textID";
-            this.textID.Size = new System.Drawing.Size(100, 20);
-            this.textID.TabIndex = 76;
-            // 
             // textNome
             // 
             this.textNome.Location = new System.Drawing.Point(111, 120);
@@ -197,15 +188,6 @@ namespace WindowsFormsApp1
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 71;
             this.label7.Text = "Senha";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(54, 227);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(18, 13);
-            this.label6.TabIndex = 70;
-            this.label6.Text = "ID";
             // 
             // label5
             // 
@@ -327,13 +309,11 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.cEstadoCivil);
             this.Controls.Add(this.textEndereco);
             this.Controls.Add(this.textSenha);
-            this.Controls.Add(this.textID);
             this.Controls.Add(this.textNome);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -358,13 +338,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ComboBox cEstadoCivil;
         private System.Windows.Forms.TextBox textEndereco;
         private System.Windows.Forms.TextBox textSenha;
-        private System.Windows.Forms.TextBox textID;
         private System.Windows.Forms.TextBox textNome;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;

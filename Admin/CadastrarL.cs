@@ -28,7 +28,6 @@ namespace WindowsFormsApp1
             FormatarContato(); 
             // Formata o campo da senha
             formatarCampoSenha();
-            textID.Enabled = false;
 
         }
         // Declaração de uma variável pública "value"
@@ -192,13 +191,7 @@ namespace WindowsFormsApp1
                 return;
             }    // Verifica se o campo "ID" contém apenas caracteres numéricos
 
-            else if (!textID.Text.All(char.IsDigit))
-            {        // Se houver algum caractere que não seja um número, exibe uma mensagem de erro e limpa o campo "ID"
-
-                MessageBox.Show("Por favor, insira apenas carecteres numéricos  no campo 'ID'.");
-                textID.Text = "";
-                    return;
-                }
+           
 
             // Verifica se o campo "Contato" foi preenchido corretamente (com um número de celular válido)
 
@@ -246,7 +239,6 @@ namespace WindowsFormsApp1
                     mCRM.Text = "";
                     cStatus.SelectedIndex = 0;
                 cContato.SelectedIndex = 0;
-                    textID.Text = "";
                 
             }
         }

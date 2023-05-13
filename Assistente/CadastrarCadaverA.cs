@@ -15,7 +15,6 @@ namespace WindowsFormsApp1
         public CadastrarCadaverA()
         {
             InitializeComponent();
-            textID.Enabled = false;
 
         }
        
@@ -28,19 +27,13 @@ namespace WindowsFormsApp1
         {
             // Verifica se algum dos campos obrigatórios está vazio ou se as máscaras de data e hora não foram preenchidas
             if (string.IsNullOrWhiteSpace(textNome.Text) || string.IsNullOrWhiteSpace(textGaveta.Text) ||
-                    string.IsNullOrWhiteSpace(textID.Text) || !mDataChegada.MaskCompleted || !mHorarioChegada.MaskCompleted)
+                    !mDataChegada.MaskCompleted || !mHorarioChegada.MaskCompleted)
             {
                 // Exibe uma mensagem de erro informando que todos os campos obrigatórios devem ser preenchidos
                 MessageBox.Show("Preencha todos os campos!");
                 return; // Retorna sem cadastrar
             }
-            else if (!textID.Text.All(char.IsDigit)) // Verifica se o campo ID contém apenas caracteres numéricos
-            {
-                // Exibe uma mensagem de erro informando que o campo ID deve conter apenas caracteres numéricos
-                MessageBox.Show("Por favor, insira apenas carecteres numéricos no campo 'ID'.");
-                textID.Text = ""; // Limpa o campo ID
-                return; // Retorna sem cadastrar
-            }
+          
             else if (textAssistente.Text.All(char.IsDigit)) // Verifica se o campo Assistente contém apenas caracteres numéricos
             {
                 // Exibe uma mensagem de erro informando que o campo Assistente deve conter apenas caracteres
@@ -68,7 +61,6 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Cadastrado com sucesso");
                 // Limpa todos os campos para um novo cadastro
                 textNome.Text = "";
-                textID.Text = "";
                 textGaveta.Text = "";
                 mDataChegada.Text = "";
                 mHorarioChegada.Text = "";

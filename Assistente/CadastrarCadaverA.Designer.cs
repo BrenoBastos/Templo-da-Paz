@@ -31,14 +31,12 @@ namespace WindowsFormsApp1
         {
             this.bCadastrar = new System.Windows.Forms.Button();
             this.textNome = new System.Windows.Forms.TextBox();
-            this.textID = new System.Windows.Forms.TextBox();
             this.textGaveta = new System.Windows.Forms.TextBox();
             this.mHorarioChegada = new System.Windows.Forms.MaskedTextBox();
             this.mDataChegada = new System.Windows.Forms.MaskedTextBox();
             this.Gaveta = new System.Windows.Forms.Label();
             this.Horario = new System.Windows.Forms.Label();
             this.DataCheg = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.Label();
             this.Nome = new System.Windows.Forms.Label();
             this.textAssistente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,15 +61,6 @@ namespace WindowsFormsApp1
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(100, 20);
             this.textNome.TabIndex = 57;
-            // 
-            // textID
-            // 
-            this.textID.Location = new System.Drawing.Point(83, 108);
-            this.textID.MaximumSize = new System.Drawing.Size(100, 100);
-            this.textID.MinimumSize = new System.Drawing.Size(20, 20);
-            this.textID.Name = "textID";
-            this.textID.Size = new System.Drawing.Size(100, 20);
-            this.textID.TabIndex = 56;
             // 
             // textGaveta
             // 
@@ -130,15 +119,6 @@ namespace WindowsFormsApp1
             this.DataCheg.TabIndex = 50;
             this.DataCheg.Text = "Data chegada";
             // 
-            // ID
-            // 
-            this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(42, 108);
-            this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(18, 13);
-            this.ID.TabIndex = 49;
-            this.ID.Text = "ID";
-            // 
             // Nome
             // 
             this.Nome.AutoSize = true;
@@ -185,14 +165,12 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.textAssistente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textNome);
-            this.Controls.Add(this.textID);
             this.Controls.Add(this.textGaveta);
             this.Controls.Add(this.mHorarioChegada);
             this.Controls.Add(this.mDataChegada);
             this.Controls.Add(this.Gaveta);
             this.Controls.Add(this.Horario);
             this.Controls.Add(this.DataCheg);
-            this.Controls.Add(this.ID);
             this.Controls.Add(this.Nome);
             this.Controls.Add(this.bCadastrar);
             this.Name = "CadastrarCadaverA";
@@ -206,14 +184,12 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.Button bCadastrar;
         private System.Windows.Forms.TextBox textNome;
-        private System.Windows.Forms.TextBox textID;
         private System.Windows.Forms.TextBox textGaveta;
         private System.Windows.Forms.MaskedTextBox mHorarioChegada;
         private System.Windows.Forms.MaskedTextBox mDataChegada;
         private System.Windows.Forms.Label Gaveta;
         private System.Windows.Forms.Label Horario;
         private System.Windows.Forms.Label DataCheg;
-        private System.Windows.Forms.Label ID;
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.TextBox textAssistente;
         private System.Windows.Forms.Label label1;
