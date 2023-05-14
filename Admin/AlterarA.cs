@@ -249,12 +249,11 @@ namespace WindowsFormsApp1
             // Caso nenhum erro seja encontrado, atualiza os dados do cliente
             else
             {
-                // Realiza o alteração na tabela 'assistente'
                 try
                 {
                     Conexao conexao = new Conexao();
                     conexao.Abrir();
-                    string id = textID.Text; // Obtém o ID do cliente a ser atualizado
+                    string id = textID.Text; // Obtém o ID do assistente a ser atualizado
                     string nome = textNome.Text;
                     string cpf = textCpf.Text;
                     string rg = textRG.Text;
@@ -305,13 +304,14 @@ namespace WindowsFormsApp1
                             break;
                             // Adicione os casos para os outros valores do ComboBox cStatus, se houver
                     }
+
                     // Consultar o número atual de assistentes ativos
                     string countQuery = "SELECT COUNT(*) FROM assistente WHERE Status = 'ativo'";
                     MySqlCommand countCmd = new MySqlCommand(countQuery, Conexao.con);
                     int assistentesAtivos = Convert.ToInt32(countCmd.ExecuteScalar());
 
                     // Verificar se já existem 10 assistentes ativos
-                    if (assistentesAtivos >= 10)
+                    if (assistentesAtivos >= 10 && status == "Ativo")
                     {
                         // Exibir uma mensagem informando que o limite foi atingido
                         MessageBox.Show("Limite de assistentes ativos atingido. Não é possível realizar mais alterações.");
@@ -320,8 +320,8 @@ namespace WindowsFormsApp1
                     {
                         // Agora você pode usar as variáveis estadoCivil, sexo e status em sua consulta SQL:
                         string query = $"UPDATE assistente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Endereco = @endereco, " +
-                $"DataNasc = @dataNascimento, Contato = @celular, EstadoCivil = @estadoCivil, Sexo = @sexo, " +
-                $"Senha = @senha, Status = @status WHERE ID = @id";
+                            $"DataNasc = @dataNascimento, Contato = @celular, EstadoCivil = @estadoCivil, Sexo = @sexo, " +
+                            $"Senha = @senha, Status = @status WHERE ID = @id";
 
                         MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
                         cmd.Parameters.AddWithValue("@id", id);
@@ -339,6 +339,15 @@ namespace WindowsFormsApp1
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
+                            if (status == "Ativo")
+                            {
+                                assistentesAtivos++;
+                            }
+                            else if (status == "Inativo")
+                            {
+                                assistentesAtivos--;
+                            }
+
                             MessageBox.Show("Alterado com sucesso");
                             // Limpe os campos e restaure os valores padrão, se necessário
                             textID.Text = "";
@@ -351,7 +360,6 @@ namespace WindowsFormsApp1
                             textSenha.Text = "";
                             cEstadoCivil.SelectedIndex = 0;
                             cSexo.SelectedIndex = 0;
-                            cContato.SelectedIndex = 0;
                             cStatus.SelectedIndex = 0;
                             // Esconde campos desnecessários
                             Celular.Visible = false;
@@ -360,8 +368,9 @@ namespace WindowsFormsApp1
                             mCelular.Visible = true;
                             Contato1.Visible = true;
                             mCelular.Text = "";
-                            conexao.Fechar();
                         }
+
+                        conexao.Fechar();
                     }
                 }
                 catch (MySqlException ex)

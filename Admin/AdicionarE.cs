@@ -88,7 +88,7 @@ namespace WindowsFormsApp1
 
                             if (rowsAffected > 0)
                             {
-                                MessageBox.Show("Cadastrado com sucesso");
+                                MessageBox.Show("Adicionado com sucesso");
                                 textMaterial.Text = "";
                                 textFornecedor.Text = "";
                                 textQuantidade.Text = "";
@@ -96,7 +96,7 @@ namespace WindowsFormsApp1
                         }
                         else
                         {
-                            MessageBox.Show("Fornecedor não encontrado na tabela 'fornecedor'. Cadastre o fornecedor antes de adicionar um item ao estoque.");
+                            MessageBox.Show("Fornecedor não encontrado na tabela 'fornecedor'ou Fornecedor inativo.");
                         }
                     }
                     else

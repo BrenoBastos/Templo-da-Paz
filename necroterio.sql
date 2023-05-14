@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `necroterio` /*!40100 DEFAULT CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `necroterio`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: localhost    Database: necroterio
@@ -58,7 +60,7 @@ CREATE TABLE `assistente` (
   `Senha` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `Status` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   PRIMARY KEY (`Id`,`Cpf`,`Rg`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +69,7 @@ CREATE TABLE `assistente` (
 
 LOCK TABLES `assistente` WRITE;
 /*!40000 ALTER TABLE `assistente` DISABLE KEYS */;
-INSERT INTO `assistente` VALUES (1,'Beatriz','213,123,123-12','31,231,231-2','321','31/23/1232','(12)09876-2313','União Estável','Não definido','321','Ativo');
+INSERT INTO `assistente` VALUES (1,'Beatriz','213,123,123-12','31,231,231-2','321','31/23/1232','(12)09876-2313','União Estável','Não definido','321','Ativo'),(2,'Lucas','333,333,333-33','33,333,333-3','asd','22/22/2222','(12)12345-1234','União Estável','Não definido','abc','Ativo');
 /*!40000 ALTER TABLE `assistente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,7 +123,7 @@ CREATE TABLE `estoque` (
   `Fornecedor` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `Total` int DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,7 +132,7 @@ CREATE TABLE `estoque` (
 
 LOCK TABLES `estoque` WRITE;
 /*!40000 ALTER TABLE `estoque` DISABLE KEYS */;
-INSERT INTO `estoque` VALUES (1,'Mouse',12,'Juliana',12),(2,'das',21,'Juliana',NULL),(3,'mouse',312,'Juliana',12),(4,'Mouse',1,'Juliana',NULL);
+INSERT INTO `estoque` VALUES (1,'Mouse',12,'Juliana',12),(2,'das',21,'Juliana',NULL),(3,'mouse',312,'Juliana',12),(4,'Mouse',1,'Juliana',NULL),(5,'Mouse',1,'Juliana',NULL);
 /*!40000 ALTER TABLE `estoque` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -149,7 +151,7 @@ CREATE TABLE `fornecedor` (
   `Contato` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `Status` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   PRIMARY KEY (`Id`,`Cpf`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,7 +160,7 @@ CREATE TABLE `fornecedor` (
 
 LOCK TABLES `fornecedor` WRITE;
 /*!40000 ALTER TABLE `fornecedor` DISABLE KEYS */;
-INSERT INTO `fornecedor` VALUES (1,'Juliana','333,333,333-33','dasd','(12)12345-1234','Ativo');
+INSERT INTO `fornecedor` VALUES (1,'Juliana','333,333,333-33','dasd','(12)12345-1234','Ativo'),(2,'Pedro','323,143,543-53','das','(12)1234-1234','Inativo');
 /*!40000 ALTER TABLE `fornecedor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,4 +207,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-14  3:47:50
+-- Dump completed on 2023-05-14 11:49:45

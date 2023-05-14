@@ -270,7 +270,6 @@ namespace WindowsFormsApp1
             else
             {
                 try
-
                 {
                     Conexao conexao = new Conexao();
                     conexao.Abrir();
@@ -328,14 +327,13 @@ namespace WindowsFormsApp1
                             // Adicione os casos para os outros valores do ComboBox cStatus, se houver
                     }
 
-                    // Agora você pode usar as variáveis estadoCivil, sexo e status em sua consulta SQL:
                     // Consultar o número atual de legistas ativos
                     string countQuery = "SELECT COUNT(*) FROM legista WHERE Status = 'Ativo'";
                     MySqlCommand countCmd = new MySqlCommand(countQuery, Conexao.con);
                     int legistasAtivos = Convert.ToInt32(countCmd.ExecuteScalar());
 
                     // Verificar se já existem 5 legistas ativos
-                    if (legistasAtivos >= 5)
+                    if (legistasAtivos >= 5 && status == "Ativo")
                     {
                         // Exibir uma mensagem informando que o limite foi atingido
                         MessageBox.Show("Limite de legistas ativos atingido. Não é possível cadastrar mais legistas ativos.");
@@ -343,8 +341,8 @@ namespace WindowsFormsApp1
                     else
                     {
                         string query = $"UPDATE legista SET Nome = @nome, Rg = @rg, Endereco = @endereco, DataNasc = @dataNascimento, " +
-                                  $"Contato = @celular, Id=@id,Crm = @crm, EstadoCivil = @estadoCivil, Sexo = @sexo, Senha = @senha, Status = @status " +
-                                  $"WHERE Id = @id";
+                                      $"Contato = @celular, Id=@id, Crm = @crm, EstadoCivil = @estadoCivil, Sexo = @sexo, Senha = @senha, Status = @status " +
+                                      $"WHERE Id = @id";
 
                         MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
                         cmd.Parameters.AddWithValue("@id", id);
@@ -363,8 +361,19 @@ namespace WindowsFormsApp1
 
                         cmd.Parameters.AddWithValue("@status", status);
                         int rowsAffected = cmd.ExecuteNonQuery();
+
+                        // Atualizar a contagem de legistas ativos se necessário
                         if (rowsAffected > 0)
                         {
+                            if (status == "Ativo")
+                            {
+                                legistasAtivos++; // Incrementar a contagem de legistas ativos
+                            }
+                            else if (status == "Inativo")
+                            {
+                                legistasAtivos--; // Decrementar a contagem de legistas ativos
+                            }
+
                             MessageBox.Show("Alterado com sucesso");
                             textNome.Text = "";
                             textCpf.Text = "";
@@ -388,13 +397,12 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
                 }
 
+
+
+            }
             }
 
-
-
-        }
-
-        private void lSenha_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+            private void lSenha_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // Se a propriedade UseSystemPasswordChar da caixa de texto textSenha estiver definida como true,
             // isso significa que o caractere de senha do sistema está sendo usado para ocultar a senha.
