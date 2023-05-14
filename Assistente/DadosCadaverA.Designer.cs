@@ -31,17 +31,17 @@ namespace WindowsFormsApp1
         {
             this.bLocalizar = new System.Windows.Forms.Button();
             this.textNome = new System.Windows.Forms.TextBox();
-            this.Nome = new System.Windows.Forms.Label();
+            this.das = new System.Windows.Forms.Label();
             this.dDados = new System.Windows.Forms.DataGridView();
             this.bVoltar = new System.Windows.Forms.Button();
-            this.dID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dDataChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dHorarioChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dDataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dLegista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dAssistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HorarioChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Retirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Legista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Assistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,32 +62,32 @@ namespace WindowsFormsApp1
             this.textNome.Size = new System.Drawing.Size(100, 20);
             this.textNome.TabIndex = 30;
             // 
-            // Nome
+            // das
             // 
-            this.Nome.AutoSize = true;
-            this.Nome.Location = new System.Drawing.Point(164, 101);
-            this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(35, 13);
-            this.Nome.TabIndex = 29;
-            this.Nome.Text = "Nome";
+            this.das.AutoSize = true;
+            this.das.Location = new System.Drawing.Point(164, 101);
+            this.das.Name = "das";
+            this.das.Size = new System.Drawing.Size(35, 13);
+            this.das.TabIndex = 29;
+            this.das.Text = "Nome";
             // 
             // dDados
             // 
             this.dDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dID,
-            this.dNome,
-            this.dDataChegada,
-            this.dHorarioChegada,
-            this.dDataRetirada,
-            this.dRetirada,
-            this.dLegista,
-            this.dAssistente});
+            this.ID,
+            this.Nome,
+            this.DataChegada,
+            this.HorarioChegada,
+            this.DataRetirada,
+            this.Retirada,
+            this.Legista,
+            this.Assistente});
             this.dDados.Location = new System.Drawing.Point(12, 288);
             this.dDados.Name = "dDados";
             this.dDados.Size = new System.Drawing.Size(863, 150);
             this.dDados.TabIndex = 28;
-            this.dDados.DoubleClick += new System.EventHandler(this.dDados_DoubleClick);
+            this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
             // 
             // bVoltar
             // 
@@ -99,53 +99,61 @@ namespace WindowsFormsApp1
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
-            // dID
+            // ID
             // 
-            this.dID.HeaderText = "ID";
-            this.dID.Name = "dID";
-            this.dID.ReadOnly = true;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
-            // dNome
+            // Nome
             // 
-            this.dNome.HeaderText = "Nome";
-            this.dNome.Name = "dNome";
-            this.dNome.ReadOnly = true;
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
             // 
-            // dDataChegada
+            // DataChegada
             // 
-            this.dDataChegada.HeaderText = "DataChegada";
-            this.dDataChegada.Name = "dDataChegada";
-            this.dDataChegada.ReadOnly = true;
+            this.DataChegada.DataPropertyName = "DataChegada";
+            this.DataChegada.HeaderText = "DataChegada";
+            this.DataChegada.Name = "DataChegada";
+            this.DataChegada.ReadOnly = true;
             // 
-            // dHorarioChegada
+            // HorarioChegada
             // 
-            this.dHorarioChegada.HeaderText = "HorarioChegada";
-            this.dHorarioChegada.Name = "dHorarioChegada";
-            this.dHorarioChegada.ReadOnly = true;
+            this.HorarioChegada.DataPropertyName = "HorarioChegada";
+            this.HorarioChegada.HeaderText = "HorarioChegada";
+            this.HorarioChegada.Name = "HorarioChegada";
+            this.HorarioChegada.ReadOnly = true;
             // 
-            // dDataRetirada
+            // DataRetirada
             // 
-            this.dDataRetirada.HeaderText = "DataRetirada";
-            this.dDataRetirada.Name = "dDataRetirada";
-            this.dDataRetirada.ReadOnly = true;
+            this.DataRetirada.DataPropertyName = "DataRetirada";
+            this.DataRetirada.HeaderText = "DataRetirada";
+            this.DataRetirada.Name = "DataRetirada";
+            this.DataRetirada.ReadOnly = true;
             // 
-            // dRetirada
+            // Retirada
             // 
-            this.dRetirada.HeaderText = "Retirada";
-            this.dRetirada.Name = "dRetirada";
-            this.dRetirada.ReadOnly = true;
+            this.Retirada.DataPropertyName = "Retirada";
+            this.Retirada.HeaderText = "Retirada";
+            this.Retirada.Name = "Retirada";
+            this.Retirada.ReadOnly = true;
             // 
-            // dLegista
+            // Legista
             // 
-            this.dLegista.HeaderText = "Legista";
-            this.dLegista.Name = "dLegista";
-            this.dLegista.ReadOnly = true;
+            this.Legista.DataPropertyName = "Legista";
+            this.Legista.HeaderText = "Legista";
+            this.Legista.Name = "Legista";
+            this.Legista.ReadOnly = true;
             // 
-            // dAssistente
+            // Assistente
             // 
-            this.dAssistente.HeaderText = "Assistente";
-            this.dAssistente.Name = "dAssistente";
-            this.dAssistente.ReadOnly = true;
+            this.Assistente.DataPropertyName = "Assistente";
+            this.Assistente.HeaderText = "Assistente";
+            this.Assistente.Name = "Assistente";
+            this.Assistente.ReadOnly = true;
             // 
             // DadosCadaverA
             // 
@@ -155,7 +163,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.bLocalizar);
             this.Controls.Add(this.textNome);
-            this.Controls.Add(this.Nome);
+            this.Controls.Add(this.das);
             this.Controls.Add(this.dDados);
             this.Name = "DadosCadaverA";
             this.Text = "DadosCadaverA";
@@ -170,16 +178,16 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.Button bLocalizar;
         private System.Windows.Forms.TextBox textNome;
-        private System.Windows.Forms.Label Nome;
+        private System.Windows.Forms.Label das;
         private System.Windows.Forms.DataGridView dDados;
         private System.Windows.Forms.Button bVoltar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dDataChegada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dHorarioChegada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dDataRetirada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dRetirada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dLegista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dAssistente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataChegada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HorarioChegada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataRetirada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Retirada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Legista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Assistente;
     }
 }

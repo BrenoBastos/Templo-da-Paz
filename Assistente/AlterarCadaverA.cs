@@ -16,13 +16,22 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
+       
         private void mDataChegada_Click(object sender, EventArgs e)
         {
             mDataChegada.SelectionStart = 0;
             mDataChegada.SelectionLength = 0;
         }
-
+        public void CarregarDetalhes(string Id, string nome, string assistente, string gaveta, string dataCheg, string horarioCheg)
+        {
+            textID.Text = Id.ToString();
+            textNome.Text = nome;
+            textAssistente.Text= assistente;
+            textGaveta.Text = gaveta;
+            mDataChegada.Text = dataCheg;
+            mHorarioChegada.Text = horarioCheg;
+           
+        }
         private void mHorarioChegada_Click(object sender, EventArgs e)
         {
             // Define o início da seleção para 0
@@ -30,7 +39,7 @@ namespace WindowsFormsApp1
             // Define o comprimento da seleção para 0
             mHorarioChegada.SelectionLength = 0;
         }
-       
+      
         private void bAlterar_Click(object sender, EventArgs e)
         {
             // Verifica se algum campo obrigatório está vazio ou incompleto

@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 namespace WindowsFormsApp1
 {
-    public  class Conexao
+    using MySql.Data.MySqlClient;
+
+    public class Conexao
     {
-        public static MySqlConnection con = new MySqlConnection("server=127.0.0.1:3307;database=necroterio;user id=root;password=root;");
-        public void Abrir(){
+        public static MySqlConnection con;
+        public static string connectionString = "server=127.0.0.1;port=3306;database=necroterio;user id=root;password=root;";
+
+        public void Abrir()
+        {
+            con = new MySqlConnection(connectionString);
             con.Open();
         }
+
         public void Fechar()
         {
             con.Close();
         }
     }
+
 }

@@ -94,6 +94,7 @@ namespace WindowsFormsApp1
             // 
             this.textID.Location = new System.Drawing.Point(399, 119);
             this.textID.Name = "textID";
+            this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(100, 20);
             this.textID.TabIndex = 6;
             // 
@@ -123,7 +124,6 @@ namespace WindowsFormsApp1
             this.textCpf.Name = "textCpf";
             this.textCpf.Size = new System.Drawing.Size(100, 20);
             this.textCpf.TabIndex = 11;
-            this.textCpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.textCpf_MaskInputRejected);
             this.textCpf.Click += new System.EventHandler(this.textCpf_Click);
             // 
             // cStatus

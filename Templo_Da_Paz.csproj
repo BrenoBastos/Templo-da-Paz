@@ -170,12 +170,6 @@
     <Compile Include="Admin\DadosE.Designer.cs">
       <DependentUpon>DadosE.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\DadosF.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\DadosF.Designer.cs">
-      <DependentUpon>DadosF.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin\DadosL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +181,12 @@
     </Compile>
     <Compile Include="Admin\CadastrarA.Designer.cs">
       <DependentUpon>CadastrarA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DadosF1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\DadosF1.Designer.cs">
+      <DependentUpon>DadosF1.cs</DependentUpon>
     </Compile>
     <Compile Include="Legista\CertificadoObito.cs">
       <SubType>Form</SubType>
@@ -269,8 +269,8 @@
     <EmbeddedResource Include="Admin\DadosE.resx">
       <DependentUpon>DadosE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\DadosF.resx">
-      <DependentUpon>DadosF.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\DadosF1.resx">
+      <DependentUpon>DadosF1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\DadosL.resx">
       <DependentUpon>DadosL.cs</DependentUpon>

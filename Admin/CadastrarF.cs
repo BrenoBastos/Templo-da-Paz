@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -132,12 +133,55 @@ namespace WindowsFormsApp1
             // Se todos os campos estiverem preenchidos corretamente, exibe uma mensagem de sucesso e limpa os campos
             else
             {
-                MessageBox.Show("Cadastrado com sucesso");
-                textNome.Text = "";
-                textCpf.Text = "";
-                textEndereco.Text = "";
-                mCelular.Text = "";
-                cContato.SelectedIndex = 0;
+                try
+                {
+                    Conexao conexao = new Conexao();
+                    conexao.Abrir();
+
+                    string nome = textNome.Text;
+                    string cpf = textCpf.Text;
+                    string endereco = textEndereco.Text;
+                    string contato = mCelular.Text;
+                    string status = string.Empty;
+                    switch (cStatus.SelectedIndex)
+                    {
+                        case 0:
+                            status = "Ativo";
+                            break;
+                        case 1:
+                            status = "Inativo";
+                            break;
+                            // Adicione os casos para os outros valores do ComboBox cStatus, se houver
+                    }
+                    string query = $"INSERT INTO fornecedor (Nome, CPF, Endereco, Contato,Status) " +
+                                   $"VALUES (@nome, @cpf, @endereco, @contato, @status)";
+
+                    MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
+                    cmd.Parameters.AddWithValue("@nome", nome);
+                    cmd.Parameters.AddWithValue("@cpf", cpf);
+                    cmd.Parameters.AddWithValue("@endereco", endereco);
+                    cmd.Parameters.AddWithValue("@contato", contato);
+                    cmd.Parameters.AddWithValue("@status", status);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Cadastrado com sucesso");
+                        textNome.Text = "";
+                        textCpf.Text = "";
+                        textEndereco.Text = "";
+                        mCelular.Text = "";
+                        cContato.SelectedIndex = 0;
+                        cStatus.SelectedIndex = 0;
+                        conexao.Fechar();
+
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
+                }
             }
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +29,7 @@ namespace WindowsFormsApp1
 
 
 
-         else   if (!textQuantidade.Text.All(char.IsDigit))
+            else if (!textQuantidade.Text.All(char.IsDigit))
             {    // Verifica se o campo quantidade contém somente dígitos
 
                 MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Quantidade'.");
@@ -38,18 +39,75 @@ namespace WindowsFormsApp1
 
             else if (textFornecedor.Text.All(char.IsDigit))
             {
-                MessageBox.Show( "Por favor, insira apenas caracteres  no campo 'Fornecedor'.");
+                MessageBox.Show("Por favor, insira apenas caracteres  no campo 'Fornecedor'.");
                 textFornecedor.Text = "";
 
             }
             else
-            {    // Se passar por todas as validações, adiciona o item
+            {
+                try
+                {
+                    Conexao conexao = new Conexao();
+                    conexao.Abrir();
 
-                MessageBox.Show("Adicionado com sucesso");
-                textMaterial.Text = "";
-                textFornecedor.Text = "";
+                    string material = textMaterial.Text;
+                    string fornecedor = textFornecedor.Text;
+                    string quantidade = textQuantidade.Text;
 
-                textQuantidade.Text = "";
+                    // Verifica se o material existe na tabela "material"
+                    string verificaMaterialQuery = $"SELECT COUNT(*) FROM estoque WHERE material = @material";
+                    MySqlCommand verificaMaterialCmd = new MySqlCommand(verificaMaterialQuery, Conexao.con);
+                    verificaMaterialCmd.Parameters.AddWithValue("@material", material);
+
+                    int materialCount = Convert.ToInt32(verificaMaterialCmd.ExecuteScalar());
+
+                    if (materialCount > 0)
+                    {
+                        // O material existe, pode prosseguir com a adição do registro
+
+                        // Verifica se o fornecedor existe na tabela "fornecedor"
+                        string verificaFornecedorQuery = $"SELECT COUNT(*) FROM fornecedor WHERE Nome = @fornecedor AND Status = 'ativo'";
+                        MySqlCommand verificaFornecedorCmd = new MySqlCommand(verificaFornecedorQuery, Conexao.con);
+                        verificaFornecedorCmd.Parameters.AddWithValue("@fornecedor", fornecedor);
+
+                        int fornecedorCount = Convert.ToInt32(verificaFornecedorCmd.ExecuteScalar());
+
+                        if (fornecedorCount > 0)
+                        {
+                            // O fornecedor existe, pode prosseguir com a adição do registro
+
+                            string query = $"INSERT INTO estoque (Material, Fornecedor, Quantidade) " +
+                                           $"VALUES (@material, @fornecedor, @quantidade)";
+
+                            MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
+                            cmd.Parameters.AddWithValue("@material", material);
+                            cmd.Parameters.AddWithValue("@fornecedor", fornecedor);
+                            cmd.Parameters.AddWithValue("@quantidade", quantidade);
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Cadastrado com sucesso");
+                                textMaterial.Text = "";
+                                textFornecedor.Text = "";
+                                textQuantidade.Text = "";
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fornecedor não encontrado na tabela 'fornecedor'. Cadastre o fornecedor antes de adicionar um item ao estoque.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Material não encontrado na tabela 'material'. Verifique o nome do material ou cadastre-o antes de adicionar um item ao estoque.");
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
+                }
 
             }
         }

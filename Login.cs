@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,8 @@ namespace WindowsFormsApp1
         }
         private void BotaoLogin_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textNome.Text) || string.IsNullOrWhiteSpace(textSenha.Text)) { 
+            if (string.IsNullOrWhiteSpace(textNome.Text) || string.IsNullOrWhiteSpace(textSenha.Text))
+            {
                 MessageBox.Show("Preencha todos os campos!");
                 return;
             }
@@ -41,7 +43,7 @@ namespace WindowsFormsApp1
                 }
 
 
-              
+
 
                 if (string.IsNullOrWhiteSpace(textSenha.Text))
                 {
@@ -49,10 +51,10 @@ namespace WindowsFormsApp1
                     return;
                 }
 
-               
 
 
-              
+
+
 
 
 
@@ -63,17 +65,90 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    MessageBox.Show("Entrar  com sucesso");
-                    textNome.Text = "";
-                    textSenha.Text = "";
-                    this.Hide();
+                    Conexao conexao = new Conexao();
+                    conexao.Abrir();
 
-                    Admin1 novaTela = new Admin1();
-                    novaTela.ShowDialog();
+                    string nome = textNome.Text;
+                    string senha = textSenha.Text;
+
+                    // Consulta SQL para verificar as credenciais e o status na tabela correspondente ao tipo de usuário
+                    string query = $"SELECT * FROM admin WHERE Nome = @nome AND Senha = @senha";
+
+                    MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
+                    cmd.Parameters.AddWithValue("@nome", nome);
+                    cmd.Parameters.AddWithValue("@senha", senha);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        MessageBox.Show("Entrar com sucesso");
+                        textNome.Text = "";
+                        textSenha.Text = "";
+                        this.Hide();
+
+                        // Abrir a tela específica para o tipo de usuário Admin
+                        Admin1 novaTela = new Admin1();
+                        novaTela.ShowDialog();
+                    }
+                    else
+                    {
+                        reader.Close();
+
+                        query = $"SELECT * FROM legista WHERE Nome = @nome AND Senha = @senha AND Status = 'Ativo'";
+
+                        cmd = new MySqlCommand(query, Conexao.con);
+                        cmd.Parameters.AddWithValue("@nome", nome);
+                        cmd.Parameters.AddWithValue("@senha", senha);
+
+                        reader = cmd.ExecuteReader();
+
+                        if (reader.Read())
+                        {
+                            MessageBox.Show("Entrar com sucesso");
+                            textNome.Text = "";
+                            textSenha.Text = "";
+                            this.Hide();
+
+                            // Abrir a tela específica para o tipo de usuário Legista
+                            Legista novaTela = new Legista();
+                            novaTela.ShowDialog();
+                        }
+                        else
+                        {
+                            reader.Close();
+
+                            query = $"SELECT * FROM assistente WHERE Nome = @nome AND Senha = @senha AND Status = 'Ativo'";
+
+                            cmd = new MySqlCommand(query, Conexao.con);
+                            cmd.Parameters.AddWithValue("@nome", nome);
+                            cmd.Parameters.AddWithValue("@senha", senha);
+
+                            reader = cmd.ExecuteReader();
+
+                            if (reader.Read())
+                            {
+                                MessageBox.Show("Entrar com sucesso");
+                                textNome.Text = "";
+                                textSenha.Text = "";
+                                this.Hide();
+
+                                // Abrir a tela específica para o tipo de usuário Assistente
+                                Assistente novaTela = new Assistente();
+                                novaTela.ShowDialog();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Credenciais inválidas ou usuário não ativo");
+                            }
+                        }
+                    }
+
+                    reader.Close();
+                    conexao.Fechar();
+
                 }
             }
-
-           
         }
 
         private void lSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

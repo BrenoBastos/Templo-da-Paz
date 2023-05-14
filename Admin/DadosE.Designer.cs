@@ -30,14 +30,15 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.textMaterial = new System.Windows.Forms.TextBox();
-            this.Material = new System.Windows.Forms.Label();
+            this.hj = new System.Windows.Forms.Label();
             this.bLocalizar = new System.Windows.Forms.Button();
             this.dDados = new System.Windows.Forms.DataGridView();
-            this.dMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dFornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bVoltar = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,14 +49,14 @@ namespace WindowsFormsApp1
             this.textMaterial.Size = new System.Drawing.Size(100, 20);
             this.textMaterial.TabIndex = 14;
             // 
-            // Material
+            // hj
             // 
-            this.Material.AutoSize = true;
-            this.Material.Location = new System.Drawing.Point(300, 27);
-            this.Material.Name = "Material";
-            this.Material.Size = new System.Drawing.Size(44, 13);
-            this.Material.TabIndex = 13;
-            this.Material.Text = "Material";
+            this.hj.AutoSize = true;
+            this.hj.Location = new System.Drawing.Point(300, 27);
+            this.hj.Name = "hj";
+            this.hj.Size = new System.Drawing.Size(44, 13);
+            this.hj.TabIndex = 13;
+            this.hj.Text = "Material";
             // 
             // bLocalizar
             // 
@@ -71,38 +72,15 @@ namespace WindowsFormsApp1
             // 
             this.dDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dMaterial,
-            this.dQuantidade,
-            this.dFornecedor,
-            this.dTotal});
+            this.Id,
+            this.Material,
+            this.Quantidade,
+            this.Fornecedor,
+            this.Total});
             this.dDados.Location = new System.Drawing.Point(174, 150);
             this.dDados.Name = "dDados";
-            this.dDados.Size = new System.Drawing.Size(453, 150);
+            this.dDados.Size = new System.Drawing.Size(553, 150);
             this.dDados.TabIndex = 15;
-            // 
-            // dMaterial
-            // 
-            this.dMaterial.HeaderText = "Material";
-            this.dMaterial.Name = "dMaterial";
-            this.dMaterial.ReadOnly = true;
-            // 
-            // dQuantidade
-            // 
-            this.dQuantidade.HeaderText = "Quantidade";
-            this.dQuantidade.Name = "dQuantidade";
-            this.dQuantidade.ReadOnly = true;
-            // 
-            // dFornecedor
-            // 
-            this.dFornecedor.HeaderText = "Fornecedor";
-            this.dFornecedor.Name = "dFornecedor";
-            this.dFornecedor.ReadOnly = true;
-            // 
-            // dTotal
-            // 
-            this.dTotal.HeaderText = "Total";
-            this.dTotal.Name = "dTotal";
-            this.dTotal.ReadOnly = true;
             // 
             // bVoltar
             // 
@@ -114,6 +92,41 @@ namespace WindowsFormsApp1
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Material
+            // 
+            this.Material.DataPropertyName = "Material";
+            this.Material.HeaderText = "Material";
+            this.Material.Name = "Material";
+            this.Material.ReadOnly = true;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.DataPropertyName = "Quantidade";
+            this.Quantidade.HeaderText = "Quantidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.ReadOnly = true;
+            // 
+            // Fornecedor
+            // 
+            this.Fornecedor.DataPropertyName = "Fornecedor";
+            this.Fornecedor.HeaderText = "Fornecedor";
+            this.Fornecedor.Name = "Fornecedor";
+            this.Fornecedor.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
             // DadosE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,7 +135,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.dDados);
             this.Controls.Add(this.textMaterial);
-            this.Controls.Add(this.Material);
+            this.Controls.Add(this.hj);
             this.Controls.Add(this.bLocalizar);
             this.Name = "DadosE";
             this.Text = "DadosE";
@@ -135,13 +148,14 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.TextBox textMaterial;
-        private System.Windows.Forms.Label Material;
+        private System.Windows.Forms.Label hj;
         private System.Windows.Forms.Button bLocalizar;
         private System.Windows.Forms.DataGridView dDados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dMaterial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dQuantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dFornecedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dTotal;
         private System.Windows.Forms.Button bVoltar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Material;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fornecedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }

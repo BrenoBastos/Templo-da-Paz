@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class DadosF
+    partial class DadosF1
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.dDados = new System.Windows.Forms.DataGridView();
-            this.bLocalizar = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textNome = new System.Windows.Forms.TextBox();
-            this.Nome = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.bLocalizar = new System.Windows.Forms.Button();
             this.bVoltar = new System.Windows.Forms.Button();
-            this.dID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,82 +44,84 @@ namespace WindowsFormsApp1
             // 
             this.dDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dID,
-            this.DNome,
-            this.dStatus});
-            this.dDados.Location = new System.Drawing.Point(226, 227);
+            this.ID,
+            this.Nome,
+            this.Status});
+            this.dDados.Location = new System.Drawing.Point(227, 234);
             this.dDados.Name = "dDados";
-            this.dDados.Size = new System.Drawing.Size(371, 118);
-            this.dDados.TabIndex = 10;
+            this.dDados.Size = new System.Drawing.Size(347, 150);
+            this.dDados.TabIndex = 23;
             this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // textNome
+            // 
+            this.textNome.Location = new System.Drawing.Point(286, 13);
+            this.textNome.Name = "textNome";
+            this.textNome.Size = new System.Drawing.Size(100, 20);
+            this.textNome.TabIndex = 22;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(224, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Nome";
             // 
             // bLocalizar
             // 
-            this.bLocalizar.Location = new System.Drawing.Point(427, 109);
+            this.bLocalizar.Location = new System.Drawing.Point(324, 134);
             this.bLocalizar.Name = "bLocalizar";
             this.bLocalizar.Size = new System.Drawing.Size(75, 23);
-            this.bLocalizar.TabIndex = 13;
+            this.bLocalizar.TabIndex = 20;
             this.bLocalizar.Text = "Localizar";
             this.bLocalizar.UseVisualStyleBackColor = true;
             this.bLocalizar.Click += new System.EventHandler(this.bLocalizar_Click);
             // 
-            // textNome
-            // 
-            this.textNome.Location = new System.Drawing.Point(427, 18);
-            this.textNome.Name = "textNome";
-            this.textNome.Size = new System.Drawing.Size(100, 20);
-            this.textNome.TabIndex = 12;
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSize = true;
-            this.Nome.Location = new System.Drawing.Point(252, 22);
-            this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(35, 13);
-            this.Nome.TabIndex = 11;
-            this.Nome.Text = "Nome";
-            // 
             // bVoltar
             // 
-            this.bVoltar.Location = new System.Drawing.Point(3, 185);
+            this.bVoltar.Location = new System.Drawing.Point(84, 305);
             this.bVoltar.Name = "bVoltar";
             this.bVoltar.Size = new System.Drawing.Size(75, 23);
-            this.bVoltar.TabIndex = 94;
+            this.bVoltar.TabIndex = 93;
             this.bVoltar.Text = "Voltar";
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
-            // dID
-            // 
-            this.dID.HeaderText = "ID";
-            this.dID.Name = "dID";
-            this.dID.ReadOnly = true;
-            // 
-            // DNome
-            // 
-            this.DNome.HeaderText = "Nome";
-            this.DNome.Name = "DNome";
-            this.DNome.ReadOnly = true;
-            // 
-            // dStatus
-            // 
-            this.dStatus.HeaderText = "Status";
-            this.dStatus.Name = "dStatus";
-            this.dStatus.ReadOnly = true;
-            // 
-            // DadosF
+            // DadosF1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bVoltar);
-            this.Controls.Add(this.bLocalizar);
-            this.Controls.Add(this.textNome);
-            this.Controls.Add(this.Nome);
             this.Controls.Add(this.dDados);
-            this.Name = "DadosF";
-            this.Text = "DadosF";
-            this.Click += new System.EventHandler(this.DadosF_Click);
+            this.Controls.Add(this.textNome);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.bLocalizar);
+            this.Name = "DadosF1";
+            this.Text = "DadosF1";
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -129,12 +131,12 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.DataGridView dDados;
-        private System.Windows.Forms.Button bLocalizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.TextBox textNome;
-        private System.Windows.Forms.Label Nome;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button bLocalizar;
         private System.Windows.Forms.Button bVoltar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dStatus;
     }
 }

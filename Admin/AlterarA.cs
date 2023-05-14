@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,15 +17,18 @@ namespace WindowsFormsApp1
         public AlterarA()
         {
             InitializeComponent();
+            CarregarCampos();
             comboBoxiniciar1();
             comboBoxiniciar2();
             formatarCampoSenha();
             comboBoxiniciar3();
             comboBoxiniciar4();
             FormatarContato();
+         
         }
         // Define a variável pública "value".
         public int value;
+       
 
         private void comboBoxiniciar3()
         {        // Inicia o combobox "cStatus" com duas opções e define a primeira opção como selecionada por padrão.
@@ -57,6 +61,22 @@ namespace WindowsFormsApp1
                 cContato.DropDownStyle = ComboBoxStyle.DropDownList;
             }
         }
+        public void CarregarDetalhes(string Id,string nome, string cpf, string rg, string endereco, string dataNascimento, string senha, string estadoCivil, string sexo, string contato, string status)
+        {
+            textID.Text = Id.ToString();
+            textNome.Text = nome;
+            textCpf.Text = cpf;
+            textRG.Text = rg;
+            textEndereco.Text = endereco;
+            mDataNascimento.Text = dataNascimento;
+            mCelular.Text = contato;
+            textSenha.Text = senha;
+            cEstadoCivil.SelectedIndex = cEstadoCivil.FindStringExact(estadoCivil);
+            cSexo.SelectedIndex = cSexo.FindStringExact(sexo);
+            cContato.SelectedIndex = cContato.FindStringExact(contato);
+            cStatus.SelectedIndex = cStatus.FindStringExact(status);
+        }
+
 
         private void comboBoxiniciar1()
         {        // Inicia o combobox "cEstadoCivil" com quatro opções e define a primeira opção como selecionada por padrão.
@@ -122,7 +142,10 @@ namespace WindowsFormsApp1
             textSenha.UseSystemPasswordChar = true;
             textSenha.PasswordChar = '*';
         }
-
+        private void CarregarCampos()
+        {
+           
+        }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -208,7 +231,7 @@ namespace WindowsFormsApp1
             }
 
             // Verifica se o campo Contato foi preenchido com um número de celular válido
-            else if (cContato.SelectedItem.ToString() == "Celular" && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{5}-\d{4}$"))
+            if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Celular" && mCelular != null && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{5}-\d{4}$"))
             {
                 MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Contato', preencha-o com um número de celular válido.");
                 mCelular.Text = "";
@@ -216,7 +239,7 @@ namespace WindowsFormsApp1
             }
 
             // Verifica se o campo Contato foi preenchido com um número de telefone válido
-            else if (cContato.SelectedItem.ToString() == "Telefone" && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{4}-\d{4}$"))
+            if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Telefone" && mCelular != null && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{4}-\d{4}$"))
             {
                 MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Contato', preencha-o com um número de telefone válido.");
                 mCelular.Text = "";
@@ -226,28 +249,126 @@ namespace WindowsFormsApp1
             // Caso nenhum erro seja encontrado, atualiza os dados do cliente
             else
             {
-                MessageBox.Show("Alterado com sucesso!");
+                // Realiza o alteração na tabela 'assistente'
+                try
+                {
+                    Conexao conexao = new Conexao();
+                    conexao.Abrir();
+                    string id = textID.Text; // Obtém o ID do cliente a ser atualizado
+                    string nome = textNome.Text;
+                    string cpf = textCpf.Text;
+                    string rg = textRG.Text;
+                    string endereco = textEndereco.Text;
+                    string dataNascimento = mDataNascimento.Text;
+                    string celular = mCelular.Text;
+                    string senha = textSenha.Text;
+                    string estadoCivil = string.Empty;
+                    switch (cEstadoCivil.SelectedIndex)
+                    {
+                        case 0:
+                            estadoCivil = "Solteiro(a)";
+                            break;
+                        case 1:
+                            estadoCivil = "Casado(a)";
+                            break;
+                        case 2:
+                            estadoCivil = "União Estável";
+                            break;
+                        case 3:
+                            estadoCivil = "Viúvo(a)";
+                            break;
+                    }
 
-                // Limpa os campos de entrada
-                textNome.Text = "";
-                textCpf.Text = "";
-                textRG.Text = "";
-                textEndereco.Text = "";
-                mDataNascimento.Text = "";
-                mCelular.Text = "";
-                textSenha.Text = "";
-                cEstadoCivil.SelectedIndex = 0;
-                cSexo.SelectedIndex = 0;
-                cContato.SelectedIndex = 0;
-                textID.Text = "";
+                    string sexo = string.Empty;
+                    switch (cSexo.SelectedIndex)
+                    {
+                        case 0:
+                            sexo = "Masculino";
+                            break;
+                        case 1:
+                            sexo = "Feminino";
+                            break;
+                        case 2:
+                            sexo = "Não definido";
+                            break;
+                            // Adicione os casos para os outros valores do ComboBox cSexo, se houver
+                    }
 
-                // Esconde campos desnecessários
-                Celular.Visible = false;
-                Telefone.Visible = false;
-                mCelular.Enabled = true;
-                mCelular.Visible = true;
-                Contato1.Visible = true;
-                mCelular.Text = "";
+                    string status = string.Empty;
+                    switch (cStatus.SelectedIndex)
+                    {
+                        case 0:
+                            status = "Ativo";
+                            break;
+                        case 1:
+                            status = "Inativo";
+                            break;
+                            // Adicione os casos para os outros valores do ComboBox cStatus, se houver
+                    }
+                    // Consultar o número atual de assistentes ativos
+                    string countQuery = "SELECT COUNT(*) FROM assistente WHERE Status = 'ativo'";
+                    MySqlCommand countCmd = new MySqlCommand(countQuery, Conexao.con);
+                    int assistentesAtivos = Convert.ToInt32(countCmd.ExecuteScalar());
+
+                    // Verificar se já existem 10 assistentes ativos
+                    if (assistentesAtivos >= 10)
+                    {
+                        // Exibir uma mensagem informando que o limite foi atingido
+                        MessageBox.Show("Limite de assistentes ativos atingido. Não é possível realizar mais alterações.");
+                    }
+                    else
+                    {
+                        // Agora você pode usar as variáveis estadoCivil, sexo e status em sua consulta SQL:
+                        string query = $"UPDATE assistente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Endereco = @endereco, " +
+                $"DataNasc = @dataNascimento, Contato = @celular, EstadoCivil = @estadoCivil, Sexo = @sexo, " +
+                $"Senha = @senha, Status = @status WHERE ID = @id";
+
+                        MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@nome", nome);
+                        cmd.Parameters.AddWithValue("@cpf", cpf);
+                        cmd.Parameters.AddWithValue("@rg", rg);
+                        cmd.Parameters.AddWithValue("@endereco", endereco);
+                        cmd.Parameters.AddWithValue("@dataNascimento", dataNascimento);
+                        cmd.Parameters.AddWithValue("@celular", celular);
+                        cmd.Parameters.AddWithValue("@estadoCivil", estadoCivil);
+                        cmd.Parameters.AddWithValue("@sexo", sexo);
+                        cmd.Parameters.AddWithValue("@senha", senha);
+                        cmd.Parameters.AddWithValue("@status", status);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Alterado com sucesso");
+                            // Limpe os campos e restaure os valores padrão, se necessário
+                            textID.Text = "";
+                            textNome.Text = "";
+                            textCpf.Text = "";
+                            textRG.Text = "";
+                            textEndereco.Text = "";
+                            mDataNascimento.Text = "";
+                            mCelular.Text = "";
+                            textSenha.Text = "";
+                            cEstadoCivil.SelectedIndex = 0;
+                            cSexo.SelectedIndex = 0;
+                            cContato.SelectedIndex = 0;
+                            cStatus.SelectedIndex = 0;
+                            // Esconde campos desnecessários
+                            Celular.Visible = false;
+                            Telefone.Visible = false;
+                            mCelular.Enabled = true;
+                            mCelular.Visible = true;
+                            Contato1.Visible = true;
+                            mCelular.Text = "";
+                            conexao.Fechar();
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
+                }
+
             }
 
 
@@ -266,7 +387,7 @@ namespace WindowsFormsApp1
 
         private void CContato_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cContato.SelectedItem.ToString() == "Celular")
+            if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Celular")
             {// Oculta o controle Contato1
                 Contato1.Visible = false;
                 // Exibe o controle Celular
@@ -284,7 +405,7 @@ namespace WindowsFormsApp1
                 // Define a posição do controle de entrada de dados mCelular na tela
                 mCelular.Location = new Point(350, 150);
             }
-            else if (cContato.SelectedItem.ToString() == "Telefone")
+            else if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Telefone")
             { // Oculta o controle Contato1
                 Contato1.Visible = false;
                 // Oculta o controle Celular

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,9 +39,20 @@ namespace WindowsFormsApp1
                     return;
                 }
                 else
-                { // Mostra uma mensagem de sucesso e limpa o campo de nome
-                    MessageBox.Show("Localizado com sucesso");
-                    textNome.Text = "";
+                {
+                   
+                        
+
+                            MessageBox.Show("Localizado com sucesso");
+                            textNome.Text = "";
+
+                        
+                       
+
+                        
+
+                    
+
                 }
             }
         }

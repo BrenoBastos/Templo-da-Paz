@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
             this.bVoltar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +90,7 @@ namespace WindowsFormsApp1
             this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Nome,
-            this.dStatus});
+            this.Status});
             this.dDados.Location = new System.Drawing.Point(231, 273);
             this.dDados.Name = "dDados";
             this.dDados.Size = new System.Drawing.Size(347, 150);
@@ -109,21 +109,24 @@ namespace WindowsFormsApp1
             // 
             // ID
             // 
+            this.ID.DataPropertyName = "ID";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             // 
             // Nome
             // 
+            this.Nome.DataPropertyName = "Nome";
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
             // 
-            // dStatus
+            // Status
             // 
-            this.dStatus.HeaderText = "Status";
-            this.dStatus.Name = "dStatus";
-            this.dStatus.ReadOnly = true;
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
             // DadosA
             // 
@@ -157,6 +160,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button bVoltar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }

@@ -121,6 +121,7 @@ namespace WindowsFormsApp1
             this.textID.MaximumSize = new System.Drawing.Size(100, 100);
             this.textID.MinimumSize = new System.Drawing.Size(20, 20);
             this.textID.Name = "textID";
+            this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(100, 20);
             this.textID.TabIndex = 68;
             // 

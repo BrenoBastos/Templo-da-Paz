@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,7 @@ namespace WindowsFormsApp1
             FormatarContato();
 
         }
+
         // Método para iniciar o primeiro combo box de Estado Civil
         private void comboBoxiniciar1()
         {
@@ -71,7 +73,6 @@ namespace WindowsFormsApp1
             {
                 // Adiciona os valores no combo box
                 cStatus.Items.Add("Ativo");
-                cStatus.Items.Add("Inativo");
                 cStatus.Items.Add("Inativo");
 
                 // Seleciona o primeiro valor do combo box
@@ -141,7 +142,7 @@ namespace WindowsFormsApp1
 
 
         }
-       
+
 
         private void bCadastrar_Click(object sender, EventArgs e)
         {// verifica se algum dos campos obrigatórios do formulário está vazio ou incompleto
@@ -155,50 +156,146 @@ namespace WindowsFormsApp1
 
             // Verifica se o campo 'ID' contém apenas caracteres numéricos
 
-        
+
             // Verifica se o campo 'Contato' contém um número de celular válido
 
             else if (cContato.SelectedItem.ToString() == "Celular" && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{5}-\d{4}$"))
-                {
+            {
                 MessageBox.Show("Por favor, insira apenas carecteres numéricos  no  campo 'Contato' inválido, preencha-o com um número de contato válido ");
                 mCelular.Text = "";
-                    return;
-                }
+                return;
+            }
             // Verifica se o campo 'Contato' contém um número de telefone válido
 
             else if (cContato.SelectedItem.ToString() == "Telefone" && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{4}-\d{4}$"))
-                {
+            {
                 MessageBox.Show("Por favor, insira apenas carecteres numéricos  no  campo 'Contato' inválido, preencha-o com um número de contato válido ");
                 mCelular.Text = "";
-                    return;
-                }
+                return;
+            }
 
 
             // Verifica se o campo 'Nome' contém apenas caracteres não numéricos
 
             else if (textNome.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
+                textNome.Text = "";
+                return;
+            }
+            else
+            {// Realiza o cadastro na tabela 'assistente'
+                try
                 {
-                    MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
-                    textNome.Text = "";
-                    return;
-                }
-                else
-                {//limpa todos os campos e restaura o combobox pra padrão
+                    Conexao conexao = new Conexao();
+                    conexao.Abrir();
+                    string nome = textNome.Text;
+                    string cpf = textCpf.Text;
+                    string rg = textRG.Text;
+                    string endereco = textEndereco.Text;
+                    string dataNascimento = mDataNascimento.Text;
+                    string celular = mCelular.Text;
+                    string senha = textSenha.Text;
+                    string estadoCivil = string.Empty;
+                    switch (cEstadoCivil.SelectedIndex)
+                    {
+                        case 0:
+                            estadoCivil = "Solteiro(a)";
+                            break;
+                        case 1:
+                            estadoCivil = "Casado(a)";
+                            break;
+                        case 2:
+                            estadoCivil = "União Estável";
+                            break;
+                        case 3:
+                            estadoCivil = "Viúvo(a)";
+                            break;
+                    }
 
-                    MessageBox.Show("Cadastrado  com sucesso");
-                    textNome.Text = "";
-                    textCpf.Text = "";
-                    textRG.Text = "";
-                    textEndereco.Text = "";
-                    mDataNascimento.Text = "";
-                    mCelular.Text = "";
-                    textSenha.Text = "";
-                    cEstadoCivil.SelectedIndex = 0;
-                    cSexo.SelectedIndex = 0;
-                    cContato.SelectedIndex = 0;
+                    string sexo = string.Empty;
+                    switch (cSexo.SelectedIndex)
+                    {
+                        case 0:
+                            sexo = "Masculino";
+                            break;
+                        case 1:
+                            sexo = "Feminino";
+                            break;
+                        case 2:
+                            sexo = "Não definido";
+                            break;
+                            // Adicione os casos para os outros valores do ComboBox cSexo, se houver
+                    }
+
+                    string status = string.Empty;
+                    switch (cStatus.SelectedIndex)
+                    {
+                        case 0:
+                            status = "Ativo";
+                            break;
+                        case 1:
+                            status = "Inativo";
+                            break;
+                            // Adicione os casos para os outros valores do ComboBox cStatus, se houver
+                    }
+                    // Consultar o número atual de registros ativos
+                    string countQuery = "SELECT COUNT(*) FROM assistente WHERE Status = 'ativo'";
+                    MySqlCommand countCmd = new MySqlCommand(countQuery, Conexao.con);
+                    int registrosAtivos = Convert.ToInt32(countCmd.ExecuteScalar());
+
+                    // Verificar se já existem 10 registros ativos
+                    if (registrosAtivos >= 10)
+                    {
+                        // Exibir uma mensagem informando que o limite foi atingido
+                        Console.WriteLine("Limite de registros ativos atingido. Não é possível cadastrar mais como ativo.");
+                    }
+                    else
+                    {
+                        // Agora você pode usar as variáveis estadoCivil, sexo e status em sua consulta SQL:
+
+                        string query = $"INSERT INTO assistente (Nome, Cpf, Rg, Endereco, DataNasc, Contato, EstadoCivil, Sexo,Senha, Status) " +
+                                   $"VALUES (@nome, @cpf, @rg, @endereco, @dataNascimento, @celular, @estadoCivil, @sexo,@senha, @status)";
+
+                        MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
+                        cmd.Parameters.AddWithValue("@nome", nome);
+                        cmd.Parameters.AddWithValue("@cpf", cpf);
+                        cmd.Parameters.AddWithValue("@rg", rg);
+                        cmd.Parameters.AddWithValue("@endereco", endereco);
+                        cmd.Parameters.AddWithValue("@dataNascimento", dataNascimento);
+                        cmd.Parameters.AddWithValue("@celular", celular);
+                        cmd.Parameters.AddWithValue("@estadoCivil", estadoCivil);
+                        cmd.Parameters.AddWithValue("@sexo", sexo);
+                        cmd.Parameters.AddWithValue("@senha", senha);
+
+                        cmd.Parameters.AddWithValue("@status", status);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Cadastrado com sucesso");
+                            textNome.Text = "";
+                            textCpf.Text = "";
+                            textRG.Text = "";
+                            textEndereco.Text = "";
+                            mDataNascimento.Text = "";
+                            mCelular.Text = "";
+                            textSenha.Text = "";
+                            cEstadoCivil.SelectedIndex = 0;
+                            cSexo.SelectedIndex = 0;
+                            cContato.SelectedIndex = 0;
+                            cStatus.SelectedIndex = 0;
+                            conexao.Fechar();
+                        }
+                    }
                 }
-            
-        }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
+                }
+               
+                   
+                
+            } }
 
         private void mDataNascimento_Click(object sender, EventArgs e)
         {// Define o início da seleção como o caractere 0

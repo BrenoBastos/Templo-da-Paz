@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -76,6 +77,22 @@ namespace WindowsFormsApp1
 
             // Define o valor do controle "mCelular" como uma string vazia.
             mCelular.Text = "";
+        }
+        public void CarregarDetalhes(string Id, string nome, string cpf, string rg, string endereco, string dataNascimento, string senha, string crm,string estadoCivil, string sexo, string contato, string status)
+        {
+            textID.Text = Id.ToString();
+            textNome.Text = nome;
+            textCpf.Text = cpf;
+            textRG.Text = rg;
+            textEndereco.Text = endereco;
+            mDataNascimento.Text = dataNascimento;
+            mCelular.Text = contato;
+            textSenha.Text = senha;
+            mCRM.Text = crm;
+            cEstadoCivil.SelectedIndex = cEstadoCivil.FindStringExact(estadoCivil);
+            cSexo.SelectedIndex = cSexo.FindStringExact(sexo);
+            cContato.SelectedIndex = cContato.FindStringExact(contato);
+            cStatus.SelectedIndex = cStatus.FindStringExact(status);
         }
         private void comboBoxiniciar1()
         {
@@ -233,7 +250,7 @@ namespace WindowsFormsApp1
             }
             // Verifica se o tipo de contato selecionado é "Celular" e se o número inserido está no formato correto.
             // Se o formato estiver incorreto, exibe uma mensagem de erro e limpa o campo de entrada.
-            else if (cContato.SelectedItem.ToString() == "Celular" && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{5}-\d{4}$"))
+            if (cContato.SelectedItem != null&& cContato.SelectedItem.ToString() == "Celular" && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{5}-\d{4}$"))
             {
                 MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Contato' inválido, preencha-o com um número de contato válido.");
                 mCelular.Text = "";
@@ -242,7 +259,7 @@ namespace WindowsFormsApp1
 
             // Verifica se o tipo de contato selecionado é "Telefone" e se o número inserido está no formato correto.
             // Se o formato estiver incorreto, exibe uma mensagem de erro e limpa o campo de entrada.
-            else if (cContato.SelectedItem.ToString() == "Telefone" && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{4}-\d{4}$"))
+            if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Telefone" && !Regex.IsMatch(mCelular.Text, @"^^(\(\d{2}\))?\s?\d{4}-\d{4}$"))
             {
                 MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Contato' inválido, preencha-o com um número de contato válido.");
                 mCelular.Text = "";
@@ -252,28 +269,125 @@ namespace WindowsFormsApp1
             // Se todas as validações passarem, exibe uma mensagem de sucesso e limpa todos os campos.
             else
             {
-                MessageBox.Show("Alterado com sucesso.");
-                textNome.Text = "";
-                textCpf.Text = "";
-                textRG.Text = "";
-                textEndereco.Text = "";
-                mDataNascimento.Text = "";
-                mCelular.Text = "";
-                textSenha.Text = "";
-                cEstadoCivil.SelectedIndex = 0;
-                cSexo.SelectedIndex = 0;
-                mCRM.Text = "";
-                cStatus.SelectedIndex = 0;
-                cContato.SelectedIndex = 0;
-                cStatus.SelectedIndex = 0;
-                textID.Text = "";
-                Celular.Visible = false;
-                Telefone.Visible = false;
-                mCelular.Enabled = true;
-                mCelular.Visible = true;
-                Contato1.Visible = true;
-                cContato.SelectedIndex = 0;
-                mCelular.Text = "";
+                try
+
+                {
+                    Conexao conexao = new Conexao();
+                    conexao.Abrir();
+                    string nome = textNome.Text;
+                    string cpf = textCpf.Text;
+                    string rg = textRG.Text;
+                    string endereco = textEndereco.Text;
+                    string dataNascimento = mDataNascimento.Text;
+                    string celular = mCelular.Text;
+                    string senha = textSenha.Text;
+                    string crm = mCRM.Text;
+                    string id = textID.Text;
+
+                    string estadoCivil = string.Empty;
+                    switch (cEstadoCivil.SelectedIndex)
+                    {
+                        case 0:
+                            estadoCivil = "Solteiro(a)";
+                            break;
+                        case 1:
+                            estadoCivil = "Casado(a)";
+                            break;
+                        case 2:
+                            estadoCivil = "União Estável";
+                            break;
+                        case 3:
+                            estadoCivil = "Viúvo(a)";
+                            break;
+                    }
+
+                    string sexo = string.Empty;
+                    switch (cSexo.SelectedIndex)
+                    {
+                        case 0:
+                            sexo = "Masculino";
+                            break;
+                        case 1:
+                            sexo = "Feminino";
+                            break;
+                        case 2:
+                            sexo = "Não definido";
+                            break;
+                            // Adicione os casos para os outros valores do ComboBox cSexo, se houver
+                    }
+
+                    string status = string.Empty;
+                    switch (cStatus.SelectedIndex)
+                    {
+                        case 0:
+                            status = "Ativo";
+                            break;
+                        case 1:
+                            status = "Inativo";
+                            break;
+                            // Adicione os casos para os outros valores do ComboBox cStatus, se houver
+                    }
+
+                    // Agora você pode usar as variáveis estadoCivil, sexo e status em sua consulta SQL:
+                    // Consultar o número atual de legistas ativos
+                    string countQuery = "SELECT COUNT(*) FROM legista WHERE Status = 'Ativo'";
+                    MySqlCommand countCmd = new MySqlCommand(countQuery, Conexao.con);
+                    int legistasAtivos = Convert.ToInt32(countCmd.ExecuteScalar());
+
+                    // Verificar se já existem 5 legistas ativos
+                    if (legistasAtivos >= 5)
+                    {
+                        // Exibir uma mensagem informando que o limite foi atingido
+                        MessageBox.Show("Limite de legistas ativos atingido. Não é possível cadastrar mais legistas ativos.");
+                    }
+                    else
+                    {
+                        string query = $"UPDATE legista SET Nome = @nome, Rg = @rg, Endereco = @endereco, DataNasc = @dataNascimento, " +
+                                  $"Contato = @celular, Id=@id,Crm = @crm, EstadoCivil = @estadoCivil, Sexo = @sexo, Senha = @senha, Status = @status " +
+                                  $"WHERE Id = @id";
+
+                        MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
+                        cmd.Parameters.AddWithValue("@id", id);
+
+                        cmd.Parameters.AddWithValue("@nome", nome);
+                        cmd.Parameters.AddWithValue("@cpf", cpf);
+                        cmd.Parameters.AddWithValue("@rg", rg);
+                        cmd.Parameters.AddWithValue("@endereco", endereco);
+                        cmd.Parameters.AddWithValue("@dataNascimento", dataNascimento);
+                        cmd.Parameters.AddWithValue("@celular", celular);
+                        cmd.Parameters.AddWithValue("@crm", crm);
+
+                        cmd.Parameters.AddWithValue("@estadoCivil", estadoCivil);
+                        cmd.Parameters.AddWithValue("@sexo", sexo);
+                        cmd.Parameters.AddWithValue("@senha", senha);
+
+                        cmd.Parameters.AddWithValue("@status", status);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Alterado com sucesso");
+                            textNome.Text = "";
+                            textCpf.Text = "";
+                            textRG.Text = "";
+                            textEndereco.Text = "";
+                            mDataNascimento.Text = "";
+                            mCelular.Text = "";
+                            mCRM.Text = "";
+                            textSenha.Text = "";
+                            textID.Text = "";
+                            cEstadoCivil.SelectedIndex = 0;
+                            cSexo.SelectedIndex = 0;
+                            cContato.SelectedIndex = 0;
+                            cStatus.SelectedIndex = 0;
+                            conexao.Fechar();
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
+                }
+
             }
 
 
@@ -353,7 +467,7 @@ namespace WindowsFormsApp1
 
         private void cContato_SelectedIndexChanged_1(object sender, EventArgs e)
         { // Se o item selecionado em cContato for "Celular"
-            if (cContato.SelectedItem.ToString() == "Celular")
+            if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Celular")
             {            // Esconde o controle Contato1
 
                 Contato1.Visible = false;
@@ -373,7 +487,7 @@ namespace WindowsFormsApp1
 
             }
             // Se o item selecionado em cContato for "Telefone"
-            else if (cContato.SelectedItem.ToString() == "Telefone")
+            if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Celular")
             { // Esconde o controle Contato1
                 Contato1.Visible = false;
                 // Esconde o controle Celular

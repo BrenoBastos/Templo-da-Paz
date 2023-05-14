@@ -142,6 +142,7 @@ namespace WindowsFormsApp1
             // 
             this.textID.Location = new System.Drawing.Point(47, 136);
             this.textID.Name = "textID";
+            this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(100, 20);
             this.textID.TabIndex = 42;
             // 

@@ -171,6 +171,7 @@ namespace WindowsFormsApp1
             // 
             this.textID.Location = new System.Drawing.Point(72, 153);
             this.textID.Name = "textID";
+            this.textID.ReadOnly = true;
             this.textID.Size = new System.Drawing.Size(100, 20);
             this.textID.TabIndex = 15;
             this.textID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textID_KeyPress);
