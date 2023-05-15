@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,7 +34,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Preencha todos os campos!");
                 return; // Retorna sem cadastrar
             }
-          
+
             else if (textAssistente.Text.All(char.IsDigit)) // Verifica se o campo Assistente contém apenas caracteres numéricos
             {
                 // Exibe uma mensagem de erro informando que o campo Assistente deve conter apenas caracteres
@@ -57,16 +58,72 @@ namespace WindowsFormsApp1
             }
             else // Se todas as validações passarem
             {
-                // Exibe uma mensagem de sucesso informando que o cadastro foi realizado com sucesso
-                MessageBox.Show("Cadastrado com sucesso");
-                // Limpa todos os campos para um novo cadastro
-                textNome.Text = "";
-                textGaveta.Text = "";
-                mDataChegada.Text = "";
-                mHorarioChegada.Text = "";
-                textAssistente.Text = "";
+                try
+                {
+                    Conexao conexao = new Conexao();
+                    conexao.Abrir();
+
+                    string nome = textNome.Text;
+                    string gaveta = textGaveta.Text;
+                    string dataChegada = mDataChegada.Text;
+                    string horarioChegada = mHorarioChegada.Text;
+                    string assistente = textAssistente.Text;
+
+                    // Verifica se o fornecedor existe na tabela "fornecedor"
+                    string verificaAssistenteQuery = $"SELECT COUNT(*) FROM assistente WHERE Nome = @assistente AND Status = 'ativo'";
+                    MySqlCommand verificaAssistenteCmd = new MySqlCommand(verificaAssistenteQuery, Conexao.con);
+                    verificaAssistenteCmd.Parameters.AddWithValue("@assistente", assistente);
+
+                    int AssistenteCount = Convert.ToInt32(verificaAssistenteCmd.ExecuteScalar());
+
+                    if (AssistenteCount > 0)
+                    {
+                        string verificaGavetaQuery = "SELECT COUNT(*) FROM cadaver WHERE Gaveta = @gaveta";
+                        MySqlCommand verificaGavetaCmd = new MySqlCommand(verificaGavetaQuery, Conexao.con);
+                        verificaGavetaCmd.Parameters.AddWithValue("@gaveta", gaveta);
+
+                        int gavetaCount = Convert.ToInt32(verificaGavetaCmd.ExecuteScalar());
+
+                        if (gavetaCount > 0)
+                        {
+                            MessageBox.Show("A gaveta informada já está ocupada. Por favor, escolha outra gaveta.");
+                        }
+                        else
+                        {
+                            // Insira o cadáver no banco de dados
+                            string queryCadaver = "INSERT INTO cadaver (Nome, Gaveta, DataChegada, HorarioChegada, Assistente) VALUES (@nome, @gaveta, @dataChegada, @horarioChegada, @assistente)";
+                            MySqlCommand cmdCadaver = new MySqlCommand(queryCadaver, Conexao.con);
+                            cmdCadaver.Parameters.AddWithValue("@nome", nome);
+                            cmdCadaver.Parameters.AddWithValue("@gaveta", gaveta);
+                            cmdCadaver.Parameters.AddWithValue("@dataChegada", dataChegada);
+                            cmdCadaver.Parameters.AddWithValue("@horarioChegada", horarioChegada);
+                            cmdCadaver.Parameters.AddWithValue("@assistente", assistente);
+                            cmdCadaver.ExecuteNonQuery();
+
+                            // Exibe uma mensagem de sucesso informando que o cadastro foi realizado com sucesso
+                            MessageBox.Show("Cadastrado com sucesso");
+
+                            // Limpa todos os campos para um novo cadastro
+                            textNome.Text = "";
+                            textGaveta.Text = "";
+                            mDataChegada.Text = "";
+                            mHorarioChegada.Text = "";
+                            textAssistente.Text = "";
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fornecedor não encontrado na tabela 'assistente'. Cadastre o assistente antes de adicionar um cadaver,ou assistente inativo.");
+                    }
+                    conexao.Fechar();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
+                }
             }
         }
+        
         
 
         private void mDataChegada_Click(object sender, EventArgs e)

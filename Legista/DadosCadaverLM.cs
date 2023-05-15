@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -81,6 +82,13 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Por favor, insira apenas caracteres no campo 'Assistente'.");
                 textAssistente.Text = "";
                 return;
+            }
+            else if (!Regex.IsMatch(textGaveta.Text, "^[A-Z]{1}$")) // Verifica se o campo Gaveta contém apenas um caractere em maiúscula
+            {
+                // Exibe uma mensagem de erro informando que o campo Gaveta deve conter apenas um caractere em maiúscula
+                MessageBox.Show("Por favor, insira apenas um caractere em maiúscula no campo 'Gaveta'.");
+                textGaveta.Text = ""; // Limpa o campo Gaveta
+                return; // Retorna sem cadastrar
             }
 
             // Verifica se o campo 'Legista' contém somente caracteres não numéricos

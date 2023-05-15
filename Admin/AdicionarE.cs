@@ -103,6 +103,8 @@ namespace WindowsFormsApp1
                     {
                         MessageBox.Show("Material não encontrado na tabela 'material'. Verifique o nome do material ou cadastre-o antes de adicionar um item ao estoque.");
                     }
+                    conexao.Fechar();
+
                 }
                 catch (MySqlException ex)
                 {

@@ -49,16 +49,16 @@ DROP TABLE IF EXISTS `assistente`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `assistente` (
   `Id` int NOT NULL AUTO_INCREMENT,
-  `Nome` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Cpf` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Rg` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Endereco` varchar(100) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `DataNasc` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Contato` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `EstadoCivil` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Sexo` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Senha` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Status` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Nome` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Cpf` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Rg` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Endereco` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `DataNasc` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Contato` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `EstadoCivil` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Sexo` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Senha` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Status` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   PRIMARY KEY (`Id`,`Cpf`,`Rg`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -82,22 +82,22 @@ DROP TABLE IF EXISTS `cadaver`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cadaver` (
   `Id` int NOT NULL AUTO_INCREMENT,
-  `Nome` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Gaveta` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Assistente` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Nome` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Gaveta` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Assistente` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `Legista` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
   `Laudo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
   `Material` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
   `Quantidade` int DEFAULT NULL,
-  `DataCheg` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `HorarioCheg` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Datareti` varchar(45) COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
-  `Horarioreti` varchar(45) COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
-  `DataObi` varchar(45) COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
-  `HorarioObi` varchar(45) COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
-  `Retirada` varchar(45) COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
+  `DataChegada` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `HorarioChegada` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `Dataretirada` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `Horarioretirada` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `DataObito` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `HorarioObito` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `Retirada` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -106,6 +106,7 @@ CREATE TABLE `cadaver` (
 
 LOCK TABLES `cadaver` WRITE;
 /*!40000 ALTER TABLE `cadaver` DISABLE KEYS */;
+INSERT INTO `cadaver` VALUES (1,'Guilherme','A','Beatriz',NULL,NULL,NULL,NULL,'22/12/2023','22:00',NULL,NULL,NULL,NULL,NULL),(2,'Ruan','B','Beatriz',NULL,NULL,NULL,NULL,'22/12/2023','22:22',NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `cadaver` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -118,9 +119,9 @@ DROP TABLE IF EXISTS `estoque`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `estoque` (
   `Id` int NOT NULL AUTO_INCREMENT,
-  `Material` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Material` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `Quantidade` int NOT NULL,
-  `Fornecedor` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Fornecedor` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `Total` int DEFAULT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
@@ -145,11 +146,11 @@ DROP TABLE IF EXISTS `fornecedor`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `fornecedor` (
   `Id` int NOT NULL AUTO_INCREMENT,
-  `Nome` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Cpf` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Endereco` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Contato` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Status` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Nome` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Cpf` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Endereco` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Contato` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Status` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   PRIMARY KEY (`Id`,`Cpf`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -174,10 +175,10 @@ DROP TABLE IF EXISTS `legista`;
 CREATE TABLE `legista` (
   `Id` int NOT NULL AUTO_INCREMENT,
   `Nome` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Cpf` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `Rg` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Cpf` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Rg` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `Endereco` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
-  `DataNasc` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `DataNasc` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `Contato` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `Crm` int NOT NULL,
   `EstadoCivil` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
@@ -207,4 +208,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-14 11:49:45
+-- Dump completed on 2023-05-14 21:08:45

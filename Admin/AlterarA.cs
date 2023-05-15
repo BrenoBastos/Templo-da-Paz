@@ -370,8 +370,9 @@ namespace WindowsFormsApp1
                             mCelular.Text = "";
                         }
 
-                        conexao.Fechar();
                     }
+                    conexao.Fechar();
+
                 }
                 catch (MySqlException ex)
                 {
