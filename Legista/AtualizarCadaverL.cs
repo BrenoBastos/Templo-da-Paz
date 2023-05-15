@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,23 +23,77 @@ namespace WindowsFormsApp1
             // Define o modo de seleção do DataGridView
 
             dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.Shown += AtualizarCadaverL_Shown;
 
+            CarregarDados();
+            
         }
+        private void AtualizarCadaverL_Shown(object sender, EventArgs e)
+        {
+            MessageBox.Show("Dados carregados com sucesso");
+        }
+        private void CarregarDados()
+        {
+            try
+            {
+                Conexao conexao = new Conexao();
+                conexao.Abrir();
+
+                // Consulta na tabela cadaver para obter os dados filtrados por Retirada nula ou "espera"
+                string query = "SELECT Id, Nome, Gaveta, Assistente, Legista, DataChegada, HorarioChegada, DataRetirada, Retirada FROM cadaver WHERE Retirada IS NULL ";
+                MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                if (dataTable.Rows.Count > 0)
+                {
+                    // Vincula os resultados à DataGridView
+                    dDados.DataSource = dataTable;
+
+                    // Define a propriedade DataPropertyName das colunas correspondentes
+                    dDados.Columns["Id"].DataPropertyName = "Id";
+                    dDados.Columns["Nome"].DataPropertyName = "Nome";
+                    dDados.Columns["Gaveta"].DataPropertyName = "Gaveta";
+                    dDados.Columns["Assistente"].DataPropertyName = "Assistente";
+                    dDados.Columns["Legista"].DataPropertyName = "Legista";
+                    dDados.Columns["DataChegada"].DataPropertyName = "DataChegada";
+                    dDados.Columns["HorarioChegada"].DataPropertyName = "HorarioChegada";
+                    dDados.Columns["DataRetirada"].DataPropertyName = "DataRetirada";
+                    dDados.Columns["Retirada"].DataPropertyName = "Retirada";
+
+                }
+                else
+                {
+                    MessageBox.Show("Nenhum resultado encontrado.");
+                }
+
+                conexao.Fechar();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
+            }
+        }
+
         private void comboBoxiniciar()
         {// Verifica se o ComboBox está vazio
             if (cRetirada.Items.Count == 0)
+
             {// Adiciona o item itens no ComboBox
                 cRetirada.Items.Add("Espera");
                 cRetirada.Items.Add("Velório Municipal");
                 cRetirada.Items.Add("Funerária");
-                // Define o primeiro item como selecionado
                 cRetirada.SelectedIndex = 0;
+
+                // Define o primeiro item como selecionado
                 // Define o ComboBox como somente leitura
                 cRetirada.DropDownStyle = ComboBoxStyle.DropDownList;
 
             }
         }
-       
+
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -110,27 +165,175 @@ namespace WindowsFormsApp1
                 textGaveta.Text = ""; // Limpa o campo Gaveta
                 return; // Retorna sem cadastrar
             }
-
+            else if (!textGaveta.Text.All(char.IsUpper)) // Verifica se o campo Gaveta contém apenas letras maiúsculas
+            {
+                // Exibe uma mensagem de erro informando que o campo Gaveta deve conter apenas letras maiúsculas
+                MessageBox.Show("Por favor, insira apenas letras maiúsculas no campo 'Gaveta'.");
+                textGaveta.Text = ""; // Limpa o campo Gaveta
+                return; // Retorna sem cadastrar
+            }
             // Se todos os campos estiverem preenchidos corretamente
             else
             {
-                // Exibe uma mensagem de sucesso e limpa todos os campos e faz combobox voltar padrão
-                MessageBox.Show("Atualizado com sucesso");
-                textNome.Text = "";
-                textID.Text = "";
-                textGaveta.Text = "";
-                textLaudo.Text = "";
-                textMaterial.Text = "";
-                textQuantidade.Text = "";
-                mDataChegada.Text = "";
-                mDataRetirada.Text = "";
-                mHorarioChegada.Text = "";
-                textAssistente.Text = "";
-                textLegista.Text = "";
-                mHorarioRetirada.Text = "";
-                mDataObito.Text = "";
-                mHorárioÓbito.Text = "";
-                cRetirada.SelectedIndex = 0;
+                try
+                {
+                    Conexao conexao = new Conexao();
+                    conexao.Abrir();
+
+                    string id = textID.Text;
+                    string nome = textNome.Text;
+                    string gaveta = textGaveta.Text;
+                    string dataChegada = mDataChegada.Text;
+                    string horarioChegada = mHorarioChegada.Text;
+                    string assistente = textAssistente.Text;
+                    string legista = textLegista.Text;
+                    string material = textMaterial.Text;
+                    string dataobito = mDataObito.Text;
+                    string horarioobito = mHorárioÓbito.Text;
+                    string retirada = string.Empty;
+                    switch (cRetirada.SelectedIndex)
+                    {
+                        case 0:
+                            retirada = "Espera";
+                            break;
+                        case 1:
+                            retirada = "Velório Municipal";
+                            break;
+                        case 2:
+                            retirada = "Funerária";
+                            break;
+
+                    }
+
+
+
+
+                    int quantidade = int.Parse(textQuantidade.Text);
+
+                    // Verifica se o assistente existe na tabela "assistente" e está ativo
+                    string verificaAssistenteQuery = "SELECT COUNT(*) FROM assistente WHERE Nome = @assistente AND Status = 'ativo'";
+                    MySqlCommand verificaAssistenteCmd = new MySqlCommand(verificaAssistenteQuery, Conexao.con);
+                    verificaAssistenteCmd.Parameters.AddWithValue("@assistente", assistente);
+
+                    int assistenteCount = Convert.ToInt32(verificaAssistenteCmd.ExecuteScalar());
+
+                    if (assistenteCount == 0)
+                    {
+                        MessageBox.Show("O assistente informado não existe ou está inativo. Por favor, escolha um assistente válido.");
+                        return;
+                    }
+
+                    // Verifica se o legista existe na tabela "legista" e está ativo
+                    string verificaLegistaQuery = "SELECT COUNT(*) FROM legista WHERE Nome = @legista AND Status = 'ativo'";
+                    MySqlCommand verificaLegistaCmd = new MySqlCommand(verificaLegistaQuery, Conexao.con);
+                    verificaLegistaCmd.Parameters.AddWithValue("@legista", legista);
+
+                    int legistaCount = Convert.ToInt32(verificaLegistaCmd.ExecuteScalar());
+
+                    if (legistaCount == 0)
+                    {
+                        MessageBox.Show("O legista informado não existe ou está inativo. Por favor, escolha um legista válido.");
+                        return;
+                    }
+
+                    // Verifica se o material existe na tabela "estoque" e há quantidade suficiente disponível
+                    string verificaMaterialQuery = "SELECT Total FROM estoque WHERE Material = @material";
+                    MySqlCommand verificaMaterialCmd = new MySqlCommand(verificaMaterialQuery, Conexao.con);
+                    verificaMaterialCmd.Parameters.AddWithValue("@material", material);
+
+                    int quantidadeDisponivel = Convert.ToInt32(verificaMaterialCmd.ExecuteScalar());
+
+                    if (quantidadeDisponivel < quantidade)
+                    {
+                        MessageBox.Show("A quantidade solicitada do material não está disponível no estoque. Por favor, escolha uma quantidade menor ou verifique o estoque.");
+                        return;
+                    }
+                    if (retirada == "Velório Municipal" || retirada == "Funerária")
+                    {
+                        // Atualiza a gaveta para vazia
+                        string atualizaGavetaQuery = "UPDATE cadaver SET Gaveta = '' WHERE Id = @id";
+                        MySqlCommand atualizaGavetaCmd = new MySqlCommand(atualizaGavetaQuery, Conexao.con);
+                        atualizaGavetaCmd.Parameters.AddWithValue("@id", id);
+
+                        atualizaGavetaCmd.ExecuteNonQuery(); string verificaGavetaQuery = "SELECT COUNT(*) FROM cadaver WHERE Gaveta = @gaveta AND (Id <> @id OR Gaveta = '')";
+                        MySqlCommand verificaGavetaCmd = new MySqlCommand(verificaGavetaQuery, Conexao.con);
+                        verificaGavetaCmd.Parameters.AddWithValue("@gaveta", gaveta);
+                        verificaGavetaCmd.Parameters.AddWithValue("@id", id);
+
+                        int gavetaCount = Convert.ToInt32(verificaGavetaCmd.ExecuteScalar());
+
+                        if (gavetaCount > 0 && retirada == "Espera")
+                        {
+                            MessageBox.Show("A gaveta informada já está ocupada ou não está disponível. Por favor, escolha outra gaveta.");
+                            return;
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                    if (retirada == "Velório Municipal" || retirada == "Funerária")
+                    {
+                      
+                        // Localiza a linha correspondente ao cadáver na DataGridView
+                        DataGridViewRow rowToRemove = dDados.Rows
+                            .Cast<DataGridViewRow>()
+                            .FirstOrDefault(row => row.Cells["Id"].Value.ToString() == id);
+
+                        // Remove a linha da DataGridView
+                        if (rowToRemove != null)
+                        {
+                            dDados.Rows.Remove(rowToRemove);
+                        }
+
+                    }
+                    // Atualiza os dados do cadáver no banco de dados
+                    string queryUpdateCadaver = "UPDATE cadaver SET Nome = @nome, Gaveta = @gaveta, Laudo = @laudo, Material = @material, Quantidade = @quantidade, DataChegada = @dataChegada, dataRetirada = @dataRetirada, horarioChegada = @horarioChegada, Assistente = @assistente, Legista = @legista, HorarioRetirada = @horarioRetirada, DataObito = @dataObito, HorarioObito = @horarioObito, Retirada = @retirada WHERE Id = @id";
+                    MySqlCommand cmdUpdateCadaver = new MySqlCommand(queryUpdateCadaver, Conexao.con);
+
+                    cmdUpdateCadaver.Parameters.AddWithValue("@nome", textNome.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@gaveta", textGaveta.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@laudo", textLaudo.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@material", textMaterial.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@quantidade", textQuantidade.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@dataChegada", mDataChegada.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@dataRetirada", mDataRetirada.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@horarioChegada", mHorarioChegada.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@assistente", textAssistente.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@legista", textLegista.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@horarioRetirada", mHorarioRetirada.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@dataObito", mDataObito.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@horarioObito", mHorárioÓbito.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@retirada", cRetirada.SelectedItem);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@id", textID.Text);
+
+                    cmdUpdateCadaver.ExecuteNonQuery();
+
+
+                    // Exibe uma mensagem de sucesso e limpa todos os campos
+                    MessageBox.Show("Atualizado com sucesso");
+                    textNome.Text = "";
+                    textID.Text = "";
+                    textGaveta.Text = "";
+                    textLaudo.Text = "";
+                    textMaterial.Text = "";
+                    textQuantidade.Text = "";
+                    mDataChegada.Text = "";
+                    mDataRetirada.Text = "";
+                    mHorarioChegada.Text = "";
+                    textAssistente.Text = "";
+                    textLegista.Text = "";
+                    mHorarioRetirada.Text = "";
+                    mDataObito.Text = "";
+                    mHorárioÓbito.Text = "";
+                    cRetirada.SelectedIndex = 0;
+                    CarregarDados();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocorreu um erro ao atualizar os dados do cadáver: " + ex.Message);
+                }
+
             }
         }
 
@@ -189,8 +392,72 @@ namespace WindowsFormsApp1
         }
 
         private void dDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
+        {// Verifica se há uma célula selecionada
+            if (e.RowIndex >= 0)
+            {
+                // Obtém o valor do ID da célula selecionada
+                string id = dDados.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+
+                try
+                {
+                    // Executa uma consulta para obter os dados correspondentes ao ID
+                    Conexao conexao = new Conexao();
+                    conexao.Abrir();
+
+                    string query = "SELECT Id, Nome, Gaveta, Assistente,Legista, DataChegada, HorarioChegada,DataRetirada,Retirada FROM cadaver WHERE Id = @id";
+                    MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Obtém os valores do leitor de dados
+                            string Id = reader.GetString("Id");
+                            string nome = reader.GetString("Nome");
+                            string gaveta = reader.GetString("Gaveta");
+                            string assistente = reader.GetString("Assistente");
+                            string dataChegada = reader.GetString("DataChegada");
+                            string horarioChegada = reader.GetString("HorarioChegada");
+                            string legista = reader.IsDBNull(reader.GetOrdinal("Legista")) ? null : reader.GetString("Legista");
+                            string dataRetirada = reader.IsDBNull(reader.GetOrdinal("DataRetirada")) ? null : reader.GetString("DataRetirada");
+                            string retirada = reader.IsDBNull(reader.GetOrdinal("Retirada")) ? null : reader.GetString("Retirada");
+
+
+
+                            // Chama o método CarregarDetalhes e passa os valores obtidos
+                            CarregarDetalhes(Id, nome, assistente, gaveta, dataChegada, horarioChegada, legista, dataRetirada, retirada);
+                        }
+
+
+                        else
+                        {
+                            MessageBox.Show("Nenhum dado encontrado para o ID selecionado.");
+                        }
+                    }
+
+                    conexao.Fechar();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
+                }
+            }
+
         }
+        private void CarregarDetalhes(string id, string nome, string assistente, string gaveta, string dataChegada, string horarioChegada, string legista, string dataRetirada, string retirada)
+        {
+            textID.Text = id;
+            textNome.Text = nome;
+            textGaveta.Text = gaveta;
+            textAssistente.Text = assistente;
+            mDataChegada.Text = dataChegada;
+            mHorarioChegada.Text = horarioChegada;
+            textLegista.Text = legista;
+            mDataRetirada.Text = dataRetirada;
+            cRetirada.SelectedItem = retirada;
+        }
+
+
     }
 }

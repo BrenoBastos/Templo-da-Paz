@@ -34,38 +34,38 @@
             this.mHorarioChegada = new System.Windows.Forms.MaskedTextBox();
             this.mDataRetirada = new System.Windows.Forms.MaskedTextBox();
             this.mDataChegada = new System.Windows.Forms.MaskedTextBox();
-            this.Gaveta = new System.Windows.Forms.Label();
-            this.Retirada = new System.Windows.Forms.Label();
-            this.Datare = new System.Windows.Forms.Label();
-            this.Horario = new System.Windows.Forms.Label();
-            this.DataCheg = new System.Windows.Forms.Label();
-            this.Laudo = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.Label();
-            this.Nome = new System.Windows.Forms.Label();
+            this.asdd = new System.Windows.Forms.Label();
+            this.kjty = new System.Windows.Forms.Label();
+            this.hgff = new System.Windows.Forms.Label();
+            this.hgfgf = new System.Windows.Forms.Label();
+            this.adf = new System.Windows.Forms.Label();
+            this.asddd = new System.Windows.Forms.Label();
+            this.ysd = new System.Windows.Forms.Label();
+            this.ads = new System.Windows.Forms.Label();
             this.bAtualizar = new System.Windows.Forms.Button();
             this.dDados = new System.Windows.Forms.DataGridView();
-            this.NomeD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GavetaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataChegadaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HorariChegadaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dAssistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gaveta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HorarioChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Assistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textLaudo = new System.Windows.Forms.RichTextBox();
             this.cRetirada = new System.Windows.Forms.ComboBox();
             this.textQuantidade = new System.Windows.Forms.TextBox();
-            this.Quantidade = new System.Windows.Forms.Label();
+            this.fgd = new System.Windows.Forms.Label();
             this.textMaterial = new System.Windows.Forms.TextBox();
-            this.Material = new System.Windows.Forms.Label();
+            this.dfd = new System.Windows.Forms.Label();
             this.textAssistente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textLegista = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
-            this.HorárioRetirada = new System.Windows.Forms.Label();
+            this.dasdas = new System.Windows.Forms.Label();
             this.mHorárioÓbito = new System.Windows.Forms.MaskedTextBox();
             this.mDataObito = new System.Windows.Forms.MaskedTextBox();
-            this.HorárioÓbito = new System.Windows.Forms.Label();
-            this.DataÓbito = new System.Windows.Forms.Label();
+            this.jary = new System.Windows.Forms.Label();
+            this.ku = new System.Windows.Forms.Label();
             this.mHorarioRetirada = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
@@ -128,77 +128,77 @@
             this.mDataChegada.ValidatingType = typeof(System.DateTime);
             this.mDataChegada.Click += new System.EventHandler(this.mDataChegada_Click);
             // 
-            // Gaveta
+            // asdd
             // 
-            this.Gaveta.AutoSize = true;
-            this.Gaveta.Location = new System.Drawing.Point(18, 147);
-            this.Gaveta.Name = "Gaveta";
-            this.Gaveta.Size = new System.Drawing.Size(42, 13);
-            this.Gaveta.TabIndex = 37;
-            this.Gaveta.Text = "Gaveta";
+            this.asdd.AutoSize = true;
+            this.asdd.Location = new System.Drawing.Point(18, 147);
+            this.asdd.Name = "asdd";
+            this.asdd.Size = new System.Drawing.Size(42, 13);
+            this.asdd.TabIndex = 37;
+            this.asdd.Text = "Gaveta";
             // 
-            // Retirada
+            // kjty
             // 
-            this.Retirada.AutoSize = true;
-            this.Retirada.Location = new System.Drawing.Point(556, 268);
-            this.Retirada.Name = "Retirada";
-            this.Retirada.Size = new System.Drawing.Size(47, 13);
-            this.Retirada.TabIndex = 36;
-            this.Retirada.Text = "Retirada";
+            this.kjty.AutoSize = true;
+            this.kjty.Location = new System.Drawing.Point(556, 268);
+            this.kjty.Name = "kjty";
+            this.kjty.Size = new System.Drawing.Size(47, 13);
+            this.kjty.TabIndex = 36;
+            this.kjty.Text = "Retirada";
             // 
-            // Datare
+            // hgff
             // 
-            this.Datare.AutoSize = true;
-            this.Datare.Location = new System.Drawing.Point(546, 140);
-            this.Datare.Name = "Datare";
-            this.Datare.Size = new System.Drawing.Size(68, 13);
-            this.Datare.TabIndex = 35;
-            this.Datare.Text = "Data retirada";
+            this.hgff.AutoSize = true;
+            this.hgff.Location = new System.Drawing.Point(546, 140);
+            this.hgff.Name = "hgff";
+            this.hgff.Size = new System.Drawing.Size(68, 13);
+            this.hgff.TabIndex = 35;
+            this.hgff.Text = "Data retirada";
             // 
-            // Horario
+            // hgfgf
             // 
-            this.Horario.AutoSize = true;
-            this.Horario.Location = new System.Drawing.Point(517, 91);
-            this.Horario.Name = "Horario";
-            this.Horario.Size = new System.Drawing.Size(86, 13);
-            this.Horario.TabIndex = 34;
-            this.Horario.Text = "Horário chegada";
+            this.hgfgf.AutoSize = true;
+            this.hgfgf.Location = new System.Drawing.Point(517, 91);
+            this.hgfgf.Name = "hgfgf";
+            this.hgfgf.Size = new System.Drawing.Size(86, 13);
+            this.hgfgf.TabIndex = 34;
+            this.hgfgf.Text = "Horário chegada";
             // 
-            // DataCheg
+            // adf
             // 
-            this.DataCheg.AutoSize = true;
-            this.DataCheg.Location = new System.Drawing.Point(517, 56);
-            this.DataCheg.Name = "DataCheg";
-            this.DataCheg.Size = new System.Drawing.Size(75, 13);
-            this.DataCheg.TabIndex = 33;
-            this.DataCheg.Text = "Data chegada";
+            this.adf.AutoSize = true;
+            this.adf.Location = new System.Drawing.Point(517, 56);
+            this.adf.Name = "adf";
+            this.adf.Size = new System.Drawing.Size(75, 13);
+            this.adf.TabIndex = 33;
+            this.adf.Text = "Data chegada";
             // 
-            // Laudo
+            // asddd
             // 
-            this.Laudo.AutoSize = true;
-            this.Laudo.Location = new System.Drawing.Point(283, 49);
-            this.Laudo.Name = "Laudo";
-            this.Laudo.Size = new System.Drawing.Size(37, 13);
-            this.Laudo.TabIndex = 32;
-            this.Laudo.Text = "Laudo";
+            this.asddd.AutoSize = true;
+            this.asddd.Location = new System.Drawing.Point(283, 49);
+            this.asddd.Name = "asddd";
+            this.asddd.Size = new System.Drawing.Size(37, 13);
+            this.asddd.TabIndex = 32;
+            this.asddd.Text = "Laudo";
             // 
-            // ID
+            // ysd
             // 
-            this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(42, 84);
-            this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(18, 13);
-            this.ID.TabIndex = 28;
-            this.ID.Text = "ID";
+            this.ysd.AutoSize = true;
+            this.ysd.Location = new System.Drawing.Point(42, 84);
+            this.ysd.Name = "ysd";
+            this.ysd.Size = new System.Drawing.Size(18, 13);
+            this.ysd.TabIndex = 28;
+            this.ysd.Text = "ID";
             // 
-            // Nome
+            // ads
             // 
-            this.Nome.AutoSize = true;
-            this.Nome.Location = new System.Drawing.Point(42, 49);
-            this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(35, 13);
-            this.Nome.TabIndex = 27;
-            this.Nome.Text = "Nome";
+            this.ads.AutoSize = true;
+            this.ads.Location = new System.Drawing.Point(42, 49);
+            this.ads.Name = "ads";
+            this.ads.Size = new System.Drawing.Size(35, 13);
+            this.ads.TabIndex = 27;
+            this.ads.Text = "Nome";
             // 
             // bAtualizar
             // 
@@ -214,48 +214,54 @@
             // 
             this.dDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NomeD,
-            this.IDData,
-            this.GavetaData,
-            this.DataChegadaData,
-            this.HorariChegadaData,
-            this.dAssistente});
+            this.Nome,
+            this.Id,
+            this.Gaveta,
+            this.DataChegada,
+            this.HorarioChegada,
+            this.Assistente});
             this.dDados.Location = new System.Drawing.Point(65, 322);
             this.dDados.Name = "dDados";
-            this.dDados.Size = new System.Drawing.Size(718, 128);
+            this.dDados.Size = new System.Drawing.Size(647, 128);
             this.dDados.TabIndex = 25;
             this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
             // 
-            // NomeD
+            // Nome
             // 
-            this.NomeD.HeaderText = "Nome";
-            this.NomeD.Name = "NomeD";
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
             // 
-            // IDData
+            // Id
             // 
-            this.IDData.HeaderText = "ID";
-            this.IDData.Name = "IDData";
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
             // 
-            // GavetaData
+            // Gaveta
             // 
-            this.GavetaData.HeaderText = "Gaveta";
-            this.GavetaData.Name = "GavetaData";
+            this.Gaveta.DataPropertyName = "Gaveta";
+            this.Gaveta.HeaderText = "Gaveta";
+            this.Gaveta.Name = "Gaveta";
             // 
-            // DataChegadaData
+            // DataChegada
             // 
-            this.DataChegadaData.HeaderText = "DataChegada";
-            this.DataChegadaData.Name = "DataChegadaData";
+            this.DataChegada.DataPropertyName = "DataChegada";
+            this.DataChegada.HeaderText = "DataChegada";
+            this.DataChegada.Name = "DataChegada";
             // 
-            // HorariChegadaData
+            // HorarioChegada
             // 
-            this.HorariChegadaData.HeaderText = "HorarioChegada";
-            this.HorariChegadaData.Name = "HorariChegadaData";
+            this.HorarioChegada.DataPropertyName = "HorarioChegada";
+            this.HorarioChegada.HeaderText = "HorarioChegada";
+            this.HorarioChegada.Name = "HorarioChegada";
             // 
-            // dAssistente
+            // Assistente
             // 
-            this.dAssistente.HeaderText = "Assistente";
-            this.dAssistente.Name = "dAssistente";
-            this.dAssistente.ReadOnly = true;
+            this.Assistente.DataPropertyName = "Assistente";
+            this.Assistente.HeaderText = "Assistente";
+            this.Assistente.Name = "Assistente";
+            this.Assistente.ReadOnly = true;
             // 
             // textLaudo
             // 
@@ -282,14 +288,14 @@
             this.textQuantidade.Size = new System.Drawing.Size(100, 20);
             this.textQuantidade.TabIndex = 52;
             // 
-            // Quantidade
+            // fgd
             // 
-            this.Quantidade.AutoSize = true;
-            this.Quantidade.Location = new System.Drawing.Point(298, 228);
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.Size = new System.Drawing.Size(62, 13);
-            this.Quantidade.TabIndex = 53;
-            this.Quantidade.Text = "Quantidade";
+            this.fgd.AutoSize = true;
+            this.fgd.Location = new System.Drawing.Point(298, 228);
+            this.fgd.Name = "fgd";
+            this.fgd.Size = new System.Drawing.Size(62, 13);
+            this.fgd.TabIndex = 53;
+            this.fgd.Text = "Quantidade";
             // 
             // textMaterial
             // 
@@ -298,14 +304,14 @@
             this.textMaterial.Size = new System.Drawing.Size(100, 20);
             this.textMaterial.TabIndex = 51;
             // 
-            // Material
+            // dfd
             // 
-            this.Material.AutoSize = true;
-            this.Material.Location = new System.Drawing.Point(264, 179);
-            this.Material.Name = "Material";
-            this.Material.Size = new System.Drawing.Size(44, 13);
-            this.Material.TabIndex = 29;
-            this.Material.Text = "Material";
+            this.dfd.AutoSize = true;
+            this.dfd.Location = new System.Drawing.Point(264, 179);
+            this.dfd.Name = "dfd";
+            this.dfd.Size = new System.Drawing.Size(44, 13);
+            this.dfd.TabIndex = 29;
+            this.dfd.Text = "Material";
             // 
             // textAssistente
             // 
@@ -353,14 +359,14 @@
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
-            // HorárioRetirada
+            // dasdas
             // 
-            this.HorárioRetirada.AutoSize = true;
-            this.HorárioRetirada.Location = new System.Drawing.Point(541, 181);
-            this.HorárioRetirada.Name = "HorárioRetirada";
-            this.HorárioRetirada.Size = new System.Drawing.Size(84, 13);
-            this.HorárioRetirada.TabIndex = 75;
-            this.HorárioRetirada.Text = "Horário Retirada";
+            this.dasdas.AutoSize = true;
+            this.dasdas.Location = new System.Drawing.Point(541, 181);
+            this.dasdas.Name = "dasdas";
+            this.dasdas.Size = new System.Drawing.Size(84, 13);
+            this.dasdas.TabIndex = 75;
+            this.dasdas.Text = "Horário Retirada";
             // 
             // mHorárioÓbito
             // 
@@ -382,23 +388,23 @@
             this.mDataObito.ValidatingType = typeof(System.DateTime);
             this.mDataObito.Click += new System.EventHandler(this.mDataObito_Click);
             // 
-            // HorárioÓbito
+            // jary
             // 
-            this.HorárioÓbito.AutoSize = true;
-            this.HorárioÓbito.Location = new System.Drawing.Point(561, 241);
-            this.HorárioÓbito.Name = "HorárioÓbito";
-            this.HorárioÓbito.Size = new System.Drawing.Size(69, 13);
-            this.HorárioÓbito.TabIndex = 78;
-            this.HorárioÓbito.Text = "Horário Óbito";
+            this.jary.AutoSize = true;
+            this.jary.Location = new System.Drawing.Point(561, 241);
+            this.jary.Name = "jary";
+            this.jary.Size = new System.Drawing.Size(69, 13);
+            this.jary.TabIndex = 78;
+            this.jary.Text = "Horário Óbito";
             // 
-            // DataÓbito
+            // ku
             // 
-            this.DataÓbito.AutoSize = true;
-            this.DataÓbito.Location = new System.Drawing.Point(561, 206);
-            this.DataÓbito.Name = "DataÓbito";
-            this.DataÓbito.Size = new System.Drawing.Size(58, 13);
-            this.DataÓbito.TabIndex = 77;
-            this.DataÓbito.Text = "Data Óbito";
+            this.ku.AutoSize = true;
+            this.ku.Location = new System.Drawing.Point(561, 206);
+            this.ku.Name = "ku";
+            this.ku.Size = new System.Drawing.Size(58, 13);
+            this.ku.TabIndex = 77;
+            this.ku.Text = "Data Óbito";
             // 
             // mHorarioRetirada
             // 
@@ -414,19 +420,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.ClientSize = new System.Drawing.Size(1020, 563);
             this.Controls.Add(this.mHorárioÓbito);
             this.Controls.Add(this.mDataObito);
-            this.Controls.Add(this.HorárioÓbito);
-            this.Controls.Add(this.DataÓbito);
+            this.Controls.Add(this.jary);
+            this.Controls.Add(this.ku);
             this.Controls.Add(this.mHorarioRetirada);
-            this.Controls.Add(this.HorárioRetirada);
+            this.Controls.Add(this.dasdas);
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.textLegista);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textAssistente);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Quantidade);
+            this.Controls.Add(this.fgd);
             this.Controls.Add(this.textQuantidade);
             this.Controls.Add(this.textMaterial);
             this.Controls.Add(this.cRetirada);
@@ -437,15 +443,15 @@
             this.Controls.Add(this.mHorarioChegada);
             this.Controls.Add(this.mDataRetirada);
             this.Controls.Add(this.mDataChegada);
-            this.Controls.Add(this.Gaveta);
-            this.Controls.Add(this.Retirada);
-            this.Controls.Add(this.Datare);
-            this.Controls.Add(this.Horario);
-            this.Controls.Add(this.DataCheg);
-            this.Controls.Add(this.Laudo);
-            this.Controls.Add(this.Material);
-            this.Controls.Add(this.ID);
-            this.Controls.Add(this.Nome);
+            this.Controls.Add(this.asdd);
+            this.Controls.Add(this.kjty);
+            this.Controls.Add(this.hgff);
+            this.Controls.Add(this.hgfgf);
+            this.Controls.Add(this.adf);
+            this.Controls.Add(this.asddd);
+            this.Controls.Add(this.dfd);
+            this.Controls.Add(this.ysd);
+            this.Controls.Add(this.ads);
             this.Controls.Add(this.bAtualizar);
             this.Controls.Add(this.dDados);
             this.Name = "AtualizarCadaverL";
@@ -463,38 +469,39 @@
         private System.Windows.Forms.MaskedTextBox mHorarioChegada;
         private System.Windows.Forms.MaskedTextBox mDataRetirada;
         private System.Windows.Forms.MaskedTextBox mDataChegada;
-        private System.Windows.Forms.Label Gaveta;
-        private System.Windows.Forms.Label Retirada;
-        private System.Windows.Forms.Label Datare;
-        private System.Windows.Forms.Label Horario;
-        private System.Windows.Forms.Label DataCheg;
-        private System.Windows.Forms.Label Laudo;
-        private System.Windows.Forms.Label ID;
-        private System.Windows.Forms.Label Nome;
+        private System.Windows.Forms.Label asdd;
+        private System.Windows.Forms.Label kjty;
+        private System.Windows.Forms.Label hgff;
+        private System.Windows.Forms.Label hgfgf;
+        private System.Windows.Forms.Label adf;
+        private System.Windows.Forms.Label asddd;
+        private System.Windows.Forms.Label ysd;
+        private System.Windows.Forms.Label ads;
         private System.Windows.Forms.Button bAtualizar;
         private System.Windows.Forms.DataGridView dDados;
         private System.Windows.Forms.RichTextBox textLaudo;
         private System.Windows.Forms.ComboBox cRetirada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GavetaData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataChegadaData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HorariChegadaData;
         private System.Windows.Forms.TextBox textQuantidade;
-        private System.Windows.Forms.Label Quantidade;
+        private System.Windows.Forms.Label fgd;
         private System.Windows.Forms.TextBox textMaterial;
-        private System.Windows.Forms.Label Material;
+        private System.Windows.Forms.Label dfd;
         private System.Windows.Forms.TextBox textAssistente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textLegista;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dAssistente;
         private System.Windows.Forms.Button bVoltar;
-        private System.Windows.Forms.Label HorárioRetirada;
+        private System.Windows.Forms.Label dasdas;
         private System.Windows.Forms.MaskedTextBox mHorárioÓbito;
         private System.Windows.Forms.MaskedTextBox mDataObito;
-        private System.Windows.Forms.Label HorárioÓbito;
-        private System.Windows.Forms.Label DataÓbito;
+        private System.Windows.Forms.Label jary;
+        private System.Windows.Forms.Label ku;
         private System.Windows.Forms.MaskedTextBox mHorarioRetirada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataRetirada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gaveta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataChegada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HorarioChegada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Assistente;
     }
 }

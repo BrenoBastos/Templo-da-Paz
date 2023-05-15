@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,6 @@ namespace WindowsFormsApp1
             // Chama o método que inicializa a ComboBox
 
             comboBoxiniciar();
-            comboBoxiniciar2();
 
 
         }// Método que inicializa a ComboBox
@@ -42,22 +42,29 @@ namespace WindowsFormsApp1
 
             }
         }
-        private void comboBoxiniciar2()
+        public void CarregarDetalhes(string id, string nome, string assistente, string gaveta, string dataChegada, string horarioChegada, string laudo, string material, string quantidade, string dataRetirada, string horarioRetirada, string dataObito, string horarioObito, string retirada,string legista)
         {
-            // Verifica se o ComboBox não tem nenhum item
-            if (comboCor.Items.Count == 0)
-            {
-                // Adiciona os itens e seleciona o primeiro item
-                comboCor.Items.Add("Branco");
-                comboCor.Items.Add("Preto");
-                comboCor.Items.Add("Pardo");
-                comboCor.Items.Add("Amarelo");
-                comboCor.Items.Add("Indígena");
-                comboCor.SelectedIndex = 0;
-                // Define o estilo de dropdown como DropDownList, para impedir a inserção de itens
-                comboCor.DropDownStyle = ComboBoxStyle.DropDownList;
-            }
+            // Atribua os valores aos controles da janela DadosCadaverLM
+            textID.Text = id;
+            textNome.Text = nome;
+            textAssistente.Text = assistente;
+            textGaveta.Text = gaveta;
+            mDataChegada.Text = dataChegada;
+           mHorarioChegada.Text = horarioChegada;
+            textLaudo.Text = laudo;
+            textMaterial.Text = material;
+            textQuantidade.Text = quantidade;
+           mDataRetirada.Text = dataRetirada;
+           mHorarioRetirada.Text = horarioRetirada;
+            mDataObito.Text = dataObito;
+            mHorárioÓbito.Text = horarioObito;
+            textLegista.Text = legista;
+
+            // Selecionar o valor correto no ComboBox de Retirada
+            cRetirada.SelectedItem = retirada;
         }
+
+
         private void bAlterar_Click(object sender, EventArgs e)
         {
             // Verifica se algum campo obrigatório está vazio
@@ -114,24 +121,160 @@ namespace WindowsFormsApp1
                 textGaveta.Text = "";
                 return;
             }
+            else if (!textGaveta.Text.All(char.IsUpper)) // Verifica se o campo Gaveta contém apenas letras maiúsculas
+            {
+                // Exibe uma mensagem de erro informando que o campo Gaveta deve conter apenas letras maiúsculas
+                MessageBox.Show("Por favor, insira apenas letras maiúsculas no campo 'Gaveta'.");
+                textGaveta.Text = ""; // Limpa o campo Gaveta
+                return; // Retorna sem cadastrar
+            }
 
             // Caso todas as validações sejam bem-sucedidas, mostra a mensagem de sucesso e limpa os campos
             else
             {
-                MessageBox.Show("Alterado com sucesso");
-                textNome.Text = "";
-                textID.Text = "";
-                textGaveta.Text = "";
-                textLaudo.Text = "";
-                textMaterial.Text = "";
-                textQuantidade.Text = "";
-                mDataChegada.Text = "";
-                mDataRetirada.Text = "";
-                mHorarioChegada.Text = "";
-                textAssistente.Text = "";
-                textLegista.Text = "";
-                cRetirada.SelectedIndex = 0;
-                comboCor.SelectedIndex = 0;
+                try
+                {
+                    Conexao conexao = new Conexao();
+                    conexao.Abrir();
+
+                    string id = textID.Text;
+                    string nome = textNome.Text;
+                    string gaveta = textGaveta.Text;
+                    string dataChegada = mDataChegada.Text;
+                    string horarioChegada = mHorarioChegada.Text;
+                    string assistente = textAssistente.Text;
+                    string legista = textLegista.Text;
+                    string material = textMaterial.Text;
+                    string dataobito = mDataObito.Text;
+                    string horarioobito = mHorárioÓbito.Text;
+                    string retirada = string.Empty;
+                    switch (cRetirada.SelectedIndex)
+                    {
+                        case 0:
+                            retirada = "Espera";
+                            break;
+                        case 1:
+                            retirada = "Velório Municipal";
+                            break;
+                        case 2:
+                            retirada = "Funerária";
+                            break;
+
+                    }
+                  
+
+                
+
+                    int quantidade = int.Parse(textQuantidade.Text);
+
+                    // Verifica se o assistente existe na tabela "assistente" e está ativo
+                    string verificaAssistenteQuery = "SELECT COUNT(*) FROM assistente WHERE Nome = @assistente AND Status = 'ativo'";
+                    MySqlCommand verificaAssistenteCmd = new MySqlCommand(verificaAssistenteQuery, Conexao.con);
+                    verificaAssistenteCmd.Parameters.AddWithValue("@assistente", assistente);
+
+                    int assistenteCount = Convert.ToInt32(verificaAssistenteCmd.ExecuteScalar());
+
+                    if (assistenteCount == 0)
+                    {
+                        MessageBox.Show("O assistente informado não existe ou está inativo. Por favor, escolha um assistente válido.");
+                        return;
+                    }
+
+                    // Verifica se o legista existe na tabela "legista" e está ativo
+                    string verificaLegistaQuery = "SELECT COUNT(*) FROM legista WHERE Nome = @legista AND Status = 'ativo'";
+                    MySqlCommand verificaLegistaCmd = new MySqlCommand(verificaLegistaQuery, Conexao.con);
+                    verificaLegistaCmd.Parameters.AddWithValue("@legista", legista);
+
+                    int legistaCount = Convert.ToInt32(verificaLegistaCmd.ExecuteScalar());
+
+                    if (legistaCount == 0)
+                    {
+                        MessageBox.Show("O legista informado não existe ou está inativo. Por favor, escolha um legista válido.");
+                        return;
+                    }
+
+                    // Verifica se o material existe na tabela "estoque" e há quantidade suficiente disponível
+                    string verificaMaterialQuery = "SELECT Total FROM estoque WHERE Material = @material";
+                    MySqlCommand verificaMaterialCmd = new MySqlCommand(verificaMaterialQuery, Conexao.con);
+                    verificaMaterialCmd.Parameters.AddWithValue("@material", material);
+
+                    int quantidadeDisponivel = Convert.ToInt32(verificaMaterialCmd.ExecuteScalar());
+
+                    if (quantidadeDisponivel < quantidade)
+                    {
+                        MessageBox.Show("A quantidade solicitada do material não está disponível no estoque. Por favor, escolha uma quantidade menor ou verifique o estoque.");
+                        return;
+                    }
+                    if (retirada == "Velório Municipal" || retirada == "Funerária")
+                    {
+                        // Atualiza a gaveta para vazia
+                        string atualizaGavetaQuery = "UPDATE cadaver SET Gaveta = '' WHERE Id = @id";
+                        MySqlCommand atualizaGavetaCmd = new MySqlCommand(atualizaGavetaQuery, Conexao.con);
+                        atualizaGavetaCmd.Parameters.AddWithValue("@id", id);
+
+                        atualizaGavetaCmd.ExecuteNonQuery(); string verificaGavetaQuery = "SELECT COUNT(*) FROM cadaver WHERE Gaveta = @gaveta AND (Id <> @id OR Gaveta = '')";
+                        MySqlCommand verificaGavetaCmd = new MySqlCommand(verificaGavetaQuery, Conexao.con);
+                        verificaGavetaCmd.Parameters.AddWithValue("@gaveta", gaveta);
+                        verificaGavetaCmd.Parameters.AddWithValue("@id", id);
+
+                        int gavetaCount = Convert.ToInt32(verificaGavetaCmd.ExecuteScalar());
+
+                        if (gavetaCount > 0&& retirada == "Espera")
+                        {
+                            MessageBox.Show("A gaveta informada já está ocupada ou não está disponível. Por favor, escolha outra gaveta.");
+                            return;
+                        }
+                        else
+                        {
+
+                        }
+                    }
+
+                    // Atualiza os dados do cadáver no banco de dados
+                    string queryUpdateCadaver = "UPDATE cadaver SET Nome = @nome, Gaveta = @gaveta, Laudo = @laudo, Material = @material, Quantidade = @quantidade, DataChegada = @dataChegada, dataRetirada = @dataRetirada, horarioChegada = @horarioChegada, Assistente = @assistente, Legista = @legista, HorarioRetirada = @horarioRetirada, DataObito = @dataObito, HorarioObito = @horarioObito, Retirada = @retirada WHERE Id = @id";
+                    MySqlCommand cmdUpdateCadaver = new MySqlCommand(queryUpdateCadaver, Conexao.con);
+
+                    cmdUpdateCadaver.Parameters.AddWithValue("@nome", textNome.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@gaveta", textGaveta.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@laudo", textLaudo.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@material", textMaterial.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@quantidade", textQuantidade.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@dataChegada", mDataChegada.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@dataRetirada", mDataRetirada.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@horarioChegada", mHorarioChegada.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@assistente", textAssistente.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@legista", textLegista.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@horarioRetirada", mHorarioRetirada.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@dataObito", mDataObito.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@horarioObito", mHorárioÓbito.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@retirada", cRetirada.SelectedItem);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@id", textID.Text);
+
+                    cmdUpdateCadaver.ExecuteNonQuery();
+
+
+                    // Exibe uma mensagem de sucesso e limpa todos os campos
+                    MessageBox.Show("Alterado com sucesso");
+                    textNome.Text = "";
+                    textID.Text = "";
+                    textGaveta.Text = "";
+                    textLaudo.Text = "";
+                    textMaterial.Text = "";
+                    textQuantidade.Text = "";
+                    mDataChegada.Text = "";
+                    mDataRetirada.Text = "";
+                    mHorarioChegada.Text = "";
+                    textAssistente.Text = "";
+                    textLegista.Text = "";
+                    mHorarioRetirada.Text = "";
+                    mDataObito.Text = "";
+                    mHorárioÓbito.Text = "";
+                    cRetirada.SelectedIndex = 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocorreu um erro ao atualizar os dados do cadáver: " + ex.Message);
+                }
 
 
             }

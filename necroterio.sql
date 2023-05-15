@@ -69,7 +69,7 @@ CREATE TABLE `assistente` (
 
 LOCK TABLES `assistente` WRITE;
 /*!40000 ALTER TABLE `assistente` DISABLE KEYS */;
-INSERT INTO `assistente` VALUES (1,'Beatriz','213,123,123-12','31,231,231-2','321','31/23/1232','(12)09876-2313','União Estável','Não definido','321','Ativo'),(2,'Lucas','333,333,333-33','33,333,333-3','asd','22/22/2222','(12)12345-1234','União Estável','Não definido','abc','Ativo');
+INSERT INTO `assistente` VALUES (1,'Beatriz','213,123,123-12','31,231,231-2','321','31/23/1232','(12)09876-2313','União Estável','Não definido','123','Ativo'),(2,'Lucas','333,333,333-33','33,333,333-3','asd','22/22/2222','(12)12345-1234','União Estável','Não definido','abc','Ativo');
 /*!40000 ALTER TABLE `assistente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +97,7 @@ CREATE TABLE `cadaver` (
   `HorarioObito` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `Retirada` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -106,7 +106,7 @@ CREATE TABLE `cadaver` (
 
 LOCK TABLES `cadaver` WRITE;
 /*!40000 ALTER TABLE `cadaver` DISABLE KEYS */;
-INSERT INTO `cadaver` VALUES (1,'Guilherme','A','Beatriz',NULL,NULL,NULL,NULL,'22/12/2023','22:00',NULL,NULL,NULL,NULL,NULL),(2,'Ruan','B','Beatriz',NULL,NULL,NULL,NULL,'22/12/2023','22:22',NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `cadaver` VALUES (1,'Guilherme','A','Beatriz','Vanderlei','a','Mouse',1,'22/12/2023','22:00','22/12/2023','23:12','22/12/2023','10:13','Espera'),(2,'Ruan','A','Beatriz','Vanderlei','a','Mouse',1,'22/12/2023','22:22','23/10/2023','12:30','22/12/2023','22:10','Espera'),(3,'Igor','C','Beatriz','Vanderlei','b','Mouse',1,'15/05/2023','20:30','16/05/2023','23:00','15/05/2023','19:00','Velório Municipal'),(4,'Joao','B','Beatriz','Vanderlei','b','Mouse',1,'15/05/2023','20:40','16/05/2023','20:00','14/05/2023','23:00','Espera'),(6,'Ruan','D','Beatriz','VAnderlei','a','Mouse',2,'22/22/2222','22:22','22/22/2222','22:22','22/22/2222','22:22','Velório Municipal');
 /*!40000 ALTER TABLE `cadaver` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,7 +133,7 @@ CREATE TABLE `estoque` (
 
 LOCK TABLES `estoque` WRITE;
 /*!40000 ALTER TABLE `estoque` DISABLE KEYS */;
-INSERT INTO `estoque` VALUES (1,'Mouse',12,'Juliana',12),(2,'das',21,'Juliana',NULL),(3,'mouse',312,'Juliana',12),(4,'Mouse',1,'Juliana',NULL),(5,'Mouse',1,'Juliana',NULL);
+INSERT INTO `estoque` VALUES (1,'Mouse',12,'Juliana',325),(2,'das',21,'Juliana',NULL),(3,'mouse',312,'Juliana',12),(4,'Mouse',1,'Juliana',NULL),(5,'Mouse',1,'Juliana',NULL);
 /*!40000 ALTER TABLE `estoque` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -208,4 +208,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-14 21:08:45
+-- Dump completed on 2023-05-15 20:49:31

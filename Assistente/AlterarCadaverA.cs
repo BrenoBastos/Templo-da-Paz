@@ -94,6 +94,13 @@ namespace WindowsFormsApp1
                 textGaveta.Text = "";
                 return;
             }
+            else if (!textGaveta.Text.All(char.IsUpper)) // Verifica se o campo Gaveta contém apenas letras maiúsculas
+            {
+                // Exibe uma mensagem de erro informando que o campo Gaveta deve conter apenas letras maiúsculas
+                MessageBox.Show("Por favor, insira apenas letras maiúsculas no campo 'Gaveta'.");
+                textGaveta.Text = ""; // Limpa o campo Gaveta
+                return; // Retorna sem cadastrar
+            }
             else
             {
                 try

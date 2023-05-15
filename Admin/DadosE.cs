@@ -38,6 +38,7 @@ namespace WindowsFormsApp1
 
                 // Consulta na tabela estoque para obter os dados ordenados por Id
                 string query = "SELECT Id, Fornecedor, Material, Quantidade, SUM(Quantidade) OVER (PARTITION BY Material) AS Total FROM estoque ORDER BY Id";
+
                 MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -102,10 +103,9 @@ namespace WindowsFormsApp1
                     cmdCadaver.Parameters.AddWithValue("@material", material);
                     object resultCadaver = cmdCadaver.ExecuteScalar();
                     int quantidadeCadaver = resultCadaver != DBNull.Value ? Convert.ToInt32(resultCadaver) : 0;
-
                     if (totalEstoque > 0)
                     {
-                        int resultado = quantidadeCadaver - totalEstoque;
+                        int resultado = totalEstoque-quantidadeCadaver  ;
 
                      
                         // Resto do código...
