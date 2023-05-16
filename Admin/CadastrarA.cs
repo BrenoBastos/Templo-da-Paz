@@ -240,7 +240,7 @@ namespace WindowsFormsApp1
                             // Adicione os casos para os outros valores do ComboBox cStatus, se houver
                     }
                     // Consultar o número atual de registros ativos
-                    string countQuery = "SELECT COUNT(*) FROM assistente WHERE Status = 'ativo'";
+                    string countQuery = "SELECT COUNT(*) FROM assistente WHERE Status = 'Ativo'";
                     MySqlCommand countCmd = new MySqlCommand(countQuery, Conexao.con);
                     int registrosAtivos = Convert.ToInt32(countCmd.ExecuteScalar());
 

@@ -306,7 +306,7 @@ namespace WindowsFormsApp1
                     }
 
                     // Consultar o número atual de assistentes ativos
-                    string countQuery = "SELECT COUNT(*) FROM assistente WHERE Status = 'ativo'";
+                    string countQuery = "SELECT COUNT(*) FROM assistente WHERE Status = 'Ativo'";
                     MySqlCommand countCmd = new MySqlCommand(countQuery, Conexao.con);
                     int assistentesAtivos = Convert.ToInt32(countCmd.ExecuteScalar());
 
