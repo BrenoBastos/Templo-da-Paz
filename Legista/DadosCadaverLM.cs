@@ -205,30 +205,7 @@ namespace WindowsFormsApp1
                         MessageBox.Show("A quantidade solicitada do material não está disponível no estoque. Por favor, escolha uma quantidade menor ou verifique o estoque.");
                         return;
                     }
-                    if (retirada == "Velório Municipal" || retirada == "Funerária")
-                    {
-                        // Atualiza a gaveta para vazia
-                        string atualizaGavetaQuery = "UPDATE cadaver SET Gaveta = '' WHERE Id = @id";
-                        MySqlCommand atualizaGavetaCmd = new MySqlCommand(atualizaGavetaQuery, Conexao.con);
-                        atualizaGavetaCmd.Parameters.AddWithValue("@id", id);
-
-                        atualizaGavetaCmd.ExecuteNonQuery(); string verificaGavetaQuery = "SELECT COUNT(*) FROM cadaver WHERE Gaveta = @gaveta AND (Id <> @id OR Gaveta = '')";
-                        MySqlCommand verificaGavetaCmd = new MySqlCommand(verificaGavetaQuery, Conexao.con);
-                        verificaGavetaCmd.Parameters.AddWithValue("@gaveta", gaveta);
-                        verificaGavetaCmd.Parameters.AddWithValue("@id", id);
-
-                        int gavetaCount = Convert.ToInt32(verificaGavetaCmd.ExecuteScalar());
-
-                        if (gavetaCount > 0&& retirada == "Espera")
-                        {
-                            MessageBox.Show("A gaveta informada já está ocupada ou não está disponível. Por favor, escolha outra gaveta.");
-                            return;
-                        }
-                        else
-                        {
-
-                        }
-                    }
+                  
 
                     // Atualiza os dados do cadáver no banco de dados
                     string queryUpdateCadaver = "UPDATE cadaver SET Nome = @nome, Gaveta = @gaveta, Laudo = @laudo, Material = @material, Quantidade = @quantidade, DataChegada = @dataChegada, dataRetirada = @dataRetirada, horarioChegada = @horarioChegada, Assistente = @assistente, Legista = @legista, HorarioRetirada = @horarioRetirada, DataObito = @dataObito, HorarioObito = @horarioObito, Retirada = @retirada WHERE Id = @id";
