@@ -31,7 +31,6 @@ namespace WindowsFormsApp1
         {
             this.Quantidade = new System.Windows.Forms.Label();
             this.textQuantidade = new System.Windows.Forms.TextBox();
-            this.textMaterial = new System.Windows.Forms.TextBox();
             this.cRetirada = new System.Windows.Forms.ComboBox();
             this.textLaudo = new System.Windows.Forms.RichTextBox();
             this.textNome = new System.Windows.Forms.TextBox();
@@ -50,9 +49,7 @@ namespace WindowsFormsApp1
             this.ID = new System.Windows.Forms.Label();
             this.Nome = new System.Windows.Forms.Label();
             this.bAlterar = new System.Windows.Forms.Button();
-            this.textLegista = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textAssistente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
             this.mHorárioÓbito = new System.Windows.Forms.MaskedTextBox();
@@ -61,6 +58,9 @@ namespace WindowsFormsApp1
             this.DataÓbito = new System.Windows.Forms.Label();
             this.mHorarioRetirada = new System.Windows.Forms.MaskedTextBox();
             this.HorárioRetirada = new System.Windows.Forms.Label();
+            this.cMaterial = new System.Windows.Forms.ComboBox();
+            this.cAssistente = new System.Windows.Forms.ComboBox();
+            this.cLegista = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Quantidade
@@ -78,13 +78,6 @@ namespace WindowsFormsApp1
             this.textQuantidade.Name = "textQuantidade";
             this.textQuantidade.Size = new System.Drawing.Size(100, 20);
             this.textQuantidade.TabIndex = 73;
-            // 
-            // textMaterial
-            // 
-            this.textMaterial.Location = new System.Drawing.Point(340, 226);
-            this.textMaterial.Name = "textMaterial";
-            this.textMaterial.Size = new System.Drawing.Size(100, 20);
-            this.textMaterial.TabIndex = 72;
             // 
             // cRetirada
             // 
@@ -253,15 +246,6 @@ namespace WindowsFormsApp1
             this.bAlterar.UseVisualStyleBackColor = true;
             this.bAlterar.Click += new System.EventHandler(this.bAlterar_Click);
             // 
-            // textLegista
-            // 
-            this.textLegista.Location = new System.Drawing.Point(134, 284);
-            this.textLegista.MaximumSize = new System.Drawing.Size(100, 100);
-            this.textLegista.MinimumSize = new System.Drawing.Size(20, 20);
-            this.textLegista.Name = "textLegista";
-            this.textLegista.Size = new System.Drawing.Size(100, 20);
-            this.textLegista.TabIndex = 78;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -270,15 +254,6 @@ namespace WindowsFormsApp1
             this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 77;
             this.label2.Text = "Legista";
-            // 
-            // textAssistente
-            // 
-            this.textAssistente.Location = new System.Drawing.Point(101, 233);
-            this.textAssistente.MaximumSize = new System.Drawing.Size(100, 100);
-            this.textAssistente.MinimumSize = new System.Drawing.Size(20, 20);
-            this.textAssistente.Name = "textAssistente";
-            this.textAssistente.Size = new System.Drawing.Size(100, 20);
-            this.textAssistente.TabIndex = 76;
             // 
             // label1
             // 
@@ -357,11 +332,38 @@ namespace WindowsFormsApp1
             this.HorárioRetirada.Text = "Horário Retirada";
             this.HorárioRetirada.Click += new System.EventHandler(this.mHorarioRetirada_Click);
             // 
+            // cMaterial
+            // 
+            this.cMaterial.FormattingEnabled = true;
+            this.cMaterial.Location = new System.Drawing.Point(340, 215);
+            this.cMaterial.Name = "cMaterial";
+            this.cMaterial.Size = new System.Drawing.Size(121, 21);
+            this.cMaterial.TabIndex = 93;
+            // 
+            // cAssistente
+            // 
+            this.cAssistente.FormattingEnabled = true;
+            this.cAssistente.Location = new System.Drawing.Point(113, 238);
+            this.cAssistente.Name = "cAssistente";
+            this.cAssistente.Size = new System.Drawing.Size(121, 21);
+            this.cAssistente.TabIndex = 94;
+            // 
+            // cLegista
+            // 
+            this.cLegista.FormattingEnabled = true;
+            this.cLegista.Location = new System.Drawing.Point(114, 287);
+            this.cLegista.Name = "cLegista";
+            this.cLegista.Size = new System.Drawing.Size(121, 21);
+            this.cLegista.TabIndex = 95;
+            // 
             // DadosCadaverLM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cLegista);
+            this.Controls.Add(this.cAssistente);
+            this.Controls.Add(this.cMaterial);
             this.Controls.Add(this.mHorarioRetirada);
             this.Controls.Add(this.HorárioRetirada);
             this.Controls.Add(this.mHorárioÓbito);
@@ -369,13 +371,10 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.HorárioÓbito);
             this.Controls.Add(this.DataÓbito);
             this.Controls.Add(this.bVoltar);
-            this.Controls.Add(this.textLegista);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textAssistente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Quantidade);
             this.Controls.Add(this.textQuantidade);
-            this.Controls.Add(this.textMaterial);
             this.Controls.Add(this.cRetirada);
             this.Controls.Add(this.textLaudo);
             this.Controls.Add(this.textNome);
@@ -405,7 +404,6 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.Label Quantidade;
         private System.Windows.Forms.TextBox textQuantidade;
-        private System.Windows.Forms.TextBox textMaterial;
         private System.Windows.Forms.ComboBox cRetirada;
         private System.Windows.Forms.RichTextBox textLaudo;
         private System.Windows.Forms.TextBox textNome;
@@ -424,9 +422,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label ID;
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.Button bAlterar;
-        private System.Windows.Forms.TextBox textLegista;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textAssistente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bVoltar;
         private System.Windows.Forms.MaskedTextBox mHorárioÓbito;
@@ -435,5 +431,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label DataÓbito;
         private System.Windows.Forms.MaskedTextBox mHorarioRetirada;
         private System.Windows.Forms.Label HorárioRetirada;
+        private System.Windows.Forms.ComboBox cMaterial;
+        private System.Windows.Forms.ComboBox cAssistente;
+        private System.Windows.Forms.ComboBox cLegista;
     }
 }

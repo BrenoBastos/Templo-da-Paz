@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
             dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CarregarDados();
             this.Shown += DadosE_Shown;
+
         }
         private void DadosE_Shown(object sender, EventArgs e)
         {
@@ -28,7 +29,7 @@ namespace WindowsFormsApp1
             MessageBox.Show("Dados carregados com sucesso");
 
         }
-
+       
         private void CarregarDados()
         {
             try
@@ -76,84 +77,52 @@ namespace WindowsFormsApp1
         private void bLocalizar_Click(object sender, EventArgs e)
         { // Verifica se o campo de material está vazio
 
-            if (string.IsNullOrWhiteSpace(textMaterial.Text))
-            {  // Mostra uma mensagem de erro e interrompe o processamento da função
-                MessageBox.Show("Por favor, preencha o campo material");
 
-            }
-            else // Mostra uma mensagem de sucesso e limpa o campo de material
+            try
             {
-                try
+                string material = textMaterial.Text;
+
+
+                Conexao conexao = new Conexao();
+                conexao.Abrir();
+
+
+                string query = "SELECT Id, Fornecedor, Quantidade, Total, Material FROM estoque WHERE Material = @material";
+                MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
+                cmd.Parameters.AddWithValue("@material", material);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+
+                if (dataTable.Rows.Count > 0)
                 {
-                    string material = textMaterial.Text;
+                    dDados.DataSource = dataTable;
 
-                    Conexao conexao = new Conexao();
-                    conexao.Abrir();
+                    dDados.Columns["Id"].DataPropertyName = "Id";
+                    dDados.Columns["Fornecedor"].DataPropertyName = "Fornecedor";
+                    dDados.Columns["Material"].DataPropertyName = "Material";
+                    dDados.Columns["Quantidade"].DataPropertyName = "Quantidade";
+                    dDados.Columns["Total"].DataPropertyName = "Total";
 
-                    // Consulta na tabela estoque para obter o valor da coluna "Total"
-                    string queryEstoque = "SELECT Total FROM estoque WHERE Material = @material";
-                    MySqlCommand cmdEstoque = new MySqlCommand(queryEstoque, Conexao.con);
-                    cmdEstoque.Parameters.AddWithValue("@material", material);
-                    object resultEstoque = cmdEstoque.ExecuteScalar();
-                    int totalEstoque = resultEstoque != DBNull.Value ? Convert.ToInt32(resultEstoque) : 0;
-
-                    // Consulta na tabela cadaver para obter o valor da coluna "Quantidade"
-                    string queryCadaver = "SELECT Quantidade FROM cadaver WHERE Material = @material";
-                    MySqlCommand cmdCadaver = new MySqlCommand(queryCadaver, Conexao.con);
-                    cmdCadaver.Parameters.AddWithValue("@material", material);
-                    object resultCadaver = cmdCadaver.ExecuteScalar();
-                    int quantidadeCadaver = resultCadaver != DBNull.Value ? Convert.ToInt32(resultCadaver) : 0;
-                    if (totalEstoque > 0)
-                    {
-                        int resultado = totalEstoque-quantidadeCadaver  ;
-
-                     
-                        // Resto do código...
-
-                        string query = "SELECT Id, Fornecedor, Material, Quantidade, SUM(Quantidade) OVER (PARTITION BY Material) AS Total FROM estoque WHERE Material = @material";
-                        MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
-                        cmd.Parameters.AddWithValue("@material", material);
-
-                        MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-
-                        if (dataTable.Rows.Count > 0)
-                        {
-                            // Vincula os resultados à DataGridView
-                            dDados.DataSource = dataTable;
-
-                            // Define a propriedade DataPropertyName das colunas correspondentes
-                            dDados.Columns["Id"].DataPropertyName = "Id";
-                            dDados.Columns["Fornecedor"].DataPropertyName = "Fornecedor";
-                            dDados.Columns["Material"].DataPropertyName = "Material";
-                            dDados.Columns["Quantidade"].DataPropertyName = "Quantidade";
-                            dDados.Columns["Total"].DataPropertyName = "Total";
-
-                            MessageBox.Show("Localizado com sucesso");
-                            textMaterial.Text = "";
-                        }
-                        else
-                        {
-                            MessageBox.Show("Nenhum resultado encontrado.");
-                        }
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Material não encontrado na tabela estoque.");
-                    }
-
-                    conexao.Fechar();
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
+                    MessageBox.Show("Localizado com sucesso");
+                    textMaterial.Text = "";
                 }
 
 
 
+
+                else { 
+
+                MessageBox.Show("Material não encontrado na tabela estoque.");
+
+
+            }}
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
             }
+
         }
 
         private void bVoltar_Click(object sender, EventArgs e)

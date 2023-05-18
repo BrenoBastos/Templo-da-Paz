@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -37,12 +38,11 @@ namespace WindowsFormsApp1
         private void FormatarContato()
         {
             // Define a localização dos componentes de telefone/celular na tela
-            Celular.Location = new Point(261, 215);
+            Contato.Location = new Point(261, 215);
             mCelular.Location = new Point(335, 208);
             // Torna o componente do telefone visível
-            Celular.Visible = true; 
+            Contato.Visible = true; 
                                     // Torna o componente do celular invisível
-            Telefone.Visible = false;
             // Habilita o campo de telefone/celular
             mCelular.Enabled = true; 
                                      // Torna o campo de telefone/celular visível
@@ -313,6 +313,7 @@ namespace WindowsFormsApp1
                         cmd.Parameters.AddWithValue("@senha", senha);
 
                         cmd.Parameters.AddWithValue("@status", status);
+                    
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
@@ -369,14 +370,13 @@ namespace WindowsFormsApp1
             if (cContato.SelectedItem.ToString() == "Celular")
             {
                 // Define a visibilidade dos controles
-                Celular.Visible = true;
-                Telefone.Visible = false;
+                Contato.Visible = true;
 
                 // Habilita a caixa de texto para digitar o número do celular
                 mCelular.Enabled = true;
 
                 // Define a posição dos controles na tela
-                Celular.Location = new Point(261, 215);
+                Contato.Location = new Point(261, 215);
                 mCelular.Location = new Point(335, 208);
 
                 // Limpa o conteúdo da caixa de texto
@@ -385,18 +385,17 @@ namespace WindowsFormsApp1
             // Caso contrário, se o item selecionado for "Telefone"
             else if (cContato.SelectedItem.ToString() == "Telefone")
             {
+                mCelular.Text = "";
                 // Define a visibilidade dos controles
-                Celular.Visible = false;
-                Telefone.Visible = true;
+                Contato.Visible = true;
 
                 // Define a posição da caixa de texto na tela
                 mCelular.Location = new Point(335, 208);
 
                 // Limpa o conteúdo da caixa de texto
-                mCelular.Text = "";
+              
 
                 // Define a posição dos controles na tela
-                Telefone.Location = new Point(261, 215);
             }
         }
         private void mContato_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)

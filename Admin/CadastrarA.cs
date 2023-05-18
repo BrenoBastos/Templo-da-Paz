@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -113,12 +114,11 @@ namespace WindowsFormsApp1
         private void FormatarContato()
         {
             // Define a posição dos campos de celular e telefone
-            Celular.Location = new Point(300, 216);
+            Contato.Location = new Point(300, 216);
             mCelular.Location = new Point(374, 209);
 
             // Define que o campo de celular deve ser exibido e o campo de telefone deve ser ocultado
-            Celular.Visible = true;
-            Telefone.Visible = false;
+            Contato.Visible = true;
 
             // Define que o campo de celular está habilitado e deve ser exibido como uma máscara de telefone
             mCelular.Enabled = true;
@@ -268,7 +268,9 @@ namespace WindowsFormsApp1
                         cmd.Parameters.AddWithValue("@sexo", sexo);
                         cmd.Parameters.AddWithValue("@senha", senha);
 
+
                         cmd.Parameters.AddWithValue("@status", status);
+                       
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
@@ -356,22 +358,20 @@ namespace WindowsFormsApp1
             if (cContato.SelectedItem.ToString() == "Celular")
             {
                 // Se for "Celular", exibe o campo de celular, oculta o campo de telefone e habilita o campo de número de celular
-                Celular.Visible = true;
-                Telefone.Visible = false;
+                Contato.Visible = true;
                 mCelular.Enabled = true;
                 mCelular.Visible = true;
                 mCelular.Text = "";
-                Celular.Location = new Point(300, 216);
+                Contato.Location = new Point(300, 216);
                 mCelular.Location = new Point(374, 209);
             }
             // Caso contrário, verifica se o item selecionado é "Telefone"
             else if (cContato.SelectedItem.ToString() == "Telefone")
             {
-                // Se for "Telefone", oculta o campo de celular, exibe o campo de telefone e limpa o campo de número de celular
-                Celular.Visible = false;
-                Telefone.Visible = true;
                 mCelular.Text = "";
-                Telefone.Location = new Point(300, 216);
+                // Se for "Telefone", oculta o campo de celular, exibe o campo de telefone e limpa o campo de número de celular
+                Contato.Visible = true;
+               
             }
         }
     }

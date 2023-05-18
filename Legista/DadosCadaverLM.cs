@@ -20,10 +20,113 @@ namespace WindowsFormsApp1
             // Chama o método que inicializa a ComboBox
 
             comboBoxiniciar();
-
+            listarmaterial();
+            listarassistente();
+            listarlegista();
 
         }// Método que inicializa a ComboBox
+        private void listarmaterial()
+        {
+            Conexao conexao = new Conexao();
+            conexao.Abrir();
+            try
+            {
+                string query = "SELECT Material FROM estoque";
 
+                MySqlCommand command = new MySqlCommand(query, Conexao.con);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string nome = reader.GetString("Material");
+
+                    if (!cMaterial.Items.Contains(nome))
+                    {
+                        cMaterial.Items.Add(nome);
+                    }
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                // Trate exceções ou exiba mensagens de erro conforme necessário
+            }
+            finally
+            {
+                conexao.Fechar();
+            }
+            cMaterial.DropDownStyle = ComboBoxStyle.DropDownList;
+
+        }
+        private void listarassistente()
+        {
+            Conexao conexao = new Conexao();
+            conexao.Abrir();
+            try
+            {
+                string query = "SELECT Nome FROM assistente WHERE Status = 'Ativo'";
+
+                MySqlCommand command = new MySqlCommand(query, Conexao.con);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string nome = reader.GetString("Nome");
+
+                    if (!cAssistente.Items.Contains(nome))
+                    {
+                        cAssistente.Items.Add(nome);
+                    }
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                // Trate exceções ou exiba mensagens de erro conforme necessário
+            }
+            finally
+            {
+                conexao.Fechar();
+            }
+            cAssistente.DropDownStyle = ComboBoxStyle.DropDownList;
+
+        }
+        private void listarlegista()
+        {
+            Conexao conexao = new Conexao();
+            conexao.Abrir();
+            try
+            {
+                string query = "SELECT Nome FROM legista WHERE Status = 'Ativo' ";
+
+                MySqlCommand command = new MySqlCommand(query, Conexao.con);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string nome = reader.GetString("Nome");
+
+                    if (!cLegista.Items.Contains(nome))
+                    {
+                        cLegista.Items.Add(nome);
+                    }
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                // Trate exceções ou exiba mensagens de erro conforme necessário
+            }
+            finally
+            {
+                conexao.Fechar();
+            }
+            cLegista.DropDownStyle = ComboBoxStyle.DropDownList;
+
+        }
         private void comboBoxiniciar()
         {    // Verifica se o ComboBox já foi preenchido antes
 
@@ -35,7 +138,6 @@ namespace WindowsFormsApp1
                 cRetirada.Items.Add("Funerária");
                 // Seleciona o primeiro item por padrão
 
-                cRetirada.SelectedIndex = 0;
                 // Define o estilo do ComboBox para "DropDownList", que impede que o usuário digite valores
 
                 cRetirada.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -47,18 +149,18 @@ namespace WindowsFormsApp1
             // Atribua os valores aos controles da janela DadosCadaverLM
             textID.Text = id;
             textNome.Text = nome;
-            textAssistente.Text = assistente;
+            cAssistente.SelectedItem = assistente;
             textGaveta.Text = gaveta;
             mDataChegada.Text = dataChegada;
            mHorarioChegada.Text = horarioChegada;
             textLaudo.Text = laudo;
-            textMaterial.Text = material;
+            cMaterial.SelectedIndex = cMaterial.FindStringExact(material);
             textQuantidade.Text = quantidade;
            mDataRetirada.Text = dataRetirada;
            mHorarioRetirada.Text = horarioRetirada;
             mDataObito.Text = dataObito;
             mHorárioÓbito.Text = horarioObito;
-            textLegista.Text = legista;
+            cLegista.SelectedItem = legista;
 
             // Selecionar o valor correto no ComboBox de Retirada
             cRetirada.SelectedItem = retirada;
@@ -67,27 +169,46 @@ namespace WindowsFormsApp1
 
         private void bAlterar_Click(object sender, EventArgs e)
         {
-            // Verifica se algum campo obrigatório está vazio
-            if (string.IsNullOrWhiteSpace(textNome.Text) || string.IsNullOrWhiteSpace(textID.Text) || string.IsNullOrWhiteSpace(textGaveta.Text) || string.IsNullOrWhiteSpace(textLaudo.Text) || string.IsNullOrWhiteSpace(textMaterial.Text)
-                || string.IsNullOrWhiteSpace(textQuantidade.Text) || !mHorarioChegada.MaskCompleted || !mDataObito.MaskCompleted || !mHorárioÓbito.MaskCompleted || !mDataRetirada.MaskCompleted || !mDataChegada.MaskCompleted)
+            // Verifica se algum campo obrigatório está vazio ou não preenchido corretamente
+            if (string.IsNullOrWhiteSpace(textNome.Text) || string.IsNullOrWhiteSpace(textID.Text) || string.IsNullOrWhiteSpace(textGaveta.Text) || string.IsNullOrWhiteSpace(textLaudo.Text)
+                || string.IsNullOrWhiteSpace(textQuantidade.Text) || !mHorarioChegada.MaskCompleted || !mDataRetirada.MaskCompleted || !mDataChegada.MaskCompleted)
             {
+                // Exibe uma mensagem de erro e encerra a função
                 MessageBox.Show("Preencha todos os campos!");
                 return;
             }
 
-            // Verifica se o campo 'ID' contém somente caracteres numéricos
-            else if (!textID.Text.All(char.IsDigit))
+            // Verifica se o campo 'ID' contém apenas caracteres numéricos
+            if (!textID.Text.All(char.IsDigit))
             {
-                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'ID'.");
+                // Exibe uma mensagem de erro e limpa o campo 'ID'
+                MessageBox.Show("Por favor, insira apenas carecteres numéricos  no campo 'ID'.");
                 textID.Text = "";
                 return;
             }
 
-            // Verifica se o campo 'Assistente' contém somente caracteres não numéricos
-            else if (textAssistente.Text.All(char.IsDigit))
+            // Verifica se o campo 'Nome' contém apenas caracteres alfanuméricos
+            else if (textNome.Text.All(char.IsDigit))
             {
-                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Assistente'.");
-                textAssistente.Text = "";
+                // Exibe uma mensagem de erro e limpa o campo 'Nome'
+                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
+                textNome.Text = "";
+                return;
+            }
+            // Verifica se o campo 'Gaveta' contém apenas caracteres alfanuméricos
+            else if (textGaveta.Text.All(char.IsDigit))
+            {
+                // Exibe uma mensagem de erro e limpa o campo 'Gaveta'
+                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Gaveta'.");
+                textGaveta.Text = "";
+                return;
+            }
+            // Verifica se o campo 'Quantidade' contém apenas caracteres numéricos
+            else if (!textQuantidade.Text.All(char.IsDigit))
+            {
+                // Exibe uma mensagem de erro e limpa o campo 'Quantidade'
+                MessageBox.Show("Por favor, insira apenas carecteres numéricos no campo 'Quantidade'.");
+                textQuantidade.Text = "";
                 return;
             }
             else if (!Regex.IsMatch(textGaveta.Text, "^[A-Z]{1}$")) // Verifica se o campo Gaveta contém apenas um caractere em maiúscula
@@ -97,30 +218,6 @@ namespace WindowsFormsApp1
                 textGaveta.Text = ""; // Limpa o campo Gaveta
                 return; // Retorna sem cadastrar
             }
-
-            // Verifica se o campo 'Legista' contém somente caracteres não numéricos
-            else if (textLegista.Text.All(char.IsDigit))
-            {
-                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Legista'.");
-                textLegista.Text = "";
-                return;
-            }
-
-            // Verifica se o campo 'Nome' contém somente caracteres não numéricos
-            else if (textNome.Text.All(char.IsDigit))
-            {
-                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Nome'.");
-                textNome.Text = "";
-                return;
-            }
-
-            // Verifica se o campo 'Gaveta' contém somente caracteres não numéricos
-            else if (textGaveta.Text.All(char.IsDigit))
-            {
-                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Gaveta'.");
-                textGaveta.Text = "";
-                return;
-            }
             else if (!textGaveta.Text.All(char.IsUpper)) // Verifica se o campo Gaveta contém apenas letras maiúsculas
             {
                 // Exibe uma mensagem de erro informando que o campo Gaveta deve conter apenas letras maiúsculas
@@ -128,8 +225,7 @@ namespace WindowsFormsApp1
                 textGaveta.Text = ""; // Limpa o campo Gaveta
                 return; // Retorna sem cadastrar
             }
-
-            // Caso todas as validações sejam bem-sucedidas, mostra a mensagem de sucesso e limpa os campos
+            // Se todos os campos estiverem preenchidos corretamente
             else
             {
                 try
@@ -140,12 +236,18 @@ namespace WindowsFormsApp1
                     string id = textID.Text;
                     string nome = textNome.Text;
                     string gaveta = textGaveta.Text;
+                    string material = cMaterial.SelectedItem.ToString();
+
+                    string laudo = textLaudo.Text;
                     string dataChegada = mDataChegada.Text;
+                    string dataRetirada = mDataRetirada.Text;
                     string horarioChegada = mHorarioChegada.Text;
-                    string assistente = textAssistente.Text;
-                    string legista = textLegista.Text;
-                    string material = textMaterial.Text;
-                    string dataobito = mDataObito.Text;
+                    string assistente = cAssistente.SelectedItem.ToString();
+                    string legista = cLegista.SelectedItem.ToString();
+
+
+                    string horarioRetirada = mHorarioRetirada.Text;
+                    string dataObito = mDataObito.Text;
                     string horarioobito = mHorárioÓbito.Text;
                     string retirada = string.Empty;
                     switch (cRetirada.SelectedIndex)
@@ -161,9 +263,9 @@ namespace WindowsFormsApp1
                             break;
 
                     }
-                  
 
-                
+
+
 
                     int quantidade = int.Parse(textQuantidade.Text);
 
@@ -193,39 +295,28 @@ namespace WindowsFormsApp1
                         return;
                     }
 
-                    // Verifica se o material existe na tabela "estoque" e há quantidade suficiente disponível
-                    string verificaMaterialQuery = "SELECT Total FROM estoque WHERE Material = @material";
-                    MySqlCommand verificaMaterialCmd = new MySqlCommand(verificaMaterialQuery, Conexao.con);
-                    verificaMaterialCmd.Parameters.AddWithValue("@material", material);
 
-                    int quantidadeDisponivel = Convert.ToInt32(verificaMaterialCmd.ExecuteScalar());
 
-                    if (quantidadeDisponivel < quantidade)
-                    {
-                        MessageBox.Show("A quantidade solicitada do material não está disponível no estoque. Por favor, escolha uma quantidade menor ou verifique o estoque.");
-                        return;
-                    }
-                  
 
                     // Atualiza os dados do cadáver no banco de dados
                     string queryUpdateCadaver = "UPDATE cadaver SET Nome = @nome, Gaveta = @gaveta, Laudo = @laudo, Material = @material, Quantidade = @quantidade, DataChegada = @dataChegada, dataRetirada = @dataRetirada, horarioChegada = @horarioChegada, Assistente = @assistente, Legista = @legista, HorarioRetirada = @horarioRetirada, DataObito = @dataObito, HorarioObito = @horarioObito, Retirada = @retirada WHERE Id = @id";
                     MySqlCommand cmdUpdateCadaver = new MySqlCommand(queryUpdateCadaver, Conexao.con);
 
-                    cmdUpdateCadaver.Parameters.AddWithValue("@nome", textNome.Text);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@gaveta", textGaveta.Text);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@laudo", textLaudo.Text);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@material", textMaterial.Text);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@quantidade", textQuantidade.Text);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@dataChegada", mDataChegada.Text);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@dataRetirada", mDataRetirada.Text);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@horarioChegada", mHorarioChegada.Text);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@assistente", textAssistente.Text);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@legista", textLegista.Text);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@horarioRetirada", mHorarioRetirada.Text);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@dataObito", mDataObito.Text);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@horarioObito", mHorárioÓbito.Text);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@retirada", cRetirada.SelectedItem);
-                    cmdUpdateCadaver.Parameters.AddWithValue("@id", textID.Text);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@nome", nome);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@gaveta", gaveta);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@laudo", laudo);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@material", material);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@quantidade", quantidade);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@dataChegada", dataChegada);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@dataRetirada", dataRetirada);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@horarioChegada", horarioChegada);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@assistente", assistente);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@legista", legista);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@horarioRetirada", horarioRetirada);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@dataObito", dataObito);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@horarioObito", horarioobito);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@retirada", retirada);
+                    cmdUpdateCadaver.Parameters.AddWithValue("@id", id);
 
                     cmdUpdateCadaver.ExecuteNonQuery();
 
@@ -236,13 +327,13 @@ namespace WindowsFormsApp1
                     textID.Text = "";
                     textGaveta.Text = "";
                     textLaudo.Text = "";
-                    textMaterial.Text = "";
+                    cMaterial.SelectedIndex = 0;
                     textQuantidade.Text = "";
                     mDataChegada.Text = "";
                     mDataRetirada.Text = "";
                     mHorarioChegada.Text = "";
-                    textAssistente.Text = "";
-                    textLegista.Text = "";
+                    cAssistente.SelectedIndex = 0;
+                    cLegista.SelectedIndex = 0;
                     mHorarioRetirada.Text = "";
                     mDataObito.Text = "";
                     mHorárioÓbito.Text = "";

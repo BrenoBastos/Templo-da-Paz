@@ -75,11 +75,8 @@ namespace WindowsFormsApp1
        
         private void FormatarContato()
         { // Define a posição do Contato1
-            Contato1.Location = new Point(309, 262);
             // Torna o campo Celular invisível
-            Celular.Visible = false;
-            // Torna o campo Telefone invisível
-            Telefone.Visible = false;
+      
             // Habilita o campo de digitação do celular
             mCelular.Enabled = true;
             // Torna o campo de digitação do celular visível
@@ -189,15 +186,13 @@ namespace WindowsFormsApp1
                         cContato.SelectedIndex = 0;
                         cStatus.SelectedIndex = 0;
                         // torna o rótulo "Celular" invisível
-                        Celular.Visible = false;
-                        // torna o rótulo "Telefone" invisível
-                        Telefone.Visible = false;
+                       
                         // habilita o campo de entrada do celular
                         mCelular.Enabled = true;
                         // torna o campo de entrada do celular visível
                         mCelular.Visible = true;
                         // torna o rótulo "Contato" visível
-                        Contato1.Visible = true;
+                        Contato.Visible = true;
                         // seleciona a primeira opção do campo de seleção de Contato
                         cContato.SelectedIndex = 0;
                         // limpa o campo de entrada do celular novamente
@@ -246,38 +241,33 @@ namespace WindowsFormsApp1
             {
                 // Esconde o painel Contato1
 
-                Contato1.Visible = false;
+                Contato.Visible = true;
                 // Exibe o painel Celular e esconde o painel Telefone
 
-                Celular.Visible = true;
-                Telefone.Visible = false;
+             
                 // Habilita a caixa de texto do celular e limpa o seu conteúdo
 
                 mCelular.Enabled = true;
                 mCelular.Visible = true;
                 mCelular.Text = "";
                 // Define as novas posições do painel Celular e da caixa de texto do celular
-
-                Celular.Location = new Point(309, 262);
                 mCelular.Location = new Point(374, 259);
 
 
             }
             // Verifica se o item selecionado é "Telefone"
 
-            if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Celular")
+            if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Telefone")
             {        // Define as novas posições do painel Telefone e da caixa de texto do celular
 
-                Telefone.Location = new Point(309, 262);
                 mCelular.Location = new Point(374, 259);
                 // Esconde o painel Contato1
 
-                Contato1.Visible = false;
+                Contato.Visible = true;
 
                 // Exibe o painel Telefone e esconde o painel Celular
 
-                Celular.Visible = false;
-                Telefone.Visible = true;
+               
                 // Habilita a caixa de texto do celular e limpa o seu conteúdo
 
                 mCelular.Enabled = true;

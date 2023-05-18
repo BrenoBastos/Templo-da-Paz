@@ -54,11 +54,8 @@
             this.cRetirada = new System.Windows.Forms.ComboBox();
             this.textQuantidade = new System.Windows.Forms.TextBox();
             this.fgd = new System.Windows.Forms.Label();
-            this.textMaterial = new System.Windows.Forms.TextBox();
             this.dfd = new System.Windows.Forms.Label();
-            this.textAssistente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textLegista = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
             this.dasdas = new System.Windows.Forms.Label();
@@ -67,6 +64,9 @@
             this.jary = new System.Windows.Forms.Label();
             this.ku = new System.Windows.Forms.Label();
             this.mHorarioRetirada = new System.Windows.Forms.MaskedTextBox();
+            this.cLegista = new System.Windows.Forms.ComboBox();
+            this.cAssistente = new System.Windows.Forms.ComboBox();
+            this.cMaterial = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -297,13 +297,6 @@
             this.fgd.TabIndex = 53;
             this.fgd.Text = "Quantidade";
             // 
-            // textMaterial
-            // 
-            this.textMaterial.Location = new System.Drawing.Point(340, 177);
-            this.textMaterial.Name = "textMaterial";
-            this.textMaterial.Size = new System.Drawing.Size(100, 20);
-            this.textMaterial.TabIndex = 51;
-            // 
             // dfd
             // 
             this.dfd.AutoSize = true;
@@ -313,15 +306,6 @@
             this.dfd.TabIndex = 29;
             this.dfd.Text = "Material";
             // 
-            // textAssistente
-            // 
-            this.textAssistente.Location = new System.Drawing.Point(112, 184);
-            this.textAssistente.MaximumSize = new System.Drawing.Size(100, 100);
-            this.textAssistente.MinimumSize = new System.Drawing.Size(20, 20);
-            this.textAssistente.Name = "textAssistente";
-            this.textAssistente.Size = new System.Drawing.Size(100, 20);
-            this.textAssistente.TabIndex = 55;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -330,15 +314,6 @@
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 54;
             this.label1.Text = "Assistente";
-            // 
-            // textLegista
-            // 
-            this.textLegista.Location = new System.Drawing.Point(145, 235);
-            this.textLegista.MaximumSize = new System.Drawing.Size(100, 100);
-            this.textLegista.MinimumSize = new System.Drawing.Size(20, 20);
-            this.textLegista.Name = "textLegista";
-            this.textLegista.Size = new System.Drawing.Size(100, 20);
-            this.textLegista.TabIndex = 57;
             // 
             // label2
             // 
@@ -416,11 +391,38 @@
             this.mHorarioRetirada.ValidatingType = typeof(System.DateTime);
             this.mHorarioRetirada.Click += new System.EventHandler(this.mHorarioRetirada_Click);
             // 
+            // cLegista
+            // 
+            this.cLegista.FormattingEnabled = true;
+            this.cLegista.Location = new System.Drawing.Point(136, 233);
+            this.cLegista.Name = "cLegista";
+            this.cLegista.Size = new System.Drawing.Size(121, 21);
+            this.cLegista.TabIndex = 98;
+            // 
+            // cAssistente
+            // 
+            this.cAssistente.FormattingEnabled = true;
+            this.cAssistente.Location = new System.Drawing.Point(135, 184);
+            this.cAssistente.Name = "cAssistente";
+            this.cAssistente.Size = new System.Drawing.Size(121, 21);
+            this.cAssistente.TabIndex = 97;
+            // 
+            // cMaterial
+            // 
+            this.cMaterial.FormattingEnabled = true;
+            this.cMaterial.Location = new System.Drawing.Point(362, 161);
+            this.cMaterial.Name = "cMaterial";
+            this.cMaterial.Size = new System.Drawing.Size(121, 21);
+            this.cMaterial.TabIndex = 96;
+            // 
             // AtualizarCadaverL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 563);
+            this.Controls.Add(this.cLegista);
+            this.Controls.Add(this.cAssistente);
+            this.Controls.Add(this.cMaterial);
             this.Controls.Add(this.mHorárioÓbito);
             this.Controls.Add(this.mDataObito);
             this.Controls.Add(this.jary);
@@ -428,13 +430,10 @@
             this.Controls.Add(this.mHorarioRetirada);
             this.Controls.Add(this.dasdas);
             this.Controls.Add(this.bVoltar);
-            this.Controls.Add(this.textLegista);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textAssistente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fgd);
             this.Controls.Add(this.textQuantidade);
-            this.Controls.Add(this.textMaterial);
             this.Controls.Add(this.cRetirada);
             this.Controls.Add(this.textLaudo);
             this.Controls.Add(this.textNome);
@@ -483,11 +482,8 @@
         private System.Windows.Forms.ComboBox cRetirada;
         private System.Windows.Forms.TextBox textQuantidade;
         private System.Windows.Forms.Label fgd;
-        private System.Windows.Forms.TextBox textMaterial;
         private System.Windows.Forms.Label dfd;
-        private System.Windows.Forms.TextBox textAssistente;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textLegista;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button bVoltar;
         private System.Windows.Forms.Label dasdas;
@@ -503,5 +499,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DataChegada;
         private System.Windows.Forms.DataGridViewTextBoxColumn HorarioChegada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Assistente;
+        private System.Windows.Forms.ComboBox cLegista;
+        private System.Windows.Forms.ComboBox cAssistente;
+        private System.Windows.Forms.ComboBox cMaterial;
     }
 }

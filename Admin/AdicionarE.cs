@@ -16,20 +16,88 @@ namespace WindowsFormsApp1
         public AdicionarE()
         {
             InitializeComponent();
-        }
+            listarfornecedor();
+            listarmaterial();
 
+        }
+        private void listarmaterial()
+        {
+            Conexao conexao = new Conexao();
+            conexao.Abrir();
+            try
+            {
+                string query = "SELECT Material FROM estoque";
+
+                MySqlCommand command = new MySqlCommand(query, Conexao.con);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string nome = reader.GetString("Material");
+
+                    if (!cMaterial.Items.Contains(nome))
+                    {
+                        cMaterial.Items.Add(nome);
+                    }
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                // Trate exceções ou exiba mensagens de erro conforme necessário
+            }
+            finally
+            {
+                conexao.Fechar();
+            }
+            cMaterial.SelectedIndex = 0;
+            cMaterial.DropDownStyle = ComboBoxStyle.DropDownList;
+
+        }
+        private void listarfornecedor()
+        {
+            Conexao conexao = new Conexao();
+            conexao.Abrir();
+            try
+            {
+                string query = "SELECT Nome FROM fornecedor WHERE Status = 'Ativo'";
+
+                MySqlCommand command = new MySqlCommand(query, Conexao.con);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string nome = reader.GetString("Nome");
+                    cFornecedor.Items.Add(nome);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                // Trate exceções ou exiba mensagens de erro conforme necessário
+            }
+            finally
+            {
+                conexao.Fechar();
+            }
+            cFornecedor.SelectedIndex = 0;
+            cFornecedor.DropDownStyle = ComboBoxStyle.DropDownList;
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {    // Verifica se os campos obrigatórios foram preenchidos
 
-            if (string.IsNullOrWhiteSpace(textMaterial.Text) || string.IsNullOrWhiteSpace(textQuantidade.Text) || string.IsNullOrWhiteSpace(textFornecedor.Text))
+            if ( string.IsNullOrWhiteSpace(textQuantidade.Text))
             {
+                // Verifica se algum dos campos está vazio ou contém apenas espaços em branco
                 MessageBox.Show("Por favor, preencha todos os campos.");
                 return;
             }
 
 
-
-            else if (!textQuantidade.Text.All(char.IsDigit))
+          else  if (!textQuantidade.Text.All(char.IsDigit))
             {    // Verifica se o campo quantidade contém somente dígitos
 
                 MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Quantidade'.");
@@ -37,12 +105,7 @@ namespace WindowsFormsApp1
                 return;
             }    // Verifica se o campo fornecedor não contém somente dígitos
 
-            else if (textFornecedor.Text.All(char.IsDigit))
-            {
-                MessageBox.Show("Por favor, insira apenas caracteres  no campo 'Fornecedor'.");
-                textFornecedor.Text = "";
-
-            }
+         
             else
             {
                 try
@@ -50,12 +113,12 @@ namespace WindowsFormsApp1
                     Conexao conexao = new Conexao();
                     conexao.Abrir();
 
-                    string material = textMaterial.Text;
-                    string fornecedor = textFornecedor.Text;
+                    string material = cMaterial.SelectedItem.ToString();
+                    string fornecedor = cFornecedor.SelectedItem.ToString();
                     string quantidade = textQuantidade.Text;
 
                     // Verifica se o material existe na tabela "material"
-                    string verificaMaterialQuery = $"SELECT COUNT(*) FROM estoque WHERE material = @material";
+                    string verificaMaterialQuery = $"SELECT COUNT(*) FROM estoque WHERE Material = @material";
                     MySqlCommand verificaMaterialCmd = new MySqlCommand(verificaMaterialQuery, Conexao.con);
                     verificaMaterialCmd.Parameters.AddWithValue("@material", material);
 
@@ -89,8 +152,9 @@ namespace WindowsFormsApp1
                             if (rowsAffected > 0)
                             {
                                 MessageBox.Show("Adicionado com sucesso");
-                                textMaterial.Text = "";
-                                textFornecedor.Text = "";
+                                cMaterial.SelectedIndex = 0;
+
+                                cFornecedor.SelectedIndex = 0;
                                 textQuantidade.Text = "";
                             }
                         }

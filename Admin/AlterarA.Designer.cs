@@ -54,8 +54,6 @@ namespace WindowsFormsApp1
             this.Status = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
             this.cContato = new System.Windows.Forms.ComboBox();
-            this.Celular = new System.Windows.Forms.Label();
-            this.Telefone = new System.Windows.Forms.Label();
             this.mCelular = new System.Windows.Forms.TextBox();
             this.Contato1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -284,24 +282,6 @@ namespace WindowsFormsApp1
             this.cContato.TabIndex = 65;
             this.cContato.SelectedIndexChanged += new System.EventHandler(this.CContato_SelectedIndexChanged);
             // 
-            // Celular
-            // 
-            this.Celular.AutoSize = true;
-            this.Celular.Location = new System.Drawing.Point(285, 153);
-            this.Celular.Name = "Celular";
-            this.Celular.Size = new System.Drawing.Size(39, 13);
-            this.Celular.TabIndex = 67;
-            this.Celular.Text = "Celular";
-            // 
-            // Telefone
-            // 
-            this.Telefone.AutoSize = true;
-            this.Telefone.Location = new System.Drawing.Point(275, 187);
-            this.Telefone.Name = "Telefone";
-            this.Telefone.Size = new System.Drawing.Size(49, 13);
-            this.Telefone.TabIndex = 68;
-            this.Telefone.Text = "Telefone";
-            // 
             // mCelular
             // 
             this.mCelular.Location = new System.Drawing.Point(359, 146);
@@ -312,7 +292,7 @@ namespace WindowsFormsApp1
             // Contato1
             // 
             this.Contato1.AutoSize = true;
-            this.Contato1.Location = new System.Drawing.Point(280, 214);
+            this.Contato1.Location = new System.Drawing.Point(280, 153);
             this.Contato1.Name = "Contato1";
             this.Contato1.Size = new System.Drawing.Size(44, 13);
             this.Contato1.TabIndex = 70;
@@ -325,8 +305,6 @@ namespace WindowsFormsApp1
             this.ClientSize = new System.Drawing.Size(1020, 450);
             this.Controls.Add(this.Contato1);
             this.Controls.Add(this.mCelular);
-            this.Controls.Add(this.Telefone);
-            this.Controls.Add(this.Celular);
             this.Controls.Add(this.cContato);
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.cStatus);
@@ -386,8 +364,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label Status;
         private System.Windows.Forms.Button bVoltar;
         private System.Windows.Forms.ComboBox cContato;
-        private System.Windows.Forms.Label Celular;
-        private System.Windows.Forms.Label Telefone;
         private System.Windows.Forms.TextBox mCelular;
         private System.Windows.Forms.Label Contato1;
     }

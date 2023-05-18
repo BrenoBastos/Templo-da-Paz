@@ -16,9 +16,43 @@ namespace WindowsFormsApp1
         public CadastrarCadaverA()
         {
             InitializeComponent();
+            listarassistente();
 
         }
-       
+        private void listarassistente()
+        {
+            Conexao conexao = new Conexao();
+            conexao.Abrir();
+            try
+            {
+                string query = "SELECT Nome FROM assistente WHERE Status = 'Ativo'";
+
+                MySqlCommand command = new MySqlCommand(query, Conexao.con);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string nome = reader.GetString("Nome");
+
+                    if (!cAssistente.Items.Contains(nome))
+                    {
+                        cAssistente.Items.Add(nome);
+                    }
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                // Trate exceções ou exiba mensagens de erro conforme necessário
+            }
+            finally
+            {
+                conexao.Fechar();
+            }
+            cAssistente.DropDownStyle = ComboBoxStyle.DropDownList;
+
+        }
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
@@ -35,13 +69,7 @@ namespace WindowsFormsApp1
                 return; // Retorna sem cadastrar
             }
 
-            else if (textAssistente.Text.All(char.IsDigit)) // Verifica se o campo Assistente contém apenas caracteres numéricos
-            {
-                // Exibe uma mensagem de erro informando que o campo Assistente deve conter apenas caracteres
-                MessageBox.Show("Por favor, insira apenas carecteres no campo 'Assistente'.");
-                textAssistente.Text = ""; // Limpa o campo Assistente
-                return; // Retorna sem cadastrar
-            }
+        
             else if (textNome.Text.All(char.IsDigit)) // Verifica se o campo Nome contém apenas caracteres
             {
                 // Exibe uma mensagem de erro informando que o campo Nome deve conter apenas caracteres
@@ -74,7 +102,7 @@ namespace WindowsFormsApp1
                     string gaveta = textGaveta.Text;
                     string dataChegada = mDataChegada.Text;
                     string horarioChegada = mHorarioChegada.Text;
-                    string assistente = textAssistente.Text;
+                    string assistente = cAssistente.SelectedItem.ToString();
 
                     // Verifica se o fornecedor existe na tabela "fornecedor"
                     string verificaAssistenteQuery = $"SELECT COUNT(*) FROM assistente WHERE Nome = @assistente AND Status = 'ativo'";
@@ -115,7 +143,7 @@ namespace WindowsFormsApp1
                             textGaveta.Text = "";
                             mDataChegada.Text = "";
                             mHorarioChegada.Text = "";
-                            textAssistente.Text = "";
+                            cAssistente.SelectedIndex = 0;
                         }
                     }
                     else

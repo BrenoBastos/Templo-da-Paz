@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -61,7 +62,6 @@ namespace WindowsFormsApp1
             Contato1.Visible = true;
 
             // Define a visibilidade do controle "Telefone" como falsa.
-            Telefone.Visible = false;
 
             // Habilita o controle "mCelular".
             mCelular.Enabled = true;
@@ -70,7 +70,6 @@ namespace WindowsFormsApp1
             mCelular.Visible = true;
 
             // Define a visibilidade do controle "Celular" como falsa.
-            Celular.Visible = false;
 
             // Define a posição do controle "Contato1".
             Contato1.Location = new Point(192, 125);
@@ -80,7 +79,6 @@ namespace WindowsFormsApp1
         }
         public void CarregarDetalhes(string Id, string nome, string cpf, string rg, string endereco, string dataNascimento, string senha, string crm,string estadoCivil, string sexo, string contato, string status)
         {
-            textID.Text = Id.ToString();
             textNome.Text = nome;
             textCpf.Text = cpf;
             textRG.Text = rg;
@@ -93,7 +91,20 @@ namespace WindowsFormsApp1
             cSexo.SelectedIndex = cSexo.FindStringExact(sexo);
             cContato.SelectedIndex = cContato.FindStringExact(contato);
             cStatus.SelectedIndex = cStatus.FindStringExact(status);
+            textID.Text = Id.ToString();
+
+            Conexao conexao = new Conexao();
+            conexao.Abrir();
+          
+
+            conexao.Fechar();
+
         }
+
+
+      
+
+
         private void comboBoxiniciar1()
         {
             // Verifica se a lista de itens do controle "cEstadoCivil" está vazia.
@@ -360,6 +371,8 @@ namespace WindowsFormsApp1
                         cmd.Parameters.AddWithValue("@senha", senha);
 
                         cmd.Parameters.AddWithValue("@status", status);
+                     
+
                         int rowsAffected = cmd.ExecuteNonQuery();
 
                         // Atualizar a contagem de legistas ativos se necessário
@@ -478,11 +491,9 @@ namespace WindowsFormsApp1
             if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Celular")
             {            // Esconde o controle Contato1
 
-                Contato1.Visible = false;
+                Contato1.Visible = true;
                 // Mostra o controle Celular
-                Celular.Visible = true;
                 // Esconde o controle Telefone
-                Telefone.Visible = false;
                 // Habilita o controle mCelular
                 mCelular.Enabled = true;
                 // Mostra o controle mCelular
@@ -490,25 +501,22 @@ namespace WindowsFormsApp1
                 // Define o texto do controle mCelular como vazio
                 mCelular.Text = "";
                 // Define a posição do controle Celular como (192, 125)
-                Celular.Location = new Point(192, 125);
 
 
             }
             // Se o item selecionado em cContato for "Telefone"
-            if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Celular")
+            if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Telefone")
             { // Esconde o controle Contato1
-                Contato1.Visible = false;
+                mCelular.Text = "";
+                Contato1.Visible = true;
                 // Esconde o controle Celular
-                Celular.Visible = false;
                 // Mostra o controle Telefone
-                Telefone.Visible = true;
 
                 // Define o texto do controle mCelular como vazio
 
-                mCelular.Text = "";
+                
                 // Define a posição do controle Telefone como (192, 125)
 
-                Telefone.Location = new Point(192,125);
 
 
             }

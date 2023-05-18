@@ -53,8 +53,7 @@ namespace WindowsFormsApp1
             this.cContato = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.mCelular = new System.Windows.Forms.TextBox();
-            this.Telefone = new System.Windows.Forms.Label();
-            this.Celular = new System.Windows.Forms.Label();
+            this.Contato = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cStatus
@@ -270,23 +269,14 @@ namespace WindowsFormsApp1
             this.mCelular.Size = new System.Drawing.Size(100, 20);
             this.mCelular.TabIndex = 104;
             // 
-            // Telefone
+            // Contato
             // 
-            this.Telefone.AutoSize = true;
-            this.Telefone.Location = new System.Drawing.Point(290, 250);
-            this.Telefone.Name = "Telefone";
-            this.Telefone.Size = new System.Drawing.Size(49, 13);
-            this.Telefone.TabIndex = 103;
-            this.Telefone.Text = "Telefone";
-            // 
-            // Celular
-            // 
-            this.Celular.AutoSize = true;
-            this.Celular.Location = new System.Drawing.Point(300, 216);
-            this.Celular.Name = "Celular";
-            this.Celular.Size = new System.Drawing.Size(39, 13);
-            this.Celular.TabIndex = 102;
-            this.Celular.Text = "Celular";
+            this.Contato.AutoSize = true;
+            this.Contato.Location = new System.Drawing.Point(300, 216);
+            this.Contato.Name = "Contato";
+            this.Contato.Size = new System.Drawing.Size(44, 13);
+            this.Contato.TabIndex = 102;
+            this.Contato.Text = "Contato";
             // 
             // CadastrarA
             // 
@@ -294,8 +284,7 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.mCelular);
-            this.Controls.Add(this.Telefone);
-            this.Controls.Add(this.Celular);
+            this.Controls.Add(this.Contato);
             this.Controls.Add(this.cContato);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bVoltar);
@@ -352,7 +341,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.ComboBox cContato;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox mCelular;
-        private System.Windows.Forms.Label Telefone;
-        private System.Windows.Forms.Label Celular;
+        private System.Windows.Forms.Label Contato;
     }
 }

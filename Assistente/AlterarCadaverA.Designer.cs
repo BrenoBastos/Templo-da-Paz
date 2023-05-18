@@ -40,9 +40,9 @@ namespace WindowsFormsApp1
             this.ID = new System.Windows.Forms.Label();
             this.Nome = new System.Windows.Forms.Label();
             this.bAlterar = new System.Windows.Forms.Button();
-            this.textAssistente = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bVoltar = new System.Windows.Forms.Button();
+            this.cAssistente = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textNome
@@ -148,15 +148,6 @@ namespace WindowsFormsApp1
             this.bAlterar.UseVisualStyleBackColor = true;
             this.bAlterar.Click += new System.EventHandler(this.bAlterar_Click);
             // 
-            // textAssistente
-            // 
-            this.textAssistente.Location = new System.Drawing.Point(109, 225);
-            this.textAssistente.MaximumSize = new System.Drawing.Size(100, 100);
-            this.textAssistente.MinimumSize = new System.Drawing.Size(20, 20);
-            this.textAssistente.Name = "textAssistente";
-            this.textAssistente.Size = new System.Drawing.Size(100, 20);
-            this.textAssistente.TabIndex = 70;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -176,13 +167,21 @@ namespace WindowsFormsApp1
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
+            // cAssistente
+            // 
+            this.cAssistente.FormattingEnabled = true;
+            this.cAssistente.Location = new System.Drawing.Point(111, 225);
+            this.cAssistente.Name = "cAssistente";
+            this.cAssistente.Size = new System.Drawing.Size(121, 21);
+            this.cAssistente.TabIndex = 99;
+            // 
             // AlterarCadaverA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cAssistente);
             this.Controls.Add(this.bVoltar);
-            this.Controls.Add(this.textAssistente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textNome);
             this.Controls.Add(this.textID);
@@ -215,8 +214,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label ID;
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.Button bAlterar;
-        private System.Windows.Forms.TextBox textAssistente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bVoltar;
+        private System.Windows.Forms.ComboBox cAssistente;
     }
 }

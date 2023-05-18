@@ -17,8 +17,43 @@ namespace WindowsFormsApp1
         public AlterarCadaverA()
         {
             InitializeComponent();
+            listarassistente();
+
         }
-       
+        private void listarassistente()
+        {
+            Conexao conexao = new Conexao();
+            conexao.Abrir();
+            try
+            {
+                string query = "SELECT Nome FROM assistente WHERE Status = 'Ativo'";
+
+                MySqlCommand command = new MySqlCommand(query, Conexao.con);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string nome = reader.GetString("Nome");
+
+                    if (!cAssistente.Items.Contains(nome))
+                    {
+                        cAssistente.Items.Add(nome);
+                    }
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                // Trate exceções ou exiba mensagens de erro conforme necessário
+            }
+            finally
+            {
+                conexao.Fechar();
+            }
+            cAssistente.DropDownStyle = ComboBoxStyle.DropDownList;
+
+        }
         private void mDataChegada_Click(object sender, EventArgs e)
         {
             mDataChegada.SelectionStart = 0;
@@ -28,7 +63,7 @@ namespace WindowsFormsApp1
         {
             textID.Text = Id.ToString();
             textNome.Text = nome;
-            textAssistente.Text= assistente;
+            cAssistente.SelectedItem = assistente;
             textGaveta.Text = gaveta;
             mDataChegada.Text = dataChegada;
             mHorarioChegada.Text = horarioChegada;
@@ -68,14 +103,7 @@ namespace WindowsFormsApp1
                 return; // Retorna sem cadastrar
             }
 
-            // Verifica se o campo Assistente contém apenas caracteres de texto
-            else if (textAssistente.Text.All(char.IsDigit))
-            {
-                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Assistente'.");
-                // Limpa o campo Assistente se o usuário inseriu caracteres inválidos
-                textAssistente.Text = ""; 
-                return;
-            }
+          
             // Verifica se o campo Nome contém apenas caracteres de texto
             else if (textNome.Text.All(char.IsDigit))
             {
@@ -113,7 +141,7 @@ namespace WindowsFormsApp1
                     string gaveta = textGaveta.Text;
                     string dataChegada = mDataChegada.Text;
                     string horarioChegada = mHorarioChegada.Text;
-                    string assistente = textAssistente.Text;
+                    string assistente = cAssistente.SelectedItem.ToString();
 
                     // Verifica se o assistente existe na tabela "assistente"
                     string verificaAssistenteQuery = $"SELECT COUNT(*) FROM assistente WHERE Nome = @assistente AND Status = 'ativo'";
@@ -169,7 +197,7 @@ namespace WindowsFormsApp1
                         textGaveta.Text = "";
                         mDataChegada.Text = "";
                         mHorarioChegada.Text = "";
-                        textAssistente.Text = "";
+                        cAssistente.SelectedIndex = 0;
                         textID.Text = "";
 
                     }

@@ -29,7 +29,6 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.textFornecedor = new System.Windows.Forms.TextBox();
             this.Fornecedor = new System.Windows.Forms.Label();
             this.textQuantidade = new System.Windows.Forms.TextBox();
             this.textMaterial = new System.Windows.Forms.TextBox();
@@ -37,14 +36,8 @@ namespace WindowsFormsApp1
             this.Material = new System.Windows.Forms.Label();
             this.bCadastrar = new System.Windows.Forms.Button();
             this.bVoltar = new System.Windows.Forms.Button();
+            this.cFornecedor = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // textFornecedor
-            // 
-            this.textFornecedor.Location = new System.Drawing.Point(416, 238);
-            this.textFornecedor.Name = "textFornecedor";
-            this.textFornecedor.Size = new System.Drawing.Size(100, 20);
-            this.textFornecedor.TabIndex = 14;
             // 
             // Fornecedor
             // 
@@ -109,13 +102,21 @@ namespace WindowsFormsApp1
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
+            // cFornecedor
+            // 
+            this.cFornecedor.FormattingEnabled = true;
+            this.cFornecedor.Location = new System.Drawing.Point(404, 237);
+            this.cFornecedor.Name = "cFornecedor";
+            this.cFornecedor.Size = new System.Drawing.Size(121, 21);
+            this.cFornecedor.TabIndex = 90;
+            // 
             // CadastrarE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cFornecedor);
             this.Controls.Add(this.bVoltar);
-            this.Controls.Add(this.textFornecedor);
             this.Controls.Add(this.Fornecedor);
             this.Controls.Add(this.textQuantidade);
             this.Controls.Add(this.textMaterial);
@@ -130,8 +131,6 @@ namespace WindowsFormsApp1
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textFornecedor;
         private System.Windows.Forms.Label Fornecedor;
         private System.Windows.Forms.TextBox textQuantidade;
         private System.Windows.Forms.TextBox textMaterial;
@@ -139,5 +138,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label Material;
         private System.Windows.Forms.Button bCadastrar;
         private System.Windows.Forms.Button bVoltar;
+        private System.Windows.Forms.ComboBox cFornecedor;
     }
 }

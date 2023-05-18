@@ -16,11 +16,43 @@ namespace WindowsFormsApp1
         public CadastrarE()
         {
             InitializeComponent();
+            listar();
+        }
+        private void listar()
+        {
+            Conexao conexao = new Conexao();
+            conexao.Abrir();
+            try
+            {
+                string query = "SELECT Nome FROM fornecedor WHERE Status = 'Ativo'";
+
+                MySqlCommand command = new MySqlCommand(query, Conexao.con);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string nome = reader.GetString("Nome");
+                    cFornecedor.Items.Add(nome);
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                // Trate exceções ou exiba mensagens de erro conforme necessário
+            }
+            finally
+            {
+                conexao.Fechar();
+            }
+            cFornecedor.SelectedIndex = 0;
+            cFornecedor.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
         private void bCadastrar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textMaterial.Text) || string.IsNullOrWhiteSpace(textQuantidade.Text) || string.IsNullOrWhiteSpace(textFornecedor.Text))
+            if (string.IsNullOrWhiteSpace(textMaterial.Text) || string.IsNullOrWhiteSpace(textQuantidade.Text) )
             {
                 // Verifica se algum dos campos está vazio ou contém apenas espaços em branco
                 MessageBox.Show("Por favor, preencha todos os campos.");
@@ -33,13 +65,7 @@ namespace WindowsFormsApp1
                 textQuantidade.Text = "";
                 return;
             }
-            else if (textFornecedor.Text.All(char.IsDigit))
-            {
-                // Verifica se o campo 'Fornecedor' contém apenas caracteres não-numéricos
-                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Fornecedor'.");
-                textFornecedor.Text = "";
-                return;
-            }
+       
             else
             {
                 try
@@ -48,7 +74,7 @@ namespace WindowsFormsApp1
                     conexao.Abrir();
 
                     string material = textMaterial.Text;
-                    string fornecedor = textFornecedor.Text;
+                    string fornecedor = cFornecedor.SelectedItem.ToString(); // Obtém o fornecedor selecionado do ComboBox
                     string quantidade = textQuantidade.Text;
 
                     // Verifica se o fornecedor existe na tabela "fornecedor"
@@ -89,9 +115,9 @@ namespace WindowsFormsApp1
 
                             if (rowsAffected > 0)
                             {
-                                MessageBox.Show("Adicionado com sucesso");
+                                MessageBox.Show("Cadastrado com sucesso");
                                 textMaterial.Text = "";
-                                textFornecedor.Text = "";
+                                cFornecedor.SelectedIndex = 0;
                                 textQuantidade.Text = "";
                             }
                         }
@@ -100,6 +126,7 @@ namespace WindowsFormsApp1
                     {
                         MessageBox.Show("Fornecedor não encontrado na tabela 'fornecedor'. Cadastre o fornecedor antes de adicionar um item ao estoque.");
                     }
+                    conexao.Fechar();
                 }
                 catch (MySqlException ex)
                 {

@@ -32,12 +32,12 @@ namespace WindowsFormsApp1
             this.bAdicionar = new System.Windows.Forms.Button();
             this.Material = new System.Windows.Forms.Label();
             this.Quantidade = new System.Windows.Forms.Label();
-            this.textMaterial = new System.Windows.Forms.TextBox();
             this.textQuantidade = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Fornecedor = new System.Windows.Forms.Label();
-            this.textFornecedor = new System.Windows.Forms.TextBox();
             this.bVoltar = new System.Windows.Forms.Button();
+            this.cFornecedor = new System.Windows.Forms.ComboBox();
+            this.cMaterial = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // bAdicionar
@@ -68,13 +68,6 @@ namespace WindowsFormsApp1
             this.Quantidade.TabIndex = 2;
             this.Quantidade.Text = "Quantidade";
             // 
-            // textMaterial
-            // 
-            this.textMaterial.Location = new System.Drawing.Point(391, 93);
-            this.textMaterial.Name = "textMaterial";
-            this.textMaterial.Size = new System.Drawing.Size(100, 20);
-            this.textMaterial.TabIndex = 3;
-            // 
             // textQuantidade
             // 
             this.textQuantidade.Location = new System.Drawing.Point(433, 171);
@@ -99,13 +92,6 @@ namespace WindowsFormsApp1
             this.Fornecedor.TabIndex = 6;
             this.Fornecedor.Text = "Fornecedor";
             // 
-            // textFornecedor
-            // 
-            this.textFornecedor.Location = new System.Drawing.Point(433, 227);
-            this.textFornecedor.Name = "textFornecedor";
-            this.textFornecedor.Size = new System.Drawing.Size(100, 20);
-            this.textFornecedor.TabIndex = 7;
-            // 
             // bVoltar
             // 
             this.bVoltar.Location = new System.Drawing.Point(69, 291);
@@ -116,17 +102,33 @@ namespace WindowsFormsApp1
             this.bVoltar.UseVisualStyleBackColor = true;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
+            // cFornecedor
+            // 
+            this.cFornecedor.FormattingEnabled = true;
+            this.cFornecedor.Location = new System.Drawing.Point(424, 231);
+            this.cFornecedor.Name = "cFornecedor";
+            this.cFornecedor.Size = new System.Drawing.Size(121, 21);
+            this.cFornecedor.TabIndex = 91;
+            // 
+            // cMaterial
+            // 
+            this.cMaterial.FormattingEnabled = true;
+            this.cMaterial.Location = new System.Drawing.Point(412, 100);
+            this.cMaterial.Name = "cMaterial";
+            this.cMaterial.Size = new System.Drawing.Size(121, 21);
+            this.cMaterial.TabIndex = 92;
+            // 
             // AdicionarE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cMaterial);
+            this.Controls.Add(this.cFornecedor);
             this.Controls.Add(this.bVoltar);
-            this.Controls.Add(this.textFornecedor);
             this.Controls.Add(this.Fornecedor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textQuantidade);
-            this.Controls.Add(this.textMaterial);
             this.Controls.Add(this.Quantidade);
             this.Controls.Add(this.Material);
             this.Controls.Add(this.bAdicionar);
@@ -142,11 +144,11 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button bAdicionar;
         private System.Windows.Forms.Label Material;
         private System.Windows.Forms.Label Quantidade;
-        private System.Windows.Forms.TextBox textMaterial;
         private System.Windows.Forms.TextBox textQuantidade;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Fornecedor;
-        private System.Windows.Forms.TextBox textFornecedor;
         private System.Windows.Forms.Button bVoltar;
+        private System.Windows.Forms.ComboBox cFornecedor;
+        private System.Windows.Forms.ComboBox cMaterial;
     }
 }

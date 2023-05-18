@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -118,11 +119,7 @@ namespace WindowsFormsApp1
             mCelular.Location = new Point(350, 150);
             // Torna o controle "Celular" invisível.
 
-            Celular.Visible = false;
-            // Torna o controle "Telefone" invisível.
-
-            Telefone.Visible = false;
-            // Habilita o controle "mCelular".
+          
 
             mCelular.Enabled = true;
             // Torna o controle "mCelular" visível.
@@ -333,8 +330,8 @@ namespace WindowsFormsApp1
                         cmd.Parameters.AddWithValue("@celular", celular);
                         cmd.Parameters.AddWithValue("@estadoCivil", estadoCivil);
                         cmd.Parameters.AddWithValue("@sexo", sexo);
-                        cmd.Parameters.AddWithValue("@senha", senha);
                         cmd.Parameters.AddWithValue("@status", status);
+                        cmd.Parameters.AddWithValue("@senha", senha);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
@@ -362,8 +359,7 @@ namespace WindowsFormsApp1
                             cSexo.SelectedIndex = 0;
                             cStatus.SelectedIndex = 0;
                             // Esconde campos desnecessários
-                            Celular.Visible = false;
-                            Telefone.Visible = false;
+                          
                             mCelular.Enabled = true;
                             mCelular.Visible = true;
                             Contato1.Visible = true;
@@ -399,11 +395,11 @@ namespace WindowsFormsApp1
         {
             if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Celular")
             {// Oculta o controle Contato1
-                Contato1.Visible = false;
+                Contato1.Visible = true;
                 // Exibe o controle Celular
-                Celular.Visible = true;
+
                 // Oculta o controle Telefone
-                Telefone.Visible = false;
+               
                 // Habilita o controle de entrada de dados mCelular
                 mCelular.Enabled = true;
                 // Exibe o controle de entrada de dados mCelular
@@ -411,25 +407,22 @@ namespace WindowsFormsApp1
                 // Limpa o valor atual do controle mCelular
                 mCelular.Text = "";
                 // Define a posição do controle Celular na tela
-                Celular.Location = new Point(285, 153);
+             
                 // Define a posição do controle de entrada de dados mCelular na tela
                 mCelular.Location = new Point(350, 150);
             }
             else if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Telefone")
             { // Oculta o controle Contato1
-                Contato1.Visible = false;
-                // Oculta o controle Celular
-                Celular.Visible = false;
-                // Exibe o controle Telefone
-                Telefone.Visible = true;
+                mCelular.Text = "";
+                Contato1.Visible = true;
+            
                 // Habilita o controle de entrada de dados mCelular
                 mCelular.Enabled = true;
                 // Exibe o controle de entrada de dados mCelular
                 mCelular.Visible = true;
                 // Limpa o valor atual do controle mCelular
-                mCelular.Text = "";
+        
                 // Define a posição do controle Telefone na tela
-                Telefone.Location = new Point(285, 153); 
             }
         }
 

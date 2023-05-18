@@ -63,12 +63,11 @@ namespace WindowsFormsApp1
         private void FormatarContato()
         {
             //Define a posição dos controles de celular e mascara de celular
-            Celular.Location = new Point(313, 330);
+            Contato.Location = new Point(313, 330);
             mCelular.Location = new Point(387, 323);
 
             //Torna visível o controle de celular e invisível o controle de telefone
-            Celular.Visible = true;
-            Telefone.Visible = false;
+            Contato.Visible = true;
 
             //Habilita o controle de mascara de celular
             mCelular.Enabled = true;
@@ -202,10 +201,9 @@ namespace WindowsFormsApp1
             if (cContato.SelectedItem.ToString() == "Celular")
             {
                 // Mostrar o painel "Celular"
-                Celular.Visible = true;
+                Contato.Visible = true;
 
                 // Esconder o painel "Telefone"
-                Telefone.Visible = false;
 
                 // Habilitar a máscara de entrada para número de celular
                 mCelular.Enabled = true;
@@ -217,7 +215,7 @@ namespace WindowsFormsApp1
                 mCelular.Text = "";
 
                 // Mover o painel "Celular" para a posição correta na tela
-                Celular.Location = new Point(313, 330);
+                Contato.Location = new Point(313, 330);
 
                 // Mover a máscara de entrada para número de celular para a posição correta na tela
                 mCelular.Location = new Point(387, 323);
@@ -226,16 +224,14 @@ namespace WindowsFormsApp1
             else if (cContato.SelectedItem.ToString() == "Telefone")
             {
                 // Esconder o painel "Celular"
-                Celular.Visible = false;
+                Contato.Visible = true;
 
                 // Mostrar o painel "Telefone"
-                Telefone.Visible = true;
 
                 // Limpar o valor atual da máscara de entrada para número de celular
                 mCelular.Text = "";
 
                 // Mover o painel "Telefone" para a posição correta na tela
-                Telefone.Location = new Point(313, 330);
             
 
         }
