@@ -225,14 +225,6 @@ LOCK TABLES `legista` WRITE;
 INSERT INTO `legista` VALUES (1,'Vanderlei','123,324,456-45','33,333,333-3','das','22/22/2222','(12)12345-1235',2222222,'Viúvo(a)','Feminino','123','Ativo'),(2,'Guilherme','957,896,346-78','98,745,645-9','Rua Ipiranga,78','20/06/1990','(12)12345-1234',6536453,'União Estável','Não definido','123','Inativo'),(3,'Rafael','566,747,647-46','73,657,563-7','Rua Portugal,23','53/42/3423','(12)12345-1234',4134232,'União Estável','Feminino','123','Ativo');
 /*!40000 ALTER TABLE `legista` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'necroterio'
---
-
---
--- Dumping routines for database 'necroterio'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -243,4 +235,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-18 20:09:41
+-- Dump completed on 2023-05-21 11:55:39
