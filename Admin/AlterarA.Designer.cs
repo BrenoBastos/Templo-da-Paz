@@ -178,7 +178,7 @@ namespace WindowsFormsApp1
             // 
             this.textSenha.Location = new System.Drawing.Point(350, 241);
             this.textSenha.Name = "textSenha";
-            this.textSenha.Size = new System.Drawing.Size(100, 20);
+            this.textSenha.Size = new System.Drawing.Size(121, 20);
             this.textSenha.TabIndex = 16;
             // 
             // textEndereco

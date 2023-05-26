@@ -196,6 +196,7 @@ namespace WindowsFormsApp1
                     string dataNascimento = mDataNascimento.Text;
                     string celular = mCelular.Text;
                     string senha = textSenha.Text;
+                    string senhaCriptografada = textSenha.Text;
                     string estadoCivil = string.Empty;
                     switch (cEstadoCivil.SelectedIndex)
                     {
@@ -266,10 +267,18 @@ namespace WindowsFormsApp1
                         cmd.Parameters.AddWithValue("@celular", celular);
                         cmd.Parameters.AddWithValue("@estadoCivil", estadoCivil);
                         cmd.Parameters.AddWithValue("@sexo", sexo);
-                        cmd.Parameters.AddWithValue("@senha", senha);
-
 
                         cmd.Parameters.AddWithValue("@status", status);
+                        using (SHA256 sha256 = SHA256.Create())
+                        {
+                            byte[] bytesSenha = Encoding.UTF8.GetBytes(senha);
+                            byte[] hashSenha = sha256.ComputeHash(bytesSenha);
+                            senhaCriptografada = Convert.ToBase64String(hashSenha);
+                        }
+
+                        cmd.Parameters.AddWithValue("@senha", senhaCriptografada);
+
+
                        
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)

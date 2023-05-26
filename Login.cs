@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -70,13 +71,22 @@ namespace WindowsFormsApp1
 
                     string nome = textNome.Text;
                     string senha = textSenha.Text;
+                    string senhaCriptografada;
+
+                    using (SHA256 sha256 = SHA256.Create())
+                    {
+                        byte[] bytesSenha = Encoding.UTF8.GetBytes(senha);
+                        byte[] hashSenha = sha256.ComputeHash(bytesSenha);
+                        senhaCriptografada = Convert.ToBase64String(hashSenha);
+                    }
+
 
                     // Consulta SQL para verificar as credenciais e o status na tabela correspondente ao tipo de usuário
                     string query = $"SELECT * FROM admin WHERE Nome = @nome AND Senha = @senha";
 
                     MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
                     cmd.Parameters.AddWithValue("@nome", nome);
-                    cmd.Parameters.AddWithValue("@senha", senha);
+                    cmd.Parameters.AddWithValue("@senha", senhaCriptografada);
 
                     MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -99,7 +109,7 @@ namespace WindowsFormsApp1
 
                         cmd = new MySqlCommand(query, Conexao.con);
                         cmd.Parameters.AddWithValue("@nome", nome);
-                        cmd.Parameters.AddWithValue("@senha", senha);
+                        cmd.Parameters.AddWithValue("@senha", senhaCriptografada);
 
                         reader = cmd.ExecuteReader();
 
@@ -122,7 +132,7 @@ namespace WindowsFormsApp1
 
                             cmd = new MySqlCommand(query, Conexao.con);
                             cmd.Parameters.AddWithValue("@nome", nome);
-                            cmd.Parameters.AddWithValue("@senha", senha);
+                            cmd.Parameters.AddWithValue("@senha", senhaCriptografada);
 
                             reader = cmd.ExecuteReader();
 

@@ -36,7 +36,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES ('Caio','Caio1'),('Caio','Caio1');
+INSERT INTO `admin` VALUES ('Caio','Caio1'),('Caio','Caio1'),('Gustavo','1WcjMgI2jtUDyFZY6T9YzmihL62LRenHay/sma4ct14=');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,7 +60,7 @@ CREATE TABLE `assistente` (
   `Senha` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `Status` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   PRIMARY KEY (`Id`,`Cpf`,`Rg`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +69,7 @@ CREATE TABLE `assistente` (
 
 LOCK TABLES `assistente` WRITE;
 /*!40000 ALTER TABLE `assistente` DISABLE KEYS */;
-INSERT INTO `assistente` VALUES (1,'Beatriz','213,123,123-12','31,231,231-2','321','31/23/1232','(12)09876-2313','União Estável','Não definido','123','Ativo'),(2,'Lucas','333,333,333-33','33,333,333-3','asd','22/22/2222','(12)12345-1234','União Estável','Não definido','abc','Ativo'),(3,'Juliana','763,563,646-35','63,563,634-5','Rua Cachoeira.89','10/06/2000','(12)1234-2345','Solteiro(a)','Feminino','123','Inativo');
+INSERT INTO `assistente` VALUES (1,'Beatriz','213,123,123-12','31,231,231-2','321','31/23/1232','(12)09876-2313','União Estável','Não definido','pmWkWSBCL51Bfkhn79xPuKBKHz//H6B+mY6G9/eieuM=','Ativo'),(2,'Lucas','333,333,333-33','33,333,333-3','asd','22/22/2222','(12)12345-1234','União Estável','Não definido','ungWv48Bz+pBQUDeXa4iI7ADYaOWF3qctBD/YfIAFa0=','Ativo'),(3,'Juliana','763,563,646-35','63,563,634-5','Rua Cachoeira.89','10/06/2000','(12)1234-2345','Solteiro(a)','Feminino','pmWkWSBCL51Bfkhn79xPuKBKHz//H6B+mY6G9/eieuM=','Inativo'),(4,'Gabriel','675,673,576-47','73,674,566-7','Rua das Papoulas,98','10/10/2002','(12)1234-1234','Solteiro(a)','Masculino','4263DyM5AgU1r5/pe1+tD0W8u/ZKgTVt/oMuDmzhuqI=','Inativo');
 /*!40000 ALTER TABLE `assistente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `cadaver` (
   `Laudo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
   `Material` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
   `Quantidade` int DEFAULT NULL,
-  `DataChegada` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `DataChegada` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `HorarioChegada` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `Dataretirada` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `Horarioretirada` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
@@ -121,7 +121,7 @@ CREATE TABLE `estoque` (
   `Id` int NOT NULL AUTO_INCREMENT,
   `Material` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
   `Quantidade` int NOT NULL,
-  `Fornecedor` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Fornecedor` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `Total` int DEFAULT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
@@ -146,9 +146,9 @@ DROP TABLE IF EXISTS `estoquee`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `estoquee` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `Material` varchar(45) COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
+  `Material` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci DEFAULT NULL,
   `Quantidade` int NOT NULL,
-  `Fornecedor` varchar(45) COLLATE utf8mb3_general_mysql500_ci NOT NULL,
+  `Fornecedor` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `Total` int DEFAULT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
@@ -213,7 +213,7 @@ CREATE TABLE `legista` (
   `Senha` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   `Status` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_mysql500_ci NOT NULL,
   PRIMARY KEY (`Id`,`Cpf`,`Rg`,`Crm`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_mysql500_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -222,9 +222,17 @@ CREATE TABLE `legista` (
 
 LOCK TABLES `legista` WRITE;
 /*!40000 ALTER TABLE `legista` DISABLE KEYS */;
-INSERT INTO `legista` VALUES (1,'Vanderlei','123,324,456-45','33,333,333-3','das','22/22/2222','(12)12345-1235',2222222,'Viúvo(a)','Feminino','123','Ativo'),(2,'Guilherme','957,896,346-78','98,745,645-9','Rua Ipiranga,78','20/06/1990','(12)12345-1234',6536453,'União Estável','Não definido','123','Inativo'),(3,'Rafael','566,747,647-46','73,657,563-7','Rua Portugal,23','53/42/3423','(12)12345-1234',4134232,'União Estável','Feminino','123','Ativo');
+INSERT INTO `legista` VALUES (1,'Vanderlei','123,324,456-45','33,333,333-3','das','22/22/2222','(12)12345-1235',2222222,'Viúvo(a)','Feminino','pmWkWSBCL51Bfkhn79xPuKBKHz//H6B+mY6G9/eieuM=','Ativo'),(2,'Guilherme','957,896,346-78','98,745,645-9','Rua Ipiranga,78','20/06/1990','(12)12345-1234',6536453,'União Estável','Não definido','4263DyM5AgU1r5/pe1+tD0W8u/ZKgTVt/oMuDmzhuqI=','Inativo'),(3,'Rafael','566,747,647-46','73,657,563-7','Rua Portugal,23','53/42/3423','(12)12345-1234',4134232,'União Estável','Feminino','pmWkWSBCL51Bfkhn79xPuKBKHz//H6B+mY6G9/eieuM=','Ativo'),(4,'Lucas Carvalho','312,142,354-25','52,454,254-2','Rua Sesi,98','22/06/2002','(12)12345-1234',6536767,'Solteiro(a)','Masculino','pmWkWSBCL51Bfkhn79xPuKBKHz//H6B+mY6G9/eieuM=','Ativo');
 /*!40000 ALTER TABLE `legista` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'necroterio'
+--
+
+--
+-- Dumping routines for database 'necroterio'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -235,4 +243,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-21 11:55:39
+-- Dump completed on 2023-05-26 20:55:01

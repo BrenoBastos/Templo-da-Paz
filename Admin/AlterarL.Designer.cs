@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
             this.lSenha.ActiveLinkColor = System.Drawing.Color.Black;
             this.lSenha.AutoSize = true;
             this.lSenha.LinkColor = System.Drawing.Color.Black;
-            this.lSenha.Location = new System.Drawing.Point(589, 142);
+            this.lSenha.Location = new System.Drawing.Point(645, 143);
             this.lSenha.Name = "lSenha";
             this.lSenha.Size = new System.Drawing.Size(73, 13);
             this.lSenha.TabIndex = 51;
@@ -133,7 +133,7 @@ namespace WindowsFormsApp1
             // 
             this.textSenha.Location = new System.Drawing.Point(473, 142);
             this.textSenha.Name = "textSenha";
-            this.textSenha.Size = new System.Drawing.Size(100, 20);
+            this.textSenha.Size = new System.Drawing.Size(162, 20);
             this.textSenha.TabIndex = 43;
             // 
             // textID
