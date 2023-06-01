@@ -29,6 +29,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DadosA));
             this.textNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bLocalizar = new System.Windows.Forms.Button();
@@ -36,9 +37,9 @@ namespace WindowsFormsApp1
             this.label2 = new System.Windows.Forms.Label();
             this.dDados = new System.Windows.Forms.DataGridView();
             this.bVoltar = new System.Windows.Forms.Button();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,25 +61,30 @@ namespace WindowsFormsApp1
             // 
             // bLocalizar
             // 
-            this.bLocalizar.Location = new System.Drawing.Point(328, 173);
+            this.bLocalizar.BackColor = System.Drawing.Color.Transparent;
+            this.bLocalizar.FlatAppearance.BorderSize = 0;
+            this.bLocalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bLocalizar.Location = new System.Drawing.Point(1094, 801);
             this.bLocalizar.Name = "bLocalizar";
-            this.bLocalizar.Size = new System.Drawing.Size(75, 23);
-            this.bLocalizar.TabIndex = 13;
-            this.bLocalizar.Text = "Localizar";
-            this.bLocalizar.UseVisualStyleBackColor = true;
+            this.bLocalizar.Size = new System.Drawing.Size(203, 65);
+            this.bLocalizar.TabIndex = 0;
+            this.bLocalizar.UseVisualStyleBackColor = false;
             this.bLocalizar.Click += new System.EventHandler(this.bLocalizar_Click);
             // 
             // textNome1
             // 
-            this.textNome1.Location = new System.Drawing.Point(290, 52);
+            this.textNome1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textNome1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
+            this.textNome1.Location = new System.Drawing.Point(355, 172);
+            this.textNome1.Multiline = true;
             this.textNome1.Name = "textNome1";
-            this.textNome1.Size = new System.Drawing.Size(100, 20);
+            this.textNome1.Size = new System.Drawing.Size(935, 37);
             this.textNome1.TabIndex = 18;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 55);
+            this.label2.Location = new System.Drawing.Point(228, 179);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 17;
@@ -91,35 +97,26 @@ namespace WindowsFormsApp1
             this.ID,
             this.Nome,
             this.Status});
-            this.dDados.Location = new System.Drawing.Point(231, 273);
+            this.dDados.Location = new System.Drawing.Point(53, 226);
             this.dDados.Name = "dDados";
-            this.dDados.Size = new System.Drawing.Size(347, 150);
+            this.dDados.Size = new System.Drawing.Size(1237, 550);
             this.dDados.TabIndex = 19;
             this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
             // 
             // bVoltar
             // 
-            this.bVoltar.Location = new System.Drawing.Point(42, 351);
+            this.bVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.bVoltar.FlatAppearance.BorderSize = 0;
+            this.bVoltar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVoltar.Image = ((System.Drawing.Image)(resources.GetObject("bVoltar.Image")));
+            this.bVoltar.Location = new System.Drawing.Point(918, 794);
             this.bVoltar.Name = "bVoltar";
-            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.Size = new System.Drawing.Size(183, 79);
             this.bVoltar.TabIndex = 92;
-            this.bVoltar.Text = "Voltar";
-            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.UseVisualStyleBackColor = false;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
             // 
             // ID
             // 
@@ -127,12 +124,31 @@ namespace WindowsFormsApp1
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            this.ID.Width = 400;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 399;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 395;
             // 
             // DadosA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(1302, 872);
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.dDados);
             this.Controls.Add(this.textNome1);
@@ -140,6 +156,8 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.textNome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bLocalizar);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DadosA";
             this.Text = "DadosA";
             this.DoubleClick += new System.EventHandler(this.DadosA_DoubleClick);
