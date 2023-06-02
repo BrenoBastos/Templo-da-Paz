@@ -508,6 +508,42 @@ namespace WindowsFormsApp1
             cRetirada.SelectedItem = retirada;
         }
 
+        private void btnMateriais_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Conexao conexao = new Conexao();
+                conexao.Abrir();
 
+                string material = cMaterial.SelectedItem.ToString();
+                string quantidade = textQuantidade.Text;
+
+                // Verifica se o material existe na tabela "material"
+                string verificaMaterialQuery = $"SELECT COUNT(*) FROM estoque WHERE Material = @material";
+                MySqlCommand verificaMaterialCmd = new MySqlCommand(verificaMaterialQuery, Conexao.con);
+                verificaMaterialCmd.Parameters.AddWithValue("@material", material);
+
+                int materialCount = Convert.ToInt32(verificaMaterialCmd.ExecuteScalar());
+
+                if (materialCount > 0)
+                {
+                    string query = $"UPDATE estoque SET Quantidade = Quantidade - {quantidade} WHERE Material = '{material}'";
+
+                    MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
+                    cmd.Parameters.AddWithValue("@material", material);
+                    cmd.Parameters.AddWithValue("@quantidade", quantidade);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    MessageBox.Show("Material não encontrado.");
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
+            }
+        }
     }
 }

@@ -67,6 +67,7 @@
             this.cLegista = new System.Windows.Forms.ComboBox();
             this.cAssistente = new System.Windows.Forms.ComboBox();
             this.cMaterial = new System.Windows.Forms.ComboBox();
+            this.btnMateriais = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -415,11 +416,22 @@
             this.cMaterial.Size = new System.Drawing.Size(121, 21);
             this.cMaterial.TabIndex = 96;
             // 
+            // btnMateriais
+            // 
+            this.btnMateriais.Location = new System.Drawing.Point(365, 254);
+            this.btnMateriais.Name = "btnMateriais";
+            this.btnMateriais.Size = new System.Drawing.Size(118, 23);
+            this.btnMateriais.TabIndex = 99;
+            this.btnMateriais.Text = "Atualizar materiais";
+            this.btnMateriais.UseVisualStyleBackColor = true;
+            this.btnMateriais.Click += new System.EventHandler(this.btnMateriais_Click);
+            // 
             // AtualizarCadaverL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 563);
+            this.Controls.Add(this.btnMateriais);
             this.Controls.Add(this.cLegista);
             this.Controls.Add(this.cAssistente);
             this.Controls.Add(this.cMaterial);
@@ -502,5 +514,6 @@
         private System.Windows.Forms.ComboBox cLegista;
         private System.Windows.Forms.ComboBox cAssistente;
         private System.Windows.Forms.ComboBox cMaterial;
+        private System.Windows.Forms.Button btnMateriais;
     }
 }
