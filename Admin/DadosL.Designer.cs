@@ -29,9 +29,9 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DadosL));
             this.dDados = new System.Windows.Forms.DataGridView();
             this.textNome1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.bLocalizar = new System.Windows.Forms.Button();
             this.bVoltar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,46 +47,48 @@ namespace WindowsFormsApp1
             this.ID,
             this.Nome,
             this.Status});
-            this.dDados.Location = new System.Drawing.Point(227, 199);
+            this.dDados.Location = new System.Drawing.Point(44, 188);
             this.dDados.Name = "dDados";
-            this.dDados.Size = new System.Drawing.Size(345, 150);
+            this.dDados.Size = new System.Drawing.Size(964, 452);
             this.dDados.TabIndex = 22;
             this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
             // 
             // textNome1
             // 
-            this.textNome1.Location = new System.Drawing.Point(290, 101);
+            this.textNome1.Location = new System.Drawing.Point(302, 146);
+            this.textNome1.Multiline = true;
             this.textNome1.Name = "textNome1";
-            this.textNome1.Size = new System.Drawing.Size(100, 20);
+            this.textNome1.Size = new System.Drawing.Size(706, 30);
             this.textNome1.TabIndex = 21;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Nome";
             // 
             // bLocalizar
             // 
-            this.bLocalizar.Location = new System.Drawing.Point(331, 170);
+            this.bLocalizar.BackColor = System.Drawing.Color.Transparent;
+            this.bLocalizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bLocalizar.BackgroundImage")));
+            this.bLocalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bLocalizar.FlatAppearance.BorderSize = 0;
+            this.bLocalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bLocalizar.ForeColor = System.Drawing.Color.Transparent;
+            this.bLocalizar.Location = new System.Drawing.Point(817, 656);
             this.bLocalizar.Name = "bLocalizar";
-            this.bLocalizar.Size = new System.Drawing.Size(75, 23);
+            this.bLocalizar.Size = new System.Drawing.Size(206, 67);
             this.bLocalizar.TabIndex = 23;
-            this.bLocalizar.Text = "Localizar";
-            this.bLocalizar.UseVisualStyleBackColor = true;
+            this.bLocalizar.UseVisualStyleBackColor = false;
             this.bLocalizar.Click += new System.EventHandler(this.bLocalizar_Click);
             // 
             // bVoltar
             // 
-            this.bVoltar.Location = new System.Drawing.Point(69, 219);
+            this.bVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.bVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVoltar.BackgroundImage")));
+            this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bVoltar.FlatAppearance.BorderSize = 0;
+            this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVoltar.ForeColor = System.Drawing.Color.Transparent;
+            this.bVoltar.Location = new System.Drawing.Point(645, 656);
             this.bVoltar.Name = "bVoltar";
-            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.Size = new System.Drawing.Size(166, 57);
             this.bVoltar.TabIndex = 95;
-            this.bVoltar.Text = "Voltar";
-            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.UseVisualStyleBackColor = false;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
             // ID
@@ -95,6 +97,7 @@ namespace WindowsFormsApp1
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            this.ID.Width = 300;
             // 
             // Nome
             // 
@@ -102,6 +105,7 @@ namespace WindowsFormsApp1
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
+            this.Nome.Width = 321;
             // 
             // Status
             // 
@@ -109,19 +113,24 @@ namespace WindowsFormsApp1
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
+            this.Status.Width = 300;
             // 
             // DadosL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(1035, 725);
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.bLocalizar);
             this.Controls.Add(this.dDados);
             this.Controls.Add(this.textNome1);
-            this.Controls.Add(this.label2);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DadosL";
-            this.Text = "DadosL";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Click += new System.EventHandler(this.DadosL_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
@@ -133,7 +142,6 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.DataGridView dDados;
         private System.Windows.Forms.TextBox textNome1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button bLocalizar;
         private System.Windows.Forms.Button bVoltar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
