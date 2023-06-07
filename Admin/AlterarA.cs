@@ -392,7 +392,7 @@ namespace WindowsFormsApp1
         {// Esconde a janela atual antes de exibir uma nova
             this.Hide();
             // Cria uma nova instância do formulário DadosA
-            DadosA novaTela = new DadosA();
+            DadosA1 novaTela = new DadosA1();
             // Exibe o formulário DadosA como uma caixa de diálogo
             novaTela.ShowDialog(); 
 

@@ -18,10 +18,33 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             listarassistente();
+            cAssistente.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cAssistente.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
 
         }
         private void listarassistente()
         {
+            bAlterar.FlatAppearance.MouseOverBackColor = bAlterar.BackColor;
+            bAlterar.FlatAppearance.MouseDownBackColor = bAlterar.BackColor;
+            bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
+            bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
+            mHorarioChegada.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            mDataChegada.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            cAssistente.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textGaveta.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textID.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textNome.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textGaveta.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textNome.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textID.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mDataChegada.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mHorarioChegada.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mHorarioChegada.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            mDataChegada.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textGaveta.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textID.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textNome.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+           
             Conexao conexao = new Conexao();
             conexao.Abrir();
             try
@@ -197,7 +220,6 @@ namespace WindowsFormsApp1
                         textGaveta.Text = "";
                         mDataChegada.Text = "";
                         mHorarioChegada.Text = "";
-                        cAssistente.SelectedIndex = 0;
                         textID.Text = "";
 
                     }

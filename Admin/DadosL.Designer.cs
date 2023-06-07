@@ -55,10 +55,10 @@ namespace WindowsFormsApp1
             // 
             // textNome1
             // 
-            this.textNome1.Location = new System.Drawing.Point(302, 146);
+            this.textNome1.Location = new System.Drawing.Point(302, 140);
             this.textNome1.Multiline = true;
             this.textNome1.Name = "textNome1";
-            this.textNome1.Size = new System.Drawing.Size(706, 30);
+            this.textNome1.Size = new System.Drawing.Size(706, 36);
             this.textNome1.TabIndex = 21;
             // 
             // bLocalizar
@@ -105,7 +105,7 @@ namespace WindowsFormsApp1
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
-            this.Nome.Width = 321;
+            this.Nome.Width = 360;
             // 
             // Status
             // 
@@ -122,13 +122,13 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1035, 725);
+            this.ClientSize = new System.Drawing.Size(1020, 725);
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.bLocalizar);
             this.Controls.Add(this.dDados);
             this.Controls.Add(this.textNome1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DadosL";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Click += new System.EventHandler(this.DadosL_Click);

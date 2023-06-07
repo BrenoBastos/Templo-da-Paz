@@ -154,7 +154,7 @@ namespace WindowsFormsApp1
                 this.Hide();
 
                 // Cria uma nova instância da tela DadosA
-                DadosA novaTela = new DadosA();
+                DadosA1 novaTela = new DadosA1();
 
                 // Abre a nova tela em um diálogo
                 novaTela.ShowDialog();

@@ -18,10 +18,17 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             // Define o modo de seleção do DataGridView como seleção de linha completa
-            BackColor = Color.FromArgb(40, 31, 31);
-            dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            BackColor = Color.FromArgb(0x27, 0x1F, 0x1F);
             CarregarDados();
             this.Shown += DadosL_Shown;
+            dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+
+
+
+
+
+
 
         }
         private void DadosL_Shown(object sender, EventArgs e)
@@ -31,41 +38,6 @@ namespace WindowsFormsApp1
         }
         private void CarregarDados()
         {
-            bLocalizar.FlatAppearance.MouseOverBackColor = bLocalizar.BackColor;
-            bLocalizar.FlatAppearance.MouseDownBackColor = bLocalizar.BackColor;
-            bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
-            bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
-            textNome1.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
-            textNome1.Font = new Font("Poppins", 20, FontStyle.Regular);
-            textNome1.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
-
-            dDados.Columns["ID"].DefaultCellStyle.Font = new Font("Poppins", 20, FontStyle.Regular);
-            dDados.Columns["Nome"].DefaultCellStyle.Font = new Font("Poppins", 20, FontStyle.Regular);
-            dDados.Columns["Status"].DefaultCellStyle.Font = new Font("Poppins", 20, FontStyle.Regular);
-            dDados.Columns["ID"].HeaderCell.Style.Font = new Font("Poppins", 20, FontStyle.Regular);
-            dDados.Columns["Nome"].HeaderCell.Style.Font = new Font("Poppins", 20, FontStyle.Regular);
-            dDados.Columns["Status"].HeaderCell.Style.Font = new Font("Poppins", 20, FontStyle.Regular);
-            dDados.BackgroundColor = System.Drawing.Color.FromArgb(151, 128, 128);
-            dDados.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
-            dDados.EnableHeadersVisualStyles = false; // Desabilita o estilo visual padrão dos cabeçalhos
-            dDados.Columns["Status"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128); // Define a cor de fundo do cabeçalho
-            dDados.Columns["ID"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128); // Define a cor de fundo do cabeçalho
-            dDados.DefaultCellStyle.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF); // Define a cor do texto do cabeçalho           
-            dDados.RowHeadersVisible = false;
-
-            dDados.Columns["Nome"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128); // Define a cor de fundo do cabeçalho
-            dDados.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF); // Define a cor do texto do cabeçalho        
-            int borderRadius = 10; // Define o raio da borda arredondada
-
-            using (GraphicsPath path = new GraphicsPath())
-            {
-                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
-                path.AddArc(textNome1.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
-                path.AddArc(textNome1.Width - borderRadius, textNome1.Height - borderRadius, borderRadius, borderRadius, 0, 90);
-                path.AddArc(0, textNome1.Height - borderRadius, borderRadius, borderRadius, 90, 90);
-
-                textNome1.Region = new Region(path);
-            }
             try
             {
                 Conexao conexao = new Conexao();
@@ -87,6 +59,45 @@ namespace WindowsFormsApp1
                     dDados.Columns["ID"].DataPropertyName = "ID";
                     dDados.Columns["Nome"].DataPropertyName = "Nome";
                     dDados.Columns["Status"].DataPropertyName = "Status";
+                    dDados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
+                    bLocalizar.FlatAppearance.MouseOverBackColor = bLocalizar.BackColor;
+                    bLocalizar.FlatAppearance.MouseDownBackColor = bLocalizar.BackColor;
+                    bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
+                    bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
+                    textNome1.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+                    textNome1.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    textNome1.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+
+                    dDados.Columns["ID"].DefaultCellStyle.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    dDados.Columns["Nome"].DefaultCellStyle.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    dDados.Columns["Status"].DefaultCellStyle.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    dDados.Columns["ID"].HeaderCell.Style.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    dDados.Columns["Nome"].HeaderCell.Style.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    dDados.Columns["Status"].HeaderCell.Style.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    dDados.BackgroundColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.EnableHeadersVisualStyles = false; // Desabilita o estilo visual padrão dos cabeçalhos
+                    dDados.Columns["Status"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128); // Define a cor de fundo do cabeçalho
+                    dDados.Columns["ID"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128); // Define a cor de fundo do cabeçalho
+                    dDados.DefaultCellStyle.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF); // Define a cor do texto do cabeçalho           
+                    dDados.RowHeadersVisible = false;
+                    dDados.RowTemplate.Height = 25; // Define a altura das células
+                    dDados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
+                    dDados.Columns["Nome"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128); // Define a cor de fundo do cabeçalho
+                    dDados.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF); // Define a cor do texto do cabeçalho        
+                    int borderRadius = 10; // Define o raio da borda arredondada
+
+                    using (GraphicsPath path = new GraphicsPath())
+                    {
+                        path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                        path.AddArc(textNome1.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                        path.AddArc(textNome1.Width - borderRadius, textNome1.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                        path.AddArc(0, textNome1.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+
+                        textNome1.Region = new Region(path);
+                    }
 
                 }
                 else

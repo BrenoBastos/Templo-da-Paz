@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace WindowsFormsApp1
     {
         public DadosF1()
         {
+            BackColor = Color.FromArgb(0x27, 0x1F, 0x1F);
+
             InitializeComponent();
             dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CarregarDados();
@@ -48,6 +51,44 @@ namespace WindowsFormsApp1
                     dDados.Columns["ID"].DataPropertyName = "ID";
                     dDados.Columns["Nome"].DataPropertyName = "Nome";
                     dDados.Columns["Status"].DataPropertyName = "Status";
+                    bLocalizar.FlatAppearance.MouseOverBackColor = bLocalizar.BackColor;
+                    bLocalizar.FlatAppearance.MouseDownBackColor = bLocalizar.BackColor;
+                    bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
+                    bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
+                    textNome1.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+                    textNome1.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    textNome1.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+                    dDados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
+                    dDados.Columns["ID"].DefaultCellStyle.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    dDados.Columns["Nome"].DefaultCellStyle.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    dDados.Columns["Status"].DefaultCellStyle.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    dDados.Columns["ID"].HeaderCell.Style.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    dDados.Columns["Nome"].HeaderCell.Style.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    dDados.Columns["Status"].HeaderCell.Style.Font = new Font("Poppins", 15, FontStyle.Regular);
+                    dDados.BackgroundColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.EnableHeadersVisualStyles = false; // Desabilita o estilo visual padrão dos cabeçalhos
+                    dDados.Columns["Status"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128); // Define a cor de fundo do cabeçalho
+                    dDados.Columns["ID"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128); // Define a cor de fundo do cabeçalho
+                    dDados.DefaultCellStyle.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF); // Define a cor do texto do cabeçalho           
+                    dDados.RowHeadersVisible = false;
+                    dDados.RowTemplate.Height = 25; // Define a altura das células
+                    dDados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
+                    dDados.Columns["Nome"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128); // Define a cor de fundo do cabeçalho
+                    dDados.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF); // Define a cor do texto do cabeçalho        
+                    int borderRadius = 10; // Define o raio da borda arredondada
+
+                    using (GraphicsPath path = new GraphicsPath())
+                    {
+                        path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                        path.AddArc(textNome1.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                        path.AddArc(textNome1.Width - borderRadius, textNome1.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                        path.AddArc(0, textNome1.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+
+                        textNome1.Region = new Region(path);
+                    }
                 }
                 else
                 {
@@ -76,12 +117,12 @@ namespace WindowsFormsApp1
         private void bLocalizar_Click(object sender, EventArgs e)
         {
              // Verifica se o campo de nome está vazio
-            if (string.IsNullOrWhiteSpace(textNome.Text))
+            if (string.IsNullOrWhiteSpace(textNome1.Text))
             { // Mostra uma mensagem de erro e interrompe o processamento da função
                 MessageBox.Show("Campo 'Nome' vazio, preencha-o!");
                 return;
             }  // Verifica se o campo de nome contém apenas caracteres alfabéticos
-            else if (textNome.Text.All(char.IsDigit))
+            else if (textNome1.Text.All(char.IsDigit))
             { // Mostra uma mensagem de erro e interrompe o processamento da função
                 MessageBox.Show("Por favor, insira apenas carecteres no campo 'Nome'.");
                 return;
@@ -90,7 +131,7 @@ namespace WindowsFormsApp1
 {
     try
     {
-        string nome = textNome.Text;
+        string nome = textNome1.Text;
 
         Conexao conexao = new Conexao();
         conexao.Abrir();
@@ -115,7 +156,7 @@ namespace WindowsFormsApp1
 
 
             MessageBox.Show("Localizado com sucesso");
-            textNome.Text = "";
+            textNome1.Text = "";
             conexao.Fechar();
 
         }
