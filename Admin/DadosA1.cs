@@ -107,7 +107,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
             }
-            textNome1.Height = 40;
+
         }
 
         private void bLocalizar_Click(object sender, EventArgs e)

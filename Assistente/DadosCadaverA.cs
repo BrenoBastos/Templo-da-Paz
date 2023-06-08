@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
                 conexao.Abrir();
 
                 // Consulta na tabela estoque para obter os dados ordenados por Id
-                string query = "SELECT Id,  Nome,Gaveta,Assistente,Legista,DataChegada,HorarioChegada,DataRetirada,Retirada FROM cadaver ";
+                string query = "SELECT Id,  Nome,Gaveta,Assistente,Legista,DataRetirada,Retirada FROM cadaver ";
                 MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
@@ -58,8 +58,7 @@ namespace WindowsFormsApp1
                     dDados.Columns["Gaveta"].DataPropertyName = "Gaveta";
                     dDados.Columns["Assistente"].DataPropertyName = "Assistente";
                     dDados.Columns["Legista"].DataPropertyName = "Legista";
-                    dDados.Columns["DataChegada"].DataPropertyName = "DataChegada";
-                    dDados.Columns["HorarioChegada"].DataPropertyName = "HorarioChegada";
+                  
                     dDados.Columns["DataRetirada"].DataPropertyName = "DataRetirada";
                     dDados.Columns["Retirada"].DataPropertyName = "Retirada";
 
@@ -77,8 +76,6 @@ namespace WindowsFormsApp1
                     dDados.Columns["Gaveta"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
                     dDados.Columns["Assistente"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
                     dDados.Columns["Legista"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
-                    dDados.Columns["DataChegada"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
-                    dDados.Columns["HorarioChegada"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
                     dDados.Columns["DataRetirada"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
                     dDados.Columns["Retirada"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
 
@@ -91,8 +88,6 @@ namespace WindowsFormsApp1
                     dDados.Columns["Gaveta"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
                     dDados.Columns["Assistente"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
                     dDados.Columns["Legista"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
-                    dDados.Columns["DataChegada"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
-                    dDados.Columns["HorarioChegada"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
                     dDados.Columns["DataRetirada"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
                     dDados.Columns["Retirada"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
 
@@ -111,8 +106,6 @@ namespace WindowsFormsApp1
                     dDados.Columns["Gaveta"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
                     dDados.Columns["Assistente"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
                     dDados.Columns["Legista"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
-                    dDados.Columns["DataChegada"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
-                    dDados.Columns["HorarioChegada"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
                     dDados.Columns["DataRetirada"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
                     dDados.Columns["Retirada"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
 
@@ -151,7 +144,6 @@ namespace WindowsFormsApp1
                 {
                     MessageBox.Show("Nenhum resultado encontrado.");
                 }
-                textNome.Height = 40;
 
                 conexao.Fechar();
             }
@@ -186,7 +178,7 @@ namespace WindowsFormsApp1
                         Conexao conexao = new Conexao();
                         conexao.Abrir();
 
-                        string query = "SELECT Id,  Nome,Gaveta,Assistente,Legista,DataChegada,HorarioChegada,DataRetirada,Retirada FROM cadaver WHERE Nome = @nome";
+                        string query = "SELECT Id,  Nome,Gaveta,Assistente,Legista,DataRetirada,Retirada FROM cadaver WHERE Nome = @nome";
                         MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
                         cmd.Parameters.AddWithValue("@nome", nome);
 
@@ -205,8 +197,6 @@ namespace WindowsFormsApp1
                             dDados.Columns["Gaveta"].DataPropertyName = "Gaveta";
                             dDados.Columns["Assistente"].DataPropertyName = "Assistente";
                             dDados.Columns["Legista"].DataPropertyName = "Legista";
-                            dDados.Columns["DataChegada"].DataPropertyName = "DataChegada";
-                            dDados.Columns["HorarioChegada"].DataPropertyName = "HorarioChegada";
                             dDados.Columns["DataRetirada"].DataPropertyName = "DataRetirada";
                             dDados.Columns["Retirada"].DataPropertyName = "Retirada";
 

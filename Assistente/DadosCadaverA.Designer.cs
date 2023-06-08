@@ -36,8 +36,6 @@ namespace WindowsFormsApp1
             this.bVoltar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HorarioChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Retirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Legista = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,8 +71,6 @@ namespace WindowsFormsApp1
             this.dDados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Nome,
-            this.DataChegada,
-            this.HorarioChegada,
             this.DataRetirada,
             this.Retirada,
             this.Legista,
@@ -113,22 +109,7 @@ namespace WindowsFormsApp1
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
-            this.Nome.Width = 160;
-            // 
-            // DataChegada
-            // 
-            this.DataChegada.DataPropertyName = "DataChegada";
-            this.DataChegada.HeaderText = "DataChegada";
-            this.DataChegada.Name = "DataChegada";
-            this.DataChegada.ReadOnly = true;
-            this.DataChegada.Width = 120;
-            // 
-            // HorarioChegada
-            // 
-            this.HorarioChegada.DataPropertyName = "HorarioChegada";
-            this.HorarioChegada.HeaderText = "HorarioChegada";
-            this.HorarioChegada.Name = "HorarioChegada";
-            this.HorarioChegada.ReadOnly = true;
+            this.Nome.Width = 200;
             // 
             // DataRetirada
             // 
@@ -152,7 +133,7 @@ namespace WindowsFormsApp1
             this.Legista.HeaderText = "Legista";
             this.Legista.Name = "Legista";
             this.Legista.ReadOnly = true;
-            this.Legista.Width = 120;
+            this.Legista.Width = 170;
             // 
             // Assistente
             // 
@@ -160,7 +141,7 @@ namespace WindowsFormsApp1
             this.Assistente.HeaderText = "Assistente";
             this.Assistente.Name = "Assistente";
             this.Assistente.ReadOnly = true;
-            this.Assistente.Width = 140;
+            this.Assistente.Width = 180;
             // 
             // DadosCadaverA
             // 
@@ -189,8 +170,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Button bVoltar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataChegada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HorarioChegada;
         private System.Windows.Forms.DataGridViewTextBoxColumn DataRetirada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Retirada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Legista;
