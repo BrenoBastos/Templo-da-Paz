@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -20,7 +21,7 @@ namespace WindowsFormsApp1
             listarassistente();
             cAssistente.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             cAssistente.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
-
+            cAssistente.Height =30;
         }
         private void listarassistente()
         {
@@ -44,8 +45,67 @@ namespace WindowsFormsApp1
             textGaveta.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             textID.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             textNome.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
-           
-            Conexao conexao = new Conexao();
+            int borderRadius = 10; // Define o raio da borda arredondada
+
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textNome.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textNome.Width - borderRadius, textNome.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textNome.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textNome.Region = new Region(path);
+              
+                
+            
+
+
+            }
+                        using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textID.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textID.Width - borderRadius, textID.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textID.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textID.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textGaveta.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textGaveta.Width - borderRadius, textGaveta.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textGaveta.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textGaveta.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mDataChegada.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mDataChegada.Width - borderRadius, mDataChegada.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mDataChegada.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                mDataChegada.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mHorarioChegada.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mHorarioChegada.Width - borderRadius, mHorarioChegada.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mHorarioChegada.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                mHorarioChegada.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+            { 
+            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+            path.AddArc(cAssistente.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+            path.AddArc(cAssistente.Width - borderRadius, cAssistente.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+            path.AddArc(0, cAssistente.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+            cAssistente.Region = new Region(path);
+        }
+
+        Conexao conexao = new Conexao();
             conexao.Abrir();
             try
             {

@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
             this.textGaveta.MinimumSize = new System.Drawing.Size(20, 20);
             this.textGaveta.Multiline = true;
             this.textGaveta.Name = "textGaveta";
-            this.textGaveta.Size = new System.Drawing.Size(314, 30);
+            this.textGaveta.Size = new System.Drawing.Size(340, 30);
             this.textGaveta.TabIndex = 66;
             // 
             // mHorarioChegada
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
             this.mHorarioChegada.Location = new System.Drawing.Point(247, 287);
             this.mHorarioChegada.Mask = "00:00";
             this.mHorarioChegada.Name = "mHorarioChegada";
-            this.mHorarioChegada.Size = new System.Drawing.Size(162, 20);
+            this.mHorarioChegada.Size = new System.Drawing.Size(280, 20);
             this.mHorarioChegada.TabIndex = 65;
             this.mHorarioChegada.ValidatingType = typeof(System.DateTime);
             this.mHorarioChegada.Click += new System.EventHandler(this.mHorarioChegada_Click);
@@ -86,7 +86,7 @@ namespace WindowsFormsApp1
             this.mDataChegada.Location = new System.Drawing.Point(247, 205);
             this.mDataChegada.Mask = "00/00/0000";
             this.mDataChegada.Name = "mDataChegada";
-            this.mDataChegada.Size = new System.Drawing.Size(162, 20);
+            this.mDataChegada.Size = new System.Drawing.Size(280, 20);
             this.mDataChegada.TabIndex = 64;
             this.mDataChegada.ValidatingType = typeof(System.DateTime);
             this.mDataChegada.Click += new System.EventHandler(this.mDataChegada_Click);
@@ -121,10 +121,10 @@ namespace WindowsFormsApp1
             // cAssistente
             // 
             this.cAssistente.FormattingEnabled = true;
-            this.cAssistente.Location = new System.Drawing.Point(694, 210);
+            this.cAssistente.Location = new System.Drawing.Point(693, 214);
             this.cAssistente.Name = "cAssistente";
-            this.cAssistente.Size = new System.Drawing.Size(314, 21);
-            this.cAssistente.TabIndex = 99;
+            this.cAssistente.Size = new System.Drawing.Size(315, 21);
+            this.cAssistente.TabIndex = 72;
             // 
             // AlterarCadaverA
             // 
