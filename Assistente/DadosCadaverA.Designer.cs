@@ -29,9 +29,9 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DadosCadaverA));
             this.bLocalizar = new System.Windows.Forms.Button();
             this.textNome = new System.Windows.Forms.TextBox();
-            this.das = new System.Windows.Forms.Label();
             this.dDados = new System.Windows.Forms.DataGridView();
             this.bVoltar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,29 +47,25 @@ namespace WindowsFormsApp1
             // 
             // bLocalizar
             // 
-            this.bLocalizar.Location = new System.Drawing.Point(316, 150);
+            this.bLocalizar.BackColor = System.Drawing.Color.Transparent;
+            this.bLocalizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bLocalizar.BackgroundImage")));
+            this.bLocalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bLocalizar.FlatAppearance.BorderSize = 0;
+            this.bLocalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bLocalizar.Location = new System.Drawing.Point(817, 656);
             this.bLocalizar.Name = "bLocalizar";
-            this.bLocalizar.Size = new System.Drawing.Size(75, 23);
+            this.bLocalizar.Size = new System.Drawing.Size(206, 67);
             this.bLocalizar.TabIndex = 31;
-            this.bLocalizar.Text = "Localizar";
-            this.bLocalizar.UseVisualStyleBackColor = true;
+            this.bLocalizar.UseVisualStyleBackColor = false;
             this.bLocalizar.Click += new System.EventHandler(this.bLocalizar_Click);
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(316, 92);
+            this.textNome.Location = new System.Drawing.Point(302, 140);
+            this.textNome.Multiline = true;
             this.textNome.Name = "textNome";
-            this.textNome.Size = new System.Drawing.Size(100, 20);
+            this.textNome.Size = new System.Drawing.Size(600, 36);
             this.textNome.TabIndex = 30;
-            // 
-            // das
-            // 
-            this.das.AutoSize = true;
-            this.das.Location = new System.Drawing.Point(164, 101);
-            this.das.Name = "das";
-            this.das.Size = new System.Drawing.Size(35, 13);
-            this.das.TabIndex = 29;
-            this.das.Text = "Nome";
             // 
             // dDados
             // 
@@ -83,20 +79,24 @@ namespace WindowsFormsApp1
             this.Retirada,
             this.Legista,
             this.Assistente});
-            this.dDados.Location = new System.Drawing.Point(12, 288);
+            this.dDados.Location = new System.Drawing.Point(44, 188);
             this.dDados.Name = "dDados";
-            this.dDados.Size = new System.Drawing.Size(863, 150);
+            this.dDados.Size = new System.Drawing.Size(964, 452);
             this.dDados.TabIndex = 28;
             this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
             // 
             // bVoltar
             // 
-            this.bVoltar.Location = new System.Drawing.Point(107, 183);
+            this.bVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.bVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVoltar.BackgroundImage")));
+            this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bVoltar.FlatAppearance.BorderSize = 0;
+            this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVoltar.Location = new System.Drawing.Point(645, 656);
             this.bVoltar.Name = "bVoltar";
-            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.Size = new System.Drawing.Size(166, 57);
             this.bVoltar.TabIndex = 73;
-            this.bVoltar.Text = "Voltar";
-            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.UseVisualStyleBackColor = false;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
             // ID
@@ -105,6 +105,7 @@ namespace WindowsFormsApp1
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
+            this.ID.Width = 60;
             // 
             // Nome
             // 
@@ -112,6 +113,7 @@ namespace WindowsFormsApp1
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
+            this.Nome.Width = 160;
             // 
             // DataChegada
             // 
@@ -119,6 +121,7 @@ namespace WindowsFormsApp1
             this.DataChegada.HeaderText = "DataChegada";
             this.DataChegada.Name = "DataChegada";
             this.DataChegada.ReadOnly = true;
+            this.DataChegada.Width = 120;
             // 
             // HorarioChegada
             // 
@@ -133,6 +136,7 @@ namespace WindowsFormsApp1
             this.DataRetirada.HeaderText = "DataRetirada";
             this.DataRetirada.Name = "DataRetirada";
             this.DataRetirada.ReadOnly = true;
+            this.DataRetirada.Width = 120;
             // 
             // Retirada
             // 
@@ -140,6 +144,7 @@ namespace WindowsFormsApp1
             this.Retirada.HeaderText = "Retirada";
             this.Retirada.Name = "Retirada";
             this.Retirada.ReadOnly = true;
+            this.Retirada.Width = 130;
             // 
             // Legista
             // 
@@ -147,6 +152,7 @@ namespace WindowsFormsApp1
             this.Legista.HeaderText = "Legista";
             this.Legista.Name = "Legista";
             this.Legista.ReadOnly = true;
+            this.Legista.Width = 120;
             // 
             // Assistente
             // 
@@ -154,16 +160,17 @@ namespace WindowsFormsApp1
             this.Assistente.HeaderText = "Assistente";
             this.Assistente.Name = "Assistente";
             this.Assistente.ReadOnly = true;
+            this.Assistente.Width = 140;
             // 
             // DadosCadaverA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1020, 725);
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.bLocalizar);
             this.Controls.Add(this.textNome);
-            this.Controls.Add(this.das);
             this.Controls.Add(this.dDados);
             this.Name = "DadosCadaverA";
             this.Text = "DadosCadaverA";
@@ -178,7 +185,6 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.Button bLocalizar;
         private System.Windows.Forms.TextBox textNome;
-        private System.Windows.Forms.Label das;
         private System.Windows.Forms.DataGridView dDados;
         private System.Windows.Forms.Button bVoltar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;

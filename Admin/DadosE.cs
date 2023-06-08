@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             // Define o modo de seleção do DataGridView como seleção de linha completa
-            BackColor = Color.FromArgb(0x27, 0x1F, 0x1F);
+            BackColor = Color.FromArgb(64, 49, 49);
 
             dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CarregarDados();

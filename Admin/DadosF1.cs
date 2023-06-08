@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
     {
         public DadosF1()
         {
-            BackColor = Color.FromArgb(0x27, 0x1F, 0x1F);
+            BackColor = Color.FromArgb(64, 49, 49);
 
             InitializeComponent();
             dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;

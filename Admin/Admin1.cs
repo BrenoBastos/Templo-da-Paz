@@ -15,6 +15,11 @@ namespace WindowsFormsApp1
         public Admin1()
         {
             InitializeComponent();
+            BackColor = Color.FromArgb(64, 49, 49);
+            treeView2.Font = new Font("Poppins", 20, FontStyle.Regular);
+       
+            bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
+            bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
             // Cria um novo nó pai na árvore e define seu texto como "Legista"
             TreeNode parentNode = treeView2.Nodes.Add("Legista");
 
@@ -56,7 +61,10 @@ namespace WindowsFormsApp1
 
             // Cria um novo nó filho no nó pai "Dados" e define seu texto como "Fornecedor"
             TreeNode childNode14 = parentNode4.Nodes.Add("Fornecedor");
+
+            treeView2.BackColor = Color.FromArgb(90, 72, 72);
         }
+       
 
         private void treeView2_AfterSelect(object sender, TreeViewEventArgs e)
         {

@@ -22,6 +22,8 @@ namespace WindowsFormsApp1
             cAssistente.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             cAssistente.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             cAssistente.Height =30;
+            BackColor = Color.FromArgb(64, 49, 49);
+
         }
         private void listarassistente()
         {

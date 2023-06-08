@@ -28,34 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Assistente));
             this.treeView2 = new System.Windows.Forms.TreeView();
             this.bVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // treeView2
             // 
-            this.treeView2.Location = new System.Drawing.Point(3, 12);
+            this.treeView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treeView2.ForeColor = System.Drawing.Color.Transparent;
+            this.treeView2.Location = new System.Drawing.Point(12, 105);
             this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(121, 97);
+            this.treeView2.Size = new System.Drawing.Size(196, 551);
             this.treeView2.TabIndex = 2;
             this.treeView2.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView2_AfterSelect);
             this.treeView2.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView2_NodeMouseClick);
             // 
             // bVoltar
             // 
-            this.bVoltar.Location = new System.Drawing.Point(144, 217);
+            this.bVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.bVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVoltar.BackgroundImage")));
+            this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bVoltar.FlatAppearance.BorderSize = 0;
+            this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVoltar.Location = new System.Drawing.Point(301, 660);
             this.bVoltar.Name = "bVoltar";
-            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.Size = new System.Drawing.Size(153, 56);
             this.bVoltar.TabIndex = 81;
-            this.bVoltar.Text = "Voltar";
-            this.bVoltar.UseVisualStyleBackColor = true;
-            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
+            this.bVoltar.UseVisualStyleBackColor = false;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click_1);
             // 
             // Assistente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(454, 714);
             this.Controls.Add(this.bVoltar);
             this.Controls.Add(this.treeView2);
             this.Name = "Assistente";

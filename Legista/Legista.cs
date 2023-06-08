@@ -15,8 +15,15 @@ namespace WindowsFormsApp1
         public Legista()
         {
             InitializeComponent();
+            BackColor = Color.FromArgb(64, 49, 49);
+            treeView1.Font = new Font("Poppins", 20, FontStyle.Regular);
+            treeView1.BackColor = Color.FromArgb(90, 72, 72);
+            bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
+            bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
+            treeView1.BackColor = Color.FromArgb(90, 72, 72);
+
             // Cria um nó raiz para a árvore de exibição da interface gráfica com o texto "Cadáver"
-            TreeNode parentNode = treeView1.Nodes.Add("Cadáver");
+            TreeNode parentNode = treeView1.Nodes.Add("Laudo");
 
             // Cria um nó filho do nó raiz com o texto "Atualizar"
             TreeNode childNode = parentNode.Nodes.Add("Atualizar");
