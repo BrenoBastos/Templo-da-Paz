@@ -149,6 +149,7 @@ namespace WindowsFormsApp1
             // 
             // cAssistente
             // 
+            this.cAssistente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cAssistente.FormattingEnabled = true;
             this.cAssistente.Location = new System.Drawing.Point(162, 218);
             this.cAssistente.Name = "cAssistente";

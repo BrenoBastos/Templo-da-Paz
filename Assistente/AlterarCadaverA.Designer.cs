@@ -121,9 +121,9 @@ namespace WindowsFormsApp1
             // cAssistente
             // 
             this.cAssistente.FormattingEnabled = true;
-            this.cAssistente.Location = new System.Drawing.Point(693, 214);
+            this.cAssistente.Location = new System.Drawing.Point(696, 205);
             this.cAssistente.Name = "cAssistente";
-            this.cAssistente.Size = new System.Drawing.Size(315, 21);
+            this.cAssistente.Size = new System.Drawing.Size(312, 21);
             this.cAssistente.TabIndex = 72;
             // 
             // AlterarCadaverA

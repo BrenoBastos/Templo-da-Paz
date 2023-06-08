@@ -96,16 +96,10 @@ namespace WindowsFormsApp1
                 path.AddArc(0, mHorarioChegada.Height - borderRadius, borderRadius, borderRadius, 90, 90);
                 mHorarioChegada.Region = new Region(path);
             }
-            using (GraphicsPath path = new GraphicsPath())
-            { 
-            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
-            path.AddArc(cAssistente.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
-            path.AddArc(cAssistente.Width - borderRadius, cAssistente.Height - borderRadius, borderRadius, borderRadius, 0, 90);
-            path.AddArc(0, cAssistente.Height - borderRadius, borderRadius, borderRadius, 90, 90);
-            cAssistente.Region = new Region(path);
-        }
+            cAssistente.FlatStyle = FlatStyle.Popup;
 
-        Conexao conexao = new Conexao();
+
+            Conexao conexao = new Conexao();
             conexao.Abrir();
             try
             {

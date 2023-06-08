@@ -275,6 +275,7 @@
             // cRetirada
             // 
             this.cRetirada.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
+            this.cRetirada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cRetirada.FormattingEnabled = true;
             this.cRetirada.Location = new System.Drawing.Point(647, 268);
             this.cRetirada.Name = "cRetirada";
@@ -394,6 +395,7 @@
             // 
             // cLegista
             // 
+            this.cLegista.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cLegista.FormattingEnabled = true;
             this.cLegista.Location = new System.Drawing.Point(136, 233);
             this.cLegista.Name = "cLegista";
@@ -402,6 +404,7 @@
             // 
             // cAssistente
             // 
+            this.cAssistente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cAssistente.FormattingEnabled = true;
             this.cAssistente.Location = new System.Drawing.Point(135, 184);
             this.cAssistente.Name = "cAssistente";
@@ -410,6 +413,7 @@
             // 
             // cMaterial
             // 
+            this.cMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cMaterial.FormattingEnabled = true;
             this.cMaterial.Location = new System.Drawing.Point(362, 161);
             this.cMaterial.Name = "cMaterial";

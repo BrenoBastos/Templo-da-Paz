@@ -104,6 +104,7 @@ namespace WindowsFormsApp1
             // 
             // cFornecedor
             // 
+            this.cFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cFornecedor.FormattingEnabled = true;
             this.cFornecedor.Location = new System.Drawing.Point(404, 237);
             this.cFornecedor.Name = "cFornecedor";

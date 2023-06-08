@@ -126,6 +126,7 @@ namespace WindowsFormsApp1
             // 
             // cStatus
             // 
+            this.cStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cStatus.FormattingEnabled = true;
             this.cStatus.Location = new System.Drawing.Point(418, 369);
             this.cStatus.Name = "cStatus";
@@ -153,6 +154,7 @@ namespace WindowsFormsApp1
             // 
             // cContato
             // 
+            this.cContato.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cContato.FormattingEnabled = true;
             this.cContato.Location = new System.Drawing.Point(378, 222);
             this.cContato.Name = "cContato";

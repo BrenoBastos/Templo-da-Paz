@@ -82,6 +82,7 @@ namespace WindowsFormsApp1
             // cRetirada
             // 
             this.cRetirada.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
+            this.cRetirada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cRetirada.FormattingEnabled = true;
             this.cRetirada.Location = new System.Drawing.Point(627, 334);
             this.cRetirada.Name = "cRetirada";
@@ -334,6 +335,7 @@ namespace WindowsFormsApp1
             // 
             // cMaterial
             // 
+            this.cMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cMaterial.FormattingEnabled = true;
             this.cMaterial.Location = new System.Drawing.Point(340, 215);
             this.cMaterial.Name = "cMaterial";
@@ -342,6 +344,7 @@ namespace WindowsFormsApp1
             // 
             // cAssistente
             // 
+            this.cAssistente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cAssistente.FormattingEnabled = true;
             this.cAssistente.Location = new System.Drawing.Point(113, 238);
             this.cAssistente.Name = "cAssistente";
@@ -350,6 +353,7 @@ namespace WindowsFormsApp1
             // 
             // cLegista
             // 
+            this.cLegista.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cLegista.FormattingEnabled = true;
             this.cLegista.Location = new System.Drawing.Point(114, 287);
             this.cLegista.Name = "cLegista";

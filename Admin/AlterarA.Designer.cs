@@ -190,6 +190,7 @@ namespace WindowsFormsApp1
             // 
             // cEstadoCivil
             // 
+            this.cEstadoCivil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cEstadoCivil.FormattingEnabled = true;
             this.cEstadoCivil.Location = new System.Drawing.Point(616, 41);
             this.cEstadoCivil.Name = "cEstadoCivil";
@@ -198,6 +199,7 @@ namespace WindowsFormsApp1
             // 
             // cSexo
             // 
+            this.cSexo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cSexo.FormattingEnabled = true;
             this.cSexo.Location = new System.Drawing.Point(616, 95);
             this.cSexo.Name = "cSexo";
@@ -248,6 +250,7 @@ namespace WindowsFormsApp1
             // 
             // cStatus
             // 
+            this.cStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cStatus.FormattingEnabled = true;
             this.cStatus.Location = new System.Drawing.Point(604, 134);
             this.cStatus.Name = "cStatus";
@@ -275,6 +278,7 @@ namespace WindowsFormsApp1
             // 
             // cContato
             // 
+            this.cContato.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cContato.FormattingEnabled = true;
             this.cContato.Location = new System.Drawing.Point(350, 112);
             this.cContato.Name = "cContato";
