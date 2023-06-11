@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -17,12 +18,21 @@ namespace WindowsFormsApp1
         public AlterarF()
         {
             InitializeComponent();
+            cStatus.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cStatus.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cStatus.Height = 30;
+
+            cContato.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cContato.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cContato.Height = 30;
+            BackColor = Color.FromArgb(64, 49, 49);
+            comboBoxiniciar4();
+
             // Inicializa o primeiro ComboBox
             comboBoxiniciar1();
             // Formata o campo de contato
             FormatarContato();
             // Inicializa o segundo ComboBox
-            comboBoxiniciar4();
 
         }
         // Variável global para armazenar um valor
@@ -40,7 +50,90 @@ namespace WindowsFormsApp1
             cStatus.SelectedIndex = cStatus.FindStringExact(status);
         }
         private void comboBoxiniciar1()
-        {// Se o ComboBox estiver vazio
+
+        {
+            bAlterar.FlatAppearance.MouseOverBackColor = bAlterar.BackColor;
+            bAlterar.FlatAppearance.MouseDownBackColor = bAlterar.BackColor;
+            bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
+            bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
+            textCpf.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+          textEndereco.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+           cContato.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+           mCelular.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+           cStatus.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+
+            textID.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textNome.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textCpf.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textNome.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textID.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textEndereco.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cContato.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mCelular.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cStatus.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+
+
+
+
+            textCpf.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textEndereco.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+             cContato.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            mCelular.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cStatus.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+
+
+
+            textID.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textNome.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            int borderRadius = 10; // Define o raio da borda arredondada
+
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textNome.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textNome.Width - borderRadius, textNome.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textNome.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textNome.Region = new Region(path);
+
+            }
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textCpf.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textCpf.Width - borderRadius, textCpf.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textNome.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textCpf.Region = new Region(path);
+
+            }
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textID.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textID.Width - borderRadius, textID.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textID.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textID.Region = new Region(path);
+
+            }
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textEndereco.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textEndereco.Width - borderRadius, textEndereco.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textEndereco.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textEndereco.Region = new Region(path);
+
+            }
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mCelular.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mCelular.Width - borderRadius, mCelular.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mCelular.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                mCelular.Region = new Region(path);
+
+            }
+
+            // Se o ComboBox estiver vazio
             if (cStatus.Items.Count == 0)
             {// Adiciona "Ativo"
                 cStatus.Items.Add("Ativo");
@@ -192,7 +285,7 @@ namespace WindowsFormsApp1
                         // torna o campo de entrada do celular visível
                         mCelular.Visible = true;
                         // torna o rótulo "Contato" visível
-                        Contato.Visible = true;
+                        
                         // seleciona a primeira opção do campo de seleção de Contato
                         cContato.SelectedIndex = 0;
                         // limpa o campo de entrada do celular novamente
@@ -241,7 +334,7 @@ namespace WindowsFormsApp1
             {
                 // Esconde o painel Contato1
 
-                Contato.Visible = true;
+                
                 // Exibe o painel Celular e esconde o painel Telefone
 
              
@@ -263,7 +356,7 @@ namespace WindowsFormsApp1
                 mCelular.Location = new Point(374, 259);
                 // Esconde o painel Contato1
 
-                Contato.Visible = true;
+             
 
                 // Exibe o painel Telefone e esconde o painel Celular
 
