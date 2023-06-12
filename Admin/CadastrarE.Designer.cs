@@ -29,100 +29,77 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.Fornecedor = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastrarE));
             this.textQuantidade = new System.Windows.Forms.TextBox();
             this.textMaterial = new System.Windows.Forms.TextBox();
-            this.Quantidade = new System.Windows.Forms.Label();
-            this.Material = new System.Windows.Forms.Label();
             this.bCadastrar = new System.Windows.Forms.Button();
             this.bVoltar = new System.Windows.Forms.Button();
             this.cFornecedor = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // Fornecedor
-            // 
-            this.Fornecedor.AutoSize = true;
-            this.Fornecedor.Location = new System.Drawing.Point(312, 245);
-            this.Fornecedor.Name = "Fornecedor";
-            this.Fornecedor.Size = new System.Drawing.Size(61, 13);
-            this.Fornecedor.TabIndex = 13;
-            this.Fornecedor.Text = "Fornecedor";
-            // 
             // textQuantidade
             // 
-            this.textQuantidade.Location = new System.Drawing.Point(416, 182);
+            this.textQuantidade.Location = new System.Drawing.Point(256, 342);
+            this.textQuantidade.Multiline = true;
             this.textQuantidade.Name = "textQuantidade";
-            this.textQuantidade.Size = new System.Drawing.Size(100, 20);
+            this.textQuantidade.Size = new System.Drawing.Size(227, 30);
             this.textQuantidade.TabIndex = 12;
             // 
             // textMaterial
             // 
-            this.textMaterial.Location = new System.Drawing.Point(374, 104);
+            this.textMaterial.Location = new System.Drawing.Point(217, 214);
+            this.textMaterial.Multiline = true;
             this.textMaterial.Name = "textMaterial";
-            this.textMaterial.Size = new System.Drawing.Size(100, 20);
+            this.textMaterial.Size = new System.Drawing.Size(286, 30);
             this.textMaterial.TabIndex = 11;
             this.textMaterial.TextChanged += new System.EventHandler(this.textMaterial_TextChanged);
             // 
-            // Quantidade
-            // 
-            this.Quantidade.AutoSize = true;
-            this.Quantidade.Location = new System.Drawing.Point(285, 181);
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.Size = new System.Drawing.Size(62, 13);
-            this.Quantidade.TabIndex = 10;
-            this.Quantidade.Text = "Quantidade";
-            // 
-            // Material
-            // 
-            this.Material.AutoSize = true;
-            this.Material.Location = new System.Drawing.Point(285, 111);
-            this.Material.Name = "Material";
-            this.Material.Size = new System.Drawing.Size(44, 13);
-            this.Material.TabIndex = 9;
-            this.Material.Text = "Material";
-            this.Material.Click += new System.EventHandler(this.Material_Click);
-            // 
             // bCadastrar
             // 
-            this.bCadastrar.Location = new System.Drawing.Point(363, 324);
+            this.bCadastrar.BackColor = System.Drawing.Color.Transparent;
+            this.bCadastrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bCadastrar.BackgroundImage")));
+            this.bCadastrar.FlatAppearance.BorderSize = 0;
+            this.bCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCadastrar.Location = new System.Drawing.Point(769, 429);
             this.bCadastrar.Name = "bCadastrar";
-            this.bCadastrar.Size = new System.Drawing.Size(75, 23);
+            this.bCadastrar.Size = new System.Drawing.Size(229, 75);
             this.bCadastrar.TabIndex = 8;
-            this.bCadastrar.Text = "Cadastrar";
-            this.bCadastrar.UseVisualStyleBackColor = true;
+            this.bCadastrar.UseVisualStyleBackColor = false;
             this.bCadastrar.Click += new System.EventHandler(this.bCadastrar_Click);
             // 
             // bVoltar
             // 
-            this.bVoltar.Location = new System.Drawing.Point(109, 283);
+            this.bVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.bVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVoltar.BackgroundImage")));
+            this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bVoltar.FlatAppearance.BorderSize = 0;
+            this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVoltar.Location = new System.Drawing.Point(520, 429);
             this.bVoltar.Name = "bVoltar";
-            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.Size = new System.Drawing.Size(228, 75);
             this.bVoltar.TabIndex = 89;
-            this.bVoltar.Text = "Voltar";
-            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.UseVisualStyleBackColor = false;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
             // cFornecedor
             // 
             this.cFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cFornecedor.FormattingEnabled = true;
-            this.cFornecedor.Location = new System.Drawing.Point(404, 237);
+            this.cFornecedor.Location = new System.Drawing.Point(246, 283);
             this.cFornecedor.Name = "cFornecedor";
-            this.cFornecedor.Size = new System.Drawing.Size(121, 21);
+            this.cFornecedor.Size = new System.Drawing.Size(248, 21);
             this.cFornecedor.TabIndex = 90;
             // 
             // CadastrarE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1020, 510);
             this.Controls.Add(this.cFornecedor);
             this.Controls.Add(this.bVoltar);
-            this.Controls.Add(this.Fornecedor);
             this.Controls.Add(this.textQuantidade);
             this.Controls.Add(this.textMaterial);
-            this.Controls.Add(this.Quantidade);
-            this.Controls.Add(this.Material);
             this.Controls.Add(this.bCadastrar);
             this.Name = "CadastrarE";
             this.Text = "CadastrarE";
@@ -132,11 +109,8 @@ namespace WindowsFormsApp1
         }
 
         #endregion
-        private System.Windows.Forms.Label Fornecedor;
         private System.Windows.Forms.TextBox textQuantidade;
         private System.Windows.Forms.TextBox textMaterial;
-        private System.Windows.Forms.Label Quantidade;
-        private System.Windows.Forms.Label Material;
         private System.Windows.Forms.Button bCadastrar;
         private System.Windows.Forms.Button bVoltar;
         private System.Windows.Forms.ComboBox cFornecedor;

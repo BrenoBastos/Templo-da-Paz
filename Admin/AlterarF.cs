@@ -344,7 +344,6 @@ namespace WindowsFormsApp1
                 mCelular.Visible = true;
                 mCelular.Text = "";
                 // Define as novas posições do painel Celular e da caixa de texto do celular
-                mCelular.Location = new Point(374, 259);
 
 
             }
@@ -353,7 +352,6 @@ namespace WindowsFormsApp1
             if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Telefone")
             {        // Define as novas posições do painel Telefone e da caixa de texto do celular
 
-                mCelular.Location = new Point(374, 259);
                 // Esconde o painel Contato1
 
              

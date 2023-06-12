@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +18,57 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             listar();
+            cFornecedor.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cFornecedor.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cFornecedor.Height = 30;
+           textMaterial.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textMaterial.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textMaterial.Height = 30;
+
+            BackColor = Color.FromArgb(64, 49, 49);
         }
         private void listar()
         {
+            bCadastrar.FlatAppearance.MouseOverBackColor = bCadastrar.BackColor;
+            bCadastrar.FlatAppearance.MouseDownBackColor = bCadastrar.BackColor;
+            bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
+            bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
+            cFornecedor.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textMaterial.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textQuantidade.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            cFornecedor.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+          textMaterial.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textQuantidade.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+
+
+
+
+            textQuantidade.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cFornecedor.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+           textMaterial.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+
+
+
+            int borderRadius = 10; // Define o raio da borda arredondada
+
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textQuantidade.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textQuantidade.Width - borderRadius, textQuantidade.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textQuantidade.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textQuantidade.Region = new Region(path);
+
+            }
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textMaterial.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textMaterial.Width - borderRadius, textMaterial.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textMaterial.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textQuantidade.Region = new Region(path);
+
+            }
             Conexao conexao = new Conexao();
             conexao.Abrir();
             try

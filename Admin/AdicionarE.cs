@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,10 +19,51 @@ namespace WindowsFormsApp1
             InitializeComponent();
             listarfornecedor();
             listarmaterial();
-
+            cFornecedor.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+          cFornecedor.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+           cFornecedor.Height = 30;
+           cMaterial.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cMaterial.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cMaterial.Height = 30;
+   
+           cMaterial.Height = 30;
+            BackColor = Color.FromArgb(64, 49, 49);
+            
         }
         private void listarmaterial()
         {
+           
+            bAdicionar.FlatAppearance.MouseOverBackColor = bAdicionar.BackColor;
+            bAdicionar.FlatAppearance.MouseDownBackColor = bAdicionar.BackColor;
+            bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
+            bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
+            cFornecedor.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+        cMaterial.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+           textQuantidade.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+cFornecedor.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cMaterial.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textQuantidade.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+
+
+
+
+           textQuantidade.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+          cFornecedor.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+          cMaterial.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+
+
+
+            int borderRadius = 10; // Define o raio da borda arredondada
+
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textQuantidade.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textQuantidade.Width - borderRadius, textQuantidade.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textQuantidade.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textQuantidade.Region = new Region(path);
+
+            }
             Conexao conexao = new Conexao();
             conexao.Abrir();
             try
@@ -186,6 +228,11 @@ namespace WindowsFormsApp1
             // Cria uma nova instância da tela Admin1 e a exibe como diálogo
             Admin1 novaTela = new Admin1();
             novaTela.ShowDialog();
+        }
+
+        private void textQuantidade_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

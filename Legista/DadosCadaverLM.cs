@@ -154,7 +154,7 @@ namespace WindowsFormsApp1
             mDataChegada.Text = dataChegada;
            mHorarioChegada.Text = horarioChegada;
             textLaudo.Text = laudo;
-            cMaterial.SelectedIndex = cMaterial.FindStringExact(material);
+            cMaterial.SelectedItem = material;
             textQuantidade.Text = quantidade;
            mDataRetirada.Text = dataRetirada;
            mHorarioRetirada.Text = horarioRetirada;

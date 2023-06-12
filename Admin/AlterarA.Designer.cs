@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(319, 290);
+            this.button1.Location = new System.Drawing.Point(933, 415);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -268,7 +268,7 @@ namespace WindowsFormsApp1
             // 
             // bVoltar
             // 
-            this.bVoltar.Location = new System.Drawing.Point(72, 238);
+            this.bVoltar.Location = new System.Drawing.Point(852, 415);
             this.bVoltar.Name = "bVoltar";
             this.bVoltar.Size = new System.Drawing.Size(75, 23);
             this.bVoltar.TabIndex = 64;
