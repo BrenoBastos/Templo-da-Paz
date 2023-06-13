@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -20,7 +21,20 @@ namespace WindowsFormsApp1
             // Inicializa o ComboBox
             listarmaterial();
             comboBoxiniciar();
-
+            cAssistente.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cAssistente.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cAssistente.Height = 30;
+            BackColor = Color.FromArgb(64, 49, 49);
+            cLegista.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cLegista.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cLegista.Height = 30;
+            cMaterial.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cMaterial.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cMaterial.Height = 30;
+            cRetirada.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cRetirada.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cRetirada.Height = 30;
+            
             // Define o modo de seleção do DataGridView
 
             dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -34,6 +48,89 @@ namespace WindowsFormsApp1
         }
         private void listarmaterial()
         {
+
+            bAtualizar.FlatAppearance.MouseOverBackColor = bAtualizar.BackColor;
+            bAtualizar.FlatAppearance.MouseDownBackColor = bAtualizar.BackColor;
+            bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
+            bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
+            btnMateriais.FlatAppearance.MouseOverBackColor = btnMateriais.BackColor;
+            btnMateriais.FlatAppearance.MouseDownBackColor = btnMateriais.BackColor;
+
+            mHorarioChegada.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            mDataChegada.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            cAssistente.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textGaveta.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textID.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textNome.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+
+
+
+            textGaveta.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textNome.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textID.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mDataChegada.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mHorarioChegada.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+
+
+
+
+            mHorarioChegada.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            mDataChegada.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textGaveta.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textID.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textNome.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            int borderRadius = 10; // Define o raio da borda arredondada
+
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textNome.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textNome.Width - borderRadius, textNome.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textNome.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textNome.Region = new Region(path);
+
+
+
+
+
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textID.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textID.Width - borderRadius, textID.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textID.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textID.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textGaveta.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textGaveta.Width - borderRadius, textGaveta.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textGaveta.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textGaveta.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mDataChegada.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mDataChegada.Width - borderRadius, mDataChegada.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mDataChegada.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                mDataChegada.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mHorarioChegada.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mHorarioChegada.Width - borderRadius, mHorarioChegada.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mHorarioChegada.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                mHorarioChegada.Region = new Region(path);
+            }
+
             Conexao conexao = new Conexao();
             conexao.Abrir();
             try
@@ -101,6 +198,7 @@ namespace WindowsFormsApp1
             cAssistente.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
+
         private void listarlegista()
         {
             Conexao conexao = new Conexao();
@@ -169,6 +267,72 @@ namespace WindowsFormsApp1
                     dDados.Columns["HorarioChegada"].DataPropertyName = "HorarioChegada";
                     dDados.Columns["DataRetirada"].DataPropertyName = "DataRetirada";
                     dDados.Columns["Retirada"].DataPropertyName = "Retirada";
+                    dDados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
+                    dDados.Columns["ID"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["Nome"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["Gaveta"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["DataChegada"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["HorarioChegada"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
+
+
+                    dDados.Columns["Assistente"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["Legista"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["DataRetirada"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["Retirada"].DefaultCellStyle.Font = new Font("Poppins", 10, FontStyle.Regular);
+
+
+
+
+
+                    dDados.Columns["ID"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["Nome"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["Gaveta"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["DataChegada"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["HorarioChegada"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
+
+                    dDados.Columns["Assistente"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["Legista"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["DataRetirada"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
+                    dDados.Columns["Retirada"].HeaderCell.Style.Font = new Font("Poppins", 10, FontStyle.Regular);
+
+
+
+
+
+
+                    dDados.BackgroundColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.EnableHeadersVisualStyles = false; // Desabilita o estilo visual padrão dos cabeçalhos
+
+
+                    dDados.Columns["ID"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.Columns["Nome"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.Columns["Gaveta"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.Columns["DataChegada"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.Columns["HorarioChegada"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.Columns["Assistente"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.Columns["Legista"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.Columns["DataRetirada"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
+                    dDados.Columns["Retirada"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128);
+
+
+
+
+
+
+
+
+
+
+
+                    dDados.DefaultCellStyle.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF); // Define a cor do texto do cabeçalho           
+                    dDados.RowHeadersVisible = false;
+                    dDados.RowTemplate.Height = 25; // Define a altura das células
+                    dDados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
+                    dDados.Columns["Nome"].HeaderCell.Style.BackColor = System.Drawing.Color.FromArgb(151, 128, 128); // Define a cor de fundo do cabeçalho
+                    dDados.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF); // Define a cor do texto do cabeçalho        
 
                 }
                 else

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -17,15 +18,47 @@ namespace WindowsFormsApp1
         public Login()
         {
             InitializeComponent();
-            formatarCampoSenha();
-        }
-        private void formatarCampoSenha()
-        {
-            textSenha.UseSystemPasswordChar = true;
             textSenha.PasswordChar = '*';
+           BackColor = Color.FromArgb(39, 31, 31);
+            textNome.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textSenha.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            BotaoLogin.FlatAppearance.MouseOverBackColor = BotaoLogin.BackColor;
+            BotaoLogin.FlatAppearance.MouseDownBackColor = BotaoLogin.BackColor;
+            textSenha.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textNome.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textSenha.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textNome.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            button1.FlatAppearance.MouseOverBackColor = button1.BackColor;
+            button1.FlatAppearance.MouseDownBackColor = button1.BackColor;
+            button2.FlatAppearance.MouseOverBackColor = button2.BackColor;
+            button2.FlatAppearance.MouseDownBackColor = button2.BackColor;
+            int borderRadius = 10; // Define o raio da borda arredondada
 
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textNome.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textNome.Width - borderRadius, textNome.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textNome.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textNome.Region = new Region(path);
+
+
+
+
+
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textSenha.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textSenha.Width - borderRadius, textSenha.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textSenha.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textSenha.Region = new Region(path);
+            }
 
         }
+
         private void BotaoLogin_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textNome.Text) || string.IsNullOrWhiteSpace(textSenha.Text))
@@ -163,18 +196,7 @@ namespace WindowsFormsApp1
 
         private void lSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (textSenha.UseSystemPasswordChar)
-            {
-                textSenha.UseSystemPasswordChar = false;
-                textSenha.PasswordChar = '\0';
-                lSenha.Text = "OcultarSenha";
-            }
-            else
-            {
-                lSenha.Text = "MostrarSenha";
-                textSenha.UseSystemPasswordChar = true;
-                textSenha.PasswordChar = '*';
-            }
+          
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -22,11 +23,95 @@ namespace WindowsFormsApp1
             comboBoxiniciar2();
             FormatarContato();
 
+            cStatus.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cStatus.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cStatus.Height = 30;
+
+            cContato.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cContato.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cContato.Height = 30;
+         
+            BackColor = Color.FromArgb(64, 49, 49);
+
+            mCelular.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mCelular.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            mCelular.Height = 30;
+
+        
+            textCpf.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textCpf.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textCpf.Height = 30;
         }
 
         //Função para inicializar o ComboBox de Status
         private void comboBoxiniciar1()
         {
+            bCadastrar.FlatAppearance.MouseOverBackColor = bCadastrar.BackColor;
+            bCadastrar.FlatAppearance.MouseDownBackColor = bCadastrar.BackColor;
+            bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
+            bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
+
+            mCelular.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textCpf.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textEndereco.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textNome.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            cStatus.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            cContato.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+
+            mCelular.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textCpf.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textEndereco.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textNome.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            
+            mCelular.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textCpf.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textEndereco.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textNome.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+        
+            int borderRadius = 10; // Define o raio da borda arredondada
+
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textNome.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textNome.Width - borderRadius, textNome.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textNome.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textNome.Region = new Region(path);
+
+
+
+
+
+            }
+         
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mCelular.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mCelular.Width - borderRadius, mCelular.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mCelular.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                mCelular.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textCpf.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textCpf.Width - borderRadius, textCpf.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textCpf.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textCpf.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textEndereco.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textEndereco.Width - borderRadius, textEndereco.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textEndereco.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textEndereco.Region = new Region(path);
+            }
+         
             //Verifica se o ComboBox de Status está vazio
             if (cStatus.Items.Count == 0)
             {
@@ -63,11 +148,9 @@ namespace WindowsFormsApp1
         private void FormatarContato()
         {
             //Define a posição dos controles de celular e mascara de celular
-            Contato.Location = new Point(313, 330);
-            mCelular.Location = new Point(387, 323);
+           
 
             //Torna visível o controle de celular e invisível o controle de telefone
-            Contato.Visible = true;
 
             //Habilita o controle de mascara de celular
             mCelular.Enabled = true;
@@ -201,7 +284,6 @@ namespace WindowsFormsApp1
             if (cContato.SelectedItem.ToString() == "Celular")
             {
                 // Mostrar o painel "Celular"
-                Contato.Visible = true;
 
                 // Esconder o painel "Telefone"
 
@@ -214,17 +296,12 @@ namespace WindowsFormsApp1
                 // Limpar o valor atual da máscara de entrada para número de celular
                 mCelular.Text = "";
 
-                // Mover o painel "Celular" para a posição correta na tela
-                Contato.Location = new Point(313, 330);
-
-                // Mover a máscara de entrada para número de celular para a posição correta na tela
-                mCelular.Location = new Point(387, 323);
+             
             }
             // Se o item selecionado não for "Celular", verificar se é "Telefone"
             else if (cContato.SelectedItem.ToString() == "Telefone")
             {
                 // Esconder o painel "Celular"
-                Contato.Visible = true;
 
                 // Mostrar o painel "Telefone"
 

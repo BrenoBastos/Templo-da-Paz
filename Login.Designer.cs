@@ -28,80 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.BotaoLogin = new System.Windows.Forms.Button();
-            this.Nome = new System.Windows.Forms.Label();
-            this.lSenha = new System.Windows.Forms.LinkLabel();
             this.textSenha = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.textNome = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BotaoLogin
             // 
-            this.BotaoLogin.Location = new System.Drawing.Point(366, 297);
+            this.BotaoLogin.BackColor = System.Drawing.Color.Transparent;
+            this.BotaoLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BotaoLogin.BackgroundImage")));
+            this.BotaoLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BotaoLogin.FlatAppearance.BorderSize = 0;
+            this.BotaoLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BotaoLogin.Location = new System.Drawing.Point(179, 566);
             this.BotaoLogin.Name = "BotaoLogin";
-            this.BotaoLogin.Size = new System.Drawing.Size(75, 23);
+            this.BotaoLogin.Size = new System.Drawing.Size(338, 83);
             this.BotaoLogin.TabIndex = 0;
-            this.BotaoLogin.Text = "Login";
-            this.BotaoLogin.UseVisualStyleBackColor = true;
+            this.BotaoLogin.UseVisualStyleBackColor = false;
             this.BotaoLogin.Click += new System.EventHandler(this.BotaoLogin_Click);
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSize = true;
-            this.Nome.Location = new System.Drawing.Point(270, 94);
-            this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(35, 13);
-            this.Nome.TabIndex = 1;
-            this.Nome.Text = "Nome";
-            // 
-            // lSenha
-            // 
-            this.lSenha.ActiveLinkColor = System.Drawing.Color.Black;
-            this.lSenha.AutoSize = true;
-            this.lSenha.LinkColor = System.Drawing.Color.Black;
-            this.lSenha.Location = new System.Drawing.Point(457, 158);
-            this.lSenha.Name = "lSenha";
-            this.lSenha.Size = new System.Drawing.Size(73, 13);
-            this.lSenha.TabIndex = 88;
-            this.lSenha.TabStop = true;
-            this.lSenha.Text = "MostrarSenha";
-            this.lSenha.VisitedLinkColor = System.Drawing.Color.Black;
-            this.lSenha.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lSenha_LinkClicked);
             // 
             // textSenha
             // 
-            this.textSenha.Location = new System.Drawing.Point(340, 155);
+            this.textSenha.Location = new System.Drawing.Point(214, 454);
+            this.textSenha.Multiline = true;
             this.textSenha.Name = "textSenha";
-            this.textSenha.Size = new System.Drawing.Size(100, 20);
+            this.textSenha.Size = new System.Drawing.Size(374, 41);
             this.textSenha.TabIndex = 87;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(267, 158);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 86;
-            this.label7.Text = "Senha";
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(359, 91);
+            this.textNome.Location = new System.Drawing.Point(214, 343);
+            this.textNome.Multiline = true;
             this.textNome.Name = "textNome";
-            this.textNome.Size = new System.Drawing.Size(100, 20);
+            this.textNome.Size = new System.Drawing.Size(374, 41);
             this.textNome.TabIndex = 89;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(158, 343);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 41);
+            this.button1.TabIndex = 90;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(158, 454);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(36, 41);
+            this.button2.TabIndex = 91;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(614, 711);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textNome);
-            this.Controls.Add(this.lSenha);
             this.Controls.Add(this.textSenha);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.Nome);
             this.Controls.Add(this.BotaoLogin);
             this.Name = "Login";
             this.Text = "Form1";
@@ -113,11 +113,10 @@
         #endregion
 
         private System.Windows.Forms.Button BotaoLogin;
-        private System.Windows.Forms.Label Nome;
-        private System.Windows.Forms.LinkLabel lSenha;
         private System.Windows.Forms.TextBox textSenha;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textNome;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
