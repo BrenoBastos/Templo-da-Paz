@@ -37,6 +37,12 @@
             this.mDataChegada = new System.Windows.Forms.MaskedTextBox();
             this.bAtualizar = new System.Windows.Forms.Button();
             this.dDados = new System.Windows.Forms.DataGridView();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gaveta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HorarioChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Assistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textLaudo = new System.Windows.Forms.RichTextBox();
             this.cRetirada = new System.Windows.Forms.ComboBox();
             this.textQuantidade = new System.Windows.Forms.TextBox();
@@ -47,13 +53,6 @@
             this.cLegista = new System.Windows.Forms.ComboBox();
             this.cAssistente = new System.Windows.Forms.ComboBox();
             this.cMaterial = new System.Windows.Forms.ComboBox();
-            this.btnMateriais = new System.Windows.Forms.Button();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gaveta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HorarioChegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Assistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,12 +119,15 @@
             // 
             // bAtualizar
             // 
-            this.bAtualizar.Location = new System.Drawing.Point(857, 666);
+            this.bAtualizar.BackColor = System.Drawing.Color.Transparent;
+            this.bAtualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bAtualizar.BackgroundImage")));
+            this.bAtualizar.FlatAppearance.BorderSize = 0;
+            this.bAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bAtualizar.Location = new System.Drawing.Point(839, 632);
             this.bAtualizar.Name = "bAtualizar";
-            this.bAtualizar.Size = new System.Drawing.Size(75, 23);
+            this.bAtualizar.Size = new System.Drawing.Size(169, 57);
             this.bAtualizar.TabIndex = 26;
-            this.bAtualizar.Text = "Atualizar";
-            this.bAtualizar.UseVisualStyleBackColor = true;
+            this.bAtualizar.UseVisualStyleBackColor = false;
             this.bAtualizar.Click += new System.EventHandler(this.bAtualizar_Click);
             // 
             // dDados
@@ -138,17 +140,59 @@
             this.DataChegada,
             this.HorarioChegada,
             this.Assistente});
-            this.dDados.Location = new System.Drawing.Point(21, 617);
+            this.dDados.Location = new System.Drawing.Point(781, 489);
             this.dDados.Name = "dDados";
-            this.dDados.Size = new System.Drawing.Size(227, 81);
+            this.dDados.Size = new System.Drawing.Size(227, 122);
             this.dDados.TabIndex = 25;
             this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Gaveta
+            // 
+            this.Gaveta.DataPropertyName = "Gaveta";
+            this.Gaveta.HeaderText = "Gaveta";
+            this.Gaveta.Name = "Gaveta";
+            this.Gaveta.ReadOnly = true;
+            // 
+            // DataChegada
+            // 
+            this.DataChegada.DataPropertyName = "DataChegada";
+            this.DataChegada.HeaderText = "DataChegada";
+            this.DataChegada.Name = "DataChegada";
+            this.DataChegada.ReadOnly = true;
+            // 
+            // HorarioChegada
+            // 
+            this.HorarioChegada.DataPropertyName = "HorarioChegada";
+            this.HorarioChegada.HeaderText = "HorarioChegada";
+            this.HorarioChegada.Name = "HorarioChegada";
+            this.HorarioChegada.ReadOnly = true;
+            // 
+            // Assistente
+            // 
+            this.Assistente.DataPropertyName = "Assistente";
+            this.Assistente.HeaderText = "Assistente";
+            this.Assistente.Name = "Assistente";
+            this.Assistente.ReadOnly = true;
             // 
             // textLaudo
             // 
             this.textLaudo.Location = new System.Drawing.Point(113, 489);
             this.textLaudo.Name = "textLaudo";
-            this.textLaudo.Size = new System.Drawing.Size(895, 122);
+            this.textLaudo.Size = new System.Drawing.Size(646, 135);
             this.textLaudo.TabIndex = 49;
             this.textLaudo.Text = "";
             // 
@@ -173,12 +217,16 @@
             // 
             // bVoltar
             // 
-            this.bVoltar.Location = new System.Drawing.Point(740, 666);
+            this.bVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.bVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVoltar.BackgroundImage")));
+            this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bVoltar.FlatAppearance.BorderSize = 0;
+            this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVoltar.Location = new System.Drawing.Point(671, 635);
             this.bVoltar.Name = "bVoltar";
-            this.bVoltar.Size = new System.Drawing.Size(75, 23);
+            this.bVoltar.Size = new System.Drawing.Size(169, 60);
             this.bVoltar.TabIndex = 74;
-            this.bVoltar.Text = "Voltar";
-            this.bVoltar.UseVisualStyleBackColor = true;
+            this.bVoltar.UseVisualStyleBackColor = false;
             this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
             // mHorárioÓbito
@@ -238,65 +286,12 @@
             this.cMaterial.Size = new System.Drawing.Size(382, 21);
             this.cMaterial.TabIndex = 96;
             // 
-            // btnMateriais
-            // 
-            this.btnMateriais.Location = new System.Drawing.Point(593, 666);
-            this.btnMateriais.Name = "btnMateriais";
-            this.btnMateriais.Size = new System.Drawing.Size(118, 23);
-            this.btnMateriais.TabIndex = 99;
-            this.btnMateriais.Text = "Atualizar materiais";
-            this.btnMateriais.UseVisualStyleBackColor = true;
-            this.btnMateriais.Click += new System.EventHandler(this.btnMateriais_Click);
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "ID";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Gaveta
-            // 
-            this.Gaveta.DataPropertyName = "Gaveta";
-            this.Gaveta.HeaderText = "Gaveta";
-            this.Gaveta.Name = "Gaveta";
-            this.Gaveta.ReadOnly = true;
-            // 
-            // DataChegada
-            // 
-            this.DataChegada.DataPropertyName = "DataChegada";
-            this.DataChegada.HeaderText = "DataChegada";
-            this.DataChegada.Name = "DataChegada";
-            this.DataChegada.ReadOnly = true;
-            // 
-            // HorarioChegada
-            // 
-            this.HorarioChegada.DataPropertyName = "HorarioChegada";
-            this.HorarioChegada.HeaderText = "HorarioChegada";
-            this.HorarioChegada.Name = "HorarioChegada";
-            this.HorarioChegada.ReadOnly = true;
-            // 
-            // Assistente
-            // 
-            this.Assistente.DataPropertyName = "Assistente";
-            this.Assistente.HeaderText = "Assistente";
-            this.Assistente.Name = "Assistente";
-            this.Assistente.ReadOnly = true;
-            // 
             // AtualizarCadaverL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1020, 701);
-            this.Controls.Add(this.btnMateriais);
             this.Controls.Add(this.cLegista);
             this.Controls.Add(this.cAssistente);
             this.Controls.Add(this.cMaterial);
@@ -343,7 +338,6 @@
         private System.Windows.Forms.ComboBox cLegista;
         private System.Windows.Forms.ComboBox cAssistente;
         private System.Windows.Forms.ComboBox cMaterial;
-        private System.Windows.Forms.Button btnMateriais;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gaveta;

@@ -19,7 +19,6 @@ namespace WindowsFormsApp1
         public AlterarA()
         {
             InitializeComponent();
-            textSenha.PasswordChar = '*';
 
             CarregarCampos();
 
@@ -220,7 +219,8 @@ namespace WindowsFormsApp1
             textSenha.Text = senha;
             cEstadoCivil.SelectedIndex = cEstadoCivil.FindStringExact(estadoCivil);
             cSexo.SelectedIndex = cSexo.FindStringExact(sexo);
-            cContato.SelectedIndex = cContato.FindStringExact(contato);
+            cContato.SelectedItem = contato;
+
             cStatus.SelectedIndex = cStatus.FindStringExact(status);
         }
 

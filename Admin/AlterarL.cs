@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -20,6 +21,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             // Chama a função comboBoxiniciar1(), que provavelmente preenche um combobox com opções.
             comboBoxiniciar1();
+            textSenha.PasswordChar = '*';
 
             // Chama a função comboBoxiniciar2(), que provavelmente preenche outro combobox com opções.
             comboBoxiniciar2();
@@ -35,6 +37,43 @@ namespace WindowsFormsApp1
 
             // Chama a função formatarCampoSenha(), que provavelmente formata um campo de senha para que ele seja exibido como asteriscos ou pontos.
             formatarCampoSenha();
+            cStatus.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cStatus.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cStatus.Height = 30;
+
+            cContato.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cContato.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cContato.Height = 30;
+            cEstadoCivil.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cEstadoCivil.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cEstadoCivil.Height = 30;
+
+            cSexo.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cSexo.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cSexo.Height = 30;
+            BackColor = Color.FromArgb(64, 49, 49);
+
+            mCelular.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mCelular.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            mCelular.Height = 30;
+
+            mDataNascimento.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mDataNascimento.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            mDataNascimento.Height = 30;
+
+            textRG.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textRG.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textRG.Height = 30;
+            textCpf.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textCpf.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textCpf.Height = 30;
+          mCRM.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mCRM.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            mCRM.Height = 30;
+
+
+
+
 
 
         }
@@ -42,6 +81,129 @@ namespace WindowsFormsApp1
         public int value;
         private void comboBoxiniciar5()
         { // Verifica se a lista de itens do controle "cContato" está vazia.
+           bAlterar.FlatAppearance.MouseOverBackColor = bAlterar.BackColor;
+            bAlterar.FlatAppearance.MouseDownBackColor = bAlterar.BackColor;
+            bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
+            bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
+
+            mDataNascimento.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            mCelular.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textCpf.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textEndereco.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textNome.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textRG.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            cSexo.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            cStatus.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            cEstadoCivil.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            cContato.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textSenha.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            mCRM.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textID.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+
+
+            mDataNascimento.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mCelular.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textCpf.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textEndereco.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textNome.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textRG.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textSenha.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textID.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mDataNascimento.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            mCelular.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textCpf.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textEndereco.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textNome.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textRG.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textSenha.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textID.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            int borderRadius = 10; // Define o raio da borda arredondada
+
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textNome.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textNome.Width - borderRadius, textNome.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textNome.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textNome.Region = new Region(path);
+
+
+
+
+
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mDataNascimento.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mDataNascimento.Width - borderRadius, mDataNascimento.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mDataNascimento.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                mDataNascimento.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textID.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textID.Width - borderRadius, textID.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textID.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textID.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mCelular.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mCelular.Width - borderRadius, mCelular.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mCelular.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                mCelular.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textCpf.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textCpf.Width - borderRadius, textCpf.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textCpf.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textCpf.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textEndereco.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textEndereco.Width - borderRadius, textEndereco.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textEndereco.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textEndereco.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textRG.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textRG.Width - borderRadius, textRG.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textRG.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textRG.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textSenha.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textSenha.Width - borderRadius, textSenha.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textSenha.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textSenha.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mCRM.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mCRM.Width - borderRadius, mCRM.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mCRM.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                mCRM.Region = new Region(path);
+            }
             if (cContato.Items.Count == 0)
             {
                 // Adiciona os itens "Contato", "Celular" e "Telefone" à lista de itens.
@@ -59,7 +221,6 @@ namespace WindowsFormsApp1
         private void FormatarContato()
         {
             // Define a visibilidade do controle "Contato1" como verdadeira.
-            Contato1.Visible = true;
 
             // Define a visibilidade do controle "Telefone" como falsa.
 
@@ -72,7 +233,6 @@ namespace WindowsFormsApp1
             // Define a visibilidade do controle "Celular" como falsa.
 
             // Define a posição do controle "Contato1".
-            Contato1.Location = new Point(192, 125);
 
             // Define o valor do controle "mCelular" como uma string vazia.
             mCelular.Text = "";
@@ -89,7 +249,7 @@ namespace WindowsFormsApp1
             mCRM.Text = crm;
             cEstadoCivil.SelectedIndex = cEstadoCivil.FindStringExact(estadoCivil);
             cSexo.SelectedIndex = cSexo.FindStringExact(sexo);
-            cContato.SelectedIndex = cContato.FindStringExact(contato);
+            cContato.SelectedItem = contato;
             cStatus.SelectedIndex = cStatus.FindStringExact(status);
             textID.Text = Id.ToString();
 
@@ -170,26 +330,7 @@ namespace WindowsFormsApp1
 
 
         private void lSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {// Se a propriedade UseSystemPasswordChar da caixa de texto textSenha estiver definida como true,
-         // isso significa que o caractere de senha do sistema está sendo usado para ocultar a senha.
-            if (textSenha.UseSystemPasswordChar)
-            {// Desabilita o uso do caractere de senha do sistema.
-                textSenha.UseSystemPasswordChar = false;
-                // Define o caractere de senha como vazio para mostrar a senha sem ocultá-la.
-                textSenha.PasswordChar = '\0';
-                // Altera o texto do controle de rótulo lSenha para indicar que a senha agora está sendo exibida.
-                lSenha.Text = "OcultarSenha";
-            }
-            // Se a propriedade UseSystemPasswordChar da caixa de texto textSenha estiver definida como false,
-            // isso significa que o caractere de senha personalizado está sendo usado para ocultar a senha.
-            else
-            {// Altera o texto do controle de rótulo lSenha para indicar que a senha agora será ocultada.
-                lSenha.Text = "MostrarSenha";
-                // Habilita o uso do caractere de senha do sistema para ocultar a senha.
-                textSenha.UseSystemPasswordChar = true;
-                // Define o caractere de senha como '*' para ocultar a senha.
-                textSenha.PasswordChar = '*';
-            }
+        {
         }
 
         private void textCpf_Click(object sender, EventArgs e)
@@ -428,26 +569,7 @@ namespace WindowsFormsApp1
 
             private void lSenha_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // Se a propriedade UseSystemPasswordChar da caixa de texto textSenha estiver definida como true,
-            // isso significa que o caractere de senha do sistema está sendo usado para ocultar a senha.
-            if (textSenha.UseSystemPasswordChar)
-            {// Desabilita o uso do caractere de senha do sistema.
-                textSenha.UseSystemPasswordChar = false;
-                // Define o caractere de senha como vazio para mostrar a senha sem ocultá-la.
-                textSenha.PasswordChar = '\0';
-                // Altera o texto do controle de rótulo lSenha para indicar que a senha agora está sendo exibida.
-                lSenha.Text = "OcultarSenha";
-            }
-            // Se a propriedade UseSystemPasswordChar da caixa de texto textSenha estiver definida como false,
-            // isso significa que o caractere de senha personalizado está sendo usado para ocultar a senha.
-            else
-            {// Altera o texto do controle de rótulo lSenha para indicar que a senha agora será ocultada.
-                lSenha.Text = "MostrarSenha";
-                // Habilita o uso do caractere de senha do sistema para ocultar a senha.
-                textSenha.UseSystemPasswordChar = true;
-                // Define o caractere de senha como '*' para ocultar a senha.
-                textSenha.PasswordChar = '*';
-            }
+            
         }
 
        
@@ -502,7 +624,6 @@ namespace WindowsFormsApp1
             if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Celular")
             {            // Esconde o controle Contato1
 
-                Contato1.Visible = true;
                 // Mostra o controle Celular
                 // Esconde o controle Telefone
                 // Habilita o controle mCelular
@@ -519,7 +640,6 @@ namespace WindowsFormsApp1
             if (cContato.SelectedItem != null && cContato.SelectedItem.ToString() == "Telefone")
             { // Esconde o controle Contato1
                 mCelular.Text = "";
-                Contato1.Visible = true;
                 // Esconde o controle Celular
                 // Mostra o controle Telefone
 

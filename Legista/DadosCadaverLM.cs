@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -18,7 +19,19 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             // Chama o método que inicializa a ComboBox
-
+            cAssistente.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cAssistente.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cAssistente.Height = 30;
+            BackColor = Color.FromArgb(64, 49, 49);
+            cLegista.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cLegista.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cLegista.Height = 30;
+            cMaterial.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cMaterial.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cMaterial.Height = 30;
+            cRetirada.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cRetirada.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cRetirada.Height = 30;
             comboBoxiniciar();
             listarmaterial();
             listarassistente();
@@ -27,6 +40,179 @@ namespace WindowsFormsApp1
         }// Método que inicializa a ComboBox
         private void listarmaterial()
         {
+            bAlterar.FlatAppearance.MouseOverBackColor = bAlterar.BackColor;
+            bAlterar.FlatAppearance.MouseDownBackColor = bAlterar.BackColor;
+            bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
+            bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
+
+
+            mHorarioChegada.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            mDataChegada.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            cAssistente.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textGaveta.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textID.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textNome.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textQuantidade.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            textLaudo.Font = new Font("Poppins", 10); // Ajuste a fonte para determinar a altura
+            mDataRetirada.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            mDataObito.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            mHorarioRetirada.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            mHorárioÓbito.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            cLegista.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            cMaterial.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+            cRetirada.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
+
+            textGaveta.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textNome.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textID.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mDataChegada.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mHorarioChegada.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textLaudo.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mDataRetirada.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mDataObito.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mHorarioRetirada.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            mHorárioÓbito.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cLegista.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cMaterial.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            cRetirada.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textQuantidade.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+
+
+            mHorarioChegada.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            mDataChegada.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textGaveta.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textID.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textNome.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+
+
+            textQuantidade.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textLaudo.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            mDataRetirada.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            mDataObito.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            mHorarioRetirada.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            mHorárioÓbito.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cLegista.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cMaterial.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            cRetirada.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+            textQuantidade.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
+
+
+
+
+            int borderRadius = 10; // Define o raio da borda arredondada
+
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textNome.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textNome.Width - borderRadius, textNome.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textNome.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textNome.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+            {
+
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textQuantidade.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textQuantidade.Width - borderRadius, textQuantidade.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textQuantidade.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+
+                textQuantidade.Region = new Region(path);
+            }
+
+            using (GraphicsPath path = new GraphicsPath())
+            {
+
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textLaudo.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textLaudo.Width - borderRadius, textLaudo.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textLaudo.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+
+                textLaudo.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+            {
+
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mDataRetirada.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mDataRetirada.Width - borderRadius, mDataRetirada.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mDataRetirada.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+
+                mDataRetirada.Region = new Region(path);
+            }
+
+            using (GraphicsPath path = new GraphicsPath())
+            {
+
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mDataObito.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mDataObito.Width - borderRadius, mDataObito.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mDataObito.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+
+                mDataObito.Region = new Region(path);
+            }
+
+
+            using (GraphicsPath path = new GraphicsPath())
+            {
+
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mHorarioRetirada.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mHorarioRetirada.Width - borderRadius, mHorarioRetirada.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mHorarioRetirada.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+
+                mHorarioRetirada.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+            {
+
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mHorárioÓbito.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mHorárioÓbito.Width - borderRadius, mHorárioÓbito.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mHorárioÓbito.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+
+                mHorárioÓbito.Region = new Region(path);
+            }
+
+
+
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textID.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textID.Width - borderRadius, textID.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textID.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textID.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(textGaveta.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(textGaveta.Width - borderRadius, textGaveta.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, textGaveta.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                textGaveta.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mDataChegada.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mDataChegada.Width - borderRadius, mDataChegada.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mDataChegada.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                mDataChegada.Region = new Region(path);
+            }
+            using (GraphicsPath path = new GraphicsPath())
+
+            {
+                path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
+                path.AddArc(mHorarioChegada.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
+                path.AddArc(mHorarioChegada.Width - borderRadius, mHorarioChegada.Height - borderRadius, borderRadius, borderRadius, 0, 90);
+                path.AddArc(0, mHorarioChegada.Height - borderRadius, borderRadius, borderRadius, 90, 90);
+                mHorarioChegada.Region = new Region(path);
+            }
+
             Conexao conexao = new Conexao();
             conexao.Abrir();
             try

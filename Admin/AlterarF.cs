@@ -46,7 +46,8 @@ namespace WindowsFormsApp1
 
             mCelular.Text = contato;
 
-            cContato.SelectedIndex = cContato.FindStringExact(contato);
+            cContato.SelectedItem = contato;
+
             cStatus.SelectedIndex = cStatus.FindStringExact(status);
         }
         private void comboBoxiniciar1()
