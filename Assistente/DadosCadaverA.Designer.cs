@@ -33,13 +33,13 @@ namespace WindowsFormsApp1
             this.bLocalizar = new System.Windows.Forms.Button();
             this.textNome = new System.Windows.Forms.TextBox();
             this.dDados = new System.Windows.Forms.DataGridView();
-            this.bVoltar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataRetirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Retirada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Legista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Assistente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
             this.bLocalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bLocalizar.FlatAppearance.BorderSize = 0;
             this.bLocalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bLocalizar.Location = new System.Drawing.Point(817, 656);
+            this.bLocalizar.Location = new System.Drawing.Point(815, 668);
             this.bLocalizar.Name = "bLocalizar";
             this.bLocalizar.Size = new System.Drawing.Size(206, 67);
             this.bLocalizar.TabIndex = 31;
@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(302, 140);
+            this.textNome.Location = new System.Drawing.Point(302, 141);
             this.textNome.Multiline = true;
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(600, 36);
@@ -80,20 +80,6 @@ namespace WindowsFormsApp1
             this.dDados.Size = new System.Drawing.Size(964, 452);
             this.dDados.TabIndex = 28;
             this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
-            // 
-            // bVoltar
-            // 
-            this.bVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.bVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVoltar.BackgroundImage")));
-            this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bVoltar.FlatAppearance.BorderSize = 0;
-            this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVoltar.Location = new System.Drawing.Point(645, 656);
-            this.bVoltar.Name = "bVoltar";
-            this.bVoltar.Size = new System.Drawing.Size(166, 57);
-            this.bVoltar.TabIndex = 73;
-            this.bVoltar.UseVisualStyleBackColor = false;
-            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
             // ID
             // 
@@ -142,6 +128,20 @@ namespace WindowsFormsApp1
             this.Assistente.Name = "Assistente";
             this.Assistente.ReadOnly = true;
             this.Assistente.Width = 180;
+            // 
+            // bVoltar
+            // 
+            this.bVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.bVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVoltar.BackgroundImage")));
+            this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bVoltar.FlatAppearance.BorderSize = 0;
+            this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVoltar.Location = new System.Drawing.Point(645, 668);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(166, 57);
+            this.bVoltar.TabIndex = 73;
+            this.bVoltar.UseVisualStyleBackColor = false;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
             // DadosCadaverA
             // 

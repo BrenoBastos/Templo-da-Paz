@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             // 
             // textQuantidade
             // 
-            this.textQuantidade.Location = new System.Drawing.Point(256, 342);
+            this.textQuantidade.Location = new System.Drawing.Point(258, 347);
             this.textQuantidade.Multiline = true;
             this.textQuantidade.Name = "textQuantidade";
             this.textQuantidade.Size = new System.Drawing.Size(227, 30);
@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
             // 
             // textMaterial
             // 
-            this.textMaterial.Location = new System.Drawing.Point(217, 214);
+            this.textMaterial.Location = new System.Drawing.Point(219, 217);
             this.textMaterial.Multiline = true;
             this.textMaterial.Name = "textMaterial";
             this.textMaterial.Size = new System.Drawing.Size(286, 30);
@@ -85,7 +85,7 @@ namespace WindowsFormsApp1
             // 
             this.cFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cFornecedor.FormattingEnabled = true;
-            this.cFornecedor.Location = new System.Drawing.Point(246, 283);
+            this.cFornecedor.Location = new System.Drawing.Point(251, 281);
             this.cFornecedor.Name = "cFornecedor";
             this.cFornecedor.Size = new System.Drawing.Size(248, 21);
             this.cFornecedor.TabIndex = 90;

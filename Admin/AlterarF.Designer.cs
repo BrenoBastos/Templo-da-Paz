@@ -43,7 +43,7 @@ namespace WindowsFormsApp1
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(177, 228);
+            this.textNome.Location = new System.Drawing.Point(182, 231);
             this.textNome.Multiline = true;
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(349, 30);
@@ -51,7 +51,7 @@ namespace WindowsFormsApp1
             // 
             // textEndereco
             // 
-            this.textEndereco.Location = new System.Drawing.Point(210, 349);
+            this.textEndereco.Location = new System.Drawing.Point(211, 347);
             this.textEndereco.Multiline = true;
             this.textEndereco.Name = "textEndereco";
             this.textEndereco.Size = new System.Drawing.Size(316, 30);
@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
             // 
             // textID
             // 
-            this.textID.Location = new System.Drawing.Point(138, 174);
+            this.textID.Location = new System.Drawing.Point(142, 169);
             this.textID.Multiline = true;
             this.textID.Name = "textID";
             this.textID.ReadOnly = true;
@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
             this.bAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bAlterar.FlatAppearance.BorderSize = 0;
             this.bAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bAlterar.Location = new System.Drawing.Point(836, 395);
+            this.bAlterar.Location = new System.Drawing.Point(827, 396);
             this.bAlterar.Name = "bAlterar";
             this.bAlterar.Size = new System.Drawing.Size(185, 63);
             this.bAlterar.TabIndex = 8;
@@ -82,7 +82,7 @@ namespace WindowsFormsApp1
             // 
             // textCpf
             // 
-            this.textCpf.Location = new System.Drawing.Point(737, 163);
+            this.textCpf.Location = new System.Drawing.Point(742, 167);
             this.textCpf.Mask = "000.000.000-00";
             this.textCpf.Name = "textCpf";
             this.textCpf.Size = new System.Drawing.Size(168, 20);
@@ -93,7 +93,7 @@ namespace WindowsFormsApp1
             // 
             this.cStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cStatus.FormattingEnabled = true;
-            this.cStatus.Location = new System.Drawing.Point(784, 293);
+            this.cStatus.Location = new System.Drawing.Point(755, 293);
             this.cStatus.Name = "cStatus";
             this.cStatus.Size = new System.Drawing.Size(121, 21);
             this.cStatus.TabIndex = 61;
@@ -105,7 +105,7 @@ namespace WindowsFormsApp1
             this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bVoltar.FlatAppearance.BorderSize = 0;
             this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVoltar.Location = new System.Drawing.Point(658, 395);
+            this.bVoltar.Location = new System.Drawing.Point(650, 397);
             this.bVoltar.Name = "bVoltar";
             this.bVoltar.Size = new System.Drawing.Size(172, 63);
             this.bVoltar.TabIndex = 65;
@@ -116,7 +116,7 @@ namespace WindowsFormsApp1
             // 
             this.cContato.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cContato.FormattingEnabled = true;
-            this.cContato.Location = new System.Drawing.Point(210, 293);
+            this.cContato.Location = new System.Drawing.Point(210, 288);
             this.cContato.Name = "cContato";
             this.cContato.Size = new System.Drawing.Size(121, 21);
             this.cContato.TabIndex = 69;
@@ -124,7 +124,7 @@ namespace WindowsFormsApp1
             // 
             // mCelular
             // 
-            this.mCelular.Location = new System.Drawing.Point(855, 237);
+            this.mCelular.Location = new System.Drawing.Point(857, 234);
             this.mCelular.Multiline = true;
             this.mCelular.Name = "mCelular";
             this.mCelular.Size = new System.Drawing.Size(153, 30);

@@ -810,5 +810,15 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
             }
         }
+
+        private void cLegista_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textLaudo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

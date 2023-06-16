@@ -43,7 +43,7 @@
             this.BotaoLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BotaoLogin.FlatAppearance.BorderSize = 0;
             this.BotaoLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BotaoLogin.Location = new System.Drawing.Point(179, 566);
+            this.BotaoLogin.Location = new System.Drawing.Point(150, 557);
             this.BotaoLogin.Name = "BotaoLogin";
             this.BotaoLogin.Size = new System.Drawing.Size(338, 83);
             this.BotaoLogin.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             // textSenha
             // 
-            this.textSenha.Location = new System.Drawing.Point(214, 454);
+            this.textSenha.Location = new System.Drawing.Point(214, 456);
             this.textSenha.Multiline = true;
             this.textSenha.Name = "textSenha";
             this.textSenha.Size = new System.Drawing.Size(374, 41);
@@ -60,7 +60,7 @@
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(214, 343);
+            this.textNome.Location = new System.Drawing.Point(214, 345);
             this.textNome.Multiline = true;
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(374, 41);

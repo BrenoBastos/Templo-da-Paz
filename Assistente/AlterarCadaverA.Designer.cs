@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(127, 133);
+            this.textNome.Location = new System.Drawing.Point(130, 134);
             this.textNome.MaximumSize = new System.Drawing.Size(400, 200);
             this.textNome.MinimumSize = new System.Drawing.Size(20, 20);
             this.textNome.Multiline = true;
@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
             // 
             // textID
             // 
-            this.textID.Location = new System.Drawing.Point(608, 135);
+            this.textID.Location = new System.Drawing.Point(611, 135);
             this.textID.MaximumSize = new System.Drawing.Size(400, 400);
             this.textID.MinimumSize = new System.Drawing.Size(20, 20);
             this.textID.Multiline = true;
@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
             // 
             // mHorarioChegada
             // 
-            this.mHorarioChegada.Location = new System.Drawing.Point(247, 287);
+            this.mHorarioChegada.Location = new System.Drawing.Point(250, 289);
             this.mHorarioChegada.Mask = "00:00";
             this.mHorarioChegada.Name = "mHorarioChegada";
             this.mHorarioChegada.Size = new System.Drawing.Size(280, 20);
@@ -83,7 +83,7 @@ namespace WindowsFormsApp1
             // 
             // mDataChegada
             // 
-            this.mDataChegada.Location = new System.Drawing.Point(247, 205);
+            this.mDataChegada.Location = new System.Drawing.Point(250, 209);
             this.mDataChegada.Mask = "00/00/0000";
             this.mDataChegada.Name = "mDataChegada";
             this.mDataChegada.Size = new System.Drawing.Size(280, 20);
@@ -98,7 +98,7 @@ namespace WindowsFormsApp1
             this.bAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bAlterar.FlatAppearance.BorderSize = 0;
             this.bAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bAlterar.Location = new System.Drawing.Point(833, 377);
+            this.bAlterar.Location = new System.Drawing.Point(829, 377);
             this.bAlterar.Name = "bAlterar";
             this.bAlterar.Size = new System.Drawing.Size(185, 63);
             this.bAlterar.TabIndex = 58;
@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
             this.bVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVoltar.BackgroundImage")));
             this.bVoltar.FlatAppearance.BorderSize = 0;
             this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVoltar.Location = new System.Drawing.Point(655, 377);
+            this.bVoltar.Location = new System.Drawing.Point(651, 377);
             this.bVoltar.Name = "bVoltar";
             this.bVoltar.Size = new System.Drawing.Size(172, 63);
             this.bVoltar.TabIndex = 71;
@@ -121,7 +121,7 @@ namespace WindowsFormsApp1
             // cAssistente
             // 
             this.cAssistente.FormattingEnabled = true;
-            this.cAssistente.Location = new System.Drawing.Point(696, 205);
+            this.cAssistente.Location = new System.Drawing.Point(696, 207);
             this.cAssistente.Name = "cAssistente";
             this.cAssistente.Size = new System.Drawing.Size(312, 21);
             this.cAssistente.TabIndex = 72;

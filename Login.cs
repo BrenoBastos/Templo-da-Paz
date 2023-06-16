@@ -18,13 +18,14 @@ namespace WindowsFormsApp1
         public Login()
         {
             InitializeComponent();
+
             textSenha.PasswordChar = '*';
            BackColor = Color.FromArgb(39, 31, 31);
             textNome.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
             textSenha.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
             BotaoLogin.FlatAppearance.MouseOverBackColor = BotaoLogin.BackColor;
             BotaoLogin.FlatAppearance.MouseDownBackColor = BotaoLogin.BackColor;
-            textSenha.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            textSenha.BackColor = Color.FromArgb(129, 102, 102);
             textNome.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             textSenha.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             textNome.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);

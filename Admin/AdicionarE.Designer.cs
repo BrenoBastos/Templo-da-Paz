@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
             this.bAdicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bAdicionar.FlatAppearance.BorderSize = 0;
             this.bAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bAdicionar.Location = new System.Drawing.Point(755, 276);
+            this.bAdicionar.Location = new System.Drawing.Point(774, 283);
             this.bAdicionar.Name = "bAdicionar";
             this.bAdicionar.Size = new System.Drawing.Size(236, 86);
             this.bAdicionar.TabIndex = 0;
@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
             // 
             // textQuantidade
             // 
-            this.textQuantidade.Location = new System.Drawing.Point(237, 247);
+            this.textQuantidade.Location = new System.Drawing.Point(233, 254);
             this.textQuantidade.Multiline = true;
             this.textQuantidade.Name = "textQuantidade";
             this.textQuantidade.Size = new System.Drawing.Size(213, 30);
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
             this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bVoltar.FlatAppearance.BorderSize = 0;
             this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVoltar.Location = new System.Drawing.Point(513, 276);
+            this.bVoltar.Location = new System.Drawing.Point(533, 283);
             this.bVoltar.Name = "bVoltar";
             this.bVoltar.Size = new System.Drawing.Size(236, 84);
             this.bVoltar.TabIndex = 8;
@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
             // 
             this.cFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cFornecedor.FormattingEnabled = true;
-            this.cFornecedor.Location = new System.Drawing.Point(225, 196);
+            this.cFornecedor.Location = new System.Drawing.Point(227, 191);
             this.cFornecedor.Name = "cFornecedor";
             this.cFornecedor.Size = new System.Drawing.Size(234, 21);
             this.cFornecedor.TabIndex = 91;
@@ -96,7 +96,7 @@ namespace WindowsFormsApp1
             // 
             this.cMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cMaterial.FormattingEnabled = true;
-            this.cMaterial.Location = new System.Drawing.Point(192, 140);
+            this.cMaterial.Location = new System.Drawing.Point(194, 133);
             this.cMaterial.Name = "cMaterial";
             this.cMaterial.Size = new System.Drawing.Size(267, 21);
             this.cMaterial.TabIndex = 92;

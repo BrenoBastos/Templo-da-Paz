@@ -31,12 +31,12 @@ namespace WindowsFormsApp1
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DadosF1));
             this.dDados = new System.Windows.Forms.DataGridView();
-            this.textNome1 = new System.Windows.Forms.TextBox();
-            this.bLocalizar = new System.Windows.Forms.Button();
-            this.bVoltar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textNome1 = new System.Windows.Forms.TextBox();
+            this.bLocalizar = new System.Windows.Forms.Button();
+            this.bVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,42 +52,6 @@ namespace WindowsFormsApp1
             this.dDados.Size = new System.Drawing.Size(964, 452);
             this.dDados.TabIndex = 23;
             this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
-            // 
-            // textNome1
-            // 
-            this.textNome1.Location = new System.Drawing.Point(302, 140);
-            this.textNome1.Multiline = true;
-            this.textNome1.Name = "textNome1";
-            this.textNome1.Size = new System.Drawing.Size(706, 36);
-            this.textNome1.TabIndex = 22;
-            // 
-            // bLocalizar
-            // 
-            this.bLocalizar.BackColor = System.Drawing.Color.Transparent;
-            this.bLocalizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bLocalizar.BackgroundImage")));
-            this.bLocalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bLocalizar.FlatAppearance.BorderSize = 0;
-            this.bLocalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bLocalizar.Location = new System.Drawing.Point(817, 656);
-            this.bLocalizar.Name = "bLocalizar";
-            this.bLocalizar.Size = new System.Drawing.Size(206, 67);
-            this.bLocalizar.TabIndex = 20;
-            this.bLocalizar.UseVisualStyleBackColor = false;
-            this.bLocalizar.Click += new System.EventHandler(this.bLocalizar_Click);
-            // 
-            // bVoltar
-            // 
-            this.bVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.bVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVoltar.BackgroundImage")));
-            this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bVoltar.FlatAppearance.BorderSize = 0;
-            this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVoltar.Location = new System.Drawing.Point(645, 656);
-            this.bVoltar.Name = "bVoltar";
-            this.bVoltar.Size = new System.Drawing.Size(166, 57);
-            this.bVoltar.TabIndex = 93;
-            this.bVoltar.UseVisualStyleBackColor = false;
-            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
             // ID
             // 
@@ -112,6 +76,42 @@ namespace WindowsFormsApp1
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
             this.Status.Width = 300;
+            // 
+            // textNome1
+            // 
+            this.textNome1.Location = new System.Drawing.Point(302, 140);
+            this.textNome1.Multiline = true;
+            this.textNome1.Name = "textNome1";
+            this.textNome1.Size = new System.Drawing.Size(706, 36);
+            this.textNome1.TabIndex = 22;
+            // 
+            // bLocalizar
+            // 
+            this.bLocalizar.BackColor = System.Drawing.Color.Transparent;
+            this.bLocalizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bLocalizar.BackgroundImage")));
+            this.bLocalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bLocalizar.FlatAppearance.BorderSize = 0;
+            this.bLocalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bLocalizar.Location = new System.Drawing.Point(815, 668);
+            this.bLocalizar.Name = "bLocalizar";
+            this.bLocalizar.Size = new System.Drawing.Size(206, 67);
+            this.bLocalizar.TabIndex = 20;
+            this.bLocalizar.UseVisualStyleBackColor = false;
+            this.bLocalizar.Click += new System.EventHandler(this.bLocalizar_Click);
+            // 
+            // bVoltar
+            // 
+            this.bVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.bVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVoltar.BackgroundImage")));
+            this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bVoltar.FlatAppearance.BorderSize = 0;
+            this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVoltar.Location = new System.Drawing.Point(645, 668);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(166, 57);
+            this.bVoltar.TabIndex = 93;
+            this.bVoltar.UseVisualStyleBackColor = false;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
             // 
             // DadosF1
             // 

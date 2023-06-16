@@ -49,14 +49,14 @@ namespace WindowsFormsApp1
             // 
             this.cStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cStatus.FormattingEnabled = true;
-            this.cStatus.Location = new System.Drawing.Point(572, 458);
+            this.cStatus.Location = new System.Drawing.Point(576, 453);
             this.cStatus.Name = "cStatus";
             this.cStatus.Size = new System.Drawing.Size(157, 21);
             this.cStatus.TabIndex = 87;
             // 
             // textCpf
             // 
-            this.textCpf.Location = new System.Drawing.Point(100, 301);
+            this.textCpf.Location = new System.Drawing.Point(100, 296);
             this.textCpf.Mask = "000.000.000-00";
             this.textCpf.Name = "textCpf";
             this.textCpf.Size = new System.Drawing.Size(274, 20);
@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
             // 
             // textRG
             // 
-            this.textRG.Location = new System.Drawing.Point(640, 301);
+            this.textRG.Location = new System.Drawing.Point(640, 296);
             this.textRG.Mask = "00.000.000-0";
             this.textRG.Name = "textRG";
             this.textRG.Size = new System.Drawing.Size(346, 20);
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
             // 
             // mDataNascimento
             // 
-            this.mDataNascimento.Location = new System.Drawing.Point(826, 250);
+            this.mDataNascimento.Location = new System.Drawing.Point(829, 245);
             this.mDataNascimento.Mask = "00/00/0000";
             this.mDataNascimento.Name = "mDataNascimento";
             this.mDataNascimento.Size = new System.Drawing.Size(160, 20);
@@ -86,7 +86,7 @@ namespace WindowsFormsApp1
             // 
             this.cSexo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cSexo.FormattingEnabled = true;
-            this.cSexo.Location = new System.Drawing.Point(876, 458);
+            this.cSexo.Location = new System.Drawing.Point(880, 453);
             this.cSexo.Name = "cSexo";
             this.cSexo.Size = new System.Drawing.Size(132, 21);
             this.cSexo.TabIndex = 80;
@@ -95,14 +95,14 @@ namespace WindowsFormsApp1
             // 
             this.cEstadoCivil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cEstadoCivil.FormattingEnabled = true;
-            this.cEstadoCivil.Location = new System.Drawing.Point(170, 458);
+            this.cEstadoCivil.Location = new System.Drawing.Point(174, 452);
             this.cEstadoCivil.Name = "cEstadoCivil";
             this.cEstadoCivil.Size = new System.Drawing.Size(223, 21);
             this.cEstadoCivil.TabIndex = 79;
             // 
             // textEndereco
             // 
-            this.textEndereco.Location = new System.Drawing.Point(151, 352);
+            this.textEndereco.Location = new System.Drawing.Point(151, 347);
             this.textEndereco.Multiline = true;
             this.textEndereco.Name = "textEndereco";
             this.textEndereco.Size = new System.Drawing.Size(427, 30);
@@ -110,7 +110,7 @@ namespace WindowsFormsApp1
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(115, 240);
+            this.textNome.Location = new System.Drawing.Point(115, 244);
             this.textNome.Multiline = true;
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(463, 30);
@@ -123,7 +123,7 @@ namespace WindowsFormsApp1
             this.bCadastrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bCadastrar.FlatAppearance.BorderSize = 0;
             this.bCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bCadastrar.Location = new System.Drawing.Point(779, 534);
+            this.bCadastrar.Location = new System.Drawing.Point(775, 542);
             this.bCadastrar.Name = "bCadastrar";
             this.bCadastrar.Size = new System.Drawing.Size(229, 75);
             this.bCadastrar.TabIndex = 64;
@@ -137,7 +137,7 @@ namespace WindowsFormsApp1
             this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bVoltar.FlatAppearance.BorderSize = 0;
             this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVoltar.Location = new System.Drawing.Point(532, 534);
+            this.bVoltar.Location = new System.Drawing.Point(533, 543);
             this.bVoltar.Name = "bVoltar";
             this.bVoltar.Size = new System.Drawing.Size(228, 75);
             this.bVoltar.TabIndex = 88;
@@ -148,7 +148,7 @@ namespace WindowsFormsApp1
             // 
             this.cContato.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cContato.FormattingEnabled = true;
-            this.cContato.Location = new System.Drawing.Point(151, 406);
+            this.cContato.Location = new System.Drawing.Point(146, 400);
             this.cContato.Name = "cContato";
             this.cContato.Size = new System.Drawing.Size(242, 21);
             this.cContato.TabIndex = 101;
@@ -157,7 +157,7 @@ namespace WindowsFormsApp1
             // textSenha
             // 
             this.textSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSenha.Location = new System.Drawing.Point(741, 352);
+            this.textSenha.Location = new System.Drawing.Point(744, 347);
             this.textSenha.Multiline = true;
             this.textSenha.Name = "textSenha";
             this.textSenha.Size = new System.Drawing.Size(267, 30);
@@ -165,7 +165,7 @@ namespace WindowsFormsApp1
             // 
             // mCelular
             // 
-            this.mCelular.Location = new System.Drawing.Point(724, 407);
+            this.mCelular.Location = new System.Drawing.Point(720, 400);
             this.mCelular.Multiline = true;
             this.mCelular.Name = "mCelular";
             this.mCelular.Size = new System.Drawing.Size(202, 30);

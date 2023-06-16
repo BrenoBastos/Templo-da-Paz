@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
             this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bVoltar.FlatAppearance.BorderSize = 0;
             this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVoltar.Location = new System.Drawing.Point(301, 660);
+            this.bVoltar.Location = new System.Drawing.Point(292, 656);
             this.bVoltar.Name = "bVoltar";
             this.bVoltar.Size = new System.Drawing.Size(153, 56);
             this.bVoltar.TabIndex = 82;

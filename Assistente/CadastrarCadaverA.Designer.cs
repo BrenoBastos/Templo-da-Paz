@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
             this.bCadastrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bCadastrar.FlatAppearance.BorderSize = 0;
             this.bCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bCadastrar.Location = new System.Drawing.Point(764, 360);
+            this.bCadastrar.Location = new System.Drawing.Point(767, 369);
             this.bCadastrar.Name = "bCadastrar";
             this.bCadastrar.Size = new System.Drawing.Size(232, 78);
             this.bCadastrar.TabIndex = 0;
@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(330, 205);
+            this.textNome.Location = new System.Drawing.Point(335, 208);
             this.textNome.MaximumSize = new System.Drawing.Size(400, 100);
             this.textNome.MinimumSize = new System.Drawing.Size(20, 20);
             this.textNome.Multiline = true;
@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
             // 
             // textGaveta
             // 
-            this.textGaveta.Location = new System.Drawing.Point(659, 299);
+            this.textGaveta.Location = new System.Drawing.Point(658, 302);
             this.textGaveta.MaximumSize = new System.Drawing.Size(100, 100);
             this.textGaveta.MinimumSize = new System.Drawing.Size(20, 20);
             this.textGaveta.Multiline = true;
@@ -75,7 +75,7 @@ namespace WindowsFormsApp1
             // 
             // mHorarioChegada
             // 
-            this.mHorarioChegada.Location = new System.Drawing.Point(375, 300);
+            this.mHorarioChegada.Location = new System.Drawing.Point(376, 302);
             this.mHorarioChegada.Mask = "00:00";
             this.mHorarioChegada.Name = "mHorarioChegada";
             this.mHorarioChegada.Size = new System.Drawing.Size(144, 20);
@@ -85,7 +85,7 @@ namespace WindowsFormsApp1
             // 
             // mDataChegada
             // 
-            this.mDataChegada.Location = new System.Drawing.Point(354, 250);
+            this.mDataChegada.Location = new System.Drawing.Point(353, 253);
             this.mDataChegada.Mask = "00/00/0000";
             this.mDataChegada.Name = "mDataChegada";
             this.mDataChegada.Size = new System.Drawing.Size(152, 20);
@@ -101,7 +101,7 @@ namespace WindowsFormsApp1
             this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bVoltar.FlatAppearance.BorderSize = 0;
             this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVoltar.Location = new System.Drawing.Point(496, 360);
+            this.bVoltar.Location = new System.Drawing.Point(529, 372);
             this.bVoltar.Name = "bVoltar";
             this.bVoltar.Size = new System.Drawing.Size(243, 75);
             this.bVoltar.TabIndex = 72;
@@ -112,7 +112,7 @@ namespace WindowsFormsApp1
             // 
             this.cAssistente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cAssistente.FormattingEnabled = true;
-            this.cAssistente.Location = new System.Drawing.Point(685, 250);
+            this.cAssistente.Location = new System.Drawing.Point(692, 253);
             this.cAssistente.Name = "cAssistente";
             this.cAssistente.Size = new System.Drawing.Size(288, 21);
             this.cAssistente.TabIndex = 98;

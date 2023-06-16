@@ -32,13 +32,13 @@ namespace WindowsFormsApp1
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DadosE));
             this.bLocalizar = new System.Windows.Forms.Button();
             this.dDados = new System.Windows.Forms.DataGridView();
-            this.bVoltar = new System.Windows.Forms.Button();
-            this.textMaterial = new System.Windows.Forms.TextBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fornecedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bVoltar = new System.Windows.Forms.Button();
+            this.textMaterial = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
             this.bLocalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bLocalizar.FlatAppearance.BorderSize = 0;
             this.bLocalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bLocalizar.Location = new System.Drawing.Point(817, 656);
+            this.bLocalizar.Location = new System.Drawing.Point(815, 668);
             this.bLocalizar.Name = "bLocalizar";
             this.bLocalizar.Size = new System.Drawing.Size(206, 67);
             this.bLocalizar.TabIndex = 12;
@@ -69,28 +69,6 @@ namespace WindowsFormsApp1
             this.dDados.Name = "dDados";
             this.dDados.Size = new System.Drawing.Size(964, 452);
             this.dDados.TabIndex = 15;
-            // 
-            // bVoltar
-            // 
-            this.bVoltar.BackColor = System.Drawing.Color.Transparent;
-            this.bVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVoltar.BackgroundImage")));
-            this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bVoltar.FlatAppearance.BorderSize = 0;
-            this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVoltar.Location = new System.Drawing.Point(645, 656);
-            this.bVoltar.Name = "bVoltar";
-            this.bVoltar.Size = new System.Drawing.Size(166, 57);
-            this.bVoltar.TabIndex = 93;
-            this.bVoltar.UseVisualStyleBackColor = false;
-            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
-            // 
-            // textMaterial
-            // 
-            this.textMaterial.Location = new System.Drawing.Point(276, 140);
-            this.textMaterial.Multiline = true;
-            this.textMaterial.Name = "textMaterial";
-            this.textMaterial.Size = new System.Drawing.Size(732, 36);
-            this.textMaterial.TabIndex = 95;
             // 
             // Id
             // 
@@ -131,6 +109,28 @@ namespace WindowsFormsApp1
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
             this.Total.Width = 191;
+            // 
+            // bVoltar
+            // 
+            this.bVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.bVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVoltar.BackgroundImage")));
+            this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bVoltar.FlatAppearance.BorderSize = 0;
+            this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bVoltar.Location = new System.Drawing.Point(645, 668);
+            this.bVoltar.Name = "bVoltar";
+            this.bVoltar.Size = new System.Drawing.Size(166, 57);
+            this.bVoltar.TabIndex = 93;
+            this.bVoltar.UseVisualStyleBackColor = false;
+            this.bVoltar.Click += new System.EventHandler(this.bVoltar_Click);
+            // 
+            // textMaterial
+            // 
+            this.textMaterial.Location = new System.Drawing.Point(276, 140);
+            this.textMaterial.Multiline = true;
+            this.textMaterial.Name = "textMaterial";
+            this.textMaterial.Size = new System.Drawing.Size(732, 36);
+            this.textMaterial.TabIndex = 95;
             // 
             // DadosE
             // 

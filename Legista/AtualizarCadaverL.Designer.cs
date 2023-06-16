@@ -58,7 +58,7 @@
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(113, 138);
+            this.textNome.Location = new System.Drawing.Point(113, 141);
             this.textNome.MaximumSize = new System.Drawing.Size(400, 100);
             this.textNome.MinimumSize = new System.Drawing.Size(20, 20);
             this.textNome.Multiline = true;
@@ -68,7 +68,7 @@
             // 
             // textID
             // 
-            this.textID.Location = new System.Drawing.Point(576, 147);
+            this.textID.Location = new System.Drawing.Point(577, 142);
             this.textID.MaximumSize = new System.Drawing.Size(100, 100);
             this.textID.MinimumSize = new System.Drawing.Size(20, 20);
             this.textID.Multiline = true;
@@ -79,7 +79,7 @@
             // 
             // textGaveta
             // 
-            this.textGaveta.Location = new System.Drawing.Point(627, 340);
+            this.textGaveta.Location = new System.Drawing.Point(623, 345);
             this.textGaveta.MaximumSize = new System.Drawing.Size(100, 100);
             this.textGaveta.MinimumSize = new System.Drawing.Size(20, 20);
             this.textGaveta.Multiline = true;
@@ -89,7 +89,7 @@
             // 
             // mHorarioChegada
             // 
-            this.mHorarioChegada.Location = new System.Drawing.Point(759, 206);
+            this.mHorarioChegada.Location = new System.Drawing.Point(754, 201);
             this.mHorarioChegada.Mask = "00:00";
             this.mHorarioChegada.Name = "mHorarioChegada";
             this.mHorarioChegada.Size = new System.Drawing.Size(207, 20);
@@ -99,7 +99,7 @@
             // 
             // mDataRetirada
             // 
-            this.mDataRetirada.Location = new System.Drawing.Point(236, 260);
+            this.mDataRetirada.Location = new System.Drawing.Point(223, 244);
             this.mDataRetirada.Mask = "00/00/0000";
             this.mDataRetirada.Name = "mDataRetirada";
             this.mDataRetirada.Size = new System.Drawing.Size(247, 20);
@@ -109,7 +109,7 @@
             // 
             // mDataChegada
             // 
-            this.mDataChegada.Location = new System.Drawing.Point(236, 205);
+            this.mDataChegada.Location = new System.Drawing.Point(235, 200);
             this.mDataChegada.Mask = "00/00/0000";
             this.mDataChegada.Name = "mDataChegada";
             this.mDataChegada.Size = new System.Drawing.Size(247, 20);
@@ -123,7 +123,7 @@
             this.bAtualizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bAtualizar.BackgroundImage")));
             this.bAtualizar.FlatAppearance.BorderSize = 0;
             this.bAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bAtualizar.Location = new System.Drawing.Point(839, 632);
+            this.bAtualizar.Location = new System.Drawing.Point(839, 639);
             this.bAtualizar.Name = "bAtualizar";
             this.bAtualizar.Size = new System.Drawing.Size(169, 57);
             this.bAtualizar.TabIndex = 26;
@@ -140,9 +140,9 @@
             this.DataChegada,
             this.HorarioChegada,
             this.Assistente});
-            this.dDados.Location = new System.Drawing.Point(781, 489);
+            this.dDados.Location = new System.Drawing.Point(779, 489);
             this.dDados.Name = "dDados";
-            this.dDados.Size = new System.Drawing.Size(227, 122);
+            this.dDados.Size = new System.Drawing.Size(229, 135);
             this.dDados.TabIndex = 25;
             this.dDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dDados_CellDoubleClick);
             // 
@@ -195,13 +195,14 @@
             this.textLaudo.Size = new System.Drawing.Size(646, 135);
             this.textLaudo.TabIndex = 49;
             this.textLaudo.Text = "";
+            this.textLaudo.TextChanged += new System.EventHandler(this.textLaudo_TextChanged);
             // 
             // cRetirada
             // 
             this.cRetirada.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
             this.cRetirada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cRetirada.FormattingEnabled = true;
-            this.cRetirada.Location = new System.Drawing.Point(135, 437);
+            this.cRetirada.Location = new System.Drawing.Point(138, 430);
             this.cRetirada.Name = "cRetirada";
             this.cRetirada.Size = new System.Drawing.Size(348, 21);
             this.cRetirada.TabIndex = 50;
@@ -209,7 +210,7 @@
             // 
             // textQuantidade
             // 
-            this.textQuantidade.Location = new System.Drawing.Point(671, 437);
+            this.textQuantidade.Location = new System.Drawing.Point(669, 435);
             this.textQuantidade.Multiline = true;
             this.textQuantidade.Name = "textQuantidade";
             this.textQuantidade.Size = new System.Drawing.Size(337, 30);
@@ -222,7 +223,7 @@
             this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bVoltar.FlatAppearance.BorderSize = 0;
             this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVoltar.Location = new System.Drawing.Point(671, 635);
+            this.bVoltar.Location = new System.Drawing.Point(664, 639);
             this.bVoltar.Name = "bVoltar";
             this.bVoltar.Size = new System.Drawing.Size(169, 60);
             this.bVoltar.TabIndex = 74;
@@ -241,7 +242,7 @@
             // 
             // mDataObito
             // 
-            this.mDataObito.Location = new System.Drawing.Point(189, 292);
+            this.mDataObito.Location = new System.Drawing.Point(194, 292);
             this.mDataObito.Mask = "00/00/0000";
             this.mDataObito.Name = "mDataObito";
             this.mDataObito.Size = new System.Drawing.Size(294, 20);
@@ -251,7 +252,7 @@
             // 
             // mHorarioRetirada
             // 
-            this.mHorarioRetirada.Location = new System.Drawing.Point(740, 261);
+            this.mHorarioRetirada.Location = new System.Drawing.Point(743, 256);
             this.mHorarioRetirada.Mask = "00:00";
             this.mHorarioRetirada.Name = "mHorarioRetirada";
             this.mHorarioRetirada.Size = new System.Drawing.Size(192, 20);
@@ -263,16 +264,17 @@
             // 
             this.cLegista.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cLegista.FormattingEnabled = true;
-            this.cLegista.Location = new System.Drawing.Point(127, 349);
+            this.cLegista.Location = new System.Drawing.Point(125, 344);
             this.cLegista.Name = "cLegista";
             this.cLegista.Size = new System.Drawing.Size(356, 21);
             this.cLegista.TabIndex = 98;
+            this.cLegista.SelectedIndexChanged += new System.EventHandler(this.cLegista_SelectedIndexChanged);
             // 
             // cAssistente
             // 
             this.cAssistente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cAssistente.FormattingEnabled = true;
-            this.cAssistente.Location = new System.Drawing.Point(153, 392);
+            this.cAssistente.Location = new System.Drawing.Point(156, 388);
             this.cAssistente.Name = "cAssistente";
             this.cAssistente.Size = new System.Drawing.Size(330, 21);
             this.cAssistente.TabIndex = 97;
@@ -281,7 +283,7 @@
             // 
             this.cMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cMaterial.FormattingEnabled = true;
-            this.cMaterial.Location = new System.Drawing.Point(626, 392);
+            this.cMaterial.Location = new System.Drawing.Point(627, 387);
             this.cMaterial.Name = "cMaterial";
             this.cMaterial.Size = new System.Drawing.Size(382, 21);
             this.cMaterial.TabIndex = 96;

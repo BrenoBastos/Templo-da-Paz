@@ -44,14 +44,14 @@ namespace WindowsFormsApp1
             // 
             this.cStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cStatus.FormattingEnabled = true;
-            this.cStatus.Location = new System.Drawing.Point(777, 330);
+            this.cStatus.Location = new System.Drawing.Point(770, 324);
             this.cStatus.Name = "cStatus";
             this.cStatus.Size = new System.Drawing.Size(217, 21);
             this.cStatus.TabIndex = 73;
             // 
             // textCpf
             // 
-            this.textCpf.Location = new System.Drawing.Point(693, 214);
+            this.textCpf.Location = new System.Drawing.Point(688, 208);
             this.textCpf.Mask = "000.000.000-00";
             this.textCpf.Name = "textCpf";
             this.textCpf.Size = new System.Drawing.Size(301, 20);
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
             // 
             // textEndereco
             // 
-            this.textEndereco.Location = new System.Drawing.Point(173, 331);
+            this.textEndereco.Location = new System.Drawing.Point(168, 326);
             this.textEndereco.Multiline = true;
             this.textEndereco.Name = "textEndereco";
             this.textEndereco.Size = new System.Drawing.Size(320, 30);
@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(128, 214);
+            this.textNome.Location = new System.Drawing.Point(128, 208);
             this.textNome.Multiline = true;
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(365, 30);
@@ -105,7 +105,7 @@ namespace WindowsFormsApp1
             // 
             this.cContato.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cContato.FormattingEnabled = true;
-            this.cContato.Location = new System.Drawing.Point(152, 272);
+            this.cContato.Location = new System.Drawing.Point(152, 266);
             this.cContato.Name = "cContato";
             this.cContato.Size = new System.Drawing.Size(243, 21);
             this.cContato.TabIndex = 97;
@@ -113,7 +113,7 @@ namespace WindowsFormsApp1
             // 
             // mCelular
             // 
-            this.mCelular.Location = new System.Drawing.Point(734, 273);
+            this.mCelular.Location = new System.Drawing.Point(734, 267);
             this.mCelular.Multiline = true;
             this.mCelular.Name = "mCelular";
             this.mCelular.Size = new System.Drawing.Size(260, 30);

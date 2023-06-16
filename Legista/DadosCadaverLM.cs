@@ -595,5 +595,20 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void mDataRetirada_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void mHorarioChegada_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void textQuantidade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

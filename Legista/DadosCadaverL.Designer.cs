@@ -57,7 +57,7 @@
             this.bLocalizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bLocalizar.FlatAppearance.BorderSize = 0;
             this.bLocalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bLocalizar.Location = new System.Drawing.Point(817, 656);
+            this.bLocalizar.Location = new System.Drawing.Point(815, 668);
             this.bLocalizar.Name = "bLocalizar";
             this.bLocalizar.Size = new System.Drawing.Size(206, 67);
             this.bLocalizar.TabIndex = 27;
@@ -71,7 +71,7 @@
             this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bVoltar.FlatAppearance.BorderSize = 0;
             this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVoltar.Location = new System.Drawing.Point(645, 656);
+            this.bVoltar.Location = new System.Drawing.Point(645, 668);
             this.bVoltar.Name = "bVoltar";
             this.bVoltar.Size = new System.Drawing.Size(166, 57);
             this.bVoltar.TabIndex = 75;

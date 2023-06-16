@@ -53,7 +53,7 @@ namespace WindowsFormsApp1
             // 
             // textCpf
             // 
-            this.textCpf.Location = new System.Drawing.Point(161, 313);
+            this.textCpf.Location = new System.Drawing.Point(161, 309);
             this.textCpf.Mask = "000.000.000-00";
             this.textCpf.Name = "textCpf";
             this.textCpf.Size = new System.Drawing.Size(274, 20);
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
             // 
             // textRG
             // 
-            this.textRG.Location = new System.Drawing.Point(660, 313);
+            this.textRG.Location = new System.Drawing.Point(660, 309);
             this.textRG.Mask = "00.000.000-0";
             this.textRG.Name = "textRG";
             this.textRG.Size = new System.Drawing.Size(346, 20);
@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
             // 
             // mDataNascimento
             // 
-            this.mDataNascimento.Location = new System.Drawing.Point(838, 251);
+            this.mDataNascimento.Location = new System.Drawing.Point(838, 249);
             this.mDataNascimento.Mask = "00/00/0000";
             this.mDataNascimento.Name = "mDataNascimento";
             this.mDataNascimento.Size = new System.Drawing.Size(160, 20);
@@ -83,7 +83,7 @@ namespace WindowsFormsApp1
             // 
             this.cSexo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cSexo.FormattingEnabled = true;
-            this.cSexo.Location = new System.Drawing.Point(682, 371);
+            this.cSexo.Location = new System.Drawing.Point(682, 365);
             this.cSexo.Name = "cSexo";
             this.cSexo.Size = new System.Drawing.Size(132, 21);
             this.cSexo.TabIndex = 46;
@@ -92,14 +92,14 @@ namespace WindowsFormsApp1
             // 
             this.cEstadoCivil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cEstadoCivil.FormattingEnabled = true;
-            this.cEstadoCivil.Location = new System.Drawing.Point(241, 555);
+            this.cEstadoCivil.Location = new System.Drawing.Point(242, 547);
             this.cEstadoCivil.Name = "cEstadoCivil";
             this.cEstadoCivil.Size = new System.Drawing.Size(223, 21);
             this.cEstadoCivil.TabIndex = 45;
             // 
             // textEndereco
             // 
-            this.textEndereco.Location = new System.Drawing.Point(212, 424);
+            this.textEndereco.Location = new System.Drawing.Point(216, 428);
             this.textEndereco.Multiline = true;
             this.textEndereco.Name = "textEndereco";
             this.textEndereco.Size = new System.Drawing.Size(391, 30);
@@ -107,7 +107,7 @@ namespace WindowsFormsApp1
             // 
             // textID
             // 
-            this.textID.Location = new System.Drawing.Point(139, 183);
+            this.textID.Location = new System.Drawing.Point(141, 188);
             this.textID.Multiline = true;
             this.textID.Name = "textID";
             this.textID.ReadOnly = true;
@@ -116,10 +116,10 @@ namespace WindowsFormsApp1
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(177, 241);
+            this.textNome.Location = new System.Drawing.Point(181, 248);
             this.textNome.Multiline = true;
             this.textNome.Name = "textNome";
-            this.textNome.Size = new System.Drawing.Size(435, 30);
+            this.textNome.Size = new System.Drawing.Size(409, 30);
             this.textNome.TabIndex = 41;
             // 
             // label10
@@ -165,7 +165,7 @@ namespace WindowsFormsApp1
             this.bAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bAlterar.FlatAppearance.BorderSize = 0;
             this.bAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bAlterar.Location = new System.Drawing.Point(823, 571);
+            this.bAlterar.Location = new System.Drawing.Point(822, 571);
             this.bAlterar.Name = "bAlterar";
             this.bAlterar.Size = new System.Drawing.Size(185, 63);
             this.bAlterar.TabIndex = 29;
@@ -176,7 +176,7 @@ namespace WindowsFormsApp1
             // 
             this.cStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cStatus.FormattingEnabled = true;
-            this.cStatus.Location = new System.Drawing.Point(693, 192);
+            this.cStatus.Location = new System.Drawing.Point(693, 188);
             this.cStatus.Name = "cStatus";
             this.cStatus.Size = new System.Drawing.Size(157, 21);
             this.cStatus.TabIndex = 59;
@@ -188,7 +188,7 @@ namespace WindowsFormsApp1
             this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bVoltar.FlatAppearance.BorderSize = 0;
             this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bVoltar.Location = new System.Drawing.Point(626, 561);
+            this.bVoltar.Location = new System.Drawing.Point(643, 572);
             this.bVoltar.Name = "bVoltar";
             this.bVoltar.Size = new System.Drawing.Size(172, 63);
             this.bVoltar.TabIndex = 66;
@@ -197,7 +197,7 @@ namespace WindowsFormsApp1
             // 
             // mCRM
             // 
-            this.mCRM.Location = new System.Drawing.Point(682, 492);
+            this.mCRM.Location = new System.Drawing.Point(682, 489);
             this.mCRM.Mask = "0000000";
             this.mCRM.Name = "mCRM";
             this.mCRM.Size = new System.Drawing.Size(214, 20);
@@ -209,7 +209,7 @@ namespace WindowsFormsApp1
             // 
             this.cContato.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cContato.FormattingEnabled = true;
-            this.cContato.Location = new System.Drawing.Point(200, 492);
+            this.cContato.Location = new System.Drawing.Point(206, 488);
             this.cContato.Name = "cContato";
             this.cContato.Size = new System.Drawing.Size(242, 21);
             this.cContato.TabIndex = 87;
@@ -217,7 +217,7 @@ namespace WindowsFormsApp1
             // 
             // mCelular
             // 
-            this.mCelular.Location = new System.Drawing.Point(796, 434);
+            this.mCelular.Location = new System.Drawing.Point(805, 429);
             this.mCelular.Multiline = true;
             this.mCelular.Name = "mCelular";
             this.mCelular.Size = new System.Drawing.Size(202, 30);
@@ -226,7 +226,7 @@ namespace WindowsFormsApp1
             // textSenha
             // 
             this.textSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSenha.Location = new System.Drawing.Point(200, 362);
+            this.textSenha.Location = new System.Drawing.Point(190, 368);
             this.textSenha.Multiline = true;
             this.textSenha.Name = "textSenha";
             this.textSenha.Size = new System.Drawing.Size(244, 30);
