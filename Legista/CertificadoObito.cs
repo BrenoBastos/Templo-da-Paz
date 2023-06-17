@@ -12,6 +12,7 @@ using System.IO;
 using System.Drawing.Printing;
 using System.Reflection.Metadata;
 using Document = iTextSharp.text.Document;
+using Paragraph = iTextSharp.text.Paragraph;
 
 namespace WindowsFormsApp1
 {
@@ -25,7 +26,7 @@ namespace WindowsFormsApp1
             comboBoxiniciar2();
             comboBoxiniciar3();
 
-    }
+        }
 
         // Método para inicializar o ComboBox da cor
         private void comboBoxiniciar2()
@@ -60,10 +61,9 @@ namespace WindowsFormsApp1
                 cSexo.DropDownStyle = ComboBoxStyle.DropDownList;
             }
         }
-       
+
         private void button1_Click(object sender, EventArgs e)
         {
-
             // Verifica se algum campo obrigatório está vazio ou incompleto
             if (string.IsNullOrWhiteSpace(textNome.Text) || !textCpf.MaskCompleted || string.IsNullOrWhiteSpace(textMatricula.Text) || string.IsNullOrWhiteSpace(textMês.Text) || string.IsNullOrWhiteSpace(textAno.Text) || string.IsNullOrWhiteSpace(textDia.Text) || string.IsNullOrWhiteSpace(textAverbacoes.Text) || string.IsNullOrWhiteSpace(textAnotacoes.Text) || string.IsNullOrWhiteSpace(textNaturalidade.Text) || string.IsNullOrWhiteSpace(textLocal.Text) || !textDocumentoIdentificação.MaskCompleted
                 || string.IsNullOrWhiteSpace(textCausadaMorte.Text) || string.IsNullOrWhiteSpace(textEstadoCivil.Text) || string.IsNullOrWhiteSpace(textFiliação.Text) || !mEleitor.MaskCompleted || string.IsNullOrWhiteSpace(textDeclarante.Text) || !mDataFalecimento.MaskCompleted ||
@@ -99,16 +99,16 @@ namespace WindowsFormsApp1
             }
 
             // Verifica se o campo 'Nome' contém apenas caracteres alfabéticos
-            if (textNome.Text.All(char.IsDigit))
+            if (textNome.Text.Any(char.IsDigit))
             {
-                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Nome'.");
+                MessageBox.Show("Por favor, insira apenas caracteres alfabéticos no campo 'Nome'.");
                 return;
             }
 
             // Verifica se o campo 'Naturalidade' contém apenas caracteres alfabéticos
-            if (textNaturalidade.Text.All(char.IsDigit))
+            if (textNaturalidade.Text.Any(char.IsDigit))
             {
-                MessageBox.Show("Por favor, insira apenas caracteres no campo 'Naturalidade'.");
+                MessageBox.Show("Por favor, insira apenas caracteres alfabéticos no campo 'Naturalidade'.");
                 return;
             }
 
@@ -134,102 +134,128 @@ namespace WindowsFormsApp1
             }
 
             // Verifica se o campo 'Ano' contém apenas caracteres numéricos
-            else if (!textAno.Text.All(char.IsDigit))
+            if (!textAno.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Ano'.");
+                return;
+            }
+
+            // Cria um novo documento PDF
+            // Cria um novo documento PDF
+            Document doc = new Document(iTextSharp.text.PageSize.A4);
+
+            try
+            {
+                // Cria um objeto PdfWriter para escrever no documento
+                MemoryStream memoryStream = new MemoryStream();
+                PdfWriter writer = PdfWriter.GetInstance(doc, memoryStream);
+
+                // Abre o documento
+                doc.Open();
+
+                // Define a fonte e o tamanho do título
+                //Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18);
+
+                // Adiciona o título ao documento
+                Paragraph title = new Paragraph("Certidão de Óbito");
+                title.Alignment = Element.ALIGN_CENTER;
+                doc.Add(title);
+
+                // Adiciona espaçamento antes do primeiro parágrafo
+                doc.Add(new Paragraph(" "));
+
+                // Define a fonte e o tamanho do texto principal
+                //Font mainFont = FontFactory.GetFont(FontFactory.HELVETICA, 12);
+
+                // Adiciona as informações pessoais ao documento
+                doc.Add(new Paragraph("Nome: " + textNome.Text));
+                doc.Add(new Paragraph("CPF: " + textCpf.Text));
+                doc.Add(new Paragraph("Sexo: " + cSexo.Text));
+                doc.Add(new Paragraph("Estado Civil: " + textEstadoCivil.Text));
+                doc.Add(new Paragraph("Filiação e residência: " + textFiliação.Text));
+                doc.Add(new Paragraph("Cor: " + comboCor.Text));
+                doc.Add(new Paragraph("Naturalidade: " + textNaturalidade.Text));
+                doc.Add(new Paragraph("Matrícula: " + textMatricula.Text));
+
+                // Adiciona um espaço em branco entre as seções
+                doc.Add(new Paragraph(" "));
+
+                // Adiciona as informações de falecimento ao documento
+                doc.Add(new Paragraph("Data de Falecimento: " + mDataFalecimento.Text));
+                doc.Add(new Paragraph("Dia: " + textDia.Text));
+                doc.Add(new Paragraph("Mês: " + textMês.Text));
+                doc.Add(new Paragraph("Ano: " + textAno.Text));
+                doc.Add(new Paragraph("Local de Falecimento: " + textLocal.Text));
+                doc.Add(new Paragraph("Causa da Morte: " + textCausadaMorte.Text));
+
+                // Adiciona um espaço em branco entre as seções
+                doc.Add(new Paragraph(" "));
+
+                // Adiciona as informações adicionais ao documento
+                doc.Add(new Paragraph("Documento de Identificação: " + textDocumentoIdentificação.Text));
+                doc.Add(new Paragraph("Título de Eleitor: " + mEleitor.Text));
+                doc.Add(new Paragraph("Declarante: " + textDeclarante.Text));
+                doc.Add(new Paragraph("Sepultamento: " + textSepultamento.Text));
+                doc.Add(new Paragraph("Nome do Médico: " + textNomeMedico.Text));
+                doc.Add(new Paragraph("Anotações: " + textAverbacoes.Text));
+                doc.Add(new Paragraph("Anotações de Cadastro: " + textAnotacoes.Text));
+
+
+
+
+                // Adicione mais campos conforme necessário
+
+                // Fecha o documento
+                doc.Close();
+
+                // Salva o PDF no MemoryStream
+                byte[] pdfBytes = memoryStream.ToArray();
+
+                // Abre uma janela SaveFileDialog para permitir ao usuário escolher onde salvar o arquivo PDF
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "PDF Files (.pdf)|.pdf";
+                saveFileDialog.FilterIndex = 0;
+                saveFileDialog.DefaultExt = "pdf";
+                saveFileDialog.AddExtension = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Por favor, insira apenas caracteres numéricos  no campo 'Ano'.");
-                    return;
+                    // Escreve o conteúdo do MemoryStream no arquivo PDF selecionado pelo usuário
+                    File.WriteAllBytes(saveFileDialog.FileName, pdfBytes);
                 }
-           
-      
-          
-                // Cria um novo documento PDF
-                Document doc = new Document(PageSize.A4);
 
-                    try
-                    {
-                        // Cria um objeto PdfWriter para escrever no documento
-                        MemoryStream memoryStream = new MemoryStream();
-                        PdfWriter.GetInstance(doc, memoryStream);
-
-                        // Abre o documento
-                        doc.Open();
-
-                        // Converte a tela do formulário em um bitmap
-                        Bitmap bitmap = new Bitmap(this.Width, this.Height);
-                        this.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, this.Width, this.Height));
-
-                        // Cria um objeto Image do bitmap
-                        iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(bitmap, System.Drawing.Imaging.ImageFormat.Bmp);
-
-                        // Adiciona a imagem ao documento
-                        doc.Add(img);
-
-                        // Fecha o documento
-                        doc.Close();
-
-                        // Salva o PDF no MemoryStream
-                        byte[] pdfBytes = memoryStream.ToArray();
-
-                        // Abre uma janela SaveFileDialog para permitir ao usuário escolher onde salvar o arquivo PDF
-                        SaveFileDialog saveFileDialog = new SaveFileDialog();
-                        saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf";
-                        saveFileDialog.FilterIndex = 0;
-                        saveFileDialog.DefaultExt = "pdf";
-                        saveFileDialog.AddExtension = true;
-
-                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                        {
-                            // Escreve o conteúdo do MemoryStream no arquivo PDF selecionado pelo usuário
-                            File.WriteAllBytes(saveFileDialog.FileName, pdfBytes);
-                        }
-                        // retorna que pdf foi gerado com sucesso ,limpa os campos e retorna o combobox ao padrão
-                        MessageBox.Show("PDF gerado com sucesso!");
+                // Retorna que o PDF foi gerado com sucesso, limpa os campos e retorna o ComboBox ao padrão
+                MessageBox.Show("PDF gerado com sucesso!");
                 comboCor.SelectedIndex = 0;
                 cSexo.SelectedIndex = 0;
                 textNome.Text = "";
-                        textNaturalidade.Text = "";
-                        textLocal.Text = "";
-                        textCausadaMorte.Text = "";
-                        textEstadoCivil.Text = "";
-                        textFiliação.Text = "";
-                        textDeclarante.Text = "";
-                        textSepultamento.Text = "";
-                        textAnotacoes.Text = "";
-                        textNomeMedico.Text = "";
-                        textCpf.Text = "";
-                        textDocumentoIdentificação.Text = "";
-                        mEleitor.Text = "";
-                    textAno.Text = "";
-                        mDataFalecimento.Text = "";
-                        mDataFalecimento.Text = "";
-                    textAverbacoes.Text = "";
-                    textDia.Text = "";
-                    textMatricula.Text = "";
-                    textMês.Text = "";
-                  
-
-                }
-            //se houve erro ao gerar o pdf
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ocorreu um erro ao salvar o arquivo PDF: " + ex.Message);
-                    }
-
-
-                }
-
-
-
-
-
-               
-                             
-
-                
-            
-
-
-        
+                textNaturalidade.Text = "";
+                textLocal.Text = "";
+                textCausadaMorte.Text = "";
+                textEstadoCivil.Text = "";
+                textFiliação.Text = "";
+                textDeclarante.Text = "";
+                textSepultamento.Text = "";
+                textAnotacoes.Text = "";
+                textNomeMedico.Text = "";
+                textCpf.Text = "";
+                textDocumentoIdentificação.Text = "";
+                mEleitor.Text = "";
+                textAno.Text = "";
+                mDataFalecimento.Text = "";
+                mDataFalecimento.Text = "";
+                textAverbacoes.Text = "";
+                textDia.Text = "";
+                textMatricula.Text = "";
+                textMês.Text = "";
+            }
+            // Se ocorrer um erro ao gerar o PDF
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao salvar o arquivo PDF: " + ex.Message);
+            }
+        }
+    
 
         private void bVoltar_Click(object sender, EventArgs e)
         {// Esconde a janela atual
@@ -280,6 +306,16 @@ namespace WindowsFormsApp1
             textDocumentoIdentificação.SelectionStart = 0;
             // Define o comprimento da seleção para 0
             textDocumentoIdentificação.SelectionLength = 0;
+        }
+
+        private void cSexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CertificadoObito_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

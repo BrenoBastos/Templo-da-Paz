@@ -13,8 +13,14 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
+
+    
+
     public partial class AtualizarCadaverL : Form
     {
+
+
+
         public AtualizarCadaverL()
         {
             InitializeComponent();
@@ -24,17 +30,21 @@ namespace WindowsFormsApp1
             cAssistente.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             cAssistente.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             cAssistente.Height = 30;
+            cAssistente.RoundBorder(); // Aplica a borda arredondada ao cAssistente
             BackColor = Color.FromArgb(64, 49, 49);
             cLegista.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             cLegista.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             cLegista.Height = 30;
+            cLegista.RoundBorder(); // Aplica a borda arredondada ao cLegista
             cMaterial.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             cMaterial.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             cMaterial.Height = 30;
+            cMaterial.RoundBorder(); // Aplica a borda arredondada ao cMaterial
             cRetirada.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             cRetirada.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             cRetirada.Height = 30;
-            
+            cRetirada.RoundBorder();
+
             // Define o modo de seleção do DataGridView
 
             dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -819,6 +829,36 @@ namespace WindowsFormsApp1
         private void textLaudo_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        
+
+
+
+        private void AtualizarCadaverL_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+    public static class CustomControlExtensions
+    {
+        public static void RoundBorder(this ComboBox control, int radius = 20)
+        {
+            control.Paint += (o, e) => OnPaint(control, e, radius);
+        }
+
+        private static void OnPaint(Control control, PaintEventArgs e, int radius)
+        {
+            using (GraphicsPath graphicsPath = new GraphicsPath())
+            {
+                e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphicsPath.AddArc(new Rectangle(0, 0, radius, radius), 180, 90);
+                graphicsPath.AddArc(new Rectangle(control.Width - radius, 0, radius, radius), -90, 90);
+                graphicsPath.AddArc(new Rectangle(control.Width - radius, control.Height - radius, radius, radius), 0, 90);
+                graphicsPath.AddArc(new Rectangle(0, control.Height - radius, radius, radius), 90, 90);
+                graphicsPath.SetMarkers();
+                control.Region = new Region(graphicsPath);
+            }
         }
     }
 }

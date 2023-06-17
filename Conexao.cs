@@ -11,7 +11,7 @@ namespace WindowsFormsApp1
     public class Conexao
     {
         public static MySqlConnection con;
-        public static string connectionString = "server=127.0.0.1;port=3306;database=necroterio;user id=root;password=root;";
+        public static string connectionString = "server=127.0.0.1;port=3306;database=necroterio;user id=root;password=Vanderjr098;";
 
         public void Abrir()
         {

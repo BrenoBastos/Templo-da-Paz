@@ -314,6 +314,7 @@
             this.Controls.Add(this.dDados);
             this.Name = "AtualizarCadaverL";
             this.Text = "AtualizarCadaverT";
+            this.Load += new System.EventHandler(this.AtualizarCadaverL_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
