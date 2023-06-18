@@ -155,6 +155,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.dDados);
             this.Name = "DadosCadaverA";
             this.Text = "DadosCadaverA";
+            this.Load += new System.EventHandler(this.DadosCadaverA_Load);
             this.DoubleClick += new System.EventHandler(this.DadosCadaverA_DoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);

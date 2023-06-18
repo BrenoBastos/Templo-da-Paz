@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
             cStatus.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             cStatus.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             cStatus.Height = 30;
-
+            CenterToScreen();
             cContato.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             cContato.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             cContato.Height = 30;
@@ -314,8 +314,9 @@ namespace WindowsFormsApp1
         }
         }
 
-       
+        private void CadastrarF_Load(object sender, EventArgs e)
+        {
 
-       
+        }
     }
 }

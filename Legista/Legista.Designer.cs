@@ -69,6 +69,7 @@
             this.Controls.Add(this.treeView1);
             this.Name = "Legista";
             this.Text = "Legista";
+            this.Load += new System.EventHandler(this.Legista_Load);
             this.ResumeLayout(false);
 
         }

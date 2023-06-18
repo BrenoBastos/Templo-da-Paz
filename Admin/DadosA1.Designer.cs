@@ -129,6 +129,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.dDados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DadosA1";
+            this.Load += new System.EventHandler(this.DadosA1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

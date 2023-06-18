@@ -146,6 +146,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.bLocalizar);
             this.DoubleBuffered = true;
             this.Name = "DadosE";
+            this.Load += new System.EventHandler(this.DadosE_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -22,14 +22,7 @@ namespace WindowsFormsApp1
             CarregarDados();
             this.Shown += DadosL_Shown;
             dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-
-
-
-
-
-
-
+            CenterToScreen();
         }
         private void DadosL_Shown(object sender, EventArgs e)
         {
@@ -266,6 +259,11 @@ namespace WindowsFormsApp1
             // Mostra a nova instância da janela              Admin1
 
             novaTela.ShowDialog();
+        }
+
+        private void DadosL_Load(object sender, EventArgs e)
+        {
+
         }
     }
     }

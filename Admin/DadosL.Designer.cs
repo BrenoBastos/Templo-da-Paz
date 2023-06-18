@@ -131,6 +131,7 @@ namespace WindowsFormsApp1
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DadosL";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Load += new System.EventHandler(this.DadosL_Load);
             this.Click += new System.EventHandler(this.DadosL_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);

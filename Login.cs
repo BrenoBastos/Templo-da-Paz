@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         public Login()
         {
             InitializeComponent();
-
+            CenterToScreen();
             textSenha.PasswordChar = '*';
            BackColor = Color.FromArgb(39, 31, 31);
             textNome.Font = new Font("Poppins", 15); // Ajuste a fonte para determinar a altura
@@ -198,6 +198,11 @@ namespace WindowsFormsApp1
         private void lSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
           
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

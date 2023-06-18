@@ -143,6 +143,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.bAlterar);
             this.Name = "AlterarCadaverA";
             this.Text = "AlterarCadaverA";
+            this.Load += new System.EventHandler(this.AlterarCadaverA_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

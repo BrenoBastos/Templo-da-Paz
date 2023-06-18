@@ -203,6 +203,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.button1);
             this.Name = "AlterarA";
             this.Text = "AlterarA";
+            this.Load += new System.EventHandler(this.AlterarA_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

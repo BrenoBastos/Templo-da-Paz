@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             BackColor = Color.FromArgb(64, 49, 49);
             treeView2.Font = new Font("Poppins", 20, FontStyle.Regular);
-       
+            CenterToScreen();
             bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
             bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
             // Cria um novo nó pai na árvore e define seu texto como "Legista"
@@ -205,6 +205,11 @@ namespace WindowsFormsApp1
             // Abre a nova tela em um diálogo
 
             novaTela.ShowDialog();
+        }
+
+        private void Admin1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

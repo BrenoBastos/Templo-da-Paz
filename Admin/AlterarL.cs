@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
             // Chama a função comboBoxiniciar1(), que provavelmente preenche um combobox com opções.
             comboBoxiniciar1();
             textSenha.PasswordChar = '*';
-
+            CenterToScreen();
             // Chama a função comboBoxiniciar2(), que provavelmente preenche outro combobox com opções.
             comboBoxiniciar2();
 
@@ -661,6 +661,9 @@ namespace WindowsFormsApp1
             mCelular.SelectionLength = 0;
         }
 
-       
+        private void AlterarL_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

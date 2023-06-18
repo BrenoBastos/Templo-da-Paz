@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
             cAssistente.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             cAssistente.Height =30;
             BackColor = Color.FromArgb(64, 49, 49);
-
+            CenterToScreen();
         }
         private void listarassistente()
         {
@@ -304,6 +304,11 @@ namespace WindowsFormsApp1
             DadosCadaverA novaTela = new DadosCadaverA();
             // Mostra a nova instância da janela  DadosCadaverA
             novaTela.ShowDialog();
+        }
+
+        private void AlterarCadaverA_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

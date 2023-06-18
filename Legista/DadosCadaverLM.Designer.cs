@@ -250,6 +250,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.bAlterar);
             this.Name = "DadosCadaverLM";
             this.Text = "DadosCadaverLM";
+            this.Load += new System.EventHandler(this.DadosCadaverLM_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

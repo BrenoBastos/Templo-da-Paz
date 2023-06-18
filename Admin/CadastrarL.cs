@@ -18,7 +18,9 @@ namespace WindowsFormsApp1
     {
         public CadastrarL()
         {
+           
             InitializeComponent();
+            CenterToScreen();
             // Inicializa o combobox do estado civil
             comboBoxiniciar1();
             textSenha.PasswordChar = '*';
@@ -513,6 +515,9 @@ namespace WindowsFormsApp1
           
         }
 
-       
+        private void CadastrarL_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

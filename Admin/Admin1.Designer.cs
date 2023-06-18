@@ -72,6 +72,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.treeView2);
             this.Name = "Admin1";
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.Admin1_Load);
             this.ResumeLayout(false);
 
         }

@@ -25,8 +25,8 @@ namespace WindowsFormsApp1
            cMaterial.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             cMaterial.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             cMaterial.Height = 30;
-   
-           cMaterial.Height = 30;
+            CenterToScreen();
+            cMaterial.Height = 30;
             BackColor = Color.FromArgb(64, 49, 49);
             
         }
@@ -231,6 +231,11 @@ cFornecedor.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
         }
 
         private void textQuantidade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AdicionarE_Load(object sender, EventArgs e)
         {
 
         }

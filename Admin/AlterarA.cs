@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
             CarregarCampos();
-
+            CenterToScreen();
             comboBoxiniciar1();
             comboBoxiniciar2();
             comboBoxiniciar3();
@@ -559,7 +559,10 @@ namespace WindowsFormsApp1
             mCelular.SelectionLength = 0; 
         }
 
-       
+        private void AlterarA_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

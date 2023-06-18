@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
             bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
             treeView2.BackColor = Color.FromArgb(90, 72, 72);
             treeView2.HideSelection = false;
-
+            CenterToScreen();
             //Cria um nó raiz no TreeView com o texto "Cadáver" e o armazena na variável parentNode.
 
             TreeNode parentNode = treeView2.Nodes.Add("Laudo");
@@ -89,6 +89,11 @@ namespace WindowsFormsApp1
             // Mostra a nova instância da janela  Login
 
             novaTela.ShowDialog();
+        }
+
+        private void Assistente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

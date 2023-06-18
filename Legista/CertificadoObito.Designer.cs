@@ -57,7 +57,7 @@ namespace WindowsFormsApp1
             // 
             // bBaixar
             // 
-            this.bBaixar.Location = new System.Drawing.Point(139, 673);
+            this.bBaixar.Location = new System.Drawing.Point(213, 704);
             this.bBaixar.Name = "bBaixar";
             this.bBaixar.Size = new System.Drawing.Size(199, 62);
             this.bBaixar.TabIndex = 23;
@@ -67,28 +67,28 @@ namespace WindowsFormsApp1
             // 
             // textNomeMedico
             // 
-            this.textNomeMedico.Location = new System.Drawing.Point(68, 541);
+            this.textNomeMedico.Location = new System.Drawing.Point(39, 566);
             this.textNomeMedico.Name = "textNomeMedico";
-            this.textNomeMedico.Size = new System.Drawing.Size(881, 20);
+            this.textNomeMedico.Size = new System.Drawing.Size(524, 20);
             this.textNomeMedico.TabIndex = 85;
             // 
             // textAnotacoes
             // 
-            this.textAnotacoes.Location = new System.Drawing.Point(68, 638);
+            this.textAnotacoes.Location = new System.Drawing.Point(39, 670);
             this.textAnotacoes.Name = "textAnotacoes";
             this.textAnotacoes.Size = new System.Drawing.Size(100, 20);
             this.textAnotacoes.TabIndex = 86;
             // 
             // textSepultamento
             // 
-            this.textSepultamento.Location = new System.Drawing.Point(68, 500);
+            this.textSepultamento.Location = new System.Drawing.Point(39, 524);
             this.textSepultamento.Name = "textSepultamento";
-            this.textSepultamento.Size = new System.Drawing.Size(522, 20);
+            this.textSepultamento.Size = new System.Drawing.Size(312, 20);
             this.textSepultamento.TabIndex = 87;
             // 
             // bVoltar
             // 
-            this.bVoltar.Location = new System.Drawing.Point(68, 686);
+            this.bVoltar.Location = new System.Drawing.Point(56, 724);
             this.bVoltar.Name = "bVoltar";
             this.bVoltar.Size = new System.Drawing.Size(75, 23);
             this.bVoltar.TabIndex = 92;
@@ -98,68 +98,68 @@ namespace WindowsFormsApp1
             // 
             // textDeclarante
             // 
-            this.textDeclarante.Location = new System.Drawing.Point(619, 497);
+            this.textDeclarante.Location = new System.Drawing.Point(366, 520);
             this.textDeclarante.Name = "textDeclarante";
-            this.textDeclarante.Size = new System.Drawing.Size(330, 20);
+            this.textDeclarante.Size = new System.Drawing.Size(197, 20);
             this.textDeclarante.TabIndex = 93;
             // 
             // textCausadaMorte
             // 
-            this.textCausadaMorte.Location = new System.Drawing.Point(65, 469);
+            this.textCausadaMorte.Location = new System.Drawing.Point(39, 489);
             this.textCausadaMorte.Name = "textCausadaMorte";
-            this.textCausadaMorte.Size = new System.Drawing.Size(534, 20);
+            this.textCausadaMorte.Size = new System.Drawing.Size(524, 20);
             this.textCausadaMorte.TabIndex = 94;
             // 
             // textDocumentoIdentificação
             // 
-            this.textDocumentoIdentificação.Location = new System.Drawing.Point(458, 338);
+            this.textDocumentoIdentificação.Location = new System.Drawing.Point(269, 353);
             this.textDocumentoIdentificação.Mask = "00.000.000-0";
             this.textDocumentoIdentificação.Name = "textDocumentoIdentificação";
-            this.textDocumentoIdentificação.Size = new System.Drawing.Size(274, 20);
+            this.textDocumentoIdentificação.Size = new System.Drawing.Size(164, 20);
             this.textDocumentoIdentificação.TabIndex = 95;
             this.textDocumentoIdentificação.Click += new System.EventHandler(this.textRG_Click);
             // 
             // textEstadoCivil
             // 
-            this.textEstadoCivil.Location = new System.Drawing.Point(458, 308);
+            this.textEstadoCivil.Location = new System.Drawing.Point(269, 320);
             this.textEstadoCivil.Name = "textEstadoCivil";
-            this.textEstadoCivil.Size = new System.Drawing.Size(300, 20);
+            this.textEstadoCivil.Size = new System.Drawing.Size(294, 20);
             this.textEstadoCivil.TabIndex = 96;
             // 
             // mEleitor
             // 
-            this.mEleitor.Location = new System.Drawing.Point(758, 336);
+            this.mEleitor.Location = new System.Drawing.Point(447, 353);
             this.mEleitor.Mask = "000000000000";
             this.mEleitor.Name = "mEleitor";
-            this.mEleitor.Size = new System.Drawing.Size(191, 20);
+            this.mEleitor.Size = new System.Drawing.Size(116, 20);
             this.mEleitor.TabIndex = 97;
             this.mEleitor.ValidatingType = typeof(System.DateTime);
             this.mEleitor.Click += new System.EventHandler(this.mEleitor_Click);
             // 
             // textLocal
             // 
-            this.textLocal.Location = new System.Drawing.Point(65, 438);
+            this.textLocal.Location = new System.Drawing.Point(39, 460);
             this.textLocal.Name = "textLocal";
-            this.textLocal.Size = new System.Drawing.Size(881, 20);
+            this.textLocal.Size = new System.Drawing.Size(524, 20);
             this.textLocal.TabIndex = 98;
             // 
             // textFiliação
             // 
-            this.textFiliação.Location = new System.Drawing.Point(65, 370);
+            this.textFiliação.Location = new System.Drawing.Point(39, 386);
             this.textFiliação.Name = "textFiliação";
-            this.textFiliação.Size = new System.Drawing.Size(881, 20);
+            this.textFiliação.Size = new System.Drawing.Size(524, 20);
             this.textFiliação.TabIndex = 99;
             // 
             // textNome
             // 
-            this.textNome.Location = new System.Drawing.Point(388, 221);
+            this.textNome.Location = new System.Drawing.Point(183, 232);
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(301, 20);
             this.textNome.TabIndex = 100;
             // 
             // textCpf
             // 
-            this.textCpf.Location = new System.Drawing.Point(68, 256);
+            this.textCpf.Location = new System.Drawing.Point(39, 267);
             this.textCpf.Mask = "000.000.000-00";
             this.textCpf.Name = "textCpf";
             this.textCpf.Size = new System.Drawing.Size(82, 20);
@@ -168,71 +168,72 @@ namespace WindowsFormsApp1
             // 
             // textAno
             // 
-            this.textAno.Location = new System.Drawing.Point(865, 406);
+            this.textAno.Location = new System.Drawing.Point(509, 426);
             this.textAno.Name = "textAno";
-            this.textAno.Size = new System.Drawing.Size(81, 20);
+            this.textAno.Size = new System.Drawing.Size(54, 20);
             this.textAno.TabIndex = 102;
             // 
             // cSexo
             // 
             this.cSexo.FormattingEnabled = true;
-            this.cSexo.Location = new System.Drawing.Point(68, 308);
+            this.cSexo.Location = new System.Drawing.Point(39, 322);
             this.cSexo.Name = "cSexo";
-            this.cSexo.Size = new System.Drawing.Size(121, 21);
+            this.cSexo.Size = new System.Drawing.Size(92, 21);
             this.cSexo.TabIndex = 104;
             this.cSexo.SelectedIndexChanged += new System.EventHandler(this.cSexo_SelectedIndexChanged);
             // 
             // comboCor
             // 
             this.comboCor.FormattingEnabled = true;
-            this.comboCor.Location = new System.Drawing.Point(242, 308);
+            this.comboCor.Location = new System.Drawing.Point(146, 322);
             this.comboCor.Name = "comboCor";
-            this.comboCor.Size = new System.Drawing.Size(184, 21);
+            this.comboCor.Size = new System.Drawing.Size(117, 21);
             this.comboCor.TabIndex = 105;
+            this.comboCor.SelectedIndexChanged += new System.EventHandler(this.comboCor_SelectedIndexChanged);
             // 
             // textNaturalidade
             // 
-            this.textNaturalidade.Location = new System.Drawing.Point(65, 340);
+            this.textNaturalidade.Location = new System.Drawing.Point(43, 353);
             this.textNaturalidade.Name = "textNaturalidade";
-            this.textNaturalidade.Size = new System.Drawing.Size(361, 20);
+            this.textNaturalidade.Size = new System.Drawing.Size(213, 20);
             this.textNaturalidade.TabIndex = 106;
             // 
             // mDataFalecimento
             // 
-            this.mDataFalecimento.Location = new System.Drawing.Point(65, 409);
+            this.mDataFalecimento.Location = new System.Drawing.Point(39, 426);
             this.mDataFalecimento.Mask = "00/00/0000 00:00";
             this.mDataFalecimento.Name = "mDataFalecimento";
-            this.mDataFalecimento.Size = new System.Drawing.Size(573, 20);
+            this.mDataFalecimento.Size = new System.Drawing.Size(341, 20);
             this.mDataFalecimento.TabIndex = 109;
             this.mDataFalecimento.ValidatingType = typeof(System.DateTime);
             this.mDataFalecimento.Click += new System.EventHandler(this.mDataNascimento_Click);
             // 
             // textMatricula
             // 
-            this.textMatricula.Location = new System.Drawing.Point(581, 267);
+            this.textMatricula.Location = new System.Drawing.Point(157, 291);
             this.textMatricula.Name = "textMatricula";
             this.textMatricula.Size = new System.Drawing.Size(368, 20);
             this.textMatricula.TabIndex = 111;
             // 
             // textMês
             // 
-            this.textMês.Location = new System.Drawing.Point(758, 406);
+            this.textMês.Location = new System.Drawing.Point(447, 426);
             this.textMês.Name = "textMês";
-            this.textMês.Size = new System.Drawing.Size(72, 20);
+            this.textMês.Size = new System.Drawing.Size(43, 20);
             this.textMês.TabIndex = 112;
             // 
             // textDia
             // 
-            this.textDia.Location = new System.Drawing.Point(659, 406);
+            this.textDia.Location = new System.Drawing.Point(386, 426);
             this.textDia.Name = "textDia";
-            this.textDia.Size = new System.Drawing.Size(73, 20);
+            this.textDia.Size = new System.Drawing.Size(47, 20);
             this.textDia.TabIndex = 113;
             // 
             // textAverbacoes
             // 
-            this.textAverbacoes.Location = new System.Drawing.Point(68, 582);
+            this.textAverbacoes.Location = new System.Drawing.Point(39, 607);
             this.textAverbacoes.Name = "textAverbacoes";
-            this.textAverbacoes.Size = new System.Drawing.Size(881, 20);
+            this.textAverbacoes.Size = new System.Drawing.Size(524, 20);
             this.textAverbacoes.TabIndex = 118;
             // 
             // CertificadoObito
@@ -240,7 +241,7 @@ namespace WindowsFormsApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1020, 721);
+            this.ClientSize = new System.Drawing.Size(597, 778);
             this.Controls.Add(this.textAverbacoes);
             this.Controls.Add(this.textDia);
             this.Controls.Add(this.textMês);

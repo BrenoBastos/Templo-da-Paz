@@ -147,6 +147,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.textNome);
             this.Name = "AlterarF";
             this.Text = "AlterarF";
+            this.Load += new System.EventHandler(this.AlterarF_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -23,8 +23,11 @@ namespace WindowsFormsApp1
 
         public AtualizarCadaverL()
         {
+            
+            
             InitializeComponent();
             // Inicializa o ComboBox
+            CenterToScreen();
             listarmaterial();
             comboBoxiniciar();
             cAssistente.BackColor = Color.FromArgb(0x81, 0x66, 0x66);

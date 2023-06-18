@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             // Define o modo de seleção do DataGridView como seleção de linha completa
             BackColor = Color.FromArgb(64, 49, 49);
-
+            CenterToScreen();
             dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CarregarDados();
             this.Shown += DadosA_Shown;
@@ -255,6 +255,11 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
                 }
             }
+        }
+
+        private void DadosA1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

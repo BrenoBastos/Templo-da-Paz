@@ -68,6 +68,7 @@
             this.Controls.Add(this.treeView2);
             this.Name = "Assistente";
             this.Text = "Assistente";
+            this.Load += new System.EventHandler(this.Assistente_Load);
             this.ResumeLayout(false);
 
         }

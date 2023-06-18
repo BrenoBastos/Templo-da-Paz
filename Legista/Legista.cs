@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
 
             // Cria um nó filho do nó raiz com o texto "Certificado"
             TreeNode childNode2 = parentNode.Nodes.Add("Certificado");
-
+            CenterToScreen();
 
         }
 
@@ -93,6 +93,11 @@ namespace WindowsFormsApp1
             Login novaTela = new Login();
             // Mostra a nova instância da janela Login
             novaTela.ShowDialog();
+        }
+
+        private void Legista_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

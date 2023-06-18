@@ -18,6 +18,7 @@ namespace WindowsFormsApp1
         public DadosCadaverLM()
         {
             InitializeComponent();
+            CenterToScreen();
             // Chama o método que inicializa a ComboBox
             cAssistente.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             cAssistente.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
@@ -607,6 +608,11 @@ namespace WindowsFormsApp1
         }
 
         private void textQuantidade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DadosCadaverLM_Load(object sender, EventArgs e)
         {
 
         }

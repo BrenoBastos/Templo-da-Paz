@@ -128,6 +128,7 @@ namespace WindowsFormsApp1
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DadosF1";
+            this.Load += new System.EventHandler(this.DadosF1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

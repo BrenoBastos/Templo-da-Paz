@@ -23,6 +23,7 @@ namespace WindowsFormsApp1
             dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CarregarDados();
             this.Shown += DadosCadaverL_Shown;
+            CenterToScreen();
         }
         private void DadosCadaverL_Shown(object sender, EventArgs e)
         {
@@ -306,6 +307,11 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
                 }
             }
+        }
+
+        private void DadosCadaverL_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

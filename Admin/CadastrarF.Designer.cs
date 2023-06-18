@@ -135,6 +135,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.textNome);
             this.Name = "CadastrarF";
             this.Text = "CadastrarF";
+            this.Load += new System.EventHandler(this.CadastrarF_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

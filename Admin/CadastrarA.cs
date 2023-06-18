@@ -49,8 +49,8 @@ namespace WindowsFormsApp1
             mCelular.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             mCelular.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             mCelular.Height = 30;
-
-           mDataNascimento.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
+            CenterToScreen();
+            mDataNascimento.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             mDataNascimento.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             mDataNascimento.Height = 30;
 
@@ -508,7 +508,10 @@ namespace WindowsFormsApp1
 
         }
 
-       
+        private void CadastrarA_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

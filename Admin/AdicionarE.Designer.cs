@@ -115,6 +115,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.bAdicionar);
             this.Name = "AdicionarE";
             this.Text = "AdicionarE";
+            this.Load += new System.EventHandler(this.AdicionarE_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

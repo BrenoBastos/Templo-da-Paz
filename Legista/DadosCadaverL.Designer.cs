@@ -154,6 +154,7 @@
             this.Controls.Add(this.textNome);
             this.Name = "DadosCadaverL";
             this.Text = "DadosCadaverL";
+            this.Load += new System.EventHandler(this.DadosCadaverL_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

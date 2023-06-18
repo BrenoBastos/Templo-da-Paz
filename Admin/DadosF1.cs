@@ -17,8 +17,8 @@ namespace WindowsFormsApp1
         public DadosF1()
         {
             BackColor = Color.FromArgb(64, 49, 49);
-
             InitializeComponent();
+            CenterToScreen();
             dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CarregarDados();
             this.Shown += DadosF1_Shown;
@@ -230,6 +230,11 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Erro na conexão com o banco de dados: " + ex.Message);
                 }
             }
+        }
+
+        private void DadosF1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

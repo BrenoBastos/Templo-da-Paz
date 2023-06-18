@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
            textMaterial.BackColor = Color.FromArgb(0x81, 0x66, 0x66);
             textMaterial.ForeColor = Color.FromArgb(0xFC, 0xF3, 0xDF);
             textMaterial.Height = 30;
-
+            CenterToScreen();
             BackColor = Color.FromArgb(64, 49, 49);
         }
         private void listar()
@@ -205,6 +205,11 @@ namespace WindowsFormsApp1
 
             // Mostra a nova janela em um modo de diálogo
             novaTela.ShowDialog();
+
+        }
+
+        private void CadastrarE_Load(object sender, EventArgs e)
+        {
 
         }
     }
