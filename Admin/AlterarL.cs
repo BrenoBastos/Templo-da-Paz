@@ -494,7 +494,7 @@ namespace WindowsFormsApp1
                     else
                     {
                         string query = $"UPDATE legista SET Nome = @nome, Rg = @rg, Endereco = @endereco, DataNasc = @dataNascimento, " +
-                                      $"Contato = @celular, Id=@id, Crm = @crm, EstadoCivil = @estadoCivil, Sexo = @sexo, Senha = @senha, Status = @status " +
+                                      $"Contato = @celular, Id=@id, Crm = @crm, EstadoCivil = @estadoCivil, Sexo = @sexo,  Status = @status " +
                                       $"WHERE Id = @id";
 
                         MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
@@ -512,15 +512,7 @@ namespace WindowsFormsApp1
                         cmd.Parameters.AddWithValue("@sexo", sexo);
 
                         cmd.Parameters.AddWithValue("@status", status);
-                        using (SHA256 sha256 = SHA256.Create())
-                        {
-                            byte[] bytesSenha = Encoding.UTF8.GetBytes(senha);
-                            byte[] hashSenha = sha256.ComputeHash(bytesSenha);
-                            senhaCriptografada = Convert.ToBase64String(hashSenha);
-                        }
-
-                        cmd.Parameters.AddWithValue("@senha", senhaCriptografada);
-
+                      
 
 
 

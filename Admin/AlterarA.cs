@@ -442,7 +442,7 @@ namespace WindowsFormsApp1
                         // Agora você pode usar as variáveis estadoCivil, sexo e status em sua consulta SQL:
                         string query = $"UPDATE assistente SET Nome = @nome, Cpf = @cpf, Rg = @rg, Endereco = @endereco, " +
                             $"DataNasc = @dataNascimento, Contato = @celular, EstadoCivil = @estadoCivil, Sexo = @sexo, " +
-                            $"Senha = @senha, Status = @status WHERE ID = @id";
+                            $"Status = @status WHERE ID = @id";
 
                         MySqlCommand cmd = new MySqlCommand(query, Conexao.con);
                         cmd.Parameters.AddWithValue("@id", id);
@@ -456,14 +456,8 @@ namespace WindowsFormsApp1
                         cmd.Parameters.AddWithValue("@sexo", sexo);
                         cmd.Parameters.AddWithValue("@status", status);
  
-                        using (SHA256 sha256 = SHA256.Create())
-                        {
-                            byte[] bytesSenha = Encoding.UTF8.GetBytes(senha);
-                            byte[] hashSenha = sha256.ComputeHash(bytesSenha);
-                            senhaCriptografada = Convert.ToBase64String(hashSenha);
-                        }
-
-                        cmd.Parameters.AddWithValue("@senha", senhaCriptografada); int rowsAffected = cmd.ExecuteNonQuery();
+                      
+                        int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
                             if (status == "Ativo")

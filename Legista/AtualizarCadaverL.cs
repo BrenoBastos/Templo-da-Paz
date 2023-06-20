@@ -48,6 +48,15 @@ namespace WindowsFormsApp1
             cRetirada.Height = 30;
             cRetirada.RoundBorder();
 
+          
+
+
+
+
+
+
+
+
             // Define o modo de seleção do DataGridView
 
             dDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -441,6 +450,10 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
+                    
+
+
+    
                     MessageBox.Show("Nenhum resultado encontrado.");
                 }
 

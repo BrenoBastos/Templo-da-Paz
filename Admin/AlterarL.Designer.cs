@@ -229,6 +229,7 @@ namespace WindowsFormsApp1
             this.textSenha.Location = new System.Drawing.Point(190, 368);
             this.textSenha.Multiline = true;
             this.textSenha.Name = "textSenha";
+            this.textSenha.ReadOnly = true;
             this.textSenha.Size = new System.Drawing.Size(244, 30);
             this.textSenha.TabIndex = 109;
             // 

@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             // Verifica se algum campo obrigatório está vazio ou incompleto
-            if (string.IsNullOrWhiteSpace(textNome.Text) || !textCpf.MaskCompleted || string.IsNullOrWhiteSpace(textMatricula.Text) || string.IsNullOrWhiteSpace(textMês.Text) || string.IsNullOrWhiteSpace(textAno.Text) || string.IsNullOrWhiteSpace(textDia.Text) || string.IsNullOrWhiteSpace(textAverbacoes.Text) || string.IsNullOrWhiteSpace(textAnotacoes.Text) || string.IsNullOrWhiteSpace(textNaturalidade.Text) || string.IsNullOrWhiteSpace(textLocal.Text) || !textDocumentoIdentificação.MaskCompleted
+            if (string.IsNullOrWhiteSpace(textNome.Text) || !textCpf.MaskCompleted ||   string.IsNullOrWhiteSpace(textMês.Text) || string.IsNullOrWhiteSpace(textAno.Text) || string.IsNullOrWhiteSpace(textDia.Text) || string.IsNullOrWhiteSpace(textAverbacoes.Text) || string.IsNullOrWhiteSpace(textAnotacoes.Text) || string.IsNullOrWhiteSpace(textNaturalidade.Text) || string.IsNullOrWhiteSpace(textLocal.Text) || !textDocumentoIdentificação.MaskCompleted
                 || string.IsNullOrWhiteSpace(textCausadaMorte.Text) || string.IsNullOrWhiteSpace(textEstadoCivil.Text) || string.IsNullOrWhiteSpace(textFiliação.Text) || !mEleitor.MaskCompleted || string.IsNullOrWhiteSpace(textDeclarante.Text) || !mDataFalecimento.MaskCompleted ||
                 string.IsNullOrWhiteSpace(textSepultamento.Text) || string.IsNullOrWhiteSpace(textAnotacoes.Text) || string.IsNullOrWhiteSpace(textNomeMedico.Text))
             {
@@ -113,12 +113,7 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            // Verifica se o campo 'Matrícula' contém apenas caracteres numéricos
-            if (!textMatricula.Text.All(char.IsDigit))
-            {
-                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Matrícula'.");
-                return;
-            }
+            
 
             // Verifica se o campo 'Dia' contém apenas caracteres numéricos
             if (!textDia.Text.All(char.IsDigit))
@@ -179,7 +174,7 @@ namespace WindowsFormsApp1
                 doc.Add(new Paragraph("Filiação e residência: " + textFiliação.Text, mainFont));
 
 
-                doc.Add(new Paragraph("Matrícula: " + textMatricula.Text, mainFont));
+               
 
                 // Adiciona um espaço em branco entre as seções
                 doc.Add(new Paragraph(" "));
@@ -252,7 +247,6 @@ namespace WindowsFormsApp1
                 mDataFalecimento.Text = "";
                 textAverbacoes.Text = "";
                 textDia.Text = "";
-                textMatricula.Text = "";
                 textMês.Text = "";
             }
             // Se ocorrer um erro ao gerar o PDF
