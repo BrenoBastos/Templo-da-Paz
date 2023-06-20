@@ -11,9 +11,13 @@ using iTextSharp.text.pdf;
 using System.IO;
 using System.Drawing.Printing;
 using System.Reflection.Metadata;
-using Document = iTextSharp.text.Document;
+
+
+
 using Paragraph = iTextSharp.text.Paragraph;
 using Font = iTextSharp.text.Font;
+
+using Document = iTextSharp.text.Document;
 
 namespace WindowsFormsApp1
 {
@@ -22,6 +26,7 @@ namespace WindowsFormsApp1
         public CertificadoObito()
         {
             InitializeComponent();
+
             // Chama os métodos para inicializar os ComboBox
             CenterToScreen();
             comboBoxiniciar2();
@@ -65,78 +70,6 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Verifica se algum campo obrigatório está vazio ou incompleto
-            if (string.IsNullOrWhiteSpace(textNome.Text) || !textCpf.MaskCompleted ||   string.IsNullOrWhiteSpace(textMês.Text) || string.IsNullOrWhiteSpace(textAno.Text) || string.IsNullOrWhiteSpace(textDia.Text) || string.IsNullOrWhiteSpace(textAverbacoes.Text) || string.IsNullOrWhiteSpace(textAnotacoes.Text) || string.IsNullOrWhiteSpace(textNaturalidade.Text) || string.IsNullOrWhiteSpace(textLocal.Text) || !textDocumentoIdentificação.MaskCompleted
-                || string.IsNullOrWhiteSpace(textCausadaMorte.Text) || string.IsNullOrWhiteSpace(textEstadoCivil.Text) || string.IsNullOrWhiteSpace(textFiliação.Text) || !mEleitor.MaskCompleted || string.IsNullOrWhiteSpace(textDeclarante.Text) || !mDataFalecimento.MaskCompleted ||
-                string.IsNullOrWhiteSpace(textSepultamento.Text) || string.IsNullOrWhiteSpace(textAnotacoes.Text) || string.IsNullOrWhiteSpace(textNomeMedico.Text))
-            {
-                // Mostra uma mensagem de erro e retorna
-                MessageBox.Show("Preencha todos os campos!");
-                return;
-            }
-
-            // Verifica se o valor no campo 'Dia' é válido
-            int dia;
-            if (!int.TryParse(textDia.Text, out dia) || dia < 1 || dia > 31)
-            {
-                MessageBox.Show("O campo 'Dia' deve estar entre 1 e 31.");
-                return;
-            }
-
-            // Verifica se o valor no campo 'Mês' é válido
-            int mes;
-            if (!int.TryParse(textMês.Text, out mes) || mes < 1 || mes > 12)
-            {
-                MessageBox.Show("O campo 'Mês' deve estar entre 1 e 12.");
-                return;
-            }
-
-            // Verifica se o valor no campo 'Ano' é válido
-            int ano;
-            if (!int.TryParse(textAno.Text, out ano) || ano != DateTime.Now.Year)
-            {
-                MessageBox.Show("O campo 'Ano' deve estar no ano atual.");
-                return;
-            }
-
-            // Verifica se o campo 'Nome' contém apenas caracteres alfabéticos
-            if (textNome.Text.Any(char.IsDigit))
-            {
-                MessageBox.Show("Por favor, insira apenas caracteres alfabéticos no campo 'Nome'.");
-                return;
-            }
-
-            // Verifica se o campo 'Naturalidade' contém apenas caracteres alfabéticos
-            if (textNaturalidade.Text.Any(char.IsDigit))
-            {
-                MessageBox.Show("Por favor, insira apenas caracteres alfabéticos no campo 'Naturalidade'.");
-                return;
-            }
-
-            
-
-            // Verifica se o campo 'Dia' contém apenas caracteres numéricos
-            if (!textDia.Text.All(char.IsDigit))
-            {
-                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Dia'.");
-                return;
-            }
-
-            // Verifica se o campo 'Mês' contém apenas caracteres numéricos
-            if (!textMês.Text.All(char.IsDigit))
-            {
-                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Mês'.");
-                return;
-            }
-
-            // Verifica se o campo 'Ano' contém apenas caracteres numéricos
-            if (!textAno.Text.All(char.IsDigit))
-            {
-                MessageBox.Show("Por favor, insira apenas caracteres numéricos no campo 'Ano'.");
-                return;
-            }
-
-            // Cria um novo documento PDF
             // Cria um novo documento PDF
             Document doc = new Document(iTextSharp.text.PageSize.A4);
 
@@ -149,62 +82,62 @@ namespace WindowsFormsApp1
                 // Abre o documento
                 doc.Open();
 
+                // Cria o objeto PdfContentByte a partir do writer
+                PdfContentByte contentByte = writer.DirectContent;
+
                 // Define a fonte e o tamanho do título
                 Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18);
 
-                // Adiciona o título ao documento
-                Paragraph title = new Paragraph("Certidão de Óbito", titleFont);
-                title.Alignment = Element.ALIGN_CENTER;
-                doc.Add(title);
-
-                // Adiciona espaçamento antes do primeiro parágrafo
-                doc.Add(new Paragraph(" "));
+                // Define a posição e o conteúdo do título
+                ColumnText.ShowTextAligned(contentByte, Element.ALIGN_CENTER, new Phrase("Certidão de Óbito", titleFont),
+                    doc.PageSize.Width / 2, doc.PageSize.Height - 50, 0);
 
                 // Define a fonte e o tamanho do texto principal
                 Font mainFont = FontFactory.GetFont(FontFactory.HELVETICA, 12);
 
+                // Define a largura dos parágrafos
+                float columnWidth = doc.PageSize.Width / 2;
 
-                // Adiciona as informações pessoais ao documento
+                // Define a posição e o conteúdo das informações pessoais
+                ColumnText.ShowTextAligned(contentByte, Element.ALIGN_LEFT, new Phrase("CPF: " + textCpf.Text, mainFont),
+                    36, doc.PageSize.Height - 108, 0);
 
-                doc.Add(new Paragraph("CPF: " + textCpf.Text, mainFont));
-                doc.Add(new Paragraph("Nome: " + textNome.Text, mainFont));
+                ColumnText.ShowTextAligned(contentByte, Element.ALIGN_LEFT, new Phrase("Nome: " + textNome.Text, mainFont),
+                    36, doc.PageSize.Height - 126, 0);
 
-                doc.Add(new Paragraph("Sexo: " + cSexo.Text, mainFont)); doc.Add(new Paragraph("Cor: " + comboCor.Text, mainFont)); doc.Add(new Paragraph("Estado Civil: " + textEstadoCivil.Text, mainFont));
-                doc.Add(new Paragraph("Naturalidade: " + textNaturalidade.Text, mainFont)); doc.Add(new Paragraph("Documento de Identificação: " + textDocumentoIdentificação.Text, mainFont)); doc.Add(new Paragraph("Título de Eleitor: " + mEleitor.Text, mainFont));
-                doc.Add(new Paragraph("Filiação e residência: " + textFiliação.Text, mainFont));
+                // Define a posição e o conteúdo das informações de falecimento
+                ColumnText.ShowTextAligned(contentByte, Element.ALIGN_LEFT, new Phrase("Data de Falecimento: " + mDataFalecimento.Text, mainFont),
+                    36, doc.PageSize.Height - 162, 0);
 
+                ColumnText.ShowTextAligned(contentByte, Element.ALIGN_LEFT, new Phrase("Dia: " + textDia.Text, mainFont),
+                    36, doc.PageSize.Height - 180, 0);
 
-               
+                ColumnText.ShowTextAligned(contentByte, Element.ALIGN_LEFT, new Phrase("Mês: " + textMês.Text, mainFont),
+                    36, doc.PageSize.Height - 198, 0);
 
-                // Adiciona um espaço em branco entre as seções
-                doc.Add(new Paragraph(" "));
+                ColumnText.ShowTextAligned(contentByte, Element.ALIGN_LEFT, new Phrase("Ano: " + textAno.Text, mainFont),
+                    36, doc.PageSize.Height - 216, 0);
 
-                // Adiciona as informações de falecimento ao documento
-                doc.Add(new Paragraph("Data de Falecimento: " + mDataFalecimento.Text, mainFont)); doc.Add(new Paragraph("Dia: " + textDia.Text, mainFont)); doc.Add(new Paragraph("Mês: " + textMês.Text, mainFont)); doc.Add(new Paragraph("Ano: " + textAno.Text, mainFont));
+                // Define a posição e o conteúdo das informações adicionais
+                ColumnText.ShowTextAligned(contentByte, Element.ALIGN_LEFT, new Phrase("Sepultamento: " + textSepultamento.Text, mainFont),
+                    36, doc.PageSize.Height - 252, 0);
 
-                doc.Add(new Paragraph("Local de Falecimento: " + textLocal.Text, mainFont));
-                doc.Add(new Paragraph("Causa da Morte: " + textCausadaMorte.Text, mainFont));
+                ColumnText.ShowTextAligned(contentByte, Element.ALIGN_LEFT, new Phrase("Declarante: " + textDeclarante.Text, mainFont),
+                    36, doc.PageSize.Height - 270, 0);
 
-                // Adiciona um espaço em branco entre as seções
-                doc.Add(new Paragraph(" "));
+                ColumnText.ShowTextAligned(contentByte, Element.ALIGN_LEFT, new Phrase("Nome do Médico: " + textNomeMedico.Text, mainFont),
+                    36, doc.PageSize.Height - 288, 0);
 
-                // Adiciona as informações adicionais ao documento
-                doc.Add(new Paragraph("Sepultamento: " + textSepultamento.Text, mainFont)); doc.Add(new Paragraph("Declarante: " + textDeclarante.Text, mainFont));
-                doc.Add(new Paragraph("Nome do Médico: " + textNomeMedico.Text, mainFont));
-                doc.Add(new Paragraph("Título de Eleitor: " + mEleitor.Text, mainFont));
+                // Define a posição e o conteúdo das informações adicionais
+                ColumnText.ShowTextAligned(contentByte, Element.ALIGN_LEFT, new Phrase("Anotações: " + textAverbacoes.Text, mainFont),
+                    36, doc.PageSize.Height - 324, 0);
 
+                ColumnText.ShowTextAligned(contentByte, Element.ALIGN_LEFT, new Phrase("Anotações de Cadastro: " + textAnotacoes.Text, mainFont),
+                    36, doc.PageSize.Height - 342, 0);
 
-
-                doc.Add(new Paragraph("Anotações: " + textAverbacoes.Text, mainFont));
-                doc.Add(new Paragraph("Anotações de Cadastro: " + textAnotacoes.Text, mainFont));
-
-                doc.Add(new Paragraph(" "));
-
-                doc.Add(new Paragraph("Assinatura______"));
-
-
-
-                // Adicione mais campos conforme necessário
+                // Define a posição da assinatura
+                ColumnText.ShowTextAligned(contentByte, Element.ALIGN_LEFT, new Phrase("Assinatura______________________", mainFont),
+                    36, doc.PageSize.Height - 400, 0);
 
                 // Fecha o documento
                 doc.Close();
@@ -247,6 +180,7 @@ namespace WindowsFormsApp1
                 mDataFalecimento.Text = "";
                 textAverbacoes.Text = "";
                 textDia.Text = "";
+                textMatricula.Text = "";
                 textMês.Text = "";
             }
             // Se ocorrer um erro ao gerar o PDF
@@ -256,8 +190,7 @@ namespace WindowsFormsApp1
             }
         }
 
-
-        private void bVoltar_Click(object sender, EventArgs e)
+            private void bVoltar_Click(object sender, EventArgs e)
         {// Esconde a janela atual
             this.Hide();
             // Cria uma nova instância da classe      Legista 
@@ -319,6 +252,76 @@ namespace WindowsFormsApp1
         }
 
         private void comboCor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textNaturalidade_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textSepultamento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textNome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
         {
 
         }
