@@ -31,6 +31,13 @@ namespace WindowsFormsApp1
             CenterToScreen();
             comboBoxiniciar2();
             comboBoxiniciar3();
+            BackColor = Color.FromArgb(0x5A, 0x48, 0x48);
+            bBaixar.FlatAppearance.MouseOverBackColor = bBaixar.BackColor;
+            bBaixar.FlatAppearance.BorderSize = 0;
+
+            bBaixar.FlatAppearance.MouseDownBackColor = bBaixar.BackColor;
+            bVoltar.FlatAppearance.MouseOverBackColor = bVoltar.BackColor;
+            bVoltar.FlatAppearance.MouseDownBackColor = bVoltar.BackColor;
 
         }
 

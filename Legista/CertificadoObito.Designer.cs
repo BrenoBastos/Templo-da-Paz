@@ -116,6 +116,8 @@ namespace WindowsFormsApp1
             // 
             this.bVoltar.BackColor = System.Drawing.Color.Transparent;
             this.bVoltar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bVoltar.BackgroundImage")));
+            this.bVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bVoltar.FlatAppearance.BorderSize = 0;
             this.bVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bVoltar.Location = new System.Drawing.Point(12, 660);
             this.bVoltar.Name = "bVoltar";
@@ -143,13 +145,13 @@ namespace WindowsFormsApp1
             this.textDocumentoIdentificação.Location = new System.Drawing.Point(494, 335);
             this.textDocumentoIdentificação.Mask = "00.000.000-0";
             this.textDocumentoIdentificação.Name = "textDocumentoIdentificação";
-            this.textDocumentoIdentificação.Size = new System.Drawing.Size(82, 20);
+            this.textDocumentoIdentificação.Size = new System.Drawing.Size(140, 20);
             this.textDocumentoIdentificação.TabIndex = 95;
             this.textDocumentoIdentificação.Click += new System.EventHandler(this.textRG_Click);
             // 
             // textEstadoCivil
             // 
-            this.textEstadoCivil.Location = new System.Drawing.Point(439, 295);
+            this.textEstadoCivil.Location = new System.Drawing.Point(582, 296);
             this.textEstadoCivil.Name = "textEstadoCivil";
             this.textEstadoCivil.Size = new System.Drawing.Size(185, 20);
             this.textEstadoCivil.TabIndex = 96;
@@ -159,7 +161,7 @@ namespace WindowsFormsApp1
             this.mEleitor.Location = new System.Drawing.Point(677, 334);
             this.mEleitor.Mask = "000000000000";
             this.mEleitor.Name = "mEleitor";
-            this.mEleitor.Size = new System.Drawing.Size(84, 20);
+            this.mEleitor.Size = new System.Drawing.Size(111, 20);
             this.mEleitor.TabIndex = 97;
             this.mEleitor.ValidatingType = typeof(System.DateTime);
             this.mEleitor.Click += new System.EventHandler(this.mEleitor_Click);
@@ -207,16 +209,16 @@ namespace WindowsFormsApp1
             this.cSexo.FormattingEnabled = true;
             this.cSexo.Location = new System.Drawing.Point(264, 295);
             this.cSexo.Name = "cSexo";
-            this.cSexo.Size = new System.Drawing.Size(71, 21);
+            this.cSexo.Size = new System.Drawing.Size(148, 21);
             this.cSexo.TabIndex = 104;
             this.cSexo.SelectedIndexChanged += new System.EventHandler(this.cSexo_SelectedIndexChanged);
             // 
             // comboCor
             // 
             this.comboCor.FormattingEnabled = true;
-            this.comboCor.Location = new System.Drawing.Point(362, 295);
+            this.comboCor.Location = new System.Drawing.Point(437, 296);
             this.comboCor.Name = "comboCor";
-            this.comboCor.Size = new System.Drawing.Size(50, 21);
+            this.comboCor.Size = new System.Drawing.Size(127, 21);
             this.comboCor.TabIndex = 105;
             this.comboCor.SelectedIndexChanged += new System.EventHandler(this.comboCor_SelectedIndexChanged);
             // 
@@ -233,7 +235,7 @@ namespace WindowsFormsApp1
             this.mDataFalecimento.Location = new System.Drawing.Point(264, 415);
             this.mDataFalecimento.Mask = "00/00/0000 00:00";
             this.mDataFalecimento.Name = "mDataFalecimento";
-            this.mDataFalecimento.Size = new System.Drawing.Size(102, 20);
+            this.mDataFalecimento.Size = new System.Drawing.Size(134, 20);
             this.mDataFalecimento.TabIndex = 109;
             this.mDataFalecimento.ValidatingType = typeof(System.DateTime);
             this.mDataFalecimento.Click += new System.EventHandler(this.mDataNascimento_Click);
@@ -302,7 +304,7 @@ namespace WindowsFormsApp1
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(436, 279);
+            this.label4.Location = new System.Drawing.Point(579, 280);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 13);
             this.label4.TabIndex = 122;
@@ -312,7 +314,7 @@ namespace WindowsFormsApp1
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(368, 279);
+            this.label5.Location = new System.Drawing.Point(474, 280);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 123;
